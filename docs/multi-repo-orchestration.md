@@ -2,10 +2,6 @@
 
 ## Coordination Across Repositories with AI Agents
 
-> **Prerequisite:** Repos must have L0/L1 docs per the [Progressive Disclosure Documentation Standard](progressive-disclosure-standard.md). Set those up first.
-
-> **For single-repo practices, start with the [README](../README.md).** This document covers multi-repo coordination.
-
 This is forward-thinking guidance for when your AI-assisted development reaches the point where features span multiple repositories and you need agents working across them. The practices here are suggestions — adapt them as tooling matures.
 
 ---
