@@ -2,13 +2,13 @@
 description: Generate progressive disclosure documentation for the repo
 ---
 
-Generate progressive disclosure documentation for this repository following the [Progressive Disclosure Documentation Standard](https://github.com/BenWeekes/ai-dev/blob/main/progressive-disclosure-standard.md).
+Generate progressive disclosure documentation for this repository following the [Progressive Disclosure Documentation Standard](https://github.com/AgoraIO-Community/ai-dev-kit/blob/main/docs/progressive-disclosure-standard.md).
 
 ## Workflow
 
 ### 1. Read the standard
 
-Fetch the [Progressive Disclosure Documentation Standard](https://github.com/BenWeekes/ai-dev/blob/main/progressive-disclosure-standard.md) to understand the L0/L1/L2 architecture, file naming rules, token budgets, and content density targets.
+Fetch the [Progressive Disclosure Documentation Standard](https://github.com/AgoraIO-Community/ai-dev-kit/blob/main/docs/progressive-disclosure-standard.md) to understand the L0/L1/L2 architecture, file naming rules, token budgets, and content density targets.
 
 ### 2. Read existing project context
 

@@ -29,7 +29,7 @@ Every repo should be self-describing for AI agents. Without structured
 documentation, agents either load the entire codebase (expensive, slow,
 error-prone) or hallucinate from incomplete context.
 
-The [Progressive Disclosure Documentation Standard](https://github.com/BenWeekes/ai-dev/blob/main/progressive-disclosure-standard.md)
+The [Progressive Disclosure Documentation Standard](docs/progressive-disclosure-standard.md)
 defines a three-level architecture that gives agents exactly the context they
 need:
 
@@ -57,13 +57,13 @@ no hooks, no interceptors, no build steps.
 Add as a skill dependency for your AI coding tool. For Claude Code:
 
 ```bash
-claude mcp add-skill https://github.com/BenWeekes/ai-dev-kit
+claude mcp add-skill https://github.com/AgoraIO-Community/ai-dev-kit
 ```
 
 Or clone and reference locally:
 
 ```bash
-git clone https://github.com/BenWeekes/ai-dev-kit.git
+git clone https://github.com/AgoraIO-Community/ai-dev-kit.git
 ```
 
 ### /git — Git workflow conventions
@@ -85,7 +85,7 @@ team:
 ### /docs — Documentation generation
 
 Generates progressive disclosure documentation (L0/L1/L2) for any repository,
-following the [Progressive Disclosure Documentation Standard](https://github.com/BenWeekes/ai-dev/blob/main/progressive-disclosure-standard.md).
+following the [Progressive Disclosure Documentation Standard](docs/progressive-disclosure-standard.md).
 
 The agent reads the standard, maps your codebase, and generates the full
 `docs/ai/` structure — repo card, 8 L1 summaries, deep dives, and the
@@ -147,7 +147,7 @@ A new API endpoint may require backend changes, SDK updates, frontend
 integration, and infrastructure provisioning. Agents working in isolation
 produce locally correct but globally inconsistent changes.
 
-The [Multi-Repo Orchestration Guide](https://github.com/BenWeekes/ai-dev/blob/main/multi-repo-orchestration.md)
+The [Multi-Repo Orchestration Guide](docs/multi-repo-orchestration.md)
 describes a multi-agent architecture for this:
 
 | Tier   | Agent         | Scope                          | Writes Code?                    |
