@@ -77,6 +77,15 @@ Point your agent at `skills/ai-dev-kit/SKILL.md` as the entry point.
 | update   | update existing docs after code changes                      |
 | test     | verify docs give agents the right context at the right level |
 
+**Usage examples** — just ask your agent in natural language:
+
+- "ship it" — commits staged changes and pushes
+- "create a pr" — opens a pull request with generated title and summary
+- "sync with main" — rebases onto latest main
+- "generate docs for this repo" — creates progressive disclosure documentation
+- "update the docs" — refreshes docs to reflect recent code changes
+- "test the docs" — verifies docs give agents the right context
+
 ## AI Documentation Standard
 
 Every repo should be self-describing for AI agents. The
