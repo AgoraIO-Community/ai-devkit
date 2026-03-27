@@ -1,16 +1,21 @@
 # ai-dev-kit
 
-A practical guide and skill for consistent AI-assisted development. Works with
-any AI coding agent — the practices are about how your team works, not which
-tool you use.
+An installable skill for AI coding agents that enforces git conventions and
+generates progressive disclosure documentation. Works with any agent — Claude
+Code, Cursor, Codex, Gemini.
 
-This repo provides two things: a guide to the practices that make AI-assisted
-development reliable across a team, and installable skills that teach AI agents
-to follow those practices automatically.
+This repo contains:
+
+- **ai-dev-kit skill** — git workflow commands (commit, PR, rebase) and
+  documentation generation (create, update, verify) that agents load on demand
+- **[Progressive Disclosure Documentation Standard](docs/progressive-disclosure-standard.md)** —
+  the spec for making repos self-describing for AI agents (L0/L1/L2 architecture)
+- **[Multi-Repo Orchestration Guide](docs/multi-repo-orchestration.md)** (WIP) —
+  coordination patterns for features that span multiple repos
 
 ## Table of Contents
 
-- [How it works](#how-it-works)
+- [Overview](#overview)
 - [Install](#install)
 - [Skills Library](#skills-library)
 - [AI Documentation Standard](#ai-documentation-standard)
@@ -19,13 +24,12 @@ to follow those practices automatically.
 
 ---
 
-## How it works
+## Overview
 
-A session-start hook injects git conventions (lowercase commits, no AI tool
-names, present tense) into every session automatically. Documentation skills
-generate [progressive disclosure docs](#ai-documentation-standard) that make
-repos self-describing for AI agents. Detailed skill workflows load on demand
-via the Skill tool.
+ai-dev-kit installs as a plugin. At session start, a hook injects git
+conventions (lowercase commits, no AI tool names, present tense) so they're
+always active. Skills for git workflows and documentation generation load on
+demand via the Skill tool when you need them.
 
 ---
 
