@@ -1,13 +1,13 @@
 # ai-dev-kit
 
-An installable skill for AI coding agents that enforces git conventions and
-generates progressive disclosure documentation. Works with any agent — Claude
-Code, Cursor, Codex, Gemini.
+A practical guide to developing software with AI coding tools. Works with any
+agent — Claude Code, Cursor, Codex, Gemini.
 
 This repo contains:
 
 - **ai-dev-kit skill** — git workflow commands (commit, PR, rebase) and
-  documentation generation (create, update, verify) that agents load on demand
+  progressive disclosure documentation (generate, update, verify) that agents
+  load on demand
 - **[Progressive Disclosure Documentation Standard](docs/progressive-disclosure-standard.md)** —
   the spec for making repos self-describing for AI agents (L0/L1/L2 architecture)
 - **[Multi-Repo Orchestration Guide](docs/multi-repo-orchestration.md)** (WIP) —
@@ -28,10 +28,9 @@ This repo contains:
 
 ai-dev-kit installs as a plugin. At session start, a hook injects the main
 skill file which sets git conventions (lowercase commits, no AI tool names,
-present tense) and registers the available skills. Git conventions are always
-active. Skills for git workflows (commit, PR, rebase) and progressive
-disclosure documentation (generate, update, verify) load on demand when you
-invoke them.
+present tense) and registers skills for git workflows and progressive disclosure
+documentation. Git conventions are always active. Skills load on demand when you
+invoke them — say "ship it" for git, or "generate docs" for documentation.
 
 ---
 
