@@ -1,9 +1,23 @@
 # ai-dev-kit
 
-Git workflow conventions, documentation generation, and development standards
-for AI-assisted teams. Pairs with
-[Superpowers](https://github.com/obra/superpowers) — ai-dev-kit handles git
-and docs, Superpowers handles the dev workflow (spec, plan, TDD, review).
+A practical guide and toolkit for consistent AI-assisted development. Works with
+any AI coding agent — the practices are about how your team works, not which
+tool you use.
+
+This repo provides two things: a guide to the practices that make AI-assisted
+development reliable across a team, and installable skills that teach AI agents
+to follow those practices automatically.
+
+## Table of Contents
+
+- [Install](#install)
+- [How it works](#how-it-works)
+- [Skills Library](#skills-library)
+- [AI Documentation Standard](#ai-documentation-standard)
+- [Multi-Repo Orchestration (WIP)](#multi-repo-orchestration-wip)
+- [Using with Superpowers](#using-with-superpowers)
+
+---
 
 ## Install
 
