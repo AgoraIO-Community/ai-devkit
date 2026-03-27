@@ -18,7 +18,7 @@ ai-dev-kit provides git conventions and documentation generation as skills for A
 
 ## Architecture
 
-- **Ambient conventions** — `hooks/session-start` reads `skills/ai-dev-kit/SKILL.md` and injects git rules into the session context at startup. No user action needed.
+- **Ambient conventions** — `hooks/session-start` reads `skills/ai-dev-kit/SKILL.md` and injects git conventions and the skill directory into the session context at startup. No user action needed.
 - **On-demand skills** — detailed workflows (ship, pr, sync, docs) are loaded via the Skill tool when invoked.
 
 ## Conventions

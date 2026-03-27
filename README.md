@@ -32,14 +32,16 @@ conventions are always active. Skills load on demand when you invoke them — sa
 
 **Claude Code**
 
-```bash
-claude install github.com/BenWeekes/ai-dev-kit
+```
+/plugin marketplace add BenWeekes/ai-dev-kit
+/plugin install ai-dev-kit@ai-dev-kit
 ```
 
 **Cursor**
 
 ```bash
-cursor install github.com/BenWeekes/ai-dev-kit
+git clone https://github.com/BenWeekes/ai-dev-kit.git ~/ai-dev-kit
+ln -s ~/ai-dev-kit/skills/ai-dev-kit ~/.cursor/rules/ai-dev-kit
 ```
 
 **Any agent**
