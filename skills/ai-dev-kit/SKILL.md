@@ -22,20 +22,20 @@ These rules apply to every commit in repos that install ai-dev-kit:
 
 ### git
 
-Git workflow skills for committing, pushing, PRs, and rebasing.
+Git workflow skills for committing, pushing, PRs, and rebasing. For detailed workflows, read the skill file before executing.
 
-| Skill  | Description                                   |
-| ------ | --------------------------------------------- |
-| `ship` | commit staged changes and push to remote      |
-| `pr`   | create a pull request from the current branch |
-| `sync` | rebase current branch onto latest main        |
+| Skill  | Description                                   | Workflow                                        |
+| ------ | --------------------------------------------- | ----------------------------------------------- |
+| `ship` | commit staged changes and push to remote      | Read `skills/ai-dev-kit/git/ship.md`            |
+| `pr`   | create a pull request from the current branch | Read `skills/ai-dev-kit/git/pr.md`              |
+| `sync` | rebase current branch onto latest main        | Read `skills/ai-dev-kit/git/sync.md`            |
 
 ### docs
 
-Documentation generation following the progressive disclosure standard.
+Documentation generation following the progressive disclosure standard. For detailed workflows, read the skill file before executing.
 
-| Skill      | Description                                                 |
-| ---------- | ----------------------------------------------------------- |
-| `generate` | generate L0/L1/L2 docs for the repo from scratch            |
-| `update`   | update existing docs after code changes — only what changed |
-| `test`     | verify generated docs meet the standard                     |
+| Skill      | Description                                                 | Workflow                                        |
+| ---------- | ----------------------------------------------------------- | ----------------------------------------------- |
+| `generate` | generate L0/L1/L2 docs for the repo from scratch            | Read `skills/ai-dev-kit/docs/generate.md`       |
+| `update`   | update existing docs after code changes — only what changed | Read `skills/ai-dev-kit/docs/update.md`         |
+| `test`     | verify generated docs meet the standard                     | Read `skills/ai-dev-kit/docs/test.md`           |
