@@ -5,8 +5,8 @@
   "author": {
     "name": "AgoraIO-Community"
   },
-  "homepage": "https://github.com/AgoraIO-Community/ai-dev-kit",
-  "repository": "https://github.com/AgoraIO-Community/ai-dev-kit",
+  "homepage": "https://github.com/AgoraIO-Community/ai-devkit",
+  "repository": "https://github.com/AgoraIO-Community/ai-devkit",
   "license": "MIT",
   "hooks": "./hooks/hooks.json",
   "keywords": [

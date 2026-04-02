@@ -167,7 +167,7 @@ Total: ~5,500–7,500 tokens
 #### Required Sections (in order)
 
 1. **Identity Block** — Repo name, one-line description, primary language/framework, deployment target, owning team, repo type, last reviewed date
-2. **L1 Index** — The 8 L1 files listed with their one-line purpose statements
+2. **L1 Index** — The 8 L1 files listed with their one-line purpose statements and audience (Use, Maintain, or both)
 
 That's it. L0 is lean by design. Everything else lives in L1.
 
@@ -216,16 +216,18 @@ The Identity Block serves double duty: it orients agents working in this repo, A
 
 ## L1 — Summaries
 
-| File                                     | Purpose                                              |
-| ---------------------------------------- | ---------------------------------------------------- |
-| [01_setup](L1/01_setup.md)               | Environment setup, quick commands, env vars          |
-| [02_architecture](L1/02_architecture.md) | System design, component diagram, data flow          |
-| [03_code_map](L1/03_code_map.md)         | Directory tree, module map, "where does X live?"     |
-| [04_conventions](L1/04_conventions.md)   | Naming, patterns, error handling, testing            |
-| [05_workflows](L1/05_workflows.md)       | Step-by-step: add endpoint, deploy, migrate          |
-| [06_interfaces](L1/06_interfaces.md)     | API contracts, event schemas, DB schemas             |
-| [07_gotchas](L1/07_gotchas.md)           | Critical gotchas, tribal knowledge, incident lessons |
-| [08_security](L1/08_security.md)         | Security model, trust boundaries, auth, secrets      |
+The Audience column helps agents prioritise: **Use** = consuming the repo's functionality, **Maintain** = modifying internals.
+
+| File                                     | Purpose                                              | Audience       |
+| ---------------------------------------- | ---------------------------------------------------- | -------------- |
+| [01_setup](L1/01_setup.md)               | Environment setup, quick commands, env vars          | Use & Maintain |
+| [02_architecture](L1/02_architecture.md) | System design, component diagram, data flow          | Maintain       |
+| [03_code_map](L1/03_code_map.md)         | Directory tree, module map, "where does X live?"     | Maintain       |
+| [04_conventions](L1/04_conventions.md)   | Naming, patterns, error handling, testing            | Maintain       |
+| [05_workflows](L1/05_workflows.md)       | Step-by-step: add endpoint, deploy, migrate          | Use            |
+| [06_interfaces](L1/06_interfaces.md)     | API contracts, event schemas, DB schemas             | Use & Maintain |
+| [07_gotchas](L1/07_gotchas.md)           | Critical gotchas, tribal knowledge, incident lessons | Maintain       |
+| [08_security](L1/08_security.md)         | Security model, trust boundaries, auth, secrets      | Maintain       |
 ```
 
 ---
@@ -829,7 +831,7 @@ disclosure documentation under `docs/ai/`.
 ## The Standard
 
 Read the full standard before starting:
-https://github.com/AgoraIO-Community/ai-dev-kit/blob/main/docs/progressive-disclosure-standard.md
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/progressive-disclosure-standard.md
 
 Key constraints to keep in mind:
 
@@ -968,7 +970,7 @@ Ask the engineer (or extract from context):
 ## The Standard
 
 Read the full standard before starting:
-https://github.com/AgoraIO-Community/ai-dev-kit/blob/main/docs/progressive-disclosure-standard.md
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/progressive-disclosure-standard.md
 
 Key constraints for bootstrapping:
 
