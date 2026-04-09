@@ -498,7 +498,9 @@ Check freshness per-file so a single update doesn't reset the clock for everythi
 
 ### 4.7 AGENTS.md and CLAUDE.md Integration
 
-Every repo should have an `AGENTS.md` at the root that serves as the **universal entry point for all AI tools**. `CLAUDE.md` is a thin redirect.
+Every repo should have an `AGENTS.md` at the root that serves as the **primary
+portable entry point for AI tools that read repo files**. `CLAUDE.md` is a thin
+redirect for Claude-specific autoloading.
 
 #### AGENTS.md Template
 
@@ -546,10 +548,10 @@ Read @AGENTS.md for AI agent instructions, git conventions, and progressive disc
 
 #### Why This Pattern
 
-- **`AGENTS.md`** is the universal standard (Linux Foundation). All AI tools will look for it.
+- **`AGENTS.md`** is the most portable repo-local entry point and is designed to work across tools that read repo files.
 - **Self-contained** — `AGENTS.md` delivers doc loading instructions, git conventions, and doc commands in one file. No plugin install required.
 - **`CLAUDE.md`** uses an `@` reference so Claude Code loads `AGENTS.md` into the system prompt automatically — no tool call needed.
-- **Other tools** (Cursor, Copilot, Cody, etc.) can all read `AGENTS.md`.
+- **Other tools** should be able to consume `AGENTS.md` when they read repo files, even if they do not offer the same automatic loading behavior as Claude Code.
 - **Plugin optional** — tools like [ai-devkit](https://github.com/AgoraIO-Community/ai-devkit) can reinforce these conventions via skills and hooks, but `AGENTS.md` is the primary delivery mechanism.
 - **Future enterprise map:** A central system can scrape all `AGENTS.md` files to discover repos, then follow the link to each L0 for Identity Block metadata.
 
@@ -830,7 +832,7 @@ Copy the entire fenced block below into an AI coding agent with repo file access
 
 > **Usage notes:**
 >
-> - Works with any AI tool that can read files (Claude Code, Cursor, Cody, Aider, etc.)
+> - Designed to work with AI tools that can read repo files; exact behavior depends on each tool's file-loading model
 > - For large repos, the agent should analyze modules separately and synthesize — use sub-agents or multiple passes as your tool supports
 > - Review generated docs for accuracy — agents may miss domain-specific gotchas
 
@@ -1038,7 +1040,7 @@ Create files one at a time:
 
 | File                              | Level | Required?             | Purpose                                    |
 | --------------------------------- | ----- | --------------------- | ------------------------------------------ |
-| `AGENTS.md` (repo root)           | —     | **Required**          | Universal AI entry point                   |
+| `AGENTS.md` (repo root)           | —     | **Required**          | Primary portable AI entry point            |
 | `CLAUDE.md` (repo root)           | —     | Optional              | Loading instructions + AGENTS.md reference |
 | `docs/ai/L0_repo_card.md`         | L0    | **Required**          | Identity + L1 index                        |
 | `docs/ai/L1/01_setup.md`          | L1    | **Required**          | Environment setup, quick commands          |
@@ -1084,7 +1086,8 @@ Create files one at a time:
 A: No. Additional content goes in L2 deep dives. If an L1 file doesn't apply, it says "Not applicable" — it is not omitted.
 
 **Q: Can I use this with non-Claude agents?**
-A: Yes. Everything is tool-agnostic markdown. `AGENTS.md` is the universal entry point.
+A: Yes. Everything is tool-agnostic markdown. `AGENTS.md` is the primary
+portable entry point, and tool-specific shims can be added where needed.
 
 **Q: How does this work with multi-repo distributed systems?**
 A: Create a dedicated system repo (type: `distributed-system`) that documents the system as a whole. Each component repo has its own `docs/ai/` tree as usual. See Section 5.5.

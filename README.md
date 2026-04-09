@@ -4,13 +4,15 @@ A practical guide to developing software with AI coding tools. Includes an
 installable skill for git workflows and progressive disclosure documentation, a
 [documentation standard](docs/progressive-disclosure-standard.md) for making
 repos self-describing for AI agents, and a
-[multi-repo orchestration guide](docs/multi-repo-orchestration.md) (WIP). Works
-with any agent — Claude Code, Cursor, Codex, Gemini.
+[multi-repo orchestration guide](docs/multi-repo-orchestration.md) (WIP). The
+progressive disclosure docs are tool-agnostic markdown; this repo is tested
+primarily with Claude Code and Codex.
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Install](#install)
+- [Compatibility Status](#compatibility-status)
 - [Skills Library](#skills-library)
 - [AI Documentation Standard](#ai-documentation-standard)
 - [Multi-Repo Orchestration (WIP)](#multi-repo-orchestration-wip)
@@ -26,7 +28,7 @@ loading instructions. No plugin install required. Just copy the template from
 the [progressive disclosure standard](docs/progressive-disclosure-standard.md#47-agentsmd-and-claudemd-integration)
 into your repo.
 
-For tools that support plugins (Claude Code, Cursor), installing ai-devkit adds
+For tools that support plugins, installing ai-devkit adds
 skills and hooks as a convenience. At session start, a hook injects git
 conventions and registers skills for git workflows and progressive disclosure
 documentation. Skills load on demand when you invoke them — say "ship it" for
@@ -42,20 +44,13 @@ into your repo root. Any AI agent that reads `AGENTS.md` gets git conventions
 and doc commands automatically.
 
 The plugin install below is optional — it adds skills (ship, pr, sync) and
-session-start hooks for tools that support them.
+session-start hooks where packaged and tested.
 
 **Claude Code** (optional plugin)
 
 ```
 /plugin marketplace add AgoraIO-Community/ai-devkit
 /plugin install ai-devkit@ai-devkit
-```
-
-**Cursor** (optional plugin)
-
-```bash
-git clone https://github.com/AgoraIO-Community/ai-devkit.git ~/ai-devkit
-ln -s ~/ai-devkit/skills/ai-devkit ~/.cursor/rules/ai-devkit
 ```
 
 **Any agent** (optional clone)
@@ -65,6 +60,25 @@ git clone https://github.com/AgoraIO-Community/ai-devkit.git
 ```
 
 Point your agent at `skills/ai-devkit/SKILL.md` as the entry point.
+
+## Compatibility Status
+
+| Tool        | What works well today                                                  | Status |
+| ----------- | ---------------------------------------------------------------------- | ------ |
+| Claude Code | `AGENTS.md` + `CLAUDE.md`, Claude plugin packaging, session-start hook | Tested |
+| Codex       | `AGENTS.md` + progressive disclosure docs                              | Tested |
+
+Notes:
+
+- The most portable part of ai-devkit is the progressive disclosure doc system:
+  `AGENTS.md`, `docs/ai/`, and the standard itself.
+- Codex works well with progressive disclosure docs in practice, but this repo
+  does not ship a Codex-specific session-start hook or plugin integration.
+- Claude Code has the strongest packaged integration in this repo today.
+- Other tools should be able to consume `AGENTS.md` and `docs/ai/` because they
+  are plain markdown, but those paths are not fully tested here yet.
+- This repo still contains packaging files for other tools, but they should be
+  treated as secondary or experimental until explicitly tested and documented.
 
 ---
 

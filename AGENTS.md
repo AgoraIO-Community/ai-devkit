@@ -18,7 +18,8 @@ ai-devkit provides git conventions and documentation generation as skills for AI
 
 ## Architecture
 
-- **Ambient conventions** — `hooks/session-start` reads `skills/ai-devkit/SKILL.md` and injects git conventions and the skill directory into the session context at startup. No user action needed.
+- **AGENTS-first delivery** — the progressive disclosure standard's `AGENTS.md` template is the primary portable way to deliver git conventions and doc commands across repos.
+- **Plugin injection** — for supported plugin setups, `hooks/session-start` reads `skills/ai-devkit/SKILL.md` and injects git conventions plus the skill directory into the session context at startup.
 - **On-demand skills** — detailed workflows (ship, pr, sync, docs) are loaded via the Skill tool when invoked.
 
 ## Conventions

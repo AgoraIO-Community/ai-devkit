@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- make compatibility claims more explicit: tested primarily with Claude Code and Codex
+- clarify that `AGENTS.md` is the primary portable delivery path and plugin hooks are optional reinforcement
+- align the docs test guidance with the expanded `AGENTS.md` template requirements
+
 ## 1.1.0
 
 - migrate to skill-based architecture with session-start hook
