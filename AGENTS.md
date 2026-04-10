@@ -24,7 +24,8 @@ ai-devkit provides git conventions and documentation generation as skills for AI
 
 ## Conventions
 
-1. **Commit messages:** lowercase start, no AI tool names, present tense.
+1. **Commit messages:** conventional commits (`feat:`, `fix:`, `chore:`, `test:`, `docs:`), lowercase after prefix, present tense, no AI tool names.
+1. **Branch names:** `type/short-description` — lowercase, hyphen-separated (e.g. `feat/token-refresh`).
 2. **Spec before plan, plan before code.** Separate WHAT from HOW.
 3. **Test driven development.** Write the test first, verify it fails, implement, verify it passes.
 4. **Review before commit.** AI review checks spec compliance and code quality.

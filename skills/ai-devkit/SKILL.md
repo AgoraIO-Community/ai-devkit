@@ -1,6 +1,6 @@
 ---
 name: ai-devkit
-description: Git conventions and documentation generation for AI-assisted development. Enforces lowercase commits, no AI tool names, present tense. Use when committing, pushing, creating PRs, rebasing, or generating repo documentation.
+description: Git conventions and documentation generation for AI-assisted development. Enforces conventional commits (feat/fix/chore/test/docs), branch naming (type/description), no AI tool names. Use when committing, pushing, creating PRs, rebasing, or generating repo documentation.
 ---
 
 # ai-devkit
@@ -9,11 +9,26 @@ Git conventions and progressive disclosure documentation for AI-assisted develop
 
 ## Git Conventions (always active)
 
-These rules apply to every commit. In repos that adopt the progressive disclosure standard, these same conventions are delivered via the AGENTS.md template (no plugin needed). The skill reinforces them for plugin users.
+These rules apply to every commit and branch. In repos that adopt the progressive disclosure standard, these same conventions are delivered via the AGENTS.md template (no plugin needed). The skill reinforces them for plugin users.
 
-- **Lowercase start** — commit messages begin with a lowercase letter
-- **No AI tool names** — never mention claude, cursor, copilot, cody, aider, gemini, codex, chatgpt, or gpt-3/4
+### Commit messages — conventional commits
+
+- **Format:** `type: description` or `type(scope): description`
+- **Types:** `feat:` (new feature), `fix:` (bug fix), `chore:` (maintenance, version bumps), `test:` (test additions/changes), `docs:` (documentation)
+- **Scoped variant:** `feat(scope):`, `fix(scope):` — e.g. `feat(auth): add token refresh`
+- **Lowercase after prefix** — `feat: add feature`, not `feat: Add feature`
 - **Present tense** — "add feature", not "added feature"
+- **PR number appended** — `feat: add feature (#123)`
+
+### Branch names
+
+- **Format:** `type/short-description` — lowercase, hyphen-separated
+- **Types match commit types:** `feat/`, `fix/`, `chore/`, `test/`, `docs/`
+- **Examples:** `feat/token-refresh`, `fix/null-pointer`, `docs/progressive-disclosure`
+
+### General rules
+
+- **No AI tool names** — never mention claude, cursor, copilot, cody, aider, gemini, codex, chatgpt, or gpt-3/4
 - **No Co-Authored-By trailers** — omit AI attribution lines
 - **No --no-verify** — let git hooks run normally
 - **No git config changes** — do not modify user.name or user.email
