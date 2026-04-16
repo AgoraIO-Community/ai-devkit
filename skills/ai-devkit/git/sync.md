@@ -22,11 +22,14 @@ If there are uncommitted changes:
 
 ### 2. Determine base branch
 
-Check which base branch exists (prefer the first found):
+Check which remote base branch exists (prefer the first found):
 
-- `origin/main`
-- `origin/master`
-- `origin/develop`
+- `origin/main` → base = `main`
+- `origin/master` → base = `master`
+- `origin/develop` → base = `develop`
+
+Store the short name (e.g. `main`), not the remote-prefixed form. All later
+steps use `origin/<base>` so the short name avoids double-prefixing.
 
 If none exist, report error and stop.
 

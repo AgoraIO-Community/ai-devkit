@@ -12,7 +12,7 @@ Create a pull request from the current branch to the base branch.
 ### 1. Determine branches
 
 - Current branch: `git branch --show-current`
-- Base branch: default to `main`. If `$ARGUMENTS` contains a branch name (e.g., "pr develop"), use that as the base.
+- Base branch: if `$ARGUMENTS` contains a branch name (e.g., "pr develop"), use that. Otherwise detect the default: check for local `main`, then `master`, then `develop`. If none exist locally, check for `origin/main`, `origin/master`, or `origin/develop` and use the remote-tracking ref.
 
 If the current branch is the base branch, stop and tell the user to switch to a feature branch first.
 

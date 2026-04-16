@@ -31,7 +31,7 @@ Run these quick validations first — fix any failures before proceeding to the 
 - **L2 format:** each starts with `> **When to Read This:** ...`
 - **Cross-references:** all relative links between L0 → L1 → L2 resolve to existing files
 - **AGENTS.md:** exists at repo root and has `How to Load`, `Git Conventions`, and `Doc Commands`
-- **CLAUDE.md:** exists at repo root and references @AGENTS.md
+- **CLAUDE.md** (if present): references @AGENTS.md
 
 If structural checks fail, report all failures and stop. Structural issues must be fixed before content testing.
 

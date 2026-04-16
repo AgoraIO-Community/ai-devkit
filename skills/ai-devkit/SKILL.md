@@ -1,6 +1,6 @@
 ---
 name: ai-devkit
-description: Git conventions and documentation generation for AI-assisted development. Enforces conventional commits (feat/fix/chore/test/docs), branch naming (type/description), no AI tool names. Use when committing, pushing, creating PRs, rebasing, or generating repo documentation.
+description: Git conventions and documentation generation for AI-assisted development. Enforces conventional commits (feat/fix/chore/test/docs), branch naming (type/short-description), no AI tool names. Use when committing, pushing, creating PRs, rebasing, or generating repo documentation.
 ---
 
 # ai-devkit

@@ -927,23 +927,20 @@ Create files one at a time in this order:
 5. L2 deep dive files
 6. Verify all cross-references resolve
 
-## Also create: AGENTS.md and CLAUDE.md
+## Also create: AGENTS.md (and optionally CLAUDE.md)
 
 Create `AGENTS.md` at the repo root using the expanded template from section 4.7
 of the progressive disclosure standard. It must include all three sections:
 **How to Load**, **Git Conventions**, and **Doc Commands**.
 
-If `CLAUDE.md` exists, add a line pointing to AGENTS.md:
+If the repo uses Claude Code, create or update `CLAUDE.md` to reference AGENTS.md:
 
 ```
 Read @AGENTS.md for AI agent instructions, git conventions, and progressive disclosure docs.
 ```
 
-If `CLAUDE.md` does not exist, create it:
-
-```
-Read @AGENTS.md for AI agent instructions, git conventions, and progressive disclosure docs.
-```
+If `CLAUDE.md` already exists, add the reference without replacing existing content.
+`CLAUDE.md` is optional — repos that don't use Claude Code can skip it.
 
 ## Quality Checklist
 
@@ -953,7 +950,7 @@ Read @AGENTS.md for AI agent instructions, git conventions, and progressive disc
 
 **L2:** \_index.md exists. ≥2 deep dives. Each starts with "When to Read This." All self-contained.
 
-**CLAUDE.md:** Exists at repo root. References @AGENTS.md.
+**CLAUDE.md** (if present): References @AGENTS.md.
 
 **Links:** All relative. All resolve. None point outside docs/ai/.
 ````

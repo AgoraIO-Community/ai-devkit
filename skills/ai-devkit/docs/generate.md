@@ -62,7 +62,7 @@ Create files in this order:
 Also create or update:
 
 - `AGENTS.md` at repo root — use the expanded template from section 4.7 of the progressive disclosure standard. It must include all three sections: **How to Load**, **Git Conventions**, and **Doc Commands**. This makes the repo self-contained — agents get conventions without needing a plugin install.
-- `CLAUDE.md` at repo root referencing @AGENTS.md (add reference if file exists, create if not)
+- `CLAUDE.md` (optional, Claude Code only) — if the repo uses Claude Code, add or create `CLAUDE.md` referencing @AGENTS.md. If `CLAUDE.md` already exists, add the reference without replacing content. Skip if the repo doesn't use Claude Code.
 
 ### 6. Verify
 
@@ -76,7 +76,7 @@ Also create or update:
 - Total L1 is under 1,600 lines
 - L2 files start with `> **When to Read This:** ...`
 - AGENTS.md has How to Load, Git Conventions, and Doc Commands sections
-- CLAUDE.md references @AGENTS.md
+- CLAUDE.md references @AGENTS.md (if present)
 
 **Content self-test:**
 
