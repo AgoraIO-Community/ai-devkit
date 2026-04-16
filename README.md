@@ -3,6 +3,17 @@
 Git conventions and progressive disclosure documentation for AI-assisted
 development. Works with any AI coding agent.
 
+## Table of Contents
+
+- [What it does](#what-it-does)
+- [Quick start](#quick-start)
+- [Just want git conventions?](#just-want-git-conventions)
+- [Install (optional)](#install-optional)
+- [Skills](#skills)
+- [Progressive disclosure docs](#progressive-disclosure-docs)
+- [Compatibility](#compatibility)
+- [References](#references)
+
 ## What it does
 
 1. **Git conventions** — conventional commits (`feat:`, `fix:`, `chore:`),
@@ -18,9 +29,7 @@ required.
 
 ## Quick start
 
-### Add docs to an existing repo
-
-Paste this prompt into any AI agent session inside your target repo:
+Paste this prompt into any AI agent session inside your repo:
 
 ````
 Create a branch for this work:
@@ -53,66 +62,22 @@ Deliverables:
 
 Requirements:
 
-- Read the whole repo, not just top-level files. Delegate large modules when the tool supports it.
+- Read the whole repo, not just top-level files. Delegate large modules when
+  the tool supports it.
 - Read existing markdown, config, and CI files for project context.
 - Use the real structure and terminology of the repo — no generic filler.
+- Do not invent subsystems or workflows that aren't present yet.
 - AGENTS.md must include How to Load, Git Conventions, and Doc Commands.
-- Generate L0, L1, and L2 docs according to the standard.
-- After generating, run the test workflow. Fix failures and retest until all pass.
-- Test results are saved to docs/ai/test-results.md.
+- Generate L0, L1, and L2 docs according to the standard. Add L2 docs only
+  where deeper detail is justified.
+- After generating, run the test workflow. Fix failures and retest until all
+  pass. Test results are saved to docs/ai/test-results.md.
 
 When finished:
 
 1. Summarize what you added.
 2. Call out any assumptions, gaps, or ambiguous areas.
 3. Commit with: docs: add progressive disclosure documentation
-4. Push and create a PR.
-````
-
-### Set up a new repo
-
-Paste this prompt into an agent session inside a new or early-stage repo:
-
-````
-Create a branch for this work:
-
-git checkout -b docs/progressive-disclosure
-
-Your task is to set up this repository with progressive disclosure docs and
-git conventions from the start.
-
-Read these files from the local ai-devkit clone:
-
-1. skills/ai-devkit/docs/generate.md — the generation workflow
-2. skills/ai-devkit/docs/test.md — the test workflow
-3. docs/progressive-disclosure-standard.md — the full standard
-
-Clone URL: https://github.com/AgoraIO-Community/ai-devkit.git
-
-Deliverables:
-
-1. Add AGENTS.md at the repo root using the section 4.7 template.
-2. Add progressive disclosure docs under docs/ai/.
-3. Establish git conventions for future work:
-   - conventional commits
-   - branch naming: type/short-description
-   - no AI tool names in commit messages
-4. Make the docs honest about what exists today — don't invent architecture.
-
-Requirements:
-
-- Inspect all existing source, config, and markdown files before writing docs.
-- Do not invent subsystems or workflows that aren't present yet.
-- Keep L0 concise. Create L1 summaries that match actual code layout.
-- Add L2 docs only where deeper detail is justified.
-- Include Doc Commands in AGENTS.md so future agents can update and test docs.
-- Run the test workflow and fix issues before finishing.
-
-When finished:
-
-1. Summarize the resulting documentation structure.
-2. Identify which docs will need updates as the repo grows.
-3. Commit with: docs: add repo conventions and progressive disclosure docs
 4. Push and create a PR.
 ````
 
