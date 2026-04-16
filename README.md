@@ -1,59 +1,141 @@
 # ai-devkit
 
-A practical guide to developing software with AI coding tools. Includes an
-installable skill for git workflows and progressive disclosure documentation, a
-[documentation standard](docs/progressive-disclosure-standard.md) for making
-repos self-describing for AI agents, and a
-[multi-repo orchestration guide](docs/multi-repo-orchestration.md) (WIP). The
-progressive disclosure docs are tool-agnostic markdown; this repo is tested
-primarily with Claude Code and Codex.
+Git conventions and progressive disclosure documentation for AI-assisted
+development. Works with any AI coding agent.
 
-## Table of Contents
+## What it does
 
-- [Overview](#overview)
-- [Install](#install)
-- [Compatibility Status](#compatibility-status)
-- [Skills Library](#skills-library)
-- [AI Documentation Standard](#ai-documentation-standard)
-- [Multi-Repo Orchestration (WIP)](#multi-repo-orchestration-wip)
-- [Using with Superpowers](#using-with-superpowers)
+1. **Git conventions** — conventional commits (`feat:`, `fix:`, `chore:`),
+   branch naming (`type/short-description`), no AI tool names
+2. **Progressive disclosure docs** — a three-level doc architecture (L0/L1/L2)
+   that makes repos self-describing for AI agents
+3. **Skills** — workflows for git (ship, pr, sync) and docs (generate, update,
+   test)
 
----
+The primary delivery mechanism is `AGENTS.md`. It gives any agent the repo's
+conventions, doc loading instructions, and doc commands in one file — no plugin
+required.
 
-## Overview
+## Quick start
 
-The primary way to adopt ai-devkit is through `AGENTS.md` — a single file at
-your repo root that gives any AI agent git conventions, doc commands, and doc
-loading instructions. No plugin install required. Just copy the template from
-the [progressive disclosure standard](docs/progressive-disclosure-standard.md#47-agentsmd-and-claudemd-integration)
-into your repo.
+### Add docs to an existing repo
 
-For tools that support plugins, installing ai-devkit adds
-skills and hooks as a convenience. At session start, a hook injects git
-conventions and registers skills for git workflows and progressive disclosure
-documentation. Skills load on demand when you invoke them — say "ship it" for
-git, or "generate docs" for documentation.
+Paste this prompt into any AI agent session inside your target repo:
 
----
+````
+Create a branch for this work:
 
-## Install
+git checkout -b docs/progressive-disclosure
 
-**No install needed** — copy the AGENTS.md template from
+Your task is to add progressive disclosure documentation and git conventions
+to this repository.
+
+Read these files from the local ai-devkit clone:
+
+1. skills/ai-devkit/docs/generate.md — the generation workflow
+2. skills/ai-devkit/docs/test.md — the test workflow
+3. docs/progressive-disclosure-standard.md — the full standard
+
+Clone URL: https://github.com/AgoraIO-Community/ai-devkit.git
+
+Deliverables:
+
+1. Add AGENTS.md at the repo root using the expanded template from section 4.7
+   of the progressive disclosure standard.
+2. Generate progressive disclosure docs under docs/ai/.
+3. Preserve and integrate with existing repo docs — don't overwrite them.
+4. If CLAUDE.md already exists, add a reference to AGENTS.md using that file's
+   existing conventions — don't replace content.
+5. Apply these git conventions:
+   - conventional commits
+   - branch naming: type/short-description
+   - no AI tool names in commit messages
+
+Requirements:
+
+- Read the whole repo, not just top-level files. Delegate large modules when the tool supports it.
+- Read existing markdown, config, and CI files for project context.
+- Use the real structure and terminology of the repo — no generic filler.
+- AGENTS.md must include How to Load, Git Conventions, and Doc Commands.
+- Generate L0, L1, and L2 docs according to the standard.
+- After generating, run the test workflow. Fix failures and retest until all pass.
+- Test results are saved to docs/ai/test-results.md.
+
+When finished:
+
+1. Summarize what you added.
+2. Call out any assumptions, gaps, or ambiguous areas.
+3. Commit with: docs: add progressive disclosure documentation
+4. Push and create a PR.
+````
+
+### Set up a new repo
+
+Paste this prompt into an agent session inside a new or early-stage repo:
+
+````
+Create a branch for this work:
+
+git checkout -b docs/progressive-disclosure
+
+Your task is to set up this repository with progressive disclosure docs and
+git conventions from the start.
+
+Read these files from the local ai-devkit clone:
+
+1. skills/ai-devkit/docs/generate.md — the generation workflow
+2. skills/ai-devkit/docs/test.md — the test workflow
+3. docs/progressive-disclosure-standard.md — the full standard
+
+Clone URL: https://github.com/AgoraIO-Community/ai-devkit.git
+
+Deliverables:
+
+1. Add AGENTS.md at the repo root using the section 4.7 template.
+2. Add progressive disclosure docs under docs/ai/.
+3. Establish git conventions for future work:
+   - conventional commits
+   - branch naming: type/short-description
+   - no AI tool names in commit messages
+4. Make the docs honest about what exists today — don't invent architecture.
+
+Requirements:
+
+- Inspect all existing source, config, and markdown files before writing docs.
+- Do not invent subsystems or workflows that aren't present yet.
+- Keep L0 concise. Create L1 summaries that match actual code layout.
+- Add L2 docs only where deeper detail is justified.
+- Include Doc Commands in AGENTS.md so future agents can update and test docs.
+- Run the test workflow and fix issues before finishing.
+
+When finished:
+
+1. Summarize the resulting documentation structure.
+2. Identify which docs will need updates as the repo grows.
+3. Commit with: docs: add repo conventions and progressive disclosure docs
+4. Push and create a PR.
+````
+
+### Just want git conventions?
+
+Copy the AGENTS.md template from
 [section 4.7](docs/progressive-disclosure-standard.md#47-agentsmd-and-claudemd-integration)
 into your repo root. Any AI agent that reads `AGENTS.md` gets git conventions
-and doc commands automatically.
+and doc commands automatically. No install needed.
 
-The plugin install below is optional — it adds skills (ship, pr, sync) and
-session-start hooks where packaged and tested.
+## Install (optional)
 
-**Claude Code** (optional plugin)
+The plugin adds skills (ship, pr, sync) and session-start hooks as a
+convenience. The AGENTS.md template works without it.
+
+**Claude Code**
 
 ```
 /plugin marketplace add AgoraIO-Community/ai-devkit
 /plugin install ai-devkit@ai-devkit
 ```
 
-**Any agent** (optional clone)
+**Any agent**
 
 ```bash
 git clone https://github.com/AgoraIO-Community/ai-devkit.git
@@ -61,98 +143,47 @@ git clone https://github.com/AgoraIO-Community/ai-devkit.git
 
 Point your agent at `skills/ai-devkit/SKILL.md` as the entry point.
 
-## Compatibility Status
+## Skills
 
-| Tool        | What works well today                                                  | Status |
-| ----------- | ---------------------------------------------------------------------- | ------ |
-| Claude Code | `AGENTS.md` + `CLAUDE.md`, Claude plugin packaging, session-start hook | Tested |
-| Codex       | `AGENTS.md` + progressive disclosure docs                              | Tested |
+| Skill    | What it does                                           |
+| -------- | ------------------------------------------------------ |
+| ship     | commit staged changes and push to remote               |
+| pr       | create a pull request with generated title and summary |
+| sync     | rebase current branch onto latest main                 |
+| generate | create L0/L1/L2 progressive disclosure docs            |
+| update   | update existing docs after code changes                |
+| test     | verify docs give agents the right context              |
 
-Notes:
+Usage — just ask your agent in natural language: "ship it", "create a pr",
+"generate docs", "test the docs".
 
-- The most portable part of ai-devkit is the progressive disclosure doc system:
-  `AGENTS.md`, `docs/ai/`, and the standard itself.
-- Codex works well with progressive disclosure docs in practice, but this repo
-  does not ship a Codex-specific session-start hook or plugin integration.
-- Claude Code has the strongest packaged integration in this repo today.
-- Other tools should be able to consume `AGENTS.md` and `docs/ai/` because they
-  are plain markdown, but those paths are not fully tested here yet.
-- This repo still contains packaging files for other tools, but they should be
-  treated as secondary or experimental until explicitly tested and documented.
+## Progressive disclosure docs
 
----
+The [standard](docs/progressive-disclosure-standard.md) defines three levels:
 
-## Skills Library
+| Level  | Name       | What it is                              | Token target |
+| ------ | ---------- | --------------------------------------- | ------------ |
+| **L0** | Repo Card  | Identity + L1 index. Always loaded.     | 300-500      |
+| **L1** | Summaries  | 8 structured summaries. Loaded upfront. | 300-600 each |
+| **L2** | Deep Dives | Full specs. Loaded only when needed.    | No limit     |
 
-**Git**
+Token targets are recommendations, not hard limits — large repos may need more
+at L1. The goal is keeping default context small so 80% of agent tasks complete
+with L0+L1 alone (~4,000 tokens).
 
-| Skill | What it does                                           |
-| ----- | ------------------------------------------------------ |
-| ship  | commit staged changes and push to remote               |
-| pr    | create a pull request with generated title and summary |
-| sync  | rebase current branch onto latest main                 |
+## Compatibility
 
-**Docs**
+| Tool        | Status |
+| ----------- | ------ |
+| Claude Code | Tested — plugin + AGENTS.md + CLAUDE.md |
+| Codex       | Tested — AGENTS.md + progressive disclosure docs |
+| Others      | AGENTS.md and docs/ai/ are plain markdown — should work with any tool that reads repo files |
 
-| Skill    | What it does                                                 |
-| -------- | ------------------------------------------------------------ |
-| generate | create L0/L1/L2 progressive disclosure docs from scratch     |
-| update   | update existing docs after code changes                      |
-| test     | verify docs give agents the right context at the right level |
+## References
 
-**Usage examples** — just ask your agent in natural language:
-
-- "ship it" — commits staged changes and pushes
-- "create a pr" — opens a pull request with generated title and summary
-- "sync with main" — rebases onto latest main
-- "generate docs for this repo" — creates progressive disclosure documentation
-- "update the docs" — refreshes docs to reflect recent code changes
-- "test the docs" — verifies docs give agents the right context
-
-## AI Documentation Standard
-
-Every repo should be self-describing for AI agents. The
-[Progressive Disclosure Documentation Standard](docs/progressive-disclosure-standard.md)
-defines a three-level architecture:
-
-| Level  | Name       | What it is                                              | Token budget |
-| ------ | ---------- | ------------------------------------------------------- | ------------ |
-| **L0** | Repo Card  | Identity + L1 index. Always loaded first.               | 300-500      |
-| **L1** | Summaries  | Structured summaries for standard work. 8 files.        | 300-600 each |
-| **L2** | Deep Dives | Full specs and subsystem docs. Loaded only when needed. | No limit     |
-
-The `generate` skill creates these docs automatically for any repo.
-
-## Multi-Repo Orchestration (WIP)
-
-When features span multiple repos, you need coordination across agents. The
-[Multi-Repo Orchestration Guide](docs/multi-repo-orchestration.md) describes
-agent tiers, epic lifecycle, and cross-repo review patterns.
-
-## Using with Superpowers
-
-[Superpowers](https://github.com/obra/superpowers) handles the development
-pipeline — spec, plan, build, test, review. ai-devkit ensures consistent git
-usage (clean commits, no AI tool advertising) and maintains useful progressive
-disclosure documentation. No overlap:
-
-| Concern         | ai-devkit             | Superpowers          |
-| --------------- | ---------------------- | -------------------- |
-| Git conventions | ship, pr, sync         | —                    |
-| Documentation   | generate, update, test | —                    |
-| Spec & planning | —                      | spec, plan           |
-| Development     | —                      | tdd, review          |
-| Debugging       | —                      | systematic-debugging |
-
-A typical workflow:
-
-1. spec — capture what you want to build (Superpowers)
-2. plan — design the approach (Superpowers)
-3. tdd — implement with tests (Superpowers)
-4. review — review the changes (Superpowers)
-5. ship — commit and push (ai-devkit)
-6. pr — create a PR (ai-devkit)
-7. generate — update repo docs (ai-devkit)
+- [Progressive Disclosure Standard](docs/progressive-disclosure-standard.md) — full spec
+- [Multi-Repo Orchestration Guide](docs/multi-repo-orchestration.md) — coordinating agents across repos (WIP)
+- [Superpowers](https://github.com/obra/superpowers) — complementary spec/plan/TDD/review workflow
 
 ## License
 
