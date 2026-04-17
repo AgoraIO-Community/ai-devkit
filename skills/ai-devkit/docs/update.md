@@ -42,7 +42,7 @@ Read the existing PD docs to understand what's already documented:
 
 1. `docs/ai/L0_repo_card.md`
 2. All 8 L1 files in `docs/ai/L1/`
-3. `docs/ai/L1/deep_dives/_index.md`
+3. `docs/ai/L1/L2/_index.md`
 
 Do NOT read L2 files yet — only read them if a change directly affects a deep dive topic.
 
@@ -80,7 +80,7 @@ Apply the changes identified in step 3. For each file:
 
 If a change warrants a new L2 deep dive:
 
-1. Create the file in `docs/ai/L1/deep_dives/`
+1. Create the file in `docs/ai/L1/L2/`
 2. Add it to `_index.md`
 3. Add a link in the relevant L1 file's `## Related Deep Dives` section
 
@@ -109,6 +109,6 @@ List what was updated:
 - `01_setup.md` — added REDIS_URL env var
 - `03_code_map.md` — added auth/ module
 - `06_interfaces.md` — updated POST /v1/sessions response shape
-- `deep_dives/auth_flow.md` — new deep dive for OAuth2 implementation
+- `L2/auth_flow.md` — new deep dive for OAuth2 implementation
 - `L0_repo_card.md` — updated last_reviewed
 ```

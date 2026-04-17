@@ -53,10 +53,10 @@ Using the module summaries:
 
 Create files in this order:
 
-1. `mkdir -p docs/ai/L1/deep_dives`
+1. `mkdir -p docs/ai/L1/L2`
 2. `docs/ai/L0_repo_card.md` — Identity Block + L1 Index
 3. L1 files 01 through 08 in `docs/ai/L1/`
-4. `docs/ai/L1/deep_dives/_index.md`
+4. `docs/ai/L1/L2/_index.md`
 5. L2 deep dive files (2-4 minimum)
 
 Also create or update:

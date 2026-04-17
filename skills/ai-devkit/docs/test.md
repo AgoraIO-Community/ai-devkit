@@ -13,7 +13,7 @@ Check that these exist before running tests:
 
 - `docs/ai/L0_repo_card.md`
 - `docs/ai/L1/` directory with at least files 01-08
-- `docs/ai/L1/deep_dives/_index.md`
+- `docs/ai/L1/L2/_index.md`
 
 If any are missing, stop and tell the user to run `generate` first.
 
@@ -27,7 +27,7 @@ Run these quick validations first — fix any failures before proceeding to the 
 - **L1 files:** all 8 exist (01_setup through 08_security), each is 80-200 lines
 - **L1 format:** each starts with a one-line purpose statement, each ends with `## Related Deep Dives`
 - **L1 total:** combined line count is under 1,600
-- **L2 index:** `deep_dives/_index.md` exists and lists all L2 files
+- **L2 index:** `L2/_index.md` exists and lists all L2 files
 - **L2 format:** each starts with `> **When to Read This:** ...`
 - **Cross-references:** all relative links between L0 → L1 → L2 resolve to existing files
 - **AGENTS.md:** exists at repo root and has `How to Load`, `Git Conventions`, and `Doc Commands`

@@ -140,7 +140,7 @@ Total: ~4,000–5,500 tokens
 
 ```
 Load L0 → load all L1 → 02_architecture.md + 06_interfaces.md give overview →
-need more detail → deep_dives/websocket_system.md → done.
+need more detail → L2/websocket_system.md → done.
 Total: ~5,500–7,500 tokens
 ```
 
@@ -281,7 +281,7 @@ The Audience column helps agents prioritise: **Use** = consuming the repo's func
 
 ## Related Deep Dives
 
-- [Topic Name](deep_dives/topic_name.md) — One-line description
+- [Topic Name](L2/topic_name.md) — One-line description
 - None
 ```
 
@@ -291,13 +291,13 @@ The Audience column helps agents prioritise: **Use** = consuming the repo's func
 
 **Purpose:** Full architecture docs, specifications, and subsystem deep-dives. Loaded only for complex, cross-cutting changes.
 
-**Directory:** `docs/ai/L1/deep_dives/`
+**Directory:** `docs/ai/L1/L2/`
 
-> **Why under L1?** L2 is an _extension_ of L1, not a sibling. An agent navigating from an L1 file to an L2 deep dive follows a simple relative path: `deep_dives/topic_name.md`.
+> **Why under L1?** L2 is an _extension_ of L1, not a sibling. An agent navigating from an L1 file to an L2 deep dive follows a simple relative path: `L2/topic_name.md`.
 
 #### Index File (Required)
 
-Every repo with L2 docs MUST have `docs/ai/L1/deep_dives/_index.md`:
+Every repo with L2 docs MUST have `docs/ai/L1/L2/_index.md`:
 
 ```markdown
 # Deep Dives Index
@@ -382,7 +382,7 @@ repo-root/
             ├── 06_interfaces.md
             ├── 07_gotchas.md
             ├── 08_security.md
-            └── deep_dives/                # L2 — extension of L1
+            └── L2/                # L2 — extension of L1
                 ├── _index.md              # Required if any L2 files exist
                 ├── call_routing.md        # Example L2 files
                 └── websocket_system.md
@@ -392,7 +392,7 @@ repo-root/
 
 - The `docs/ai/` path is **mandatory** and must not be changed or aliased.
 - No files outside `docs/ai/` are part of the progressive disclosure system (except `AGENTS.md` at repo root).
-- No other files may be added to `L1/` besides the 8 standard files and the `deep_dives/` directory.
+- No other files may be added to `L1/` besides the 8 standard files and the `L2/` directory.
 
 ### 4.2 File Naming Rules
 
@@ -405,7 +405,7 @@ repo-root/
 
 - L1 files use the exact names listed in Section 3.3. No variations.
 - L2 file names: descriptive nouns, not verbs (`auth_flow.md` not `authenticate.md`).
-- No subdirectories within `deep_dives/` — flat structure only.
+- No subdirectories within `L2/` — flat structure only.
 
 ### 4.3 Linking Patterns
 
@@ -414,7 +414,7 @@ All links between progressive disclosure files use **relative paths**:
 | From           | To                                                | Pattern                  |
 | -------------- | ------------------------------------------------- | ------------------------ |
 | L0 → L1        | `[Setup](L1/01_setup.md)`                         | Relative from `docs/ai/` |
-| L1 → L2        | `[Call Routing](deep_dives/call_routing.md)`      | Relative from `L1/`      |
+| L1 → L2        | `[Call Routing](L2/call_routing.md)`      | Relative from `L1/`      |
 | L2 → L2        | `[Auth Flow](auth_flow.md)`                       | Same directory           |
 | L2 → L1        | `[Back to Interfaces](../06_interfaces.md)`       | Parent directory         |
 | Any → External | `[API Docs](https://docs.example.com) [EXTERNAL]` | Full URL with marker     |
@@ -648,8 +648,8 @@ Inbound SIP INVITE → SIP Parser → Route Matcher → Call Handler → State M
 
 ## Related Deep Dives
 
-- [Call Routing](deep_dives/call_routing.md) — Full routing decision tree
-- [WebSocket System](deep_dives/websocket_system.md) — Event notification architecture
+- [Call Routing](L2/call_routing.md) — Full routing decision tree
+- [WebSocket System](L2/websocket_system.md) — Event notification architecture
 ```
 
 ---
@@ -693,7 +693,7 @@ Inbound SIP INVITE → SIP Parser → Route Matcher → Call Handler → State M
 
 ## Related Deep Dives
 
-- [Design System](deep_dives/design_system.md) — Component library patterns
+- [Design System](L2/design_system.md) — Component library patterns
 ```
 
 ---
@@ -773,9 +773,9 @@ Inbound SIP INVITE → SIP Parser → Route Matcher → Call Handler → State M
 
 ## Related Deep Dives
 
-- [Network Topology](deep_dives/network_topology.md)
-- [IAM Model](deep_dives/iam_model.md)
-- [Disaster Recovery](deep_dives/disaster_recovery.md)
+- [Network Topology](L2/network_topology.md)
+- [IAM Model](L2/iam_model.md)
+- [Disaster Recovery](L2/disaster_recovery.md)
 ```
 
 ---
@@ -866,7 +866,7 @@ Key constraints to keep in mind:
 
 - **L0** (Repo Card): Identity Block + L1 Index. 30-50 lines. No prose.
 - **L1** (Summaries): Exactly 8 files (01-08), 80-200 lines each. All 8 loaded at session start.
-- **L2** (Deep Dives): Under `deep_dives/`, with `_index.md`. Self-contained. No ceiling.
+- **L2** (Deep Dives): Under `L2/`, with `_index.md`. Self-contained. No ceiling.
 - **Linking:** Relative paths only within `docs/ai/`. External URLs marked `[EXTERNAL]`.
 
 ## Analysis Steps
@@ -920,10 +920,10 @@ Using the module summaries from Step 3:
 
 Create files one at a time in this order:
 
-1. `mkdir -p docs/ai/L1/deep_dives`
+1. `mkdir -p docs/ai/L1/L2`
 2. `docs/ai/L0_repo_card.md` — Identity Block + L1 Index table
 3. L1 files 01 through 08
-4. `docs/ai/L1/deep_dives/_index.md`
+4. `docs/ai/L1/L2/_index.md`
 5. L2 deep dive files
 6. Verify all cross-references resolve
 
@@ -1020,11 +1020,11 @@ Every TODO must say WHAT to document and WHEN to do it.
 
 Create files one at a time:
 
-1. `mkdir -p docs/ai/L1/deep_dives`
+1. `mkdir -p docs/ai/L1/L2`
 2. `docs/ai/L0_repo_card.md` — Fill Identity from questionnaire. L1 Index.
 3. L1 files 01-08 — Fill what you can from tech stack knowledge, TODO the rest.
    All 8 must exist even if mostly TODOs.
-4. `docs/ai/L1/deep_dives/_index.md` — 3-5 anticipated topics,
+4. `docs/ai/L1/L2/_index.md` — 3-5 anticipated topics,
    all marked "To be created." No content files.
 5. `AGENTS.md` at repo root — Use the expanded template from section 4.7
    (How to Load, Git Conventions, Doc Commands).
@@ -1064,8 +1064,8 @@ Create files one at a time:
 | `docs/ai/L1/06_interfaces.md`     | L1    | **Required**          | Boundary contracts                         |
 | `docs/ai/L1/07_gotchas.md`        | L1    | **Required**          | Gotchas and tribal knowledge               |
 | `docs/ai/L1/08_security.md`       | L1    | **Required**          | Security model and boundaries              |
-| `docs/ai/L1/deep_dives/_index.md` | L2    | Required if L2 exists | Deep dive index                            |
-| `docs/ai/L1/deep_dives/*.md`      | L2    | Optional              | Topic deep dives                           |
+| `docs/ai/L1/L2/_index.md` | L2    | Required if L2 exists | Deep dive index                            |
+| `docs/ai/L1/L2/*.md`      | L2    | Optional              | Topic deep dives                           |
 
 ### 8.2 Token Budget Summary
 
