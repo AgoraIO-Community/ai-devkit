@@ -132,6 +132,22 @@ convenience. The AGENTS.md template works without it.
 /plugin install ai-devkit@ai-devkit
 ```
 
+**`npx skills`**
+
+```bash
+# Quick install
+npx skills add AgoraIO-Community/ai-devkit
+
+# Install the main entry-point skill explicitly
+npx skills add AgoraIO-Community/ai-devkit --skill ai-devkit
+
+# Preview discovered skills
+npx skills add AgoraIO-Community/ai-devkit --list
+```
+
+`ai-devkit` is the main entry-point skill. This repo also exposes `git` and
+`docs` as optional subskills for narrower installs.
+
 **Any agent**
 
 ```bash
