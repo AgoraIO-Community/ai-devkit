@@ -27,18 +27,17 @@ development. Works with any AI coding agent.
 
 ## How it works
 
-The **docs** (`docs/ai/` + `AGENTS.md`) are repo context — plain files on disk
-that agents read when they enter the repo. No install required.
+The output is `AGENTS.md` plus `docs/ai/` — plain markdown files saved in the
+repo. Any agent that reads repo files can use them. No install required.
 
-The **skills** are optional workflows that generate and maintain those docs.
-Install them for convenient natural-language commands (`generate docs`,
-`test the docs`), or use the explicit prompts below — both are equivalent ways
-to get the same result.
+The skill is one way to run the workflow that generates and maintains those
+docs. If you don't use the skill, you can run the same workflow with the
+prompts below.
 
 ## Install skill
 
 The skill adds workflows for git (ship, pr, sync) and docs (generate, update,
-test).
+test). Install using the method for your tool, or skip to the prompts below.
 
 **Claude Code**
 
@@ -47,13 +46,13 @@ test).
 /plugin install ai-devkit@ai-devkit
 ```
 
-**Cursor**
+**Cursor (via `npx skills`)**
 
 ```bash
 npx skills add AgoraIO-Community/ai-devkit
 ```
 
-**`npx skills`** (cross-agent CLI from [anthropics/skills](https://github.com/anthropics/skills))
+**Other tools (via [`npx skills`](https://github.com/anthropics/skills))**
 
 ```bash
 npx skills add AgoraIO-Community/ai-devkit
@@ -62,7 +61,7 @@ npx skills add AgoraIO-Community/ai-devkit
 Use `--list` to preview discovered skills or `--skill ai-devkit` to install the
 main entry-point explicitly.
 
-**Any agent**
+**Manual (any agent)**
 
 ```bash
 git clone https://github.com/AgoraIO-Community/ai-devkit.git
