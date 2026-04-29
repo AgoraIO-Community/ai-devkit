@@ -6,14 +6,15 @@ development. Works with any AI coding agent.
 ## Table of Contents
 
 - [What it does](#what-it-does)
-- [Quick start](#quick-start)
+- [How it works](#how-it-works)
+- [Install skill](#install-skill)
+- [Create docs](#create-docs)
 - [Review docs](#review-docs)
-- [Just want git conventions?](#just-want-git-conventions)
-- [Install (optional)](#install-optional)
 - [Skills](#skills)
 - [Progressive disclosure docs](#progressive-disclosure-docs)
 - [Compatibility](#compatibility)
 - [References](#references)
+- [License](#license)
 
 ## What it does
 
@@ -24,29 +25,83 @@ development. Works with any AI coding agent.
 3. **Skills** — workflows for git (ship, pr, sync) and docs (generate, update,
    test)
 
-The primary delivery mechanism is `AGENTS.md`. It gives any agent the repo's
-conventions, doc loading instructions, and doc commands in one file — no plugin
-required.
+## How it works
 
-## Quick start
+The **docs** (`docs/ai/` + `AGENTS.md`) are repo context — plain files on disk
+that agents read when they enter the repo. No install required.
 
-Paste this prompt into any AI agent session inside your repo:
+The **skills** are optional workflows that generate and maintain those docs.
+Install them for convenient natural-language commands (`generate docs`,
+`test the docs`), or use the explicit prompts below — both are equivalent ways
+to get the same result.
+
+## Install skill
+
+The skill adds workflows for git (ship, pr, sync) and docs (generate, update,
+test).
+
+**Claude Code**
+
+```
+/plugin marketplace add AgoraIO-Community/ai-devkit
+/plugin install ai-devkit@ai-devkit
+```
+
+**Cursor**
+
+```bash
+npx skills add AgoraIO-Community/ai-devkit
+```
+
+**`npx skills`** (cross-agent CLI from [anthropics/skills](https://github.com/anthropics/skills))
+
+```bash
+npx skills add AgoraIO-Community/ai-devkit
+```
+
+Use `--list` to preview discovered skills or `--skill ai-devkit` to install the
+main entry-point explicitly.
+
+**Any agent**
+
+```bash
+git clone https://github.com/AgoraIO-Community/ai-devkit.git
+```
+
+Point your agent at `skills/ai-devkit/SKILL.md` as the entry point.
+
+## Create docs
+
+### With the skill
+
+```
+generate docs
+```
+
+Runs the full generation workflow: reads your repo, creates `AGENTS.md`,
+and generates L0/L1/L2 docs under `docs/ai/`.
+See [skills/ai-devkit/docs/generate.md](skills/ai-devkit/docs/generate.md) for
+the complete workflow.
+
+### With a prompt
+
+Paste this into any AI agent session:
 
 ````
-Create a branch for this work:
-
-git checkout -b docs/progressive-disclosure
-
 Your task is to add progressive disclosure documentation and git conventions
 to this repository.
 
-Read these files from the local ai-devkit clone:
+Before starting:
+
+1. Confirm you are inside the target repo's checked-out folder.
+2. Ask whether to work on the current branch or create a new one.
+
+Read these files from the ai-devkit repo
+(https://github.com/AgoraIO-Community/ai-devkit.git):
 
 1. skills/ai-devkit/docs/generate.md — the generation workflow
 2. skills/ai-devkit/docs/test.md — the test workflow
 3. docs/progressive-disclosure-standard.md — the full standard
-
-Clone URL: https://github.com/AgoraIO-Community/ai-devkit.git
 
 Deliverables:
 
@@ -84,19 +139,30 @@ When finished:
 
 ## Review docs
 
-After docs are generated, use a second agent session to review the quality.
+### With the skill
+
+```
+test docs
+```
+
+Runs the test workflow against existing docs and reports gaps.
+See [skills/ai-devkit/docs/test.md](skills/ai-devkit/docs/test.md) for
+the complete workflow.
+
+### With a prompt
+
+After docs are generated, use a second agent session to review quality.
 This prompt is read-only — it reports findings without changing files.
 
 ````
 Review this repo's progressive disclosure docs and provide feedback only.
 Do not change files.
 
-Read from the local ai-devkit clone:
+Read these files from the ai-devkit repo
+(https://github.com/AgoraIO-Community/ai-devkit.git):
 
 1. skills/ai-devkit/docs/test.md — the test workflow
 2. docs/progressive-disclosure-standard.md — the full standard
-
-Clone URL: https://github.com/AgoraIO-Community/ai-devkit.git
 
 Do this:
 
@@ -112,49 +178,6 @@ Do this:
 
 Do not edit docs, do not update test-results.md, and do not commit.
 ````
-
-### Just want git conventions?
-
-Copy the AGENTS.md template from
-[section 4.7](docs/progressive-disclosure-standard.md#47-agentsmd-and-claudemd-integration)
-into your repo root. Any AI agent that reads `AGENTS.md` gets git conventions
-and doc commands automatically. No install needed.
-
-## Install (optional)
-
-The plugin adds skills (ship, pr, sync) and session-start hooks as a
-convenience. The AGENTS.md template works without it.
-
-**Claude Code**
-
-```
-/plugin marketplace add AgoraIO-Community/ai-devkit
-/plugin install ai-devkit@ai-devkit
-```
-
-**`npx skills`**
-
-```bash
-# Quick install
-npx skills add AgoraIO-Community/ai-devkit
-
-# Install the main entry-point skill explicitly
-npx skills add AgoraIO-Community/ai-devkit --skill ai-devkit
-
-# Preview discovered skills
-npx skills add AgoraIO-Community/ai-devkit --list
-```
-
-`ai-devkit` is the main entry-point skill. This repo also exposes `git` and
-`docs` as optional subskills for narrower installs.
-
-**Any agent**
-
-```bash
-git clone https://github.com/AgoraIO-Community/ai-devkit.git
-```
-
-Point your agent at `skills/ai-devkit/SKILL.md` as the entry point.
 
 ## Skills
 
@@ -189,6 +212,7 @@ with L0+L1 alone (~4,000 tokens).
 | Tool        | Status |
 | ----------- | ------ |
 | Claude Code | Tested — plugin + AGENTS.md + CLAUDE.md |
+| Cursor      | Tested — plugin + AGENTS.md |
 | Codex       | Tested — AGENTS.md + progressive disclosure docs |
 | Others      | AGENTS.md and docs/ai/ are plain markdown — should work with any tool that reads repo files |
 
