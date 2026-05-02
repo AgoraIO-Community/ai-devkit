@@ -162,9 +162,9 @@ After fixes, rerun only the failing questions with fresh sub-agents. Append a re
 
 Retested: [date]
 
-| Finding | Result | Notes |
-| ------- | ------ | ----- |
-| [exact finding from review] | Pass / Partial / Open | [what was checked and changed] |
+| Finding | Source checked | Docs changed | Result | Notes |
+| ------- | -------------- | ------------ | ------ | ----- |
+| [exact finding from review] | [source files read] | [doc files edited] | Pass / Partial / Open | [what was verified] |
 ```
 
 Mark findings as:

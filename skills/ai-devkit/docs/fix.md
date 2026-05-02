@@ -26,7 +26,7 @@ Read the prior review output:
 Create a checklist of every distinct finding. Each entry must have:
 
 - The exact claim or gap described
-- The doc file(s) the review cited
+- The doc file(s) the review cited — if the review did not cite specific files, identify the target doc files yourself by matching the finding's topic to the L1/L2 file responsibilities
 
 ### 2. Trace each finding to source
 
@@ -45,6 +45,7 @@ For each finding, decide where the fix belongs:
 | 1-3 lines of factual correction | L1 file |
 | New section >10 lines | L2 deep dive (add or update) |
 | Test coverage observation | `test-results.md` |
+| Repo-root doc issue (loading, conventions, commands) | `AGENTS.md` or `CLAUDE.md` |
 | Multiple levels affected | Update all affected files |
 
 A common failure mode: fixing an L2 file but missing the L1 file that the review actually cited. Check both.
@@ -67,14 +68,14 @@ Build or update this table in `docs/ai/test-results.md` under a `## Review Fix R
 
 Retested: [date]
 
-| Finding | Source checked | Docs changed | Status |
-| ------- | -------------- | ------------ | ------ |
-| [exact finding] | [source files read] | [doc files edited] | Fixed / Partial / Open |
+| Finding | Source checked | Docs changed | Result | Notes |
+| ------- | -------------- | ------------ | ------ | ----- |
+| [exact finding] | [source files read] | [doc files edited] | Pass / Partial / Open | [what was verified] |
 ```
 
 Status values:
 
-- **Fixed** — doc patched, verified against source
+- **Pass** — doc patched, verified against source, sub-agent re-test passed (if applicable)
 - **Partial** — doc updated but a coverage gap remains (note what's missing)
 - **Open** — intentionally deferred (note why)
 
@@ -88,6 +89,8 @@ After all patches:
 - Each modified L1 file is still 80-200 lines
 - Any new L2 files start with `> **When to Read This:** ...`
 - `L2/_index.md` lists all L2 files
+- `AGENTS.md` has How to Load, Git Conventions, and Doc Commands sections
+- `CLAUDE.md` (if present) references @AGENTS.md
 - `last_reviewed` in L0 is updated to today
 
 ### 7. Report
