@@ -54,3 +54,4 @@ Documentation generation following the progressive disclosure standard. For deta
 | `generate` | generate L0/L1/L2 docs for the repo from scratch            | Read `skills/ai-devkit/docs/generate.md`       |
 | `update`   | update existing docs after code changes — only what changed | Read `skills/ai-devkit/docs/update.md`         |
 | `test`     | verify generated docs meet the standard                     | Read `skills/ai-devkit/docs/test.md`           |
+| `fix`      | close review findings by tracing each to source code        | Read `skills/ai-devkit/docs/fix.md`            |

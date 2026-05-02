@@ -14,6 +14,7 @@ Generate and verify progressive disclosure documentation for repositories.
 | `generate` | generate L0/L1/L2 docs for the repo from scratch            |
 | `update`   | update existing docs after code changes — only what changed |
 | `test`     | verify generated docs meet the standard                     |
+| `fix`      | close review findings by tracing each to source code        |
 
 ## Standard
 

@@ -188,6 +188,7 @@ Do not edit docs, do not update test-results.md, and do not commit.
 | generate | create L0/L1/L2 progressive disclosure docs            |
 | update   | update existing docs after code changes                |
 | test     | verify docs give agents the right context              |
+| fix      | close review findings by tracing each to source code   |
 
 Usage — just ask your agent in natural language: "ship it", "create a pr",
 "generate docs", "test the docs".

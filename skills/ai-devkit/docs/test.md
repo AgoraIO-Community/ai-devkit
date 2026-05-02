@@ -97,7 +97,13 @@ For each test, determine:
 
 ### 5. Write results
 
-Save results to `docs/ai/test-results.md`:
+Save results to `docs/ai/test-results.md`.
+
+**Honesty rules:**
+
+- Do NOT mark a question as "Pass" unless the sub-agent actually answered it correctly from the docs and the answer was verified against source code.
+- If the docs reference tests that do not currently assert the behavior, label the coverage as "needed" — not "tests to run."
+- If a question was added after a review-fix pass but was not actually re-tested with a sub-agent, do not include it in the results table.
 
 ```markdown
 # PD Documentation Test Results
@@ -147,4 +153,22 @@ Repo: [repo name]
 
 ### 6. Fix and retest
 
-If any tests failed, fix the docs and rerun the failing questions only. Update test-results.md with the retest.
+If any tests failed, use the `fix` workflow (`skills/ai-devkit/docs/fix.md`) to close each finding. Do not use `generate` or `update` to fix review findings — those workflows are not finding-driven.
+
+After fixes, rerun only the failing questions with fresh sub-agents. Append a retest section to `test-results.md`:
+
+```markdown
+## Review Fix Retest
+
+Retested: [date]
+
+| Finding | Result | Notes |
+| ------- | ------ | ----- |
+| [exact finding from review] | Pass / Partial / Open | [what was checked and changed] |
+```
+
+Mark findings as:
+
+- **Pass** — fix verified against source, sub-agent answered correctly
+- **Partial** — docs updated but coverage gap remains (note what's missing)
+- **Open** — intentionally deferred (note why)
