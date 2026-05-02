@@ -10,6 +10,8 @@ development. Works with any AI coding agent.
 - [Install skill](#install-skill)
 - [Create docs](#create-docs)
 - [Review docs](#review-docs)
+- [Fix review findings](#fix-review-findings)
+- [Multi-agent review with Codex](#multi-agent-review-with-codex)
 - [Skills](#skills)
 - [Progressive disclosure docs](#progressive-disclosure-docs)
 - [Compatibility](#compatibility)
@@ -177,6 +179,80 @@ Do this:
 
 Do not edit docs, do not update test-results.md, and do not commit.
 ````
+
+## Fix review findings
+
+### With the skill
+
+```
+fix docs
+```
+
+Traces each review finding to source code, patches the exact cited doc files,
+and records a finding-to-fix matrix in `docs/ai/test-results.md`.
+See [skills/ai-devkit/docs/fix.md](skills/ai-devkit/docs/fix.md) for
+the complete workflow.
+
+Use `fix` after `test docs` produces findings. Do not use `generate` or
+`update` to close review findings — those workflows are not finding-driven.
+
+## Multi-agent review with Codex
+
+You can use Claude Code as the orchestrator and Codex CLI as an independent
+reviewer. This catches issues that a single agent misses, since each model
+has different blind spots.
+
+Requires: [Codex CLI](https://github.com/openai/codex) installed and on PATH.
+
+### The loop
+
+1. **Generate** — Claude creates docs (`generate docs`)
+2. **Claude review** — Claude runs `test docs`, then `fix docs` for its own findings
+3. **Codex review** — Claude shells out to Codex for an independent read-only review
+4. **Fix** — Claude closes Codex's findings using `fix docs`
+5. **Verify** — Claude resumes the Codex session to confirm fixes
+6. Repeat 4-5 until Codex reports no new findings
+
+### Codex review command
+
+Claude runs this via Bash to get Codex's independent review:
+
+```bash
+codex exec -m gpt-5.4 \
+  --config model_reasoning_effort="medium" \
+  --sandbox read-only \
+  --full-auto \
+  --skip-git-repo-check \
+  "Read every file in docs/ai/ and compare each factual claim against
+the actual source code. For each doc file, report findings as:
+
+FINDING: [description]
+FILE: [doc file]
+SOURCE: [source file checked]
+SEVERITY: high | medium | low
+RECOMMENDATION: [what to fix]
+
+If everything is accurate, say: NO FINDINGS" 2>/dev/null
+```
+
+### Codex verification
+
+After fixing, resume the Codex session to verify:
+
+```bash
+echo "I fixed the findings. Re-read docs/ai/ and verify each fix against
+source. Report remaining issues or say NO FINDINGS." \
+  | codex exec --skip-git-repo-check resume --last 2>/dev/null
+```
+
+### Batch across repos
+
+To generate and review docs for multiple repos at once, run Claude Code from
+a parent directory containing cloned repos. Claude generates docs for each
+repo on a `docs/progressive-disclosure` branch, runs the Claude review cycle,
+then the Codex review cycle, and pushes each branch when done. The
+[skill-codex](https://github.com/skills-directory/skill-codex) plugin can
+also be used to invoke Codex from within Claude Code.
 
 ## Skills
 
