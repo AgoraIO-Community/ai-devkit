@@ -153,20 +153,43 @@ has different blind spots.
 
 Requires: [Codex CLI](https://github.com/openai/codex) installed and on PATH.
 
-### The loop
+### How it works
 
-1. **Generate** — create docs using the prompt above
-2. **Claude review** — review docs, then fix findings
-3. **Codex review** — Claude shells out to Codex for an independent read-only review
-4. **Fix** — Claude closes Codex's findings
-5. **Verify** — Claude resumes the Codex session to confirm fixes
-6. Repeat 4-5 until Codex reports no new findings
+Claude Code invokes Codex directly via `codex exec` in the Bash tool. Codex
+runs in a read-only sandbox, reviews the docs against source code, and returns
+findings to Claude's context. Claude then fixes the findings and sends Codex
+back to verify. No extra plugins are needed — just the `codex` binary on PATH.
 
-### Codex review command
+If you have the [skill-codex](https://github.com/skills-directory/skill-codex)
+plugin installed in Claude Code, it provides a skill for invoking Codex with
+model/sandbox selection prompts. Either approach works — the prompt below uses
+`codex exec` directly so it works without any plugin.
 
-Claude runs this via Bash to get Codex's independent review:
+### Prompt
 
-```bash
+Paste this into a Claude Code session after docs have been generated:
+
+````
+Run a multi-agent review cycle on this repo's progressive disclosure docs
+using Codex as an independent reviewer.
+
+Read the fix workflow from the ai-devkit repo:
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/skills/ai-devkit/docs/fix.md
+
+## Phase 1: Claude review
+
+1. Read all files in docs/ai/ and compare every factual claim against the
+   actual source code in this repo.
+2. For each inaccuracy or gap, note the finding, the doc file, and the source
+   file you checked.
+3. Follow the fix.md workflow to close each finding.
+4. Commit: docs: fix findings from claude review
+
+## Phase 2: Codex review
+
+Run this command to get Codex's independent review:
+
+```
 codex exec -m gpt-5.4 \
   --config model_reasoning_effort="medium" \
   --sandbox read-only \
@@ -184,24 +207,39 @@ RECOMMENDATION: [what to fix]
 If everything is accurate, say: NO FINDINGS" 2>/dev/null
 ```
 
-### Codex verification
+## Phase 3: Fix Codex findings
 
-After fixing, resume the Codex session to verify:
+1. Parse Codex's findings.
+2. For each finding, follow the fix.md workflow — trace to source, patch the
+   exact doc file, record in the finding-to-fix matrix in test-results.md.
+3. Commit: docs: fix findings from codex review
 
-```bash
-echo "I fixed the findings. Re-read docs/ai/ and verify each fix against
-source. Report remaining issues or say NO FINDINGS." \
+## Phase 4: Codex verification
+
+Resume the Codex session to verify fixes:
+
+```
+echo "I fixed the findings you reported. Re-read docs/ai/ and verify each
+fix against source. Report any remaining issues using the same FINDING format,
+or say NO FINDINGS if everything is accurate." \
   | codex exec --skip-git-repo-check resume --last 2>/dev/null
 ```
+
+If Codex reports new findings, repeat phases 3-4. Max 3 rounds.
+
+## Rules
+
+- Do not mark findings as fixed without checking the source file.
+- Do not use generate or update to close findings — use fix.md.
+- Update last_reviewed in L0 when done.
+````
 
 ### Batch across repos
 
 To generate and review docs for multiple repos at once, run Claude Code from
 a parent directory containing cloned repos. Claude generates docs for each
 repo on a `docs/progressive-disclosure` branch, runs the Claude review cycle,
-then the Codex review cycle, and pushes each branch when done. The
-[skill-codex](https://github.com/skills-directory/skill-codex) plugin can
-also be used to invoke Codex from within Claude Code.
+then the Codex review cycle, and pushes each branch when done.
 
 ## Progressive disclosure docs
 
