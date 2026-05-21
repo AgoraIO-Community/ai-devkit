@@ -14,6 +14,7 @@
   - [3.2 L0 — The Repo Card](#32-l0--the-repo-card)
   - [3.3 L1 — Structured Summaries](#33-l1--structured-summaries)
   - [3.4 L2 — Deep Dives](#34-l2--deep-dives)
+  - [3.5 Optional Recipe Artifact: RECIPE.md](#35-optional-recipe-artifact-recipemd)
 - [4. Base Conventions](#4-base-conventions)
   - [4.1 Directory Structure](#41-directory-structure)
   - [4.2 File Naming Rules](#42-file-naming-rules)
@@ -28,6 +29,7 @@
   - [5.3 SDK / Library](#53-sdk--library)
   - [5.4 Infrastructure / IaC](#54-infrastructure--iac)
   - [5.5 Adaptation Notes](#55-adaptation-notes-for-other-repo-types)
+  - [5.6 Optional Recipe Profile](#56-optional-recipe-profile)
 - [6. Prompt: Generate Docs for an Existing Repo](#6-prompt-generate-docs-for-an-existing-repo)
 - [7. Prompt: Bootstrap Docs for a New Repo](#7-prompt-bootstrap-docs-for-a-new-repo)
 - [8. Appendices](#8-appendices)
@@ -50,24 +52,28 @@ This standard defines a **three-level documentation architecture (L0 / L1 / L2)*
 
 **Loading rule:** Start at L0. Load all 8 L1 files (they're small). Go to L2 only when L1 isn't detailed enough.
 
+**Optional profile:** Repos that publish reusable starter contracts may also opt
+into the recipe profile described in [docs/recipe-profile.md](recipe-profile.md).
+
 ---
 
 ## 2. Introduction and Motivation
 
 ### 2.1 The Problem
 
-AI coding agents loading an entire codebase into context is expensive, slow, and error-prone. Agents hallucinate when given too much irrelevant information. Most repositories have either no documentation, or a single sprawling README/wiki that forces full-context loading regardless of the task.
+AI coding agents can search code on demand, but code search does not tell them what matters most. Most repositories lack concise, maintained summaries of conventions, workflow boundaries, trust assumptions, and historical gotchas. The result is not just wasted context. Agents miss the tribal knowledge that humans rely on.
 
 ### 2.2 The Insight
 
-80% of agent tasks — config changes, bug fixes, small features — need only the L1 summaries, not the full L2 deep dives. Progressive disclosure exploits this by separating essential working knowledge (L1, loaded upfront) from deep reference material (L2, loaded on demand).
+Progressive disclosure gives agents a curated working model of the repository before they start changing code. L0 identifies the repo. L1 captures the core knowledge most tasks need. L2 holds deep detail only for complex areas. This mirrors how experienced engineers onboard: orient first, scan the important summaries, then dive deeper only when needed.
 
 ### 2.3 Design Goals
 
-- **Token efficiency** — Minimize context window usage for AI agents (reduces cost, latency, and hallucination)
+- **Curated context** — Capture decisions, caveats, and workflows that source code does not express clearly
+- **Token efficiency** — Keep default working context small enough to load reliably
 - **Multi-agent readiness** — Self-describing repos that can be loaded on demand by any orchestration layer
 - **Human onboarding** — The same docs serve new engineers joining a team
-- **Consistency** — Predictable structure across all enterprise repos enables shared tooling and enterprise-wide repo discovery
+- **Consistency** — Predictable structure across repos enables shared tooling and enterprise-wide repo discovery
 - **Framework agnosticism** — Works with any language, framework, or AI tool
 
 ### 2.4 Why Not a Skill?
@@ -360,6 +366,24 @@ Built on the `ws` library with a pub/sub pattern internally.
 
 ---
 
+### 3.5 Optional Recipe Artifact: `RECIPE.md`
+
+Repos using the recipe profile may add `docs/ai/RECIPE.md` as a sibling to
+`L0_repo_card.md`.
+
+Use it only when a repo is intentionally publishing a reusable recipe surface.
+
+Typical contents:
+
+- extension points
+- invariants
+- stable contracts
+- internal / subject-to-change surfaces
+
+See [docs/recipe-profile.md](recipe-profile.md) for the full profile.
+
+---
+
 ## 4. Base Conventions
 
 These rules apply to **every repository** regardless of type, language, or framework.
@@ -393,6 +417,8 @@ repo-root/
 - The `docs/ai/` path is **mandatory** and must not be changed or aliased.
 - No files outside `docs/ai/` are part of the progressive disclosure system (except `AGENTS.md` at repo root).
 - No other files may be added to `L1/` besides the 8 standard files and the `L2/` directory.
+- Product docs that a repo ships for reuse, such as canonical workflow docs or policy docs, may live outside `docs/ai/`. They are normal repo docs, not part of the progressive-disclosure tree.
+- Repos using the recipe profile may add `docs/ai/RECIPE.md` next to L0. This is optional and does not affect non-recipe repos.
 
 ### 4.2 File Naming Rules
 
@@ -516,6 +542,11 @@ This repository uses progressive disclosure documentation. Docs live under
 2. Load ALL 8 files in `docs/ai/L1/`. They are small — load all upfront.
 3. Follow L2 deep-dive links only when L1 isn't detailed enough.
 
+If the repo's L0 declares `Recipe Role`, also follow the recipe profile:
+
+4. For `Recipe Role: base`, read `docs/ai/RECIPE.md`.
+5. For `Recipe Role: vertical`, resolve the pinned base from `Extends`, load the base recipe contract, then apply local `Locked` and `Overlay` semantics.
+
 ## Git Conventions
 
 ### Commit messages — conventional commits
@@ -525,7 +556,6 @@ This repository uses progressive disclosure documentation. Docs live under
 - **Scoped variant:** `feat(scope):`, `fix(scope):` — e.g. `feat(auth): add token refresh`
 - **Lowercase after prefix** — `feat: add feature`, not `feat: Add feature`
 - **Present tense** — "add feature", not "added feature"
-- **PR number appended** — `feat: add feature (#123)`
 
 ### Branch names
 
@@ -535,6 +565,7 @@ This repository uses progressive disclosure documentation. Docs live under
 
 ### General rules
 
+- **Repo-local `AGENTS.md` overrides plugin-injected defaults.**
 - **No AI tool names** — never mention claude, cursor, copilot, cody, aider, gemini, codex, chatgpt, or gpt-3/4
 - **No Co-Authored-By trailers** — omit AI attribution lines
 - **No --no-verify** — let git hooks run normally
@@ -547,10 +578,10 @@ This repository uses progressive disclosure documentation. Docs live under
 | generate docs | no `docs/ai/` directory exists yet            |
 | update docs   | code changed since last `last_reviewed` date  |
 | test docs     | verify docs give agents the right context     |
+| fix docs      | close findings from a docs review or test run |
 
-For detailed procedures, read
-[progressive-disclosure-standard.md](docs/progressive-disclosure-standard.md)
-sections 6 (generate) and 7 (bootstrap).
+If the repo vendors workflow docs locally, link them here. Otherwise follow
+your team's documented progressive-disclosure workflow.
 ```
 
 #### CLAUDE.md Template
@@ -841,6 +872,34 @@ Follows **SDK/library** pattern. Key content shifts:
 
 ---
 
+### 5.6 Optional Recipe Profile
+
+Some repos are designed to be reused as starters rather than only consumed as standalone systems. Those repos may opt into the recipe profile.
+
+Key rules:
+
+- `repo_type` does not change; recipe status is orthogonal
+- `Recipe Role` is optional
+- base recipes may publish `docs/ai/RECIPE.md`
+- vertical recipes must pin `Extends` to a tag or SHA
+- vertical repos still expose the 8 L1 slots, but inherited slots may be stubs that point to the pinned base
+
+Use the recipe profile when:
+
+- the repo is intentionally meant to be extended by downstream repos
+- extension points and invariants should be machine-readable
+- child repos need a documented base/overlay model
+
+Do not use it when:
+
+- the repo is only documenting itself
+- there is no intended downstream extension surface
+- ordinary L0/L1/L2 docs already describe the repo adequately
+
+For the full contract, fields, and examples, see [docs/recipe-profile.md](recipe-profile.md).
+
+---
+
 ## 6. Prompt: Generate Docs for an Existing Repo
 
 Copy the entire fenced block below into an AI coding agent with repo file access.
@@ -865,7 +924,7 @@ https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/progressive-disclo
 Key constraints to keep in mind:
 
 - **L0** (Repo Card): Identity Block + L1 Index. 30-50 lines. No prose.
-- **L1** (Summaries): Exactly 8 files (01-08), 80-200 lines each. All 8 loaded at session start.
+- **L1** (Summaries): Exactly 8 files (01-08). Target 80-200 lines each in production repos. All 8 loaded at session start.
 - **L2** (Deep Dives): Under `L2/`, with `_index.md`. Self-contained. No ceiling.
 - **Linking:** Relative paths only within `docs/ai/`. External URLs marked `[EXTERNAL]`.
 
@@ -946,7 +1005,7 @@ If `CLAUDE.md` already exists, add the reference without replacing existing cont
 
 **L0:** Identity Block with repo_type + last_reviewed. L1 Index table with all 8 files. ≤50 lines. No prose.
 
-**L1:** All 8 files exist. Each starts with purpose statement, ends with Related Deep Dives. 80-200 lines each. Total ≤1,600.
+**L1:** All 8 files exist. Each starts with purpose statement and ends with Related Deep Dives. Target 80-200 lines each in production repos. Smaller stubs are acceptable for structural fixtures and inherited recipe slots. Total ≤1,600.
 
 **L2:** \_index.md exists. ≥2 deep dives. Each starts with "When to Read This." All self-contained.
 
@@ -993,7 +1052,7 @@ https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/progressive-disclo
 Key constraints for bootstrapping:
 
 - **L0** (Repo Card): Identity Block + L1 Index. 30-50 lines. No prose.
-- **L1** (Summaries): Exactly 8 files (01-08), 80-200 lines each. All loaded at session start.
+- **L1** (Summaries): Exactly 8 files (01-08). Target 80-200 lines each in production repos. All loaded at session start.
 - **L2:** Generate only `_index.md` with anticipated topics. No content files yet.
 
 ## TODO Marker Convention
@@ -1064,8 +1123,10 @@ Create files one at a time:
 | `docs/ai/L1/06_interfaces.md`     | L1    | **Required**          | Boundary contracts                         |
 | `docs/ai/L1/07_gotchas.md`        | L1    | **Required**          | Gotchas and tribal knowledge               |
 | `docs/ai/L1/08_security.md`       | L1    | **Required**          | Security model and boundaries              |
+| `docs/ai/RECIPE.md`               | —     | Optional              | Recipe extension points, invariants, stable contracts |
 | `docs/ai/L1/L2/_index.md` | L2    | Required if L2 exists | Deep dive index                            |
 | `docs/ai/L1/L2/*.md`      | L2    | Optional              | Topic deep dives                           |
+| `RECIPE_DELTA.md` (repo root)     | —     | Optional              | Child-vs-base summary for vertical recipe repos |
 
 ### 8.2 Token Budget Summary
 
@@ -1101,6 +1162,15 @@ A: No. Additional content goes in L2 deep dives. If an L1 file doesn't apply, it
 **Q: Can I use this with non-Claude agents?**
 A: Yes. Everything is tool-agnostic markdown. `AGENTS.md` is the primary
 portable entry point, and tool-specific shims can be added where needed.
+
+**Q: When should I use the recipe profile?**
+A: Use it only when a repo is intentionally published as a reusable starter with documented extension points and invariants. Ordinary repos should stay on the base PD model.
+
+**Q: Does the recipe profile change `repo_type`?**
+A: No. `Recipe Role` is orthogonal to `repo_type`.
+
+**Q: What if `Extends` is not pinned?**
+A: Treat that as invalid recipe metadata. Child repos should pin to a tag or SHA so inherited docs do not drift silently.
 
 **Q: How does this work with multi-repo distributed systems?**
 A: Create a dedicated system repo (type: `distributed-system`) that documents the system as a whole. Each component repo has its own `docs/ai/` tree as usual. See Section 5.5.

@@ -1,324 +1,150 @@
 # ai-devkit
 
-Git conventions and progressive disclosure documentation for AI-assisted
-development. Works with any AI coding agent.
+Portable repo conventions and progressive-disclosure docs for AI-assisted
+development.
 
-## Table of Contents
+This repo follows its own standard. Start with [AGENTS.md](AGENTS.md) and this
+repo's [docs/ai](docs/ai/L0_repo_card.md) tree.
 
-- [What it does](#what-it-does)
-- [How it works](#how-it-works)
-- [Create docs](#create-docs)
-- [Review docs](#review-docs)
-- [Fix review findings](#fix-review-findings)
-- [Multi-agent review with Codex](#multi-agent-review-with-codex)
-- [Progressive disclosure docs](#progressive-disclosure-docs)
-- [Compatibility](#compatibility)
-- [Install as a skill (optional)](#install-as-a-skill-optional)
-- [References](#references)
-- [License](#license)
+## What It Is
 
-## What it does
+ai-devkit has three parts:
 
-1. **Git conventions** — conventional commits (`feat:`, `fix:`, `chore:`),
-   branch naming (`type/short-description`), no AI tool names
-2. **Progressive disclosure docs** — a three-level doc architecture (L0/L1/L2)
-   that makes repos self-describing for AI agents
-3. **Prompts** — copy-paste prompts for generating, reviewing, and fixing docs
-   in any agent session
+1. **A portable repo standard** built around `AGENTS.md` and `docs/ai/`
+2. **Canonical workflow docs** under [docs/workflows](docs/workflows/)
+3. **Optional adapters** under `skills/` and plugin config directories
 
-## How it works
+The core value is curated context:
 
-The output is `AGENTS.md` plus `docs/ai/` — plain markdown files saved in the
-repo. Any agent that reads repo files can use them. No install required.
+- repo-local conventions
+- maintainable summaries of architecture and workflows
+- tribal knowledge and gotchas that code alone does not express clearly
 
-Paste a prompt into your agent session. The prompt tells the agent to read the
-ai-devkit workflows from GitHub and apply them to your repo.
+## Repo Layout
 
-## Create docs
+| Path | Purpose |
+| ---- | ------- |
+| [AGENTS.md](AGENTS.md) | primary repo entry point for agents |
+| [docs/ai](docs/ai/L0_repo_card.md) | this repo's own progressive-disclosure docs |
+| [docs/workflows](docs/workflows/) | canonical docs workflows |
+| [docs/recipe-profile.md](docs/recipe-profile.md) | recipe inheritance profile for reusable starter repos |
+| [examples/minimal-repo](examples/minimal-repo/README.md) | minimal structural fixture for adopters |
+| [examples/recipe-base](examples/recipe-base/README.md) | base recipe fixture |
+| [examples/recipe-vertical](examples/recipe-vertical/README.md) | vertical recipe fixture |
+| [docs/policy/agent-policy.md](docs/policy/agent-policy.md) | canonical shared policy |
+| [skills/ai-devkit](skills/ai-devkit/SKILL.md) | optional adapter layer for skill-aware tools |
+| [docs/progressive-disclosure-standard.md](docs/progressive-disclosure-standard.md) | full standard |
 
-Paste this into any AI agent session:
+## Quick Start
 
-````
-Your task is to add progressive disclosure documentation and git conventions
-to this repository.
+### Create docs in another repo
 
-Before starting:
+Paste this into an agent session:
 
-1. Confirm you are inside the target repo's checked-out folder.
-2. Ask whether to work on the current branch or create a new one.
+```text
+Your task is to add progressive disclosure documentation and git conventions to this repository.
 
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
-
-1. skills/ai-devkit/docs/generate.md — the generation workflow
-2. skills/ai-devkit/docs/test.md — the test workflow
-3. docs/progressive-disclosure-standard.md — the full standard
+Read these files from the ai-devkit repo:
+1. docs/workflows/generate.md
+2. docs/workflows/test.md
+3. docs/progressive-disclosure-standard.md
 
 Deliverables:
+1. Add AGENTS.md at the repo root using the standard template.
+2. Generate docs under docs/ai/.
+3. Preserve existing repo docs.
+4. If CLAUDE.md already exists, add a reference to AGENTS.md without replacing content.
+5. Apply the documented git conventions.
 
-1. Add AGENTS.md at the repo root using the expanded template from section 4.7
-   of the progressive disclosure standard.
-2. Generate progressive disclosure docs under docs/ai/.
-3. Preserve and integrate with existing repo docs — don't overwrite them.
-4. If CLAUDE.md already exists, add a reference to AGENTS.md using that file's
-   existing conventions — don't replace content.
-5. Apply these git conventions:
-   - conventional commits
-   - branch naming: type/short-description
-   - no AI tool names in commit messages
+After generating docs, run the test workflow. Fix findings and retest until the docs are accurate.
+```
 
-Requirements:
+### Review docs
 
-- Read the whole repo, not just top-level files. Delegate large modules when
-  the tool supports it.
-- Read existing markdown, config, and CI files for project context.
-- Use the real structure and terminology of the repo — no generic filler.
-- Do not invent subsystems or workflows that aren't present yet.
-- AGENTS.md must include How to Load, Git Conventions, and Doc Commands.
-- Generate L0, L1, and L2 docs according to the standard. Add L2 docs only
-  where deeper detail is justified.
-- After generating, run the test workflow. Fix failures and retest until all
-  pass. Test results are saved to docs/ai/test-results.md.
-
-When finished:
-
-1. Summarize what you added.
-2. Call out any assumptions, gaps, or ambiguous areas.
-3. Commit with: docs: add progressive disclosure documentation
-4. Push and create a PR.
-````
-
-## Review docs
-
-After docs are generated, use a second agent session to review quality.
-This prompt is read-only — it reports findings without changing files.
-
-````
+```text
 Review this repo's progressive disclosure docs and provide feedback only.
 Do not change files.
 
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
+Read these files from the ai-devkit repo:
+1. docs/workflows/test.md
+2. docs/progressive-disclosure-standard.md
 
-1. skills/ai-devkit/docs/test.md — the test workflow
-2. docs/progressive-disclosure-standard.md — the full standard
+Compare docs/ai/ to the real codebase. Report inaccuracies, weak coverage, and recommended new test cases.
+```
 
-Do this:
+### Fix review findings
 
-1. Read docs/ai/test-results.md.
-2. Read the full docs/ai/ tree.
-3. Compare the docs to the real codebase.
-4. Use git log --oneline -30 to propose 3-5 additional test questions
-   based on real recent changes.
-5. Read 2-3 complex or under-documented source files and assess whether
-   the docs cover them well.
-6. Report gaps, inaccuracies, weak test coverage, and recommended new
-   test cases.
-
-Do not edit docs, do not update test-results.md, and do not commit.
-````
-
-## Fix review findings
-
-After a review produces findings, use this prompt to close them. Each finding
-is traced to source code and patched at the correct disclosure level.
-
-````
+```text
 Fix the review findings for this repo's progressive disclosure docs.
 
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
+Read these files from the ai-devkit repo:
+1. docs/workflows/fix.md
+2. docs/progressive-disclosure-standard.md
 
-1. skills/ai-devkit/docs/fix.md — the fix workflow
-2. docs/progressive-disclosure-standard.md — the full standard
-
-Follow the fix.md workflow:
-
-1. Read docs/ai/test-results.md for findings.
-2. For each finding, trace it to the actual source code.
-3. Patch the exact cited doc files at the correct disclosure level.
-4. Record a finding-to-fix matrix in docs/ai/test-results.md.
-5. Re-run structural checks.
-6. Commit with: docs: fix review findings
-````
-
-Do not use the generate or review prompts to close findings — they are not
-finding-driven.
-
-## Multi-agent review with Codex
-
-You can use Claude Code as the orchestrator and Codex CLI as an independent
-reviewer. This catches issues that a single agent misses, since each model
-has different blind spots.
-
-Requires: [Codex CLI](https://github.com/openai/codex) installed and on PATH.
-
-### How it works
-
-Claude Code invokes Codex directly via `codex exec` in the Bash tool. Codex
-runs in a read-only sandbox, reviews the docs against source code, and returns
-findings to Claude's context. Claude then fixes the findings and sends Codex
-back to verify. No extra plugins are needed — just the `codex` binary on PATH.
-
-If you have the [skill-codex](https://github.com/skills-directory/skill-codex)
-plugin installed in Claude Code, it provides a skill for invoking Codex with
-model/sandbox selection prompts. Either approach works — the prompt below uses
-`codex exec` directly so it works without any plugin.
-
-### Prompt
-
-Paste this into a Claude Code session after docs have been generated:
-
-````
-Run a multi-agent review cycle on this repo's progressive disclosure docs
-using Codex as an independent reviewer.
-
-Read the fix workflow from the ai-devkit repo:
-https://github.com/AgoraIO-Community/ai-devkit/blob/main/skills/ai-devkit/docs/fix.md
-
-## Phase 1: Claude review
-
-1. Read all files in docs/ai/ and compare every factual claim against the
-   actual source code in this repo.
-2. For each inaccuracy or gap, note the finding, the doc file, and the source
-   file you checked.
-3. Follow the fix.md workflow to close each finding.
-4. Commit: docs: fix findings from claude review
-
-## Phase 2: Codex review
-
-Run this command to get Codex's independent review:
-
-```
-codex exec -m gpt-5.4 \
-  --config model_reasoning_effort="medium" \
-  --sandbox read-only \
-  --full-auto \
-  --skip-git-repo-check \
-  "Read every file in docs/ai/ and compare each factual claim against
-the actual source code. For each doc file, report findings as:
-
-FINDING: [description]
-FILE: [doc file]
-SOURCE: [source file checked]
-SEVERITY: high | medium | low
-RECOMMENDATION: [what to fix]
-
-If everything is accurate, say: NO FINDINGS" 2>/dev/null
+Use fix.md to trace each finding to source, patch the exact doc file, update test-results, and re-check structure.
 ```
 
-## Phase 3: Fix Codex findings
+### Multi-agent review with Codex
 
-1. Parse Codex's findings.
-2. For each finding, follow the fix.md workflow — trace to source, patch the
-   exact doc file, record in the finding-to-fix matrix in test-results.md.
-3. Commit: docs: fix findings from codex review
+Use [docs/workflows/review_codex.md](docs/workflows/review_codex.md).
 
-## Phase 4: Codex verification
+It contains the independent Codex review loop, the `codex exec` commands, the
+verification pass, and the batch-across-repos guidance.
 
-Resume the Codex session to verify fixes:
+### Recipe profile
 
-```
-echo "I fixed the findings you reported. Re-read docs/ai/ and verify each
-fix against source. Report any remaining issues using the same FINDING format,
-or say NO FINDINGS if everything is accurate." \
-  | codex exec --skip-git-repo-check resume --last 2>/dev/null
-```
-
-If Codex reports new findings, repeat phases 3-4. Max 3 rounds.
-
-## Rules
-
-- Do not mark findings as fixed without checking the source file.
-- Do not use generate or update to close findings — use fix.md.
-- Update last_reviewed in L0 when done.
-````
-
-### Batch across repos
-
-To generate and review docs for multiple repos at once, run Claude Code from
-a parent directory containing cloned repos. Claude generates docs for each
-repo on a `docs/progressive-disclosure` branch, runs the Claude review cycle,
-then the Codex review cycle, and pushes each branch when done.
-
-## Progressive disclosure docs
-
-The [standard](docs/progressive-disclosure-standard.md) defines three levels:
-
-| Level  | Name       | What it is                              | Token target |
-| ------ | ---------- | --------------------------------------- | ------------ |
-| **L0** | Repo Card  | Identity + L1 index. Always loaded.     | 300-500      |
-| **L1** | Summaries  | 8 structured summaries. Loaded upfront. | 300-600 each |
-| **L2** | Deep Dives | Full specs. Loaded only when needed.    | No limit     |
-
-Token targets are recommendations, not hard limits — large repos may need more
-at L1. The goal is keeping default context small so 80% of agent tasks complete
-with L0+L1 alone (~4,000 tokens).
+Use [docs/recipe-profile.md](docs/recipe-profile.md) when a repo is a reusable
+starter that should publish extension points and support child verticals.
 
 ## Compatibility
 
-| Tool        | Status |
-| ----------- | ------ |
-| Claude Code | Tested — plugin + AGENTS.md + CLAUDE.md |
-| Cursor      | Tested — plugin + AGENTS.md |
-| Codex       | Tested — AGENTS.md + progressive disclosure docs |
-| Others      | AGENTS.md and docs/ai/ are plain markdown — should work with any tool that reads repo files |
+Compatibility is capability-based, not absolute.
 
-## Install as a skill (optional)
+| Tool | Plain Markdown | Skill Adapter | Session-Start Adapter | Multi-Agent Review |
+| ---- | -------------- | ------------- | --------------------- | ------------------ |
+| Claude Code | Yes | Yes | Yes | Yes |
+| Cursor | Yes | Yes | Yes | Not documented here |
+| Codex | Yes | Adapter docs only | No | Yes, as reviewer via CLI |
+| Gemini | Yes | Minimal metadata only | No | Not documented here |
+| Other tools | Usually yes | Depends on tool | Depends on tool | Depends on tool |
 
-The prompts above work without installing anything. If you prefer skill-based
-invocation, install the plugin for your tool. Note that skill triggers like
-"test" and "generate" can conflict with other work — use the prompts if you
-run into ambiguity.
+## Optional Adapters
 
-**Claude Code**
+The standard works without plugin installation. Adapters are optional.
 
-```
+### Claude Code
+
+```text
 /plugin marketplace add AgoraIO-Community/ai-devkit
 /plugin install ai-devkit@ai-devkit
 ```
 
-**Cursor (via `npx skills`)**
+### Cursor
 
 ```bash
 npx skills add AgoraIO-Community/ai-devkit
 ```
 
-**Other tools (via [`npx skills`](https://github.com/anthropics/skills))**
-
-```bash
-npx skills add AgoraIO-Community/ai-devkit
-```
-
-Use `--list` to preview discovered skills or `--skill ai-devkit` to install the
-main entry-point explicitly.
-
-**Manual (any agent)**
+### Manual
 
 ```bash
 git clone https://github.com/AgoraIO-Community/ai-devkit.git
 ```
 
-Point your agent at `skills/ai-devkit/SKILL.md` as the entry point.
+Use:
 
-### Available skills
+- `AGENTS.md` when a repo already adopted the standard
+- `skills/ai-devkit/SKILL.md` only when you need the adapter layer directly
 
-| Skill    | What it does                                           |
-| -------- | ------------------------------------------------------ |
-| ship     | commit staged changes and push to remote               |
-| pr       | create a pull request with generated title and summary |
-| sync     | rebase current branch onto latest main                 |
-| generate | create L0/L1/L2 progressive disclosure docs            |
-| update   | update existing docs after code changes                |
-| test     | verify docs give agents the right context              |
-| fix      | close review findings by tracing each to source code   |
+## Notes
+
+- `ship`, `pr`, and `sync` are optional helpers, not the core product
+- canonical docs workflows live in `docs/workflows/`
+- repo-local `AGENTS.md` overrides plugin-injected defaults
 
 ## References
 
-- [Progressive Disclosure Standard](docs/progressive-disclosure-standard.md) — full spec
-- [Multi-Repo Orchestration Guide](docs/multi-repo-orchestration.md) — coordinating agents across repos (WIP)
-- [Superpowers](https://github.com/obra/superpowers) — complementary spec/plan/TDD/review workflow
-
-## License
-
-MIT
+- [Progressive Disclosure Standard](docs/progressive-disclosure-standard.md)
+- [Recipe Profile](docs/recipe-profile.md)
+- [Multi-Repo Orchestration Guide](docs/multi-repo-orchestration.md)
+- [Agent Policy](docs/policy/agent-policy.md)

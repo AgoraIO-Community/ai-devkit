@@ -6,23 +6,26 @@
 git clone https://github.com/AgoraIO-Community/ai-devkit.git
 ```
 
-Point Codex at `skills/ai-devkit/SKILL.md` as the entry point.
+Point Codex at `AGENTS.md` when you are in a repo that already adopted the
+standard. If you are loading ai-devkit directly, use `skills/ai-devkit/SKILL.md`
+as the adapter entry point.
 
 ## What it provides
 
-- **Progressive disclosure docs** — `AGENTS.md` and `docs/ai/` work well as the primary Codex integration path
-- **Git conventions** — available through `AGENTS.md` in adopting repos, or through `skills/ai-devkit/SKILL.md` when loaded directly
-- **Git skills** — ship (commit+push), pr (create PR), sync (rebase onto main)
-- **Docs skills** — generate (create docs from scratch), update (refresh after changes), test (verify docs)
+- **Portable repo standard** — `AGENTS.md` plus `docs/ai/`
+- **Canonical workflow docs** — `docs/workflows/generate.md`, `update.md`, `test.md`, `fix.md`
+- **Shared policy** — `docs/policy/agent-policy.md`
+- **Optional helpers** — git and docs skills for tools that support skill loading
 
 ## Current Status
 
-- **Tested:** Codex reading `AGENTS.md` plus progressive disclosure docs
-- **Not shipped here:** a Codex-specific session-start hook or plugin mechanism
-- **Recommended usage:** adopt the AGENTS.md template in the target repo, then use the docs/ai structure as the main source of truth
+- **Recommended path:** adopt `AGENTS.md` and `docs/ai/` in the target repo
+- **Codex plugin/hook:** not shipped here
+- **Codex review loop:** supported through the README prompt and CLI examples
 
 ## Files
 
-- `skills/ai-devkit/SKILL.md` — main conventions and skill directory
-- `skills/ai-devkit/git/` — git workflow skills
-- `skills/ai-devkit/docs/` — documentation skills
+- `AGENTS.md` — repo entry point when the standard is adopted
+- `docs/policy/agent-policy.md` — canonical shared policy
+- `docs/workflows/` — canonical workflow docs
+- `skills/ai-devkit/` — adapter layer for skill-aware tools

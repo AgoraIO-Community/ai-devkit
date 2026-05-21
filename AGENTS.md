@@ -1,39 +1,55 @@
-# Agent Conventions
+# AI Agent Instructions
 
-ai-devkit provides git conventions and documentation generation as skills for AI coding agents.
+This repository uses progressive disclosure documentation. Docs live under
+`docs/ai/` in three levels.
 
-## Repo Structure
+## How to Load
 
-| Path                         | Purpose                                       |
-| ---------------------------- | --------------------------------------------- |
-| `skills/ai-devkit/SKILL.md` | entry point — conventions + skill directory   |
-| `skills/ai-devkit/git/`     | git workflow skills (ship, pr, sync)          |
-| `skills/ai-devkit/docs/`    | documentation skills (generate, update, test) |
-| `hooks/`                     | session-start hook, platform wrappers         |
-| `docs/`                      | documentation standard + orchestration guide  |
-| `.claude-plugin/`            | Claude Code plugin config                     |
-| `.cursor-plugin/`            | Cursor plugin config                          |
-| `.codex/`                    | Codex install guide                           |
-| `gemini-extension.json`      | Gemini extension config                       |
+1. Read [docs/ai/L0_repo_card.md](docs/ai/L0_repo_card.md) to identify the repo.
+2. Load all 8 files in `docs/ai/L1/`. They are small and are meant to be read together.
+3. Follow L2 deep-dive links only when L1 is not detailed enough for the task.
 
-## Architecture
+## Git Conventions
 
-- **AGENTS-first delivery** — the progressive disclosure standard's `AGENTS.md` template is the primary portable way to deliver git conventions and doc commands across repos.
-- **Plugin injection** — for supported plugin setups, `hooks/session-start` reads `skills/ai-devkit/SKILL.md` and injects git conventions plus the skill directory into the session context at startup.
-- **On-demand skills** — detailed workflows (ship, pr, sync, docs) are loaded via the Skill tool when invoked.
+These rules mirror [docs/policy/agent-policy.md](docs/policy/agent-policy.md).
 
-## Conventions
+### Commit messages — conventional commits
 
-1. **Commit messages:** conventional commits (`feat:`, `fix:`, `chore:`, `test:`, `docs:`), lowercase after prefix, present tense, no AI tool names.
-1. **Branch names:** `type/short-description` — lowercase, hyphen-separated (e.g. `feat/token-refresh`).
-2. **Spec before plan, plan before code.** Separate WHAT from HOW.
-3. **Test driven development.** Write the test first, verify it fails, implement, verify it passes.
-4. **Review before commit.** AI review checks spec compliance and code quality.
+- **Format:** `type: description` or `type(scope): description`
+- **Types:** `feat:`, `fix:`, `chore:`, `test:`, `docs:`
+- **Lowercase after prefix**
+- **Present tense**
+- **No AI tool names**
 
-## AGENTS.md as Primary Delivery
+### Branch names
 
-The AGENTS.md template defined in [section 4.7 of the progressive disclosure standard](docs/progressive-disclosure-standard.md#47-agentsmd-and-claudemd-integration) is the primary way repos adopt git conventions and doc commands. Any repo that creates an AGENTS.md from that template gets conventions without installing ai-devkit as a plugin. The plugin (skills + hooks) is a convenience for tools that support it.
+- **Format:** `type/short-description`
+- **Lowercase and hyphen-separated**
 
-## Complementary Skills
+### General rules
 
-- [Superpowers](https://github.com/obra/superpowers) — spec, plan, TDD, review workflow
+- **Repo-local instructions win.** This `AGENTS.md` overrides plugin-injected defaults.
+- **No `Co-Authored-By` trailers**
+- **No `--no-verify`**
+- **No git identity rewrites**
+- **Spec before plan, plan before code**
+- **Review before commit**
+- **Prefer TDD when behavior changes**
+
+## Doc Commands
+
+These commands mirror [docs/policy/agent-policy.md](docs/policy/agent-policy.md).
+
+| Command         | When to use                                             |
+| --------------- | ------------------------------------------------------- |
+| `generate docs` | The repo does not have `docs/ai/` yet                   |
+| `update docs`   | Code or conventions changed and existing docs must catch up |
+| `test docs`     | You need to verify that the docs guide an agent correctly   |
+| `fix docs`      | You are closing findings from a docs review or test run     |
+
+Detailed workflow docs for this repo live in:
+
+- [docs/workflows/generate.md](docs/workflows/generate.md)
+- [docs/workflows/update.md](docs/workflows/update.md)
+- [docs/workflows/test.md](docs/workflows/test.md)
+- [docs/workflows/fix.md](docs/workflows/fix.md)

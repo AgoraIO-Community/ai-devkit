@@ -1,0 +1,194 @@
+#!/usr/bin/env python3
+
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent.parent
+LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+
+
+def read(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def line_count(path: Path) -> int:
+    return len(read(path).splitlines())
+
+
+def check(condition: bool, message: str, errors: list[str]) -> None:
+    if not condition:
+        errors.append(message)
+
+
+def resolve_links(path: Path, errors: list[str]) -> None:
+    text = read(path)
+    for raw_target in LINK_RE.findall(text):
+        target = raw_target.strip()
+        if not target or target.startswith(("http://", "https://", "mailto:", "#")):
+            continue
+        target = target.split("#", 1)[0]
+        resolved = (path.parent / target).resolve()
+        check(resolved.exists(), f"{path.relative_to(ROOT)} has broken link: {raw_target}", errors)
+
+
+def ensure_contains(path: Path, needle: str, errors: list[str]) -> None:
+    check(needle in read(path), f"{path.relative_to(ROOT)} is missing required text: {needle}", errors)
+
+
+def main() -> int:
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    canonical_policy = ROOT / "docs/policy/agent-policy.md"
+    recipe_profile = ROOT / "docs/recipe-profile.md"
+    standard = ROOT / "docs/progressive-disclosure-standard.md"
+    readme = ROOT / "README.md"
+    agents = ROOT / "AGENTS.md"
+    skill = ROOT / "skills/ai-devkit/SKILL.md"
+    install_doc = ROOT / ".codex/INSTALL.md"
+
+    workflow_dir = ROOT / "docs/workflows"
+    workflow_files = ["generate.md", "update.md", "test.md", "fix.md", "review_codex.md"]
+    wrapper_dir = ROOT / "skills/ai-devkit/docs"
+    fixture_root = ROOT / "examples/minimal-repo"
+    recipe_base = ROOT / "examples/recipe-base"
+    recipe_vertical = ROOT / "examples/recipe-vertical"
+
+    l0 = ROOT / "docs/ai/L0_repo_card.md"
+    l1_dir = ROOT / "docs/ai/L1"
+    l1_files = [
+        "01_setup.md",
+        "02_architecture.md",
+        "03_code_map.md",
+        "04_conventions.md",
+        "05_workflows.md",
+        "06_interfaces.md",
+        "07_gotchas.md",
+        "08_security.md",
+    ]
+    l2_dir = l1_dir / "L2"
+
+    for path in [canonical_policy, recipe_profile, standard, readme, agents, skill, install_doc, l0, l2_dir / "_index.md"]:
+        check(path.exists(), f"Missing required file: {path.relative_to(ROOT)}", errors)
+
+    for name in workflow_files:
+        check((workflow_dir / name).exists(), f"Missing workflow: docs/workflows/{name}", errors)
+        if name in {"generate.md", "update.md", "test.md", "fix.md"}:
+            wrapper = wrapper_dir / name
+            check(wrapper.exists(), f"Missing compatibility wrapper: {wrapper.relative_to(ROOT)}", errors)
+            if wrapper.exists():
+                ensure_contains(wrapper, f"../../../docs/workflows/{name}", errors)
+
+    ensure_contains(canonical_policy, "Repo-local `AGENTS.md` overrides plugin-injected defaults.", errors)
+    ensure_contains(canonical_policy, "`fix docs`", errors)
+
+    ensure_contains(agents, "## How to Load", errors)
+    ensure_contains(agents, "## Git Conventions", errors)
+    ensure_contains(agents, "## Doc Commands", errors)
+    check("repo-local instructions win" in read(agents).lower(), "AGENTS.md is missing the repo-local precedence rule", errors)
+    ensure_contains(agents, "`fix docs`", errors)
+    ensure_contains(agents, "docs/ai/L0_repo_card.md", errors)
+
+    ensure_contains(standard, "Repo-local `AGENTS.md` overrides plugin-injected defaults.", errors)
+    ensure_contains(standard, "| fix docs      |", errors)
+    check("PR number appended" not in read(standard), "Standard still contains removed PR-number rule", errors)
+    check("PR number appended" not in read(agents), "AGENTS.md still contains removed PR-number rule", errors)
+    check("PR number appended" not in read(skill), "skills/ai-devkit/SKILL.md still contains removed PR-number rule", errors)
+
+    ensure_contains(readme, "| Tool | Plain Markdown | Skill Adapter | Session-Start Adapter | Multi-Agent Review |", errors)
+    ensure_contains(readme, "docs/workflows/generate.md", errors)
+    ensure_contains(readme, "docs/workflows/fix.md", errors)
+    ensure_contains(readme, "docs/workflows/review_codex.md", errors)
+    ensure_contains(readme, "docs/recipe-profile.md", errors)
+
+    check((fixture_root / "README.md").exists(), "Missing fixture: examples/minimal-repo/README.md", errors)
+    check((fixture_root / "AGENTS.md").exists(), "Missing fixture: examples/minimal-repo/AGENTS.md", errors)
+    check((fixture_root / "docs/ai/L0_repo_card.md").exists(), "Missing fixture: examples/minimal-repo/docs/ai/L0_repo_card.md", errors)
+    for name in l1_files:
+        check((fixture_root / "docs/ai/L1" / name).exists(), f"Missing fixture L1 file: examples/minimal-repo/docs/ai/L1/{name}", errors)
+    check((fixture_root / "docs/ai/L1/L2/_index.md").exists(), "Missing fixture L2 index: examples/minimal-repo/docs/ai/L1/L2/_index.md", errors)
+
+    check((recipe_base / "README.md").exists(), "Missing fixture: examples/recipe-base/README.md", errors)
+    check((recipe_base / "AGENTS.md").exists(), "Missing fixture: examples/recipe-base/AGENTS.md", errors)
+    check((recipe_base / "docs/ai/L0_repo_card.md").exists(), "Missing fixture: examples/recipe-base/docs/ai/L0_repo_card.md", errors)
+    check((recipe_base / "docs/ai/RECIPE.md").exists(), "Missing fixture: examples/recipe-base/docs/ai/RECIPE.md", errors)
+    check((recipe_vertical / "README.md").exists(), "Missing fixture: examples/recipe-vertical/README.md", errors)
+    check((recipe_vertical / "AGENTS.md").exists(), "Missing fixture: examples/recipe-vertical/AGENTS.md", errors)
+    check((recipe_vertical / "RECIPE_DELTA.md").exists(), "Missing fixture: examples/recipe-vertical/RECIPE_DELTA.md", errors)
+    check((recipe_vertical / "docs/ai/L0_repo_card.md").exists(), "Missing fixture: examples/recipe-vertical/docs/ai/L0_repo_card.md", errors)
+
+    check(line_count(l0) <= 50, "docs/ai/L0_repo_card.md must be 50 lines or fewer", errors)
+
+    for name in l1_files:
+        path = l1_dir / name
+        check(path.exists(), f"Missing L1 file: {path.relative_to(ROOT)}", errors)
+        if not path.exists():
+            continue
+        lines = read(path).splitlines()
+        count = len(lines)
+        if not 80 <= count <= 200:
+            warnings.append(
+                f"{path.relative_to(ROOT)} is outside the recommended 80-200 line target; found {count}"
+            )
+        non_empty = [line for line in lines if line.strip()]
+        check(len(non_empty) >= 2 and non_empty[1].startswith("> "), f"{path.relative_to(ROOT)} must start with a one-line purpose statement", errors)
+        ensure_contains(path, "## Related Deep Dives", errors)
+
+    l2_files = sorted(p for p in l2_dir.glob("*.md") if p.name != "_index.md")
+    for path in l2_files:
+        lines = [line for line in read(path).splitlines() if line.strip()]
+        check(len(lines) >= 2 and lines[1].startswith("> **When to Read This:**"), f"{path.relative_to(ROOT)} must start with the L2 callout", errors)
+
+    link_roots = [agents, readme, canonical_policy, recipe_profile]
+    link_roots.extend((workflow_dir / name) for name in workflow_files)
+    link_roots.append(l0)
+    link_roots.extend((l1_dir / name) for name in l1_files if (l1_dir / name).exists())
+    link_roots.append(l2_dir / "_index.md")
+    link_roots.extend(l2_files)
+    link_roots.append(skill)
+    link_roots.extend(sorted(wrapper_dir.glob("*.md")))
+    link_roots.extend([
+        fixture_root / "README.md",
+        fixture_root / "AGENTS.md",
+        fixture_root / "docs/ai/L0_repo_card.md",
+        fixture_root / "docs/ai/L1/L2/_index.md",
+    ])
+    link_roots.extend((fixture_root / "docs/ai/L1" / name) for name in l1_files)
+    link_roots.extend([
+        recipe_base / "README.md",
+        recipe_base / "AGENTS.md",
+        recipe_base / "docs/ai/L0_repo_card.md",
+        recipe_base / "docs/ai/RECIPE.md",
+        recipe_base / "docs/ai/L1/L2/_index.md",
+        recipe_vertical / "README.md",
+        recipe_vertical / "AGENTS.md",
+        recipe_vertical / "RECIPE_DELTA.md",
+        recipe_vertical / "docs/ai/L0_repo_card.md",
+        recipe_vertical / "docs/ai/L1/L2/_index.md",
+    ])
+    link_roots.extend((recipe_base / "docs/ai/L1" / name) for name in l1_files)
+    link_roots.extend((recipe_vertical / "docs/ai/L1" / name) for name in l1_files)
+
+    for path in link_roots:
+        resolve_links(path, errors)
+
+    if errors:
+        print("validation failed:")
+        for err in errors:
+            print(f"- {err}")
+        return 1
+
+    print("validation passed")
+    if warnings:
+        print("warnings:")
+        for warning in warnings:
+            print(f"- {warning}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
