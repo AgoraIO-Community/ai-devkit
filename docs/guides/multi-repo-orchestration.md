@@ -61,7 +61,7 @@ This guide describes a coordination model: a System Agent plans cross-repo work,
 
 The System Agent's power is coordination, not implementation. Separating it from Repo Agents prevents a class of bugs where an orchestrator makes locally-reasonable but globally-inconsistent changes.
 
-This architecture depends on the [Progressive Disclosure Documentation Standard](progressive-disclosure-standard.md): the System Agent reads L0 Identity Blocks to build its repo registry, and L1 `06_interfaces.md` files to understand cross-repo contracts.
+This architecture depends on the [Progressive Disclosure Documentation Standard](../standard/progressive-disclosure-standard.md): the System Agent reads L0 Identity Blocks to build its repo registry, and L1 `06_interfaces.md` files to understand cross-repo contracts.
 
 ---
 

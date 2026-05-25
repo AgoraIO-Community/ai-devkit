@@ -53,7 +53,7 @@ This standard defines a **three-level documentation architecture (L0 / L1 / L2)*
 **Loading rule:** Start at L0. Load all 8 L1 files (they're small). Go to L2 only when L1 isn't detailed enough.
 
 **Optional profile:** Repos that publish reusable starter contracts may also opt
-into the recipe profile described in [docs/recipe-profile.md](recipe-profile.md).
+into the recipe profile described in [docs/standard/recipe-profile.md](recipe-profile.md).
 
 ---
 
@@ -380,7 +380,7 @@ Typical contents:
 - stable contracts
 - internal / subject-to-change surfaces
 
-See [docs/recipe-profile.md](recipe-profile.md) for the full profile.
+See [docs/standard/recipe-profile.md](recipe-profile.md) for the full profile.
 
 ---
 
@@ -565,7 +565,7 @@ If the repo's L0 declares `Recipe Role`, also follow the recipe profile:
 
 ### General rules
 
-- **Repo-local `AGENTS.md` overrides plugin-injected defaults.**
+- **Repo-local `AGENTS.md` is the authoritative source for repo conventions.**
 - **No AI tool names** — never mention claude, cursor, copilot, cody, aider, gemini, codex, chatgpt, or gpt-3/4
 - **No Co-Authored-By trailers** — omit AI attribution lines
 - **No --no-verify** — let git hooks run normally
@@ -595,10 +595,10 @@ Read @AGENTS.md for AI agent instructions, git conventions, and progressive disc
 #### Why This Pattern
 
 - **`AGENTS.md`** is the most portable repo-local entry point and is designed to work across tools that read repo files.
-- **Self-contained** — `AGENTS.md` delivers doc loading instructions, git conventions, and doc commands in one file. No plugin install required.
+- **Self-contained** — `AGENTS.md` delivers doc loading instructions, git conventions, and doc commands in one file. No install required.
 - **`CLAUDE.md`** uses an `@` reference so Claude Code loads `AGENTS.md` into the system prompt automatically — no tool call needed.
 - **Other tools** should be able to consume `AGENTS.md` when they read repo files, even if they do not offer the same automatic loading behavior as Claude Code.
-- **Plugin optional** — tools like [ai-devkit](https://github.com/AgoraIO-Community/ai-devkit) can reinforce these conventions via skills and hooks, but `AGENTS.md` is the primary delivery mechanism.
+- **No install required** — `AGENTS.md` is the primary delivery mechanism. Any tool that reads repo files can consume it directly.
 - **Future enterprise map:** A central system can scrape all `AGENTS.md` files to discover repos, then follow the link to each L0 for Identity Block metadata.
 
 ---
@@ -896,7 +896,7 @@ Do not use it when:
 - there is no intended downstream extension surface
 - ordinary L0/L1/L2 docs already describe the repo adequately
 
-For the full contract, fields, and examples, see [docs/recipe-profile.md](recipe-profile.md).
+For the full contract, fields, and examples, see [docs/standard/recipe-profile.md](recipe-profile.md).
 
 ---
 
@@ -919,7 +919,7 @@ disclosure documentation under `docs/ai/`.
 ## The Standard
 
 Read the full standard before starting:
-https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/progressive-disclosure-standard.md
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/progressive-disclosure-standard.md
 
 Key constraints to keep in mind:
 
@@ -1047,7 +1047,7 @@ Ask the engineer (or extract from context):
 ## The Standard
 
 Read the full standard before starting:
-https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/progressive-disclosure-standard.md
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/progressive-disclosure-standard.md
 
 Key constraints for bootstrapping:
 

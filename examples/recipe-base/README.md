@@ -10,4 +10,4 @@ It demonstrates:
 
 Use it as a path and naming reference, not as a content-quality model.
 
-Use it with [docs/recipe-profile.md](../../docs/recipe-profile.md).
+Use it with [docs/standard/recipe-profile.md](../../docs/standard/recipe-profile.md).

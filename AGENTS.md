@@ -11,7 +11,7 @@ This repository uses progressive disclosure documentation. Docs live under
 
 ## Git Conventions
 
-These rules mirror [docs/policy/agent-policy.md](docs/policy/agent-policy.md).
+These rules mirror [docs/standard/agent-policy.md](docs/standard/agent-policy.md).
 
 ### Commit messages — conventional commits
 
@@ -28,7 +28,7 @@ These rules mirror [docs/policy/agent-policy.md](docs/policy/agent-policy.md).
 
 ### General rules
 
-- **Repo-local instructions win.** This `AGENTS.md` overrides plugin-injected defaults.
+- **Repo-local instructions win.** This `AGENTS.md` is the authoritative source for repo conventions.
 - **No `Co-Authored-By` trailers**
 - **No `--no-verify`**
 - **No git identity rewrites**
@@ -38,7 +38,7 @@ These rules mirror [docs/policy/agent-policy.md](docs/policy/agent-policy.md).
 
 ## Doc Commands
 
-These commands mirror [docs/policy/agent-policy.md](docs/policy/agent-policy.md).
+These commands mirror [docs/standard/agent-policy.md](docs/standard/agent-policy.md).
 
 | Command         | When to use                                             |
 | --------------- | ------------------------------------------------------- |
@@ -49,7 +49,4 @@ These commands mirror [docs/policy/agent-policy.md](docs/policy/agent-policy.md)
 
 Detailed workflow docs for this repo live in:
 
-- [docs/workflows/generate.md](docs/workflows/generate.md)
-- [docs/workflows/update.md](docs/workflows/update.md)
-- [docs/workflows/test.md](docs/workflows/test.md)
-- [docs/workflows/fix.md](docs/workflows/fix.md)
+- [docs/workflows/progressive-disclosure-docs.md](docs/workflows/progressive-disclosure-docs.md)

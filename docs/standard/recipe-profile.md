@@ -128,5 +128,5 @@ It is a helper doc, not part of the core `docs/ai/` tree.
 
 ## Fixtures
 
-- [recipe-base](../examples/recipe-base/README.md)
-- [recipe-vertical](../examples/recipe-vertical/README.md)
+- [recipe-base](../../examples/recipe-base/README.md)
+- [recipe-vertical](../../examples/recipe-vertical/README.md)

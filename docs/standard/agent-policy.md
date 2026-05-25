@@ -5,8 +5,7 @@ Other entry points may summarize or mirror it, but changes should start here.
 
 ## Precedence
 
-- Repo-local `AGENTS.md` overrides plugin-injected defaults.
-- Plugins and skills are bootstrap adapters, not the source of truth for a repo.
+- Repo-local `AGENTS.md` is the authoritative source for repo conventions.
 - When a repo vendors workflow docs locally, prefer those local workflow docs.
 
 ## Git Conventions

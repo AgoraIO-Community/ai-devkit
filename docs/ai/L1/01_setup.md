@@ -32,51 +32,48 @@
 
 ## Working Modes
 
-- **Use mode:** read `AGENTS.md`, then `docs/ai/`, then the specific workflow or adapter docs you need.
-- **Maintain mode:** update the standard, the canonical workflows, and the adapter layer together.
-- **Review mode:** compare public claims in README and adapter docs against what is actually shipped.
+- **Use mode:** read `AGENTS.md`, then `docs/ai/`, then the specific workflow docs you need.
+- **Maintain mode:** update the standard and the canonical workflows together.
+- **Review mode:** compare public claims in README against what is actually shipped.
 
 ## Typical Edit Surfaces
 
 | Change Type | Start Here |
 | ----------- | ---------- |
-| repo policy or conventions | `docs/policy/agent-policy.md` |
-| standard wording or template | `docs/progressive-disclosure-standard.md` |
-| workflow behavior | `docs/workflows/` |
+| repo policy or conventions | `docs/standard/agent-policy.md` |
+| standard wording or template | `docs/standard/progressive-disclosure-standard.md` |
+| workflow behavior | `docs/workflows/progressive-disclosure-docs.md` |
 | repo entry point | `AGENTS.md` |
 | self-hosted PD docs | `docs/ai/` |
-| plugin or skill adapters | `skills/`, `hooks/`, plugin config dirs |
+| examples and fixtures | `examples/` |
 
 ## Validation Expectations
 
 - Run `python3 scripts/validate-ai-devkit` after any cross-file documentation change.
 - Re-run validation after moving files or changing link targets.
-- When modifying workflows, verify both canonical docs and compatibility wrappers.
+- When modifying workflows, verify canonical docs and README prompts stay aligned.
 - When modifying `AGENTS.md`, verify it still points cleanly into `docs/ai/`.
 
 ## Optional Tooling
 
-- `gh` matters only if you are testing the `pr` skill or GitHub-facing instructions.
+- `gh` matters only if you are testing GitHub-facing instructions.
 - `codex` matters only if you are exercising the multi-agent review loop.
 - No Node install is needed for normal repo maintenance; `package.json` is metadata only.
 
 ## Common Failure Modes
 
-- Updating README paths without updating compatibility wrappers.
 - Changing shared policy in one file and forgetting mirrored entry points.
 - Editing `docs/ai/` without updating `last_reviewed` in L0.
-- Treating plugin-injected skill text as stronger than repo-local `AGENTS.md`.
 - Moving canonical workflows without preserving old references.
 
 ## Local Change Checklist
 
 1. Edit the canonical source first.
-2. Update adapters or mirrored entry points.
+2. Update mirrored entry points.
 3. Run validation.
 4. Re-open the affected files and check link resolution manually.
 5. Update self-hosted `docs/ai/` if repo behavior changed.
 
 ## Related Deep Dives
 
-- [policy_delivery.md](L2/policy_delivery.md) — How policy and workflow text moves from canonical docs into repo entry points and adapters.
-- [adapter_injection.md](L2/adapter_injection.md) — How hooks and skill adapters inject context into supported tools.
+- [policy_delivery.md](L2/policy_delivery.md) — How policy and workflow text moves from canonical docs into repo entry points.
