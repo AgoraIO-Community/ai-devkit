@@ -16,7 +16,6 @@ development. Works with AI coding agents that read repo files.
 - [Compatibility](#compatibility)
 - [Repo layout](#repo-layout)
 - [References](#references)
-- [License](#license)
 
 ## What it does
 
@@ -296,7 +295,3 @@ files can consume `AGENTS.md` and `docs/ai/`.
 - [Recipe Profile](docs/standard/recipe-profile.md) — inheritance for reusable starter repos
 - [Multi-Repo Orchestration Guide](docs/guides/multi-repo-orchestration.md) — coordinating agents across repos (WIP)
 - [Agent Policy](docs/standard/agent-policy.md) — canonical shared policy
-
-## License
-
-MIT

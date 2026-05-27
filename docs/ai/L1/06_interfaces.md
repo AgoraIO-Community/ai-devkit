@@ -52,7 +52,6 @@
 ## Non-Interfaces
 
 - `package.json` is not an execution interface; it is metadata only.
-- `CHANGELOG.md` is not a canonical workflow source.
 - `docs/ai/` is not the canonical home for product workflows; it only describes this repo.
 
 ## Interface Review Questions
