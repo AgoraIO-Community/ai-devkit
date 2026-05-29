@@ -58,7 +58,7 @@
 
 - `gh` matters only if you are testing GitHub-facing instructions.
 - `codex` matters only if you are exercising the multi-agent review loop.
-- No Node install is needed for normal repo maintenance; `package.json` is metadata only.
+- No Node install is needed for normal repo maintenance.
 
 ## Common Failure Modes
 
