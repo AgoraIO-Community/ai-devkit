@@ -8,7 +8,9 @@ import struct
 import sys
 import urllib.request
 
-API_KEY = os.environ.get("TTS_KEY", "REDACTED_API_KEY")
+API_KEY = os.environ.get("TTS_KEY")
+if not API_KEY:
+    raise SystemExit("Set TTS_KEY environment variable (ElevenLabs API key)")
 VOICE_ID = "N1wNyps2cLeRH3gZe3PL"  # User-specified voice
 MODEL_ID = "eleven_multilingual_v2"
 
