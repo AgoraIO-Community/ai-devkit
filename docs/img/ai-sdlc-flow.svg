@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" font-family="'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-sm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/>
+    </filter>
+    <filter id="shadow-lg" x="-6%" y="-6%" width="112%" height="118%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="plan-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="impl-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="model-a-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="560" fill="#ffffff"/>
+
+  <!-- Subtitle -->
+  <text x="640" y="32" fill="#94a3b8" font-size="13" font-weight="500" text-anchor="middle" letter-spacing="0.5">Models: any 2 from independent training lineages</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- Work item stack                         -->
+  <!-- ═══════════════════════════════════════ -->
+  <text x="80" y="200" fill="#64748b" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.5" text-transform="uppercase">Work item</text>
+
+  <rect x="22" y="218" width="116" height="36" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="80" y="241" fill="#334155" font-size="14" font-weight="600" text-anchor="middle">Story</text>
+
+  <rect x="22" y="262" width="116" height="36" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="80" y="285" fill="#334155" font-size="14" font-weight="600" text-anchor="middle">Epic</text>
+
+  <rect x="22" y="306" width="116" height="36" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="80" y="329" fill="#334155" font-size="14" font-weight="600" text-anchor="middle">Bug</text>
+
+  <rect x="22" y="350" width="116" height="36" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="80" y="373" fill="#334155" font-size="14" font-weight="600" text-anchor="middle">Feature</text>
+
+  <!-- Bracket connecting work items -->
+  <line x1="138" y1="236" x2="155" y2="236" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="138" y1="280" x2="155" y2="280" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="138" y1="324" x2="155" y2="324" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="138" y1="368" x2="155" y2="368" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="155" y1="236" x2="155" y2="368" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="155" y1="302" x2="195" y2="302" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- Plan phase                              -->
+  <!-- ═══════════════════════════════════════ -->
+  <rect x="200" y="60" width="380" height="460" rx="16" fill="url(#plan-bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="390" y="98" fill="#334155" font-size="20" font-weight="700" text-anchor="middle">Plan</text>
+  <text x="406" y="98" fill="#94a3b8" font-size="16" font-weight="400"> ↻</text>
+  <text x="390" y="118" fill="#94a3b8" font-size="12" font-weight="500" text-anchor="middle">Model A runs the spec workflow</text>
+
+  <!-- Human (Plan) -->
+  <rect x="228" y="168" width="86" height="44" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1" filter="url(#shadow)"/>
+  <text x="271" y="195" fill="#dc2626" font-size="14" font-weight="600" text-anchor="middle">Human</text>
+
+  <!-- Model B (Plan) -->
+  <rect x="468" y="168" width="86" height="44" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" filter="url(#shadow)"/>
+  <text x="511" y="195" fill="#2563eb" font-size="14" font-weight="600" text-anchor="middle">Model B</text>
+
+  <!-- Progressive Disclosure docs (Plan) -->
+  <rect x="208" y="400" width="126" height="50" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="271" y="418" fill="#334155" font-size="10" font-weight="600" text-anchor="middle">Progressive</text>
+  <text x="271" y="430" fill="#334155" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
+  <text x="271" y="444" fill="#94a3b8" font-size="9" text-anchor="middle">level 1 + workflow</text>
+
+  <!-- Code (Plan) -->
+  <rect x="468" y="400" width="86" height="50" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="511" y="430" fill="#334155" font-size="12" font-weight="600" text-anchor="middle">Code</text>
+
+  <!-- Model A (Plan) — centre -->
+  <rect x="338" y="268" width="104" height="64" rx="12" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/>
+  <text x="390" y="298" fill="#fff" font-size="17" font-weight="700" text-anchor="middle">Model A</text>
+  <text x="390" y="318" fill="#bfdbfe" font-size="10" font-weight="500" text-anchor="middle">runs workflow</text>
+
+  <!-- Spokes (Plan) -->
+  <line x1="314" y1="206" x2="344" y2="272" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="468" y1="206" x2="438" y2="272" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="314" y1="408" x2="344" y2="330" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="468" y1="408" x2="438" y2="330" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- Spec arrow: Plan → Implementation       -->
+  <!-- ═══════════════════════════════════════ -->
+  <text x="615" y="290" fill="#64748b" font-size="13" font-weight="600" text-anchor="middle">Spec</text>
+  <line x1="585" y1="302" x2="645" y2="302" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- Implementation phase                    -->
+  <!-- ═══════════════════════════════════════ -->
+  <rect x="650" y="60" width="440" height="460" rx="16" fill="url(#impl-bg)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="870" y="98" fill="#334155" font-size="20" font-weight="700" text-anchor="middle">Implementation</text>
+  <text x="940" y="98" fill="#94a3b8" font-size="16" font-weight="400"> ↻</text>
+  <text x="870" y="118" fill="#94a3b8" font-size="12" font-weight="500" text-anchor="middle">Model A runs test-driven development + docs verification</text>
+
+  <!-- Spec (Impl) -->
+  <rect x="668" y="162" width="86" height="44" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="711" y="189" fill="#334155" font-size="12" font-weight="600" text-anchor="middle">Spec</text>
+
+  <!-- Code (Impl) -->
+  <rect x="988" y="162" width="86" height="44" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="1031" y="189" fill="#334155" font-size="12" font-weight="600" text-anchor="middle">Code</text>
+
+  <!-- Progressive Disclosure docs (Impl) -->
+  <rect x="648" y="268" width="126" height="50" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="711" y="286" fill="#334155" font-size="10" font-weight="600" text-anchor="middle">Progressive</text>
+  <text x="711" y="298" fill="#334155" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
+  <text x="711" y="312" fill="#94a3b8" font-size="9" text-anchor="middle">level 1 + workflow</text>
+
+  <!-- Tools (Impl) -->
+  <rect x="988" y="268" width="86" height="50" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
+  <text x="1031" y="290" fill="#334155" font-size="12" font-weight="600" text-anchor="middle">Tools</text>
+  <text x="1031" y="306" fill="#94a3b8" font-size="10" text-anchor="middle">testing</text>
+
+  <!-- Model B (Impl) -->
+  <rect x="668" y="376" width="86" height="44" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" filter="url(#shadow)"/>
+  <text x="711" y="403" fill="#2563eb" font-size="12" font-weight="600" text-anchor="middle">Model B</text>
+
+  <!-- Human (Impl) -->
+  <rect x="988" y="376" width="86" height="50" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1" filter="url(#shadow)"/>
+  <text x="1031" y="398" fill="#dc2626" font-size="12" font-weight="600" text-anchor="middle">Human</text>
+  <text x="1031" y="414" fill="#f87171" font-size="10" text-anchor="middle">on demand</text>
+
+  <!-- Model A (Impl) — centre -->
+  <rect x="798" y="248" width="144" height="90" rx="14" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/>
+  <text x="870" y="288" fill="#fff" font-size="20" font-weight="700" text-anchor="middle">Model A</text>
+  <text x="870" y="312" fill="#bfdbfe" font-size="11" font-weight="500" text-anchor="middle">runs test-driven development</text>
+
+  <!-- Spokes (Impl) -->
+  <line x1="754" y1="198" x2="804" y2="254" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="988" y1="198" x2="938" y2="254" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="754" y1="293" x2="798" y2="293" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="988" y1="293" x2="942" y2="293" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="754" y1="398" x2="804" y2="334" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="988" y1="398" x2="938" y2="334" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- Deliverable arrow: Impl → Release       -->
+  <!-- ═══════════════════════════════════════ -->
+  <text x="1132" y="290" fill="#64748b" font-size="13" font-weight="600" text-anchor="middle">Deliverable</text>
+  <line x1="1095" y1="304" x2="1165" y2="304" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- Release                                 -->
+  <!-- ═══════════════════════════════════════ -->
+  <rect x="1170" y="256" width="100" height="100" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-lg)"/>
+  <text x="1220" y="296" fill="#334155" font-size="17" font-weight="700" text-anchor="middle">Release</text>
+  <text x="1220" y="318" fill="#94a3b8" font-size="11" font-weight="500" text-anchor="middle">verification gate</text>
+  <text x="1220" y="336" fill="#94a3b8" font-size="11" font-weight="500" text-anchor="middle">+ human</text>
+</svg>

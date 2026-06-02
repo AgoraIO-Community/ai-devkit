@@ -1,0 +1,1180 @@
+{
+  "words": [
+    {
+      "word": "A",
+      "start": 0.0,
+      "end": 0.081
+    },
+    {
+      "word": "natural",
+      "start": 0.163,
+      "end": 0.476
+    },
+    {
+      "word": "question",
+      "start": 0.522,
+      "end": 0.906
+    },
+    {
+      "word": "is:",
+      "start": 0.975,
+      "end": 1.138
+    },
+    {
+      "word": "why",
+      "start": 1.184,
+      "end": 1.451
+    },
+    {
+      "word": "does",
+      "start": 1.533,
+      "end": 1.718
+    },
+    {
+      "word": "AI",
+      "start": 1.811,
+      "end": 2.171
+    },
+    {
+      "word": "DevKit",
+      "start": 2.287,
+      "end": 2.961
+    },
+    {
+      "word": "use",
+      "start": 3.135,
+      "end": 3.402
+    },
+    {
+      "word": "copy-paste",
+      "start": 3.448,
+      "end": 4.075
+    },
+    {
+      "word": "prompts",
+      "start": 4.11,
+      "end": 4.505
+    },
+    {
+      "word": "instead",
+      "start": 4.563,
+      "end": 4.899
+    },
+    {
+      "word": "of",
+      "start": 4.934,
+      "end": 4.992
+    },
+    {
+      "word": "skills,",
+      "start": 5.074,
+      "end": 5.863
+    },
+    {
+      "word": "slash",
+      "start": 6.188,
+      "end": 6.548
+    },
+    {
+      "word": "commands,",
+      "start": 6.606,
+      "end": 7.21
+    },
+    {
+      "word": "or",
+      "start": 7.245,
+      "end": 7.361
+    },
+    {
+      "word": "plugins?\n\nThe",
+      "start": 7.442,
+      "end": 8.696
+    },
+    {
+      "word": "answer",
+      "start": 8.742,
+      "end": 9.009
+    },
+    {
+      "word": "comes",
+      "start": 9.067,
+      "end": 9.288
+    },
+    {
+      "word": "down",
+      "start": 9.334,
+      "end": 9.52
+    },
+    {
+      "word": "to",
+      "start": 9.578,
+      "end": 9.648
+    },
+    {
+      "word": "portability",
+      "start": 9.729,
+      "end": 10.6
+    },
+    {
+      "word": "and",
+      "start": 10.681,
+      "end": 10.809
+    },
+    {
+      "word": "transparency.\n\nSkills",
+      "start": 10.855,
+      "end": 12.934
+    },
+    {
+      "word": "and",
+      "start": 12.992,
+      "end": 13.108
+    },
+    {
+      "word": "slash",
+      "start": 13.166,
+      "end": 13.456
+    },
+    {
+      "word": "commands",
+      "start": 13.502,
+      "end": 14.036
+    },
+    {
+      "word": "are",
+      "start": 14.129,
+      "end": 14.327
+    },
+    {
+      "word": "tool-specific.",
+      "start": 14.373,
+      "end": 15.488
+    },
+    {
+      "word": "A",
+      "start": 15.929,
+      "end": 15.999
+    },
+    {
+      "word": "Claude",
+      "start": 16.115,
+      "end": 16.486
+    },
+    {
+      "word": "Code",
+      "start": 16.521,
+      "end": 16.869
+    },
+    {
+      "word": "skill",
+      "start": 16.892,
+      "end": 17.275
+    },
+    {
+      "word": "doesn't",
+      "start": 17.391,
+      "end": 17.705
+    },
+    {
+      "word": "work",
+      "start": 17.763,
+      "end": 18.123
+    },
+    {
+      "word": "in",
+      "start": 18.297,
+      "end": 18.448
+    },
+    {
+      "word": "Cursor.",
+      "start": 18.541,
+      "end": 19.179
+    },
+    {
+      "word": "A",
+      "start": 19.562,
+      "end": 19.632
+    },
+    {
+      "word": "Cursor",
+      "start": 19.725,
+      "end": 20.062
+    },
+    {
+      "word": "command",
+      "start": 20.096,
+      "end": 20.352
+    },
+    {
+      "word": "doesn't",
+      "start": 20.41,
+      "end": 20.596
+    },
+    {
+      "word": "work",
+      "start": 20.619,
+      "end": 20.758
+    },
+    {
+      "word": "in",
+      "start": 20.805,
+      "end": 20.851
+    },
+    {
+      "word": "Codex.",
+      "start": 20.909,
+      "end": 21.641
+    },
+    {
+      "word": "If",
+      "start": 21.966,
+      "end": 22.105
+    },
+    {
+      "word": "AI",
+      "start": 22.163,
+      "end": 22.395
+    },
+    {
+      "word": "DevKit",
+      "start": 22.476,
+      "end": 22.929
+    },
+    {
+      "word": "shipped",
+      "start": 22.987,
+      "end": 23.254
+    },
+    {
+      "word": "its",
+      "start": 23.289,
+      "end": 23.394
+    },
+    {
+      "word": "workflows",
+      "start": 23.44,
+      "end": 23.928
+    },
+    {
+      "word": "as",
+      "start": 23.963,
+      "end": 24.032
+    },
+    {
+      "word": "skills,",
+      "start": 24.079,
+      "end": 24.81
+    },
+    {
+      "word": "you'd",
+      "start": 25.135,
+      "end": 25.286
+    },
+    {
+      "word": "need",
+      "start": 25.321,
+      "end": 25.46
+    },
+    {
+      "word": "a",
+      "start": 25.495,
+      "end": 25.518
+    },
+    {
+      "word": "different",
+      "start": 25.565,
+      "end": 25.855
+    },
+    {
+      "word": "implementation",
+      "start": 25.89,
+      "end": 26.644
+    },
+    {
+      "word": "for",
+      "start": 26.714,
+      "end": 26.807
+    },
+    {
+      "word": "every",
+      "start": 26.853,
+      "end": 27.039
+    },
+    {
+      "word": "tool,",
+      "start": 27.097,
+      "end": 27.62
+    },
+    {
+      "word": "and",
+      "start": 27.945,
+      "end": 28.072
+    },
+    {
+      "word": "you'd",
+      "start": 28.119,
+      "end": 28.27
+    },
+    {
+      "word": "be",
+      "start": 28.305,
+      "end": 28.374
+    },
+    {
+      "word": "locked",
+      "start": 28.421,
+      "end": 28.665
+    },
+    {
+      "word": "into",
+      "start": 28.699,
+      "end": 28.862
+    },
+    {
+      "word": "whichever",
+      "start": 28.92,
+      "end": 29.268
+    },
+    {
+      "word": "tool",
+      "start": 29.326,
+      "end": 29.57
+    },
+    {
+      "word": "you",
+      "start": 29.628,
+      "end": 29.709
+    },
+    {
+      "word": "started",
+      "start": 29.779,
+      "end": 30.174
+    },
+    {
+      "word": "with.\n\nPrompts",
+      "start": 30.22,
+      "end": 31.695
+    },
+    {
+      "word": "are",
+      "start": 31.776,
+      "end": 31.939
+    },
+    {
+      "word": "universal.",
+      "start": 31.997,
+      "end": 32.868
+    },
+    {
+      "word": "They",
+      "start": 33.146,
+      "end": 33.309
+    },
+    {
+      "word": "work",
+      "start": 33.367,
+      "end": 33.587
+    },
+    {
+      "word": "in",
+      "start": 33.657,
+      "end": 33.727
+    },
+    {
+      "word": "any",
+      "start": 33.82,
+      "end": 34.063
+    },
+    {
+      "word": "agent",
+      "start": 34.122,
+      "end": 34.435
+    },
+    {
+      "word": "session",
+      "start": 34.493,
+      "end": 34.783
+    },
+    {
+      "word": "that",
+      "start": 34.818,
+      "end": 34.923
+    },
+    {
+      "word": "can",
+      "start": 34.957,
+      "end": 35.062
+    },
+    {
+      "word": "read",
+      "start": 35.12,
+      "end": 35.283
+    },
+    {
+      "word": "files.",
+      "start": 35.341,
+      "end": 36.072
+    },
+    {
+      "word": "You",
+      "start": 36.583,
+      "end": 36.711
+    },
+    {
+      "word": "paste",
+      "start": 36.792,
+      "end": 37.094
+    },
+    {
+      "word": "the",
+      "start": 37.129,
+      "end": 37.198
+    },
+    {
+      "word": "prompt,",
+      "start": 37.245,
+      "end": 37.837
+    },
+    {
+      "word": "the",
+      "start": 38.011,
+      "end": 38.115
+    },
+    {
+      "word": "prompt",
+      "start": 38.173,
+      "end": 38.475
+    },
+    {
+      "word": "tells",
+      "start": 38.498,
+      "end": 38.719
+    },
+    {
+      "word": "the",
+      "start": 38.754,
+      "end": 38.824
+    },
+    {
+      "word": "agent",
+      "start": 38.882,
+      "end": 39.207
+    },
+    {
+      "word": "to",
+      "start": 39.253,
+      "end": 39.323
+    },
+    {
+      "word": "read",
+      "start": 39.404,
+      "end": 39.578
+    },
+    {
+      "word": "the",
+      "start": 39.613,
+      "end": 39.683
+    },
+    {
+      "word": "workflow",
+      "start": 39.729,
+      "end": 40.217
+    },
+    {
+      "word": "from",
+      "start": 40.263,
+      "end": 40.403
+    },
+    {
+      "word": "GitHub,",
+      "start": 40.484,
+      "end": 41.111
+    },
+    {
+      "word": "and",
+      "start": 41.32,
+      "end": 41.447
+    },
+    {
+      "word": "the",
+      "start": 41.494,
+      "end": 41.564
+    },
+    {
+      "word": "agent",
+      "start": 41.61,
+      "end": 41.877
+    },
+    {
+      "word": "executes",
+      "start": 41.935,
+      "end": 42.492
+    },
+    {
+      "word": "it.",
+      "start": 42.55,
+      "end": 42.829
+    },
+    {
+      "word": "The",
+      "start": 43.433,
+      "end": 43.549
+    },
+    {
+      "word": "same",
+      "start": 43.607,
+      "end": 43.851
+    },
+    {
+      "word": "prompt",
+      "start": 43.897,
+      "end": 44.222
+    },
+    {
+      "word": "works",
+      "start": 44.269,
+      "end": 44.536
+    },
+    {
+      "word": "in",
+      "start": 44.57,
+      "end": 44.64
+    },
+    {
+      "word": "Claude",
+      "start": 44.71,
+      "end": 45.035
+    },
+    {
+      "word": "Code,",
+      "start": 45.081,
+      "end": 45.581
+    },
+    {
+      "word": "Cursor,",
+      "start": 45.732,
+      "end": 46.301
+    },
+    {
+      "word": "Codex,",
+      "start": 46.37,
+      "end": 47.02
+    },
+    {
+      "word": "Gemini,",
+      "start": 47.067,
+      "end": 47.798
+    },
+    {
+      "word": "or",
+      "start": 48.042,
+      "end": 48.205
+    },
+    {
+      "word": "any",
+      "start": 48.263,
+      "end": 48.425
+    },
+    {
+      "word": "future",
+      "start": 48.495,
+      "end": 48.82
+    },
+    {
+      "word": "tool",
+      "start": 48.855,
+      "end": 49.052
+    },
+    {
+      "word": "that",
+      "start": 49.099,
+      "end": 49.203
+    },
+    {
+      "word": "reads",
+      "start": 49.25,
+      "end": 49.459
+    },
+    {
+      "word": "repo",
+      "start": 49.528,
+      "end": 49.853
+    },
+    {
+      "word": "files.\n\nThere's",
+      "start": 49.923,
+      "end": 50.503
+    },
+    {
+      "word": "also",
+      "start": 50.538,
+      "end": 50.747
+    },
+    {
+      "word": "a",
+      "start": 50.817,
+      "end": 50.84
+    },
+    {
+      "word": "transparency",
+      "start": 50.875,
+      "end": 51.572
+    },
+    {
+      "word": "benefit.",
+      "start": 51.641,
+      "end": 52.175
+    },
+    {
+      "word": "A",
+      "start": 52.616,
+      "end": 52.698
+    },
+    {
+      "word": "prompt",
+      "start": 52.767,
+      "end": 53.058
+    },
+    {
+      "word": "is",
+      "start": 53.104,
+      "end": 53.185
+    },
+    {
+      "word": "visible",
+      "start": 53.243,
+      "end": 53.615
+    },
+    {
+      "word": "text.",
+      "start": 53.65,
+      "end": 54.079
+    },
+    {
+      "word": "You",
+      "start": 54.114,
+      "end": 54.195
+    },
+    {
+      "word": "can",
+      "start": 54.253,
+      "end": 54.37
+    },
+    {
+      "word": "read",
+      "start": 54.439,
+      "end": 54.637
+    },
+    {
+      "word": "it,",
+      "start": 54.695,
+      "end": 54.822
+    },
+    {
+      "word": "understand",
+      "start": 54.892,
+      "end": 55.496
+    },
+    {
+      "word": "it,",
+      "start": 55.565,
+      "end": 55.716
+    },
+    {
+      "word": "modify",
+      "start": 55.809,
+      "end": 56.355
+    },
+    {
+      "word": "it.",
+      "start": 56.425,
+      "end": 56.645
+    },
+    {
+      "word": "A",
+      "start": 57.086,
+      "end": 57.168
+    },
+    {
+      "word": "skill",
+      "start": 57.26,
+      "end": 57.586
+    },
+    {
+      "word": "is",
+      "start": 57.655,
+      "end": 57.736
+    },
+    {
+      "word": "a",
+      "start": 57.783,
+      "end": 57.806
+    },
+    {
+      "word": "black",
+      "start": 57.853,
+      "end": 58.085
+    },
+    {
+      "word": "box",
+      "start": 58.154,
+      "end": 58.503
+    },
+    {
+      "word": "\u2014",
+      "start": 58.619,
+      "end": 58.665
+    },
+    {
+      "word": "you",
+      "start": 58.712,
+      "end": 58.816
+    },
+    {
+      "word": "invoke",
+      "start": 58.886,
+      "end": 59.281
+    },
+    {
+      "word": "it",
+      "start": 59.327,
+      "end": 59.42
+    },
+    {
+      "word": "and",
+      "start": 59.478,
+      "end": 59.582
+    },
+    {
+      "word": "hope",
+      "start": 59.652,
+      "end": 59.849
+    },
+    {
+      "word": "it",
+      "start": 59.884,
+      "end": 59.954
+    },
+    {
+      "word": "does",
+      "start": 60.0,
+      "end": 60.175
+    },
+    {
+      "word": "what",
+      "start": 60.221,
+      "end": 60.349
+    },
+    {
+      "word": "you",
+      "start": 60.384,
+      "end": 60.465
+    },
+    {
+      "word": "expect.",
+      "start": 60.535,
+      "end": 61.162
+    },
+    {
+      "word": "When",
+      "start": 61.603,
+      "end": 61.777
+    },
+    {
+      "word": "the",
+      "start": 61.812,
+      "end": 61.881
+    },
+    {
+      "word": "workflow",
+      "start": 61.916,
+      "end": 62.334
+    },
+    {
+      "word": "changes,",
+      "start": 62.404,
+      "end": 63.101
+    },
+    {
+      "word": "you",
+      "start": 63.379,
+      "end": 63.553
+    },
+    {
+      "word": "update",
+      "start": 63.704,
+      "end": 64.227
+    },
+    {
+      "word": "the",
+      "start": 64.262,
+      "end": 64.331
+    },
+    {
+      "word": "markdown",
+      "start": 64.378,
+      "end": 64.958
+    },
+    {
+      "word": "file,",
+      "start": 65.074,
+      "end": 65.666
+    },
+    {
+      "word": "and",
+      "start": 65.875,
+      "end": 66.026
+    },
+    {
+      "word": "every",
+      "start": 66.096,
+      "end": 66.34
+    },
+    {
+      "word": "prompt",
+      "start": 66.433,
+      "end": 66.874
+    },
+    {
+      "word": "that",
+      "start": 66.92,
+      "end": 67.071
+    },
+    {
+      "word": "references",
+      "start": 67.141,
+      "end": 67.791
+    },
+    {
+      "word": "it",
+      "start": 67.872,
+      "end": 68.046
+    },
+    {
+      "word": "picks",
+      "start": 68.371,
+      "end": 68.697
+    },
+    {
+      "word": "up",
+      "start": 68.755,
+      "end": 68.871
+    },
+    {
+      "word": "the",
+      "start": 68.929,
+      "end": 68.998
+    },
+    {
+      "word": "change",
+      "start": 69.045,
+      "end": 69.625
+    },
+    {
+      "word": "automatically.",
+      "start": 69.66,
+      "end": 70.705
+    },
+    {
+      "word": "There's",
+      "start": 70.984,
+      "end": 71.216
+    },
+    {
+      "word": "no",
+      "start": 71.262,
+      "end": 71.355
+    },
+    {
+      "word": "deployment",
+      "start": 71.425,
+      "end": 72.005
+    },
+    {
+      "word": "step,",
+      "start": 72.063,
+      "end": 72.586
+    },
+    {
+      "word": "no",
+      "start": 72.76,
+      "end": 72.899
+    },
+    {
+      "word": "version",
+      "start": 72.992,
+      "end": 73.387
+    },
+    {
+      "word": "mismatch,",
+      "start": 73.468,
+      "end": 74.211
+    },
+    {
+      "word": "no",
+      "start": 74.455,
+      "end": 74.594
+    },
+    {
+      "word": "\"which",
+      "start": 74.652,
+      "end": 74.919
+    },
+    {
+      "word": "version",
+      "start": 75.001,
+      "end": 75.419
+    },
+    {
+      "word": "of",
+      "start": 75.477,
+      "end": 75.535
+    },
+    {
+      "word": "the",
+      "start": 75.593,
+      "end": 75.663
+    },
+    {
+      "word": "skill",
+      "start": 75.709,
+      "end": 75.976
+    },
+    {
+      "word": "is",
+      "start": 76.034,
+      "end": 76.115
+    },
+    {
+      "word": "installed?\"\n\nIf",
+      "start": 76.185,
+      "end": 77.392
+    },
+    {
+      "word": "your",
+      "start": 77.45,
+      "end": 77.601
+    },
+    {
+      "word": "tool",
+      "start": 77.671,
+      "end": 77.996
+    },
+    {
+      "word": "supports",
+      "start": 78.089,
+      "end": 78.623
+    },
+    {
+      "word": "custom",
+      "start": 78.692,
+      "end": 79.087
+    },
+    {
+      "word": "commands",
+      "start": 79.157,
+      "end": 79.714
+    },
+    {
+      "word": "and",
+      "start": 79.993,
+      "end": 80.213
+    },
+    {
+      "word": "you",
+      "start": 80.271,
+      "end": 80.341
+    },
+    {
+      "word": "want",
+      "start": 80.387,
+      "end": 80.55
+    },
+    {
+      "word": "faster",
+      "start": 80.608,
+      "end": 81.003
+    },
+    {
+      "word": "access,",
+      "start": 81.061,
+      "end": 81.827
+    },
+    {
+      "word": "you",
+      "start": 82.106,
+      "end": 82.199
+    },
+    {
+      "word": "can",
+      "start": 82.245,
+      "end": 82.35
+    },
+    {
+      "word": "wrap",
+      "start": 82.384,
+      "end": 82.559
+    },
+    {
+      "word": "the",
+      "start": 82.617,
+      "end": 82.686
+    },
+    {
+      "word": "prompts.",
+      "start": 82.721,
+      "end": 83.278
+    },
+    {
+      "word": "Claude",
+      "start": 83.603,
+      "end": 83.952
+    },
+    {
+      "word": "Code",
+      "start": 83.987,
+      "end": 84.288
+    },
+    {
+      "word": "has",
+      "start": 84.323,
+      "end": 84.451
+    },
+    {
+      "word": "slash",
+      "start": 84.509,
+      "end": 84.822
+    },
+    {
+      "word": "commands",
+      "start": 84.881,
+      "end": 85.322
+    },
+    {
+      "word": "and",
+      "start": 85.368,
+      "end": 85.461
+    },
+    {
+      "word": "skills.",
+      "start": 85.519,
+      "end": 86.158
+    },
+    {
+      "word": "Cursor",
+      "start": 86.483,
+      "end": 86.982
+    },
+    {
+      "word": "has",
+      "start": 87.04,
+      "end": 87.179
+    },
+    {
+      "word": "commands",
+      "start": 87.237,
+      "end": 87.644
+    },
+    {
+      "word": "and",
+      "start": 87.69,
+      "end": 87.771
+    },
+    {
+      "word": "rules.",
+      "start": 87.829,
+      "end": 88.189
+    },
+    {
+      "word": "Codex",
+      "start": 88.236,
+      "end": 88.735
+    },
+    {
+      "word": "has",
+      "start": 88.793,
+      "end": 88.921
+    },
+    {
+      "word": "exec.",
+      "start": 88.979,
+      "end": 89.641
+    },
+    {
+      "word": "But",
+      "start": 90.082,
+      "end": 90.244
+    },
+    {
+      "word": "the",
+      "start": 90.279,
+      "end": 90.349
+    },
+    {
+      "word": "prompt",
+      "start": 90.395,
+      "end": 90.825
+    },
+    {
+      "word": "is",
+      "start": 91.103,
+      "end": 91.278
+    },
+    {
+      "word": "the",
+      "start": 91.347,
+      "end": 91.417
+    },
+    {
+      "word": "source",
+      "start": 91.475,
+      "end": 91.8
+    },
+    {
+      "word": "of",
+      "start": 91.835,
+      "end": 91.893
+    },
+    {
+      "word": "truth.",
+      "start": 91.951,
+      "end": 92.508
+    },
+    {
+      "word": "The",
+      "start": 92.949,
+      "end": 93.066
+    },
+    {
+      "word": "wrapper",
+      "start": 93.112,
+      "end": 93.518
+    },
+    {
+      "word": "is",
+      "start": 93.96,
+      "end": 94.122
+    },
+    {
+      "word": "just",
+      "start": 94.18,
+      "end": 94.412
+    },
+    {
+      "word": "a",
+      "start": 94.459,
+      "end": 94.482
+    },
+    {
+      "word": "convenience",
+      "start": 94.54,
+      "end": 95.155
+    },
+    {
+      "word": "layer.",
+      "start": 95.202,
+      "end": 95.713
+    }
+  ],
+  "duration": 95.713
+}

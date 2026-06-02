@@ -1,0 +1,1160 @@
+{
+  "words": [
+    {
+      "word": "There",
+      "start": 0.0,
+      "end": 0.197
+    },
+    {
+      "word": "are",
+      "start": 0.221,
+      "end": 0.302
+    },
+    {
+      "word": "two",
+      "start": 0.325,
+      "end": 0.476
+    },
+    {
+      "word": "diagrams",
+      "start": 0.546,
+      "end": 1.196
+    },
+    {
+      "word": "in",
+      "start": 1.242,
+      "end": 1.312
+    },
+    {
+      "word": "the",
+      "start": 1.347,
+      "end": 1.416
+    },
+    {
+      "word": "README",
+      "start": 1.474,
+      "end": 1.95
+    },
+    {
+      "word": "that",
+      "start": 2.032,
+      "end": 2.206
+    },
+    {
+      "word": "show",
+      "start": 2.252,
+      "end": 2.461
+    },
+    {
+      "word": "the",
+      "start": 2.519,
+      "end": 2.589
+    },
+    {
+      "word": "lifecycle.\n\nThe",
+      "start": 2.647,
+      "end": 4.226
+    },
+    {
+      "word": "first",
+      "start": 4.307,
+      "end": 4.795
+    },
+    {
+      "word": "is",
+      "start": 4.911,
+      "end": 5.074
+    },
+    {
+      "word": "a",
+      "start": 5.12,
+      "end": 5.155
+    },
+    {
+      "word": "hub-and-spoke",
+      "start": 5.236,
+      "end": 6.304
+    },
+    {
+      "word": "diagram.",
+      "start": 6.351,
+      "end": 7.117
+    },
+    {
+      "word": "It",
+      "start": 7.558,
+      "end": 7.674
+    },
+    {
+      "word": "has",
+      "start": 7.721,
+      "end": 7.825
+    },
+    {
+      "word": "a",
+      "start": 7.86,
+      "end": 7.883
+    },
+    {
+      "word": "dark",
+      "start": 7.941,
+      "end": 8.197
+    },
+    {
+      "word": "background",
+      "start": 8.266,
+      "end": 8.789
+    },
+    {
+      "word": "with",
+      "start": 8.847,
+      "end": 8.998
+    },
+    {
+      "word": "two",
+      "start": 9.044,
+      "end": 9.311
+    },
+    {
+      "word": "dashed-border",
+      "start": 9.427,
+      "end": 10.031
+    },
+    {
+      "word": "boxes",
+      "start": 10.077,
+      "end": 10.484
+    },
+    {
+      "word": "side",
+      "start": 10.53,
+      "end": 10.797
+    },
+    {
+      "word": "by",
+      "start": 10.832,
+      "end": 10.96
+    },
+    {
+      "word": "side.",
+      "start": 11.041,
+      "end": 11.54
+    },
+    {
+      "word": "The",
+      "start": 11.923,
+      "end": 12.028
+    },
+    {
+      "word": "left",
+      "start": 12.086,
+      "end": 12.26
+    },
+    {
+      "word": "box",
+      "start": 12.307,
+      "end": 12.562
+    },
+    {
+      "word": "is",
+      "start": 12.62,
+      "end": 12.701
+    },
+    {
+      "word": "Plan,",
+      "start": 12.783,
+      "end": 13.41
+    },
+    {
+      "word": "the",
+      "start": 13.653,
+      "end": 13.746
+    },
+    {
+      "word": "right",
+      "start": 13.816,
+      "end": 14.013
+    },
+    {
+      "word": "box",
+      "start": 14.06,
+      "end": 14.338
+    },
+    {
+      "word": "is",
+      "start": 14.396,
+      "end": 14.478
+    },
+    {
+      "word": "Implementation.",
+      "start": 14.536,
+      "end": 15.685
+    },
+    {
+      "word": "In",
+      "start": 16.196,
+      "end": 16.335
+    },
+    {
+      "word": "each",
+      "start": 16.381,
+      "end": 16.544
+    },
+    {
+      "word": "box,",
+      "start": 16.602,
+      "end": 16.985
+    },
+    {
+      "word": "Model",
+      "start": 17.055,
+      "end": 17.334
+    },
+    {
+      "word": "A",
+      "start": 17.426,
+      "end": 17.461
+    },
+    {
+      "word": "sits",
+      "start": 17.577,
+      "end": 17.844
+    },
+    {
+      "word": "at",
+      "start": 17.879,
+      "end": 17.96
+    },
+    {
+      "word": "the",
+      "start": 17.995,
+      "end": 18.065
+    },
+    {
+      "word": "centre,",
+      "start": 18.111,
+      "end": 18.715
+    },
+    {
+      "word": "with",
+      "start": 19.226,
+      "end": 19.388
+    },
+    {
+      "word": "arrows",
+      "start": 19.458,
+      "end": 19.83
+    },
+    {
+      "word": "connecting",
+      "start": 19.888,
+      "end": 20.271
+    },
+    {
+      "word": "it",
+      "start": 20.317,
+      "end": 20.375
+    },
+    {
+      "word": "to",
+      "start": 20.41,
+      "end": 20.457
+    },
+    {
+      "word": "the",
+      "start": 20.515,
+      "end": 20.584
+    },
+    {
+      "word": "surrounding",
+      "start": 20.619,
+      "end": 21.06
+    },
+    {
+      "word": "resources.",
+      "start": 21.107,
+      "end": 21.873
+    },
+    {
+      "word": "In",
+      "start": 22.477,
+      "end": 22.604
+    },
+    {
+      "word": "the",
+      "start": 22.651,
+      "end": 22.721
+    },
+    {
+      "word": "Plan",
+      "start": 22.755,
+      "end": 23.057
+    },
+    {
+      "word": "phase,",
+      "start": 23.138,
+      "end": 23.661
+    },
+    {
+      "word": "Model",
+      "start": 23.777,
+      "end": 24.044
+    },
+    {
+      "word": "A",
+      "start": 24.125,
+      "end": 24.16
+    },
+    {
+      "word": "connects",
+      "start": 24.241,
+      "end": 24.567
+    },
+    {
+      "word": "to",
+      "start": 24.601,
+      "end": 24.659
+    },
+    {
+      "word": "the",
+      "start": 24.717,
+      "end": 24.787
+    },
+    {
+      "word": "Human,",
+      "start": 24.834,
+      "end": 25.46
+    },
+    {
+      "word": "Model",
+      "start": 26.064,
+      "end": 26.354
+    },
+    {
+      "word": "B,",
+      "start": 26.424,
+      "end": 26.923
+    },
+    {
+      "word": "Progressive",
+      "start": 27.306,
+      "end": 27.841
+    },
+    {
+      "word": "Disclosure",
+      "start": 27.875,
+      "end": 28.386
+    },
+    {
+      "word": "docs,",
+      "start": 28.409,
+      "end": 28.955
+    },
+    {
+      "word": "and",
+      "start": 29.338,
+      "end": 29.512
+    },
+    {
+      "word": "Code.",
+      "start": 29.628,
+      "end": 30.139
+    },
+    {
+      "word": "In",
+      "start": 31.091,
+      "end": 31.219
+    },
+    {
+      "word": "the",
+      "start": 31.254,
+      "end": 31.324
+    },
+    {
+      "word": "Implementation",
+      "start": 31.37,
+      "end": 32.113
+    },
+    {
+      "word": "phase,",
+      "start": 32.171,
+      "end": 32.67
+    },
+    {
+      "word": "Model",
+      "start": 32.995,
+      "end": 33.274
+    },
+    {
+      "word": "A",
+      "start": 33.355,
+      "end": 33.401
+    },
+    {
+      "word": "connects",
+      "start": 33.483,
+      "end": 33.819
+    },
+    {
+      "word": "to",
+      "start": 33.866,
+      "end": 33.924
+    },
+    {
+      "word": "the",
+      "start": 33.982,
+      "end": 34.052
+    },
+    {
+      "word": "Spec,",
+      "start": 34.086,
+      "end": 34.655
+    },
+    {
+      "word": "Code,",
+      "start": 34.934,
+      "end": 35.514
+    },
+    {
+      "word": "Progressive",
+      "start": 35.758,
+      "end": 36.211
+    },
+    {
+      "word": "Disclosure",
+      "start": 36.234,
+      "end": 36.873
+    },
+    {
+      "word": "docs,",
+      "start": 37.024,
+      "end": 37.755
+    },
+    {
+      "word": "Tools,",
+      "start": 38.08,
+      "end": 38.521
+    },
+    {
+      "word": "Model",
+      "start": 38.556,
+      "end": 38.754
+    },
+    {
+      "word": "B,",
+      "start": 38.812,
+      "end": 39.102
+    },
+    {
+      "word": "and",
+      "start": 39.183,
+      "end": 39.346
+    },
+    {
+      "word": "the",
+      "start": 39.392,
+      "end": 39.462
+    },
+    {
+      "word": "Human",
+      "start": 39.497,
+      "end": 39.845
+    },
+    {
+      "word": "\u2014",
+      "start": 40.054,
+      "end": 40.275
+    },
+    {
+      "word": "but",
+      "start": 40.6,
+      "end": 40.751
+    },
+    {
+      "word": "the",
+      "start": 40.774,
+      "end": 40.843
+    },
+    {
+      "word": "Human",
+      "start": 40.89,
+      "end": 41.215
+    },
+    {
+      "word": "is",
+      "start": 41.273,
+      "end": 41.354
+    },
+    {
+      "word": "labelled",
+      "start": 41.424,
+      "end": 41.877
+    },
+    {
+      "word": "\"on",
+      "start": 42.051,
+      "end": 42.422
+    },
+    {
+      "word": "demand\"",
+      "start": 42.504,
+      "end": 43.2
+    },
+    {
+      "word": "because",
+      "start": 43.351,
+      "end": 43.676
+    },
+    {
+      "word": "they're",
+      "start": 43.699,
+      "end": 43.897
+    },
+    {
+      "word": "not",
+      "start": 43.943,
+      "end": 44.083
+    },
+    {
+      "word": "in",
+      "start": 44.152,
+      "end": 44.268
+    },
+    {
+      "word": "the",
+      "start": 44.338,
+      "end": 44.408
+    },
+    {
+      "word": "inner",
+      "start": 44.454,
+      "end": 44.617
+    },
+    {
+      "word": "loop.\n\nBetween",
+      "start": 44.652,
+      "end": 45.905
+    },
+    {
+      "word": "the",
+      "start": 45.929,
+      "end": 45.998
+    },
+    {
+      "word": "two",
+      "start": 46.033,
+      "end": 46.196
+    },
+    {
+      "word": "phases,",
+      "start": 46.265,
+      "end": 47.043
+    },
+    {
+      "word": "an",
+      "start": 47.194,
+      "end": 47.333
+    },
+    {
+      "word": "arrow",
+      "start": 47.415,
+      "end": 47.74
+    },
+    {
+      "word": "labelled",
+      "start": 47.821,
+      "end": 48.262
+    },
+    {
+      "word": "\"Spec\"",
+      "start": 48.436,
+      "end": 49.342
+    },
+    {
+      "word": "connects",
+      "start": 49.516,
+      "end": 50.12
+    },
+    {
+      "word": "Plan",
+      "start": 50.329,
+      "end": 50.654
+    },
+    {
+      "word": "to",
+      "start": 50.735,
+      "end": 50.817
+    },
+    {
+      "word": "Implementation.",
+      "start": 50.886,
+      "end": 51.896
+    },
+    {
+      "word": "After",
+      "start": 52.407,
+      "end": 52.709
+    },
+    {
+      "word": "Implementation,",
+      "start": 52.756,
+      "end": 53.812
+    },
+    {
+      "word": "an",
+      "start": 54.056,
+      "end": 54.184
+    },
+    {
+      "word": "arrow",
+      "start": 54.276,
+      "end": 54.799
+    },
+    {
+      "word": "labelled",
+      "start": 55.182,
+      "end": 55.763
+    },
+    {
+      "word": "\"Deliverable\"",
+      "start": 55.937,
+      "end": 57.167
+    },
+    {
+      "word": "connects",
+      "start": 57.771,
+      "end": 58.177
+    },
+    {
+      "word": "to",
+      "start": 58.224,
+      "end": 58.294
+    },
+    {
+      "word": "a",
+      "start": 58.363,
+      "end": 58.398
+    },
+    {
+      "word": "Release",
+      "start": 58.456,
+      "end": 58.828
+    },
+    {
+      "word": "box",
+      "start": 58.874,
+      "end": 59.164
+    },
+    {
+      "word": "on",
+      "start": 59.222,
+      "end": 59.292
+    },
+    {
+      "word": "the",
+      "start": 59.327,
+      "end": 59.396
+    },
+    {
+      "word": "far",
+      "start": 59.443,
+      "end": 59.64
+    },
+    {
+      "word": "right,",
+      "start": 59.71,
+      "end": 60.244
+    },
+    {
+      "word": "which",
+      "start": 60.418,
+      "end": 60.65
+    },
+    {
+      "word": "shows",
+      "start": 60.697,
+      "end": 61.161
+    },
+    {
+      "word": "\"continuous",
+      "start": 61.312,
+      "end": 62.044
+    },
+    {
+      "word": "integration",
+      "start": 62.09,
+      "end": 62.752
+    },
+    {
+      "word": "gate",
+      "start": 62.833,
+      "end": 63.123
+    },
+    {
+      "word": "plus",
+      "start": 63.17,
+      "end": 63.448
+    },
+    {
+      "word": "human.\"\n\nThe",
+      "start": 63.506,
+      "end": 64.9
+    },
+    {
+      "word": "second",
+      "start": 64.969,
+      "end": 65.329
+    },
+    {
+      "word": "diagram",
+      "start": 65.387,
+      "end": 65.875
+    },
+    {
+      "word": "is",
+      "start": 65.933,
+      "end": 66.003
+    },
+    {
+      "word": "a",
+      "start": 66.049,
+      "end": 66.084
+    },
+    {
+      "word": "sequence",
+      "start": 66.165,
+      "end": 66.688
+    },
+    {
+      "word": "diagram",
+      "start": 66.734,
+      "end": 67.349
+    },
+    {
+      "word": "showing",
+      "start": 67.431,
+      "end": 67.721
+    },
+    {
+      "word": "the",
+      "start": 67.767,
+      "end": 67.836
+    },
+    {
+      "word": "same",
+      "start": 67.871,
+      "end": 68.127
+    },
+    {
+      "word": "flow",
+      "start": 68.196,
+      "end": 68.498
+    },
+    {
+      "word": "as",
+      "start": 68.556,
+      "end": 68.638
+    },
+    {
+      "word": "interactions",
+      "start": 68.696,
+      "end": 69.357
+    },
+    {
+      "word": "over",
+      "start": 69.415,
+      "end": 69.613
+    },
+    {
+      "word": "time.",
+      "start": 69.671,
+      "end": 70.135
+    },
+    {
+      "word": "You",
+      "start": 70.414,
+      "end": 70.518
+    },
+    {
+      "word": "can",
+      "start": 70.553,
+      "end": 70.634
+    },
+    {
+      "word": "see",
+      "start": 70.669,
+      "end": 70.774
+    },
+    {
+      "word": "the",
+      "start": 70.797,
+      "end": 70.867
+    },
+    {
+      "word": "handoffs:",
+      "start": 70.901,
+      "end": 71.505
+    },
+    {
+      "word": "the",
+      "start": 71.83,
+      "end": 71.912
+    },
+    {
+      "word": "human",
+      "start": 71.946,
+      "end": 72.167
+    },
+    {
+      "word": "kicks",
+      "start": 72.213,
+      "end": 72.422
+    },
+    {
+      "word": "off",
+      "start": 72.457,
+      "end": 72.55
+    },
+    {
+      "word": "Plan,",
+      "start": 72.608,
+      "end": 73.049
+    },
+    {
+      "word": "Model",
+      "start": 73.165,
+      "end": 73.421
+    },
+    {
+      "word": "A",
+      "start": 73.49,
+      "end": 73.572
+    },
+    {
+      "word": "drafts",
+      "start": 74.013,
+      "end": 74.361
+    },
+    {
+      "word": "the",
+      "start": 74.396,
+      "end": 74.466
+    },
+    {
+      "word": "spec,",
+      "start": 74.501,
+      "end": 75.023
+    },
+    {
+      "word": "Model",
+      "start": 75.139,
+      "end": 75.383
+    },
+    {
+      "word": "B",
+      "start": 75.441,
+      "end": 75.487
+    },
+    {
+      "word": "cross-verifies,",
+      "start": 75.638,
+      "end": 76.718
+    },
+    {
+      "word": "the",
+      "start": 76.927,
+      "end": 77.02
+    },
+    {
+      "word": "human",
+      "start": 77.066,
+      "end": 77.322
+    },
+    {
+      "word": "approves,",
+      "start": 77.345,
+      "end": 78.065
+    },
+    {
+      "word": "then",
+      "start": 78.216,
+      "end": 78.355
+    },
+    {
+      "word": "Model",
+      "start": 78.413,
+      "end": 78.645
+    },
+    {
+      "word": "A",
+      "start": 78.715,
+      "end": 78.773
+    },
+    {
+      "word": "runs",
+      "start": 78.866,
+      "end": 79.121
+    },
+    {
+      "word": "test-driven",
+      "start": 79.179,
+      "end": 79.679
+    },
+    {
+      "word": "development",
+      "start": 79.737,
+      "end": 80.236
+    },
+    {
+      "word": "with",
+      "start": 80.282,
+      "end": 80.41
+    },
+    {
+      "word": "a",
+      "start": 80.445,
+      "end": 80.468
+    },
+    {
+      "word": "handoff",
+      "start": 80.515,
+      "end": 80.828
+    },
+    {
+      "word": "to",
+      "start": 80.874,
+      "end": 80.921
+    },
+    {
+      "word": "Model",
+      "start": 80.979,
+      "end": 81.2
+    },
+    {
+      "word": "B",
+      "start": 81.258,
+      "end": 81.316
+    },
+    {
+      "word": "for",
+      "start": 81.444,
+      "end": 81.525
+    },
+    {
+      "word": "the",
+      "start": 81.56,
+      "end": 81.629
+    },
+    {
+      "word": "Green",
+      "start": 81.664,
+      "end": 81.908
+    },
+    {
+      "word": "phase,",
+      "start": 81.978,
+      "end": 82.512
+    },
+    {
+      "word": "updates",
+      "start": 82.837,
+      "end": 83.348
+    },
+    {
+      "word": "Progressive",
+      "start": 83.406,
+      "end": 83.917
+    },
+    {
+      "word": "Disclosure",
+      "start": 83.951,
+      "end": 84.59
+    },
+    {
+      "word": "docs,",
+      "start": 84.625,
+      "end": 85.321
+    },
+    {
+      "word": "gets",
+      "start": 85.925,
+      "end": 86.146
+    },
+    {
+      "word": "them",
+      "start": 86.181,
+      "end": 86.297
+    },
+    {
+      "word": "cross-verified,",
+      "start": 86.366,
+      "end": 87.887
+    },
+    {
+      "word": "and",
+      "start": 88.328,
+      "end": 88.479
+    },
+    {
+      "word": "pushes",
+      "start": 88.537,
+      "end": 88.874
+    },
+    {
+      "word": "the",
+      "start": 88.932,
+      "end": 89.002
+    },
+    {
+      "word": "deliverable",
+      "start": 89.06,
+      "end": 89.768
+    },
+    {
+      "word": "to",
+      "start": 89.884,
+      "end": 90.058
+    },
+    {
+      "word": "Release.\n\nBoth",
+      "start": 90.151,
+      "end": 91.533
+    },
+    {
+      "word": "diagrams",
+      "start": 91.591,
+      "end": 92.125
+    },
+    {
+      "word": "tell",
+      "start": 92.171,
+      "end": 92.357
+    },
+    {
+      "word": "the",
+      "start": 92.404,
+      "end": 92.473
+    },
+    {
+      "word": "same",
+      "start": 92.52,
+      "end": 92.775
+    },
+    {
+      "word": "story.",
+      "start": 92.821,
+      "end": 93.518
+    },
+    {
+      "word": "The",
+      "start": 94.029,
+      "end": 94.145
+    },
+    {
+      "word": "hub-and-spoke",
+      "start": 94.191,
+      "end": 94.969
+    },
+    {
+      "word": "shows",
+      "start": 95.016,
+      "end": 95.318
+    },
+    {
+      "word": "the",
+      "start": 95.364,
+      "end": 95.434
+    },
+    {
+      "word": "architecture",
+      "start": 95.503,
+      "end": 96.363
+    },
+    {
+      "word": "\u2014",
+      "start": 96.444,
+      "end": 96.513
+    },
+    {
+      "word": "what",
+      "start": 96.688,
+      "end": 96.908
+    },
+    {
+      "word": "connects",
+      "start": 96.978,
+      "end": 97.396
+    },
+    {
+      "word": "to",
+      "start": 97.454,
+      "end": 97.547
+    },
+    {
+      "word": "what.",
+      "start": 97.628,
+      "end": 98.162
+    },
+    {
+      "word": "The",
+      "start": 98.859,
+      "end": 98.975
+    },
+    {
+      "word": "sequence",
+      "start": 99.033,
+      "end": 99.509
+    },
+    {
+      "word": "diagram",
+      "start": 99.544,
+      "end": 100.067
+    },
+    {
+      "word": "shows",
+      "start": 100.125,
+      "end": 100.38
+    },
+    {
+      "word": "the",
+      "start": 100.426,
+      "end": 100.496
+    },
+    {
+      "word": "choreography",
+      "start": 100.554,
+      "end": 101.158
+    },
+    {
+      "word": "\u2014",
+      "start": 101.17,
+      "end": 102.18
+    },
+    {
+      "word": "what",
+      "start": 103.224,
+      "end": 104.676
+    },
+    {
+      "word": "happens",
+      "start": 105.326,
+      "end": 108.484
+    },
+    {
+      "word": "in",
+      "start": 109.529,
+      "end": 112.385
+    },
+    {
+      "word": "what",
+      "start": 113.43,
+      "end": 116.669
+    },
+    {
+      "word": "order.",
+      "start": 117.702,
+      "end": 122.648
+    }
+  ],
+  "duration": 122.648
+}
