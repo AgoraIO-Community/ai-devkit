@@ -11,6 +11,7 @@
 | change recipe inheritance rules | `docs/standard/recipe-profile.md` | recipe fixtures, standard references, README |
 | change docs workflow behavior | `docs/workflows/progressive-disclosure-docs.md` | README prompts |
 | change repo self-description | `docs/ai/` | `AGENTS.md`, `last_reviewed` |
+| change a prompt | `prompts/X.md` | `README.md` `<details>` block for the same prompt |
 
 ## Update Shared Policy
 
@@ -49,6 +50,13 @@ This L1 file describes how ai-devkit uses and maintains it.
 2. Update `docs/ai/L0_repo_card.md` `Last Reviewed`.
 3. Verify related deep-dive links still make sense.
 4. Run validation.
+
+## Update a Prompt
+
+1. Edit `prompts/X.md` with the new prompt text.
+2. Copy the same text into the corresponding `<details>` block in `README.md`.
+3. Verify the `Run:` command and `> Standalone file:` reference are correct.
+4. Commit both files together.
 
 ## Review Loop
 

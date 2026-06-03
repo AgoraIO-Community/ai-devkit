@@ -11,10 +11,13 @@
 ├── README.md
 ├── docs/
 │   ├── ai/
+│   ├── img/
 │   ├── standard/
 │   │   ├── progressive-disclosure-standard.md
 │   │   ├── agent-policy.md
-│   │   └── recipe-profile.md
+│   │   ├── recipe-profile.md
+│   │   ├── spec-profile.md
+│   │   └── system-profile.md
 │   ├── workflows/
 │   │   └── progressive-disclosure-docs.md
 │   └── guides/
@@ -23,6 +26,8 @@
 │   ├── minimal-repo/
 │   ├── recipe-base/
 │   └── recipe-vertical/
+├── presentation/
+├── prompts/
 └── scripts/
     └── validate-ai-devkit
 ```
@@ -35,11 +40,16 @@
 | `README.md` | public product positioning and quick-start usage |
 | `docs/standard/progressive-disclosure-standard.md` | normative spec for the docs model |
 | `docs/standard/recipe-profile.md` | first-class extension profile for reusable starter repos |
+| `docs/standard/spec-profile.md` | spec template, TDD workflow, and nine spec principles |
+| `docs/standard/system-profile.md` | system-level dev environment profile |
 | `docs/standard/agent-policy.md` | canonical shared policy |
 | `docs/workflows/progressive-disclosure-docs.md` | canonical docs procedures |
 | `docs/ai/` | self-hosted PD docs for this repo |
 | `scripts/validate-ai-devkit` | repo validation and compliance checks |
+| `prompts/` | standalone pipeable prompt files (`cat prompts/X.md \| claude`) |
+| `docs/img/` | diagrams (AI SDLC flow SVG) |
 | `examples/` | structural fixtures for adopters |
+| `presentation/` | presentation video pipeline (audio, timing, subtitles) |
 
 ## Core Workflows
 
@@ -56,6 +66,7 @@
 | change recipe inheritance rules | `docs/standard/recipe-profile.md` |
 | change prompt/workflow guidance | `docs/workflows/progressive-disclosure-docs.md` |
 | change public positioning | `README.md` |
+| change a prompt | `prompts/X.md`, then mirror in `README.md` `<details>` block |
 | change self-hosted repo docs | `docs/ai/` |
 | change validation checks | `scripts/validate-ai-devkit` |
 

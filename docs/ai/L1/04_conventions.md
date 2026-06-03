@@ -7,8 +7,10 @@
 1. `docs/standard/agent-policy.md`
 2. `docs/standard/progressive-disclosure-standard.md`
 3. `docs/standard/recipe-profile.md` when recipe inheritance is involved
-4. canonical docs under `docs/workflows/`
-5. repo entry point in `AGENTS.md`
+4. `docs/standard/spec-profile.md` when spec/TDD workflow is involved
+5. `docs/standard/system-profile.md` when system dev environment is involved
+6. canonical docs under `docs/workflows/`
+7. repo entry point in `AGENTS.md`
 
 ## Policy Rules
 
@@ -28,6 +30,12 @@
 - Keep canonical product procedures under `docs/workflows/`.
 - Keep self-hosted repo knowledge under `docs/ai/`.
 - Keep root `AGENTS.md` focused on loading instructions and durable conventions.
+
+## Prompt Dual-Presence Rule
+
+- Each prompt exists in two places: `prompts/X.md` (standalone, pipeable) and `README.md` (embedded in `<details>` blocks).
+- `prompts/X.md` is the source of truth for running; `README.md` is for reading.
+- When updating a prompt, change both places in the same commit.
 
 ## Canonical References
 

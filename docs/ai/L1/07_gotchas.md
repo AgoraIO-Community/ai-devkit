@@ -10,6 +10,7 @@
 
 - Shared policy copied into multiple files
 - README prompts referencing old workflow paths
+- `prompts/*.md` drifting from the matching `README.md` `<details>` block
 - Root `AGENTS.md` promising behavior not backed by `docs/ai/`
 - Standard template text that breaks when copied into another repo
 

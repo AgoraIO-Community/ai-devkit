@@ -15,7 +15,10 @@
 | `docs/workflows/progressive-disclosure-docs.md` | agents following ai-devkit procedures | canonical docs generation, update, test, fix, and review workflows |
 | `docs/standard/agent-policy.md` | maintainers | canonical shared policy text |
 | `docs/standard/recipe-profile.md` | maintainers and adopters | recipe inheritance rules for base and vertical repos |
+| `docs/standard/spec-profile.md` | adopters and maintainers | spec template, TDD workflow, and nine spec principles |
+| `docs/standard/system-profile.md` | adopters and maintainers | system dev environment profile |
 | `docs/standard/progressive-disclosure-standard.md` | adopters and maintainers | normative spec |
+| `prompts/*.md` | users running prompts via CLI | standalone pipeable prompt files |
 
 ## Repo-Local Loading Contract
 

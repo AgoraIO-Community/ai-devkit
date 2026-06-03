@@ -10,6 +10,7 @@
 | Self-hosted PD docs | describes this repo using the same standard it ships | `docs/ai/` |
 | Shared policy | central policy text for conventions and command semantics | `docs/standard/agent-policy.md` |
 | Canonical workflows | actionable procedures for docs work | `docs/workflows/progressive-disclosure-docs.md` |
+| Standalone prompts | pipeable prompt files for CLI usage | `prompts/` |
 | Product/reference docs | standard spec and higher-level guides | `docs/standard/` |
 
 ## Delivery Model
