@@ -7,389 +7,274 @@
     },
     {
       "word": "how",
-      "start": 0.299,
-      "end": 0.479
+      "start": 0.259,
+      "end": 0.319
     },
     {
       "word": "to",
-      "start": 0.506,
-      "end": 0.56
+      "start": 0.372,
+      "end": 0.478
     },
     {
       "word": "start.",
-      "start": 0.64,
-      "end": 1.12
+      "start": 0.558,
+      "end": 1.038
     },
     {
       "word": "Pick",
-      "start": 2.999,
-      "end": 3.043
+      "start": 2.917,
+      "end": 2.961
     },
     {
       "word": "one",
-      "start": 3.123,
-      "end": 3.363
+      "start": 3.021,
+      "end": 3.201
     },
     {
-      "word": "repo",
-      "start": 3.459,
-      "end": 3.843
+      "word": "repo.",
+      "start": 3.313,
+      "end": 3.841
     },
     {
-      "word": "and",
-      "start": 3.963,
-      "end": 4.323
+      "word": "Curl",
+      "start": 5.935,
+      "end": 5.999
     },
     {
-      "word": "generate",
-      "start": 4.367,
-      "end": 4.719
+      "word": "create-docs,",
+      "start": 6.09,
+      "end": 7.276
     },
     {
-      "word": "Progressive",
-      "start": 4.759,
-      "end": 5.199
-    },
-    {
-      "word": "Disclosure",
-      "start": 5.243,
-      "end": 5.683
-    },
-    {
-      "word": "docs",
-      "start": 5.747,
-      "end": 6.003
-    },
-    {
-      "word": "for",
-      "start": 6.063,
-      "end": 6.243
-    },
-    {
-      "word": "it.",
-      "start": 6.323,
-      "end": 6.563
-    },
-    {
-      "word": "[short",
-      "start": 7.323,
-      "end": 8.143
-    },
-    {
-      "word": "pause]",
-      "start": 8.153,
-      "end": 8.263
-    },
-    {
-      "word": "Any",
-      "start": 8.278,
-      "end": 8.323
-    },
-    {
-      "word": "agent",
-      "start": 8.376,
-      "end": 8.641
-    },
-    {
-      "word": "can",
-      "start": 8.681,
-      "end": 8.801
-    },
-    {
-      "word": "then",
-      "start": 8.833,
-      "end": 8.961
-    },
-    {
-      "word": "pick",
-      "start": 9.009,
-      "end": 9.201
-    },
-    {
-      "word": "up",
-      "start": 9.281,
-      "end": 9.441
-    },
-    {
-      "word": "that",
-      "start": 9.473,
-      "end": 9.601
-    },
-    {
-      "word": "repo",
-      "start": 9.681,
-      "end": 10.001
-    },
-    {
-      "word": "and",
-      "start": 10.101,
-      "end": 10.401
-    },
-    {
-      "word": "work",
-      "start": 10.449,
-      "end": 10.641
-    },
-    {
-      "word": "safely.",
-      "start": 10.71,
-      "end": 11.204
-    },
-    {
-      "word": "Next,",
-      "start": 13.197,
-      "end": 13.841
-    },
-    {
-      "word": "stand",
-      "start": 13.894,
-      "end": 14.159
-    },
-    {
-      "word": "up",
-      "start": 14.239,
-      "end": 14.399
-    },
-    {
-      "word": "one",
-      "start": 14.499,
-      "end": 14.799
-    },
-    {
-      "word": "dev",
-      "start": 14.879,
-      "end": 15.119
-    },
-    {
-      "word": "environment",
-      "start": 15.172,
-      "end": 15.755
-    },
-    {
-      "word": "for",
-      "start": 15.815,
-      "end": 15.995
-    },
-    {
-      "word": "a",
-      "start": 16.035,
-      "end": 16.075
-    },
-    {
-      "word": "multi-repo",
-      "start": 16.128,
-      "end": 16.793
-    },
-    {
-      "word": "system.",
-      "start": 16.862,
-      "end": 17.356
-    },
-    {
-      "word": "[short",
-      "start": 17.916,
-      "end": 18.496
-    },
-    {
-      "word": "pause]",
-      "start": 18.499,
-      "end": 18.534
-    },
-    {
-      "word": "The",
-      "start": 18.539,
-      "end": 18.554
-    },
-    {
-      "word": "AI",
-      "start": 18.714,
-      "end": 19.034
-    },
-    {
-      "word": "can",
-      "start": 19.074,
-      "end": 19.194
-    },
-    {
-      "word": "run",
-      "start": 19.254,
-      "end": 19.434
-    },
-    {
-      "word": "it",
-      "start": 19.487,
-      "end": 19.593
-    },
-    {
-      "word": "end",
-      "start": 19.673,
-      "end": 19.913
+      "word": "pipe",
+      "start": 7.42,
+      "end": 7.996
     },
     {
       "word": "to",
-      "start": 19.993,
-      "end": 20.153
+      "start": 8.049,
+      "end": 8.155
     },
     {
-      "word": "end",
-      "start": 20.213,
-      "end": 20.393
-    },
-    {
-      "word": "from",
-      "start": 20.441,
-      "end": 20.633
-    },
-    {
-      "word": "day",
-      "start": 20.693,
-      "end": 20.873
-    },
-    {
-      "word": "one.",
-      "start": 20.953,
-      "end": 21.273
-    },
-    {
-      "word": "The",
-      "start": 22.852,
-      "end": 22.873
-    },
-    {
-      "word": "docs",
-      "start": 22.953,
-      "end": 23.273
-    },
-    {
-      "word": "and",
-      "start": 23.293,
-      "end": 23.353
-    },
-    {
-      "word": "prompts",
-      "start": 23.413,
-      "end": 23.833
-    },
-    {
-      "word": "are",
-      "start": 23.853,
-      "end": 23.913
-    },
-    {
-      "word": "plain",
-      "start": 23.966,
-      "end": 24.231
-    },
-    {
-      "word": "markdown",
-      "start": 24.293,
-      "end": 24.789
+      "word": "claude",
+      "start": 8.235,
+      "end": 8.715
     },
     {
       "word": "\u2014",
-      "start": 25.029,
-      "end": 25.269
+      "start": 9.155,
+      "end": 9.595
     },
     {
-      "word": "no",
-      "start": 25.322,
-      "end": 25.428
+      "word": "or",
+      "start": 9.622,
+      "end": 9.676
     },
     {
-      "word": "plugins,",
-      "start": 25.498,
-      "end": 26.308
+      "word": "pass",
+      "start": 9.74,
+      "end": 9.996
     },
     {
-      "word": "no",
-      "start": 26.361,
-      "end": 26.467
+      "word": "to",
+      "start": 10.049,
+      "end": 10.155
     },
     {
-      "word": "vendor",
-      "start": 26.513,
-      "end": 26.789
+      "word": "codex.",
+      "start": 10.215,
+      "end": 11.675
     },
     {
-      "word": "lock-in.",
-      "start": 26.837,
-      "end": 27.349
+      "word": "That's",
+      "start": 12.685,
+      "end": 12.797
     },
     {
-      "word": "Start",
-      "start": 29.246,
-      "end": 29.271
+      "word": "it",
+      "start": 12.877,
+      "end": 13.037
     },
     {
-      "word": "with",
-      "start": 29.319,
-      "end": 29.511
+      "word": "\u2014",
+      "start": 13.557,
+      "end": 14.077
     },
     {
-      "word": "one",
-      "start": 29.551,
-      "end": 29.671
+      "word": "any",
+      "start": 14.137,
+      "end": 14.317
     },
     {
-      "word": "repo",
-      "start": 29.783,
-      "end": 30.231
-    },
-    {
-      "word": "and",
-      "start": 30.311,
-      "end": 30.551
-    },
-    {
-      "word": "one",
-      "start": 30.611,
-      "end": 30.791
-    },
-    {
-      "word": "system,",
-      "start": 30.871,
-      "end": 31.831
-    },
-    {
-      "word": "and",
-      "start": 31.871,
-      "end": 31.991
-    },
-    {
-      "word": "you",
-      "start": 32.031,
-      "end": 32.151
+      "word": "agent",
+      "start": 14.41,
+      "end": 14.875
     },
     {
       "word": "can",
-      "start": 32.171,
-      "end": 32.231
+      "start": 14.935,
+      "end": 15.115
     },
     {
-      "word": "use",
-      "start": 32.291,
-      "end": 32.471
+      "word": "then",
+      "start": 15.147,
+      "end": 15.275
     },
     {
-      "word": "this",
-      "start": 32.503,
-      "end": 32.631
+      "word": "pick",
+      "start": 15.323,
+      "end": 15.515
     },
     {
-      "word": "operating",
-      "start": 32.679,
-      "end": 33.111
+      "word": "up",
+      "start": 15.568,
+      "end": 15.674
     },
     {
-      "word": "model",
-      "start": 33.164,
-      "end": 33.429
+      "word": "that",
+      "start": 15.706,
+      "end": 15.834
     },
     {
-      "word": "now.",
-      "start": 33.609,
-      "end": 34.389
+      "word": "repo",
+      "start": 15.93,
+      "end": 16.314
+    },
+    {
+      "word": "and",
+      "start": 16.374,
+      "end": 16.554
+    },
+    {
+      "word": "work",
+      "start": 16.618,
+      "end": 16.874
+    },
+    {
+      "word": "safely.",
+      "start": 16.943,
+      "end": 17.437
+    },
+    {
+      "word": "Chain",
+      "start": 19.347,
+      "end": 19.437
+    },
+    {
+      "word": "verify-codex",
+      "start": 19.517,
+      "end": 20.637
+    },
+    {
+      "word": "or",
+      "start": 20.717,
+      "end": 20.877
+    },
+    {
+      "word": "verify-claude",
+      "start": 20.957,
+      "end": 21.996
+    },
+    {
+      "word": "for",
+      "start": 22.136,
+      "end": 22.556
+    },
+    {
+      "word": "cross-model",
+      "start": 22.609,
+      "end": 23.192
+    },
+    {
+      "word": "review",
+      "start": 23.261,
+      "end": 23.675
+    },
+    {
+      "word": "\u2014",
+      "start": 23.915,
+      "end": 24.155
+    },
+    {
+      "word": "works",
+      "start": 24.195,
+      "end": 24.395
+    },
+    {
+      "word": "in",
+      "start": 24.448,
+      "end": 24.554
+    },
+    {
+      "word": "either",
+      "start": 24.6,
+      "end": 24.876
+    },
+    {
+      "word": "direction.",
+      "start": 24.932,
+      "end": 26.156
+    },
+    {
+      "word": "The",
+      "start": 27.226,
+      "end": 27.316
+    },
+    {
+      "word": "repo,",
+      "start": 27.34,
+      "end": 27.596
+    },
+    {
+      "word": "the",
+      "start": 27.656,
+      "end": 27.836
+    },
+    {
+      "word": "standard,",
+      "start": 27.907,
+      "end": 28.795
+    },
+    {
+      "word": "and",
+      "start": 28.835,
+      "end": 28.955
+    },
+    {
+      "word": "all",
+      "start": 29.035,
+      "end": 29.275
+    },
+    {
+      "word": "the",
+      "start": 29.295,
+      "end": 29.355
+    },
+    {
+      "word": "prompts",
+      "start": 29.415,
+      "end": 29.835
+    },
+    {
+      "word": "are",
+      "start": 29.895,
+      "end": 30.075
+    },
+    {
+      "word": "open",
+      "start": 30.155,
+      "end": 30.475
+    },
+    {
+      "word": "at",
+      "start": 30.608,
+      "end": 30.874
+    },
+    {
+      "word": "github.com/AgoraIO-Community/ai-devkit.",
+      "start": 30.943,
+      "end": 37.521
     }
   ],
-  "duration": 34.389
+  "duration": 37.521
 }

@@ -199,7 +199,7 @@
         <div class="slide-subtitle">An operating model for AI-centric software engineering</div>
         <ul class="slide-bullets">
           <li>AI writes specs, tests, code, and docs &mdash; humans approve the spec and the release</li>
-          <li>Works with your existing stack: git, repos, PRs, CI</li>
+          <li>Works with your existing stack: git, repos, PRs, continuous integration</li>
           <li>Four pillars: <span class="em">spec planning</span>, <span class="em">test-driven implementation</span>, <span class="em">Progressive Disclosure docs</span>, <span class="em">dev environment</span></li>
           <li>Plain markdown &mdash; works with any agent that can read repo files</li>
         </ul>
@@ -278,7 +278,7 @@
         <div class="slide-subtitle">Six markdown files &mdash; curl from GitHub, pipe to any agent</div>
         <ul class="slide-bullets">
           <li>Six prompts: <span class="em">spec</span>, <span class="em">implement</span>, <span class="em">create-docs</span>, <span class="em">update-docs</span>, <span class="em">verify-codex</span>, <span class="em">verify-claude</span></li>
-          <li><span class="em">curl ... | claude</span> &mdash; or &mdash; <span class="em">codex "$(curl ...)"</span> &mdash; works both ways</li>
+          <li style="font-size:15px; line-height:1.5"><span class="em" style="font-family:monospace; font-size:13px">curl -sL &hellip;/prompts/create-docs.md &hellip;/prompts/verify-codex.md | claude</span><br><span class="em" style="font-family:monospace; font-size:13px">codex --full-auto "$(curl -sL &hellip;/prompts/create-docs.md &hellip;/prompts/verify-claude.md)"</span></li>
           <li>Chain work + verify: ~50 min end to end, zero human intervention</li>
           <li><span class="em">Visible text</span> engineers can read and audit &mdash; not hidden skills that may or may not be followed</li>
         </ul>
@@ -291,7 +291,7 @@
         <div class="slide-title">Getting Started</div>
         <div class="slide-subtitle">Pick one repo, run one command</div>
         <ul class="slide-bullets">
-          <li><span class="em">curl .../create-docs.md | claude</span> &mdash; or &mdash; <span class="em">codex "$(curl ...)"</span></li>
+          <li style="font-size:15px; line-height:1.5"><span class="em" style="font-family:monospace; font-size:13px">curl -sL &hellip;/prompts/create-docs.md | claude --dangerously-skip-permissions</span><br><span class="em" style="font-family:monospace; font-size:13px">codex --full-auto "$(curl -sL &hellip;/prompts/create-docs.md)"</span></li>
           <li>Chain <span class="em">verify-codex</span> or <span class="em">verify-claude</span> for cross-model review &mdash; works in either direction</li>
           <li>Repo, standard, and all prompts are open: <span class="em">github.com/AgoraIO-Community/ai-devkit</span></li>
         </ul>
@@ -386,7 +386,7 @@ document.getElementById('diagramSlotImpl').appendChild(makeSVG('575 40 715 500')
 // Slide 1 (title) has no transcript
 const TRANSCRIPTS = {
   1: '',
-  2: `AI DevKit is an operating model for AI-centric software engineering. AI writes specs, tests, code, and docs. Humans approve the spec and approve the release. It works with your existing stack \u2014 git, repos, pull requests, CI \u2014 and reshapes it around AI execution, while keeping the human checkpoints that matter. There are four pillars: spec planning, test-driven implementation, Progressive Disclosure docs, and the AI dev environment.`,
+  2: `AI DevKit is an operating model for AI-centric software engineering. AI writes specs, tests, code, and docs. Humans approve the spec and approve the release. It works with your existing stack \u2014 git, repos, pull requests, continuous integration \u2014 and reshapes it around AI execution, while keeping the human checkpoints that matter. There are four pillars: spec planning, test-driven implementation, Progressive Disclosure docs, and the AI dev environment.`,
   3: `Work comes in as a story, epic, bug, or feature. It flows through three phases: Plan, Implementation, and Release. The Lead AI executes the workflow. The Verify AI independently reviews all Lead AI work \u2014 it's a second AI from a different training lineage. Why two AIs? A single AI is confidently wrong in ways invisible to itself. Asking the same model to review its own output rarely catches the error. Two independent lineages catch different mistakes. The Plan phase produces a spec. The Implementation phase produces working code, tests, and updated docs. That deliverable passes through Release \u2014 continuous integration and delivery pipelines plus human approval.`,
   4: `Plan turns a work item into an approved spec. The Lead AI reads the requirement, the docs, and the code, then drafts a spec with acceptance criteria, edge cases, and approach decisions. The Verify AI reviews the spec independently. If the two AIs disagree on what a criterion means, that's ambiguity \u2014 and it gets surfaced to the human before any code is written. The key discipline here: decide in the spec, not in the code. If you let the AI defer decisions to implementation, it makes them implicitly, often inconsistently, and you only find out when you're reading the code. The phase ends when the human signs off.`,
   5: `Implementation turns the approved spec into working code. The Verify AI authors the failing tests directly from the spec. The Lead AI writes the implementation to make them pass. This is independent test authorship \u2014 the AI that writes the tests is not the AI that writes the code. Without that separation, implementation assumptions get silently baked into the tests. After TDD completes, the Lead AI updates the Progressive Disclosure docs, and the Verify AI checks the updates against the actual code. Then the spec is archived. The docs carry everything forward.`,

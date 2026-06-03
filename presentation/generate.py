@@ -46,7 +46,7 @@ def generate_audio_with_timestamps(text, output_audio, output_timing):
         "voice_settings": {
             "stability": 0.7,
             "similarity_boost": 0.8,
-            "speed": 0.9,
+            "speed": 0.95,
         },
     }).encode()
 
