@@ -1,827 +1,452 @@
 1
-00:00:00,000 --> 00:00:05,631
-AI DevKit is an operating model for AI-centric software engineering.  It
+00:00:00,348 --> 00:00:05,793
+AI DevKit is an operating model for AI-centric software engineering.
 
 2
-00:00:05,700 --> 00:00:10,252
-publishes standards and workflow templates for a model of development where AI
+00:00:06,134 --> 00:00:08,952
+AI writes specs, tests,
 
 3
-00:00:10,310 --> 00:00:15,325
-agents do the bulk of execution work, and humans gate the highest-leverage
+00:00:09,032 --> 00:00:10,313
+code, and docs.
 
 4
-00:00:15,383 --> 00:00:16,219
-decisions.
+00:00:11,535 --> 00:00:14,234
+Humans approve the spec and approve the release.
 
 5
-00:00:16,544 --> 00:00:21,827
-It combines a documentation standard called Progressive Disclosure docs with
+00:00:14,913 --> 00:00:18,149
+It works with your existing stack — git,
 
 6
-00:00:21,861 --> 00:00:25,937
-a multi-model lifecycle that runs from work intake all the way through
+00:00:18,283 --> 00:00:24,786
+repos, pull requests, CI — and reshapes it around AI execution,
 
 7
-00:00:25,995 --> 00:00:27,074
-to release.  The
+00:00:24,801 --> 00:00:27,341
+while keeping the human checkpoints that matter.
 
 8
-00:00:27,144 --> 00:00:29,303
-key word here is AI-centric.
+00:00:29,248 --> 00:00:32,017
+There are four pillars: spec planning,
 
 9
-00:00:29,628 --> 00:00:34,504
-Not AI-assisted, where humans do the engineering and AI helps along the
+00:00:32,104 --> 00:00:37,570
+test-driven implementation, Progressive Disclosure docs, and the AI
 
 10
-00:00:34,551 --> 00:00:34,934
-way.
+00:00:37,670 --> 00:00:38,935
+dev environment.
 
 11
-00:00:35,259 --> 00:00:39,102
-And not AI-native, where you throw out repos and commits and start
+00:00:38,935 --> 00:00:40,850
+Work comes in as a story,
 
 12
-00:00:39,148 --> 00:00:39,961
-from scratch.
+00:00:40,929 --> 00:00:42,609
+epic, bug, or feature.
 
 13
-00:00:40,286 --> 00:00:42,875
-AI-centric sits between these two.
+00:00:43,409 --> 00:00:46,521
+It flows through three phases:
 
 14
-00:00:43,479 --> 00:00:48,727
-It takes the existing software development world — git, repos, pull requests,
+00:00:46,600 --> 00:00:49,396
+Plan, Implementation, and Release.
 
 15
-00:00:48,901 --> 00:00:52,359
-continuous integration — and reshapes it around AI execution, while keeping the
+00:00:51,295 --> 00:00:53,634
+The Lead AI executes the workflow.
 
 16
-00:00:52,393 --> 00:00:53,763
-human checkpoints that actually matter.
+00:00:54,394 --> 00:00:59,546
+The Verifier AI independently checks key transitions — it's
 
 17
-00:00:54,763 --> 00:00:56,052
-Here's the lifecycle.
+00:00:59,587 --> 00:01:02,502
+a second AI from a different training lineage.
 
 18
-00:00:56,493 --> 00:01:00,463
-Work comes in as a story, epic, bug, or feature.
+00:01:04,486 --> 00:01:05,623
+Why two AIs?
 
 19
-00:01:00,707 --> 00:01:06,443
-It flows through three phases: Plan, Implementation, and Release.  In
+00:01:06,224 --> 00:01:10,582
+A single AI is confidently wrong in ways invisible to
 
 20
-00:01:06,477 --> 00:01:09,194
-the diagram you can see two large boxes.
+00:01:10,663 --> 00:01:11,862
+itself.
 
 21
-00:01:09,519 --> 00:01:13,316
-On the left is Plan, on the right is Implementation.
+00:01:12,222 --> 00:01:15,938
+Asking the same model to review its own output rarely
 
 22
-00:01:13,699 --> 00:01:16,822
-In each phase, Model A sits at the centre.
+00:01:15,998 --> 00:01:16,975
+catches the error.
 
 23
-00:01:17,449 --> 00:01:21,466
-Model A is the AI running the workflow — it holds the
+00:01:18,795 --> 00:01:22,454
+Two independent lineages catch different mistakes.
 
 24
-00:01:21,513 --> 00:01:24,102
-procedure and works through it step by step.
+00:01:23,519 --> 00:01:25,371
+The Plan phase produces a spec.
 
 25
-00:01:24,729 --> 00:01:29,233
-Around it are the resources it draws on: the human, Model B,
+00:01:26,091 --> 00:01:30,334
+The Implementation phase produces working code,
 
 26
-00:01:29,698 --> 00:01:34,818
-the code, Progressive Disclosure docs, and testing tools.  Model
+00:01:30,441 --> 00:01:32,575
+tests, and updated docs.
 
 27
-00:01:34,899 --> 00:01:38,626
-B is a second AI from an independent training lineage.
+00:01:33,336 --> 00:01:38,498
+That deliverable passes through Release — a CI gate plus
 
 28
-00:01:39,067 --> 00:01:43,792
-It's consulted at specific cross-verification points that the workflow defines.
-
-29
-00:01:44,396 --> 00:01:48,378
-The subtitle at the top of the diagram says "any two from
-
-30
-00:01:48,425 --> 00:01:53,928
-independent training lineages." We deliberately don't hardcode which providers to use.
-
-31
-00:01:54,369 --> 00:01:58,978
-What matters is that the two models come from different training lineages.
-
-32
-00:01:59,489 --> 00:02:04,563
-Single-model AI has a known failure mode: it's confidently wrong in ways
-
-33
-00:02:04,621 --> 00:02:08,278
-invisible to itself, and asking the same model to review its own
-
-34
-00:02:08,325 --> 00:02:10,693
-output rarely catches the error.  The
-
-35
-00:02:10,739 --> 00:02:12,760
-Plan phase produces a spec.
-
-36
-00:02:13,201 --> 00:02:18,634
-The Implementation phase produces a deliverable — code, tests, updated docs,
-
-37
-00:02:18,657 --> 00:02:19,714
-and git changes.
-
-38
-00:02:19,749 --> 00:02:23,696
-That deliverable passes through Release, which is a continuous integration gate plus
-
-39
-00:02:23,754 --> 00:02:24,764
+00:01:38,564 --> 00:01:39,537
 human approval.
 
+29
+00:01:39,537 --> 00:01:45,695
+Plan turns a work item into an approved spec.
+
+30
+00:01:47,034 --> 00:01:49,860
+The Lead AI reads the requirement,
+
+31
+00:01:49,900 --> 00:01:54,425
+the docs, and the code, then drafts a spec with
+
+32
+00:01:54,475 --> 00:01:58,505
+acceptance criteria, edge cases, and approach decisions.
+
+33
+00:02:01,044 --> 00:02:05,862
+The Verifier AI reviews the spec independently.
+
+34
+00:02:06,701 --> 00:02:11,465
+If the two AIs disagree on what a criterion means,
+
+35
+00:02:11,745 --> 00:02:15,465
+that's ambiguity — and it gets surfaced to the human
+
+36
+00:02:15,545 --> 00:02:17,385
+before any code is written.
+
+37
+00:02:19,294 --> 00:02:22,977
+The key discipline here: decide in the spec,
+
+38
+00:02:23,076 --> 00:02:24,176
+not in the code.
+
+39
+00:02:25,597 --> 00:02:28,968
+If you let the AI defer decisions to implementation,
+
 40
-00:02:25,764 --> 00:02:29,166
-Plan is the only phase where the human is centrally involved.
+00:02:29,249 --> 00:02:31,610
+it makes them implicitly,
 
 41
-00:02:29,201 --> 00:02:32,776
-It turns a work item into an approved spec.  Model
+00:02:31,689 --> 00:02:35,852
+often inconsistently, and you only find out when you're reading
 
 42
-00:02:32,869 --> 00:02:35,656
-A executes the spec-creation workflow.
-
-43
-00:02:35,714 --> 00:02:40,752
-It reads the repo's Progressive Disclosure docs, scans the code, and drafts
-
-44
-00:02:40,787 --> 00:02:45,792
-a spec with acceptance criteria, edge cases, approach decisions, and
-
-45
-00:02:45,850 --> 00:02:46,674
-a test plan.
-
-46
-00:02:47,278 --> 00:02:52,932
-The workflow includes an explicit cross-verification step: Model B independently
-
-47
-00:02:53,025 --> 00:02:55,440
-restates each acceptance criterion.
-
-48
-00:02:55,881 --> 00:03:01,209
-If the two models' restatements diverge, that criterion is ambiguous and
-
-49
-00:03:01,244 --> 00:03:05,029
-gets surfaced to the human for reconciliation.  The
-
-50
-00:03:05,075 --> 00:03:08,802
-phase ends when the human signs off the spec.  The
-
-51
-00:03:08,837 --> 00:03:11,101
-spec itself is a short markdown file.
-
-52
-00:03:11,798 --> 00:03:16,941
-It has a title, acceptance criteria written in Given-When-Then form, an edge
-
-53
-00:03:16,988 --> 00:03:22,282
-cases section, approach decisions with rationale, a test case table,
-
-54
-00:03:22,491 --> 00:03:25,742
-an out-of-scope list, and a verification plan.
-
-55
-00:03:26,183 --> 00:03:28,969
-There are nine principles a good spec must satisfy.
-
-56
-00:03:29,410 --> 00:03:33,926
-Every acceptance criterion must be executable — it maps to a runnable
-
-57
-00:03:33,961 --> 00:03:34,588
-test.
-
-58
-00:03:35,192 --> 00:03:37,897
-Every spec must be reviewable in under five minutes.
-
-59
-00:03:38,408 --> 00:03:41,693
-Edge cases get their own section rather than being buried in the
-
-60
-00:03:41,740 --> 00:03:42,610
-happy path.
-
-61
-00:03:43,214 --> 00:03:47,533
-And approach decisions are made in the spec, not deferred to implementation.
-
-62
-00:03:48,136 --> 00:03:53,152
-When the AI sees multiple reasonable approaches, it names them and
-
-63
-00:03:53,233 --> 00:03:55,741
-picks one with a reason.  That
-
-64
-00:03:55,799 --> 00:03:57,123
-last point is important.
-
-65
-00:03:57,506 --> 00:04:01,581
-If you let the AI defer decisions to implementation, it makes them
-
-66
-00:04:01,627 --> 00:04:06,805
-implicitly, often inconsistently, and you only discover the choice when you're reading
-
-67
-00:04:06,840 --> 00:04:07,397
+00:02:35,891 --> 00:02:36,652
 the code.
 
-68
-00:04:08,001 --> 00:04:12,134
-Forcing decisions into the spec means the human reviews them before any
+43
+00:02:38,831 --> 00:02:41,610
+The phase ends when the human signs off.
 
-69
-00:04:12,215 --> 00:04:13,272
-code is written.
+44
+00:02:41,610 --> 00:02:47,291
+Implementation turns the approved spec into working code.
 
-70
-00:04:14,272 --> 00:04:18,196
-Implementation turns an approved spec into a deliverable bundle.
+45
+00:02:48,630 --> 00:02:53,289
+The Verifier AI authors the failing tests directly from the spec.
 
-71
-00:04:18,579 --> 00:04:22,376
-The human is available on demand for clarifications but is not in
+46
+00:02:54,329 --> 00:03:00,492
+The Lead AI writes the implementation to make them pass.
 
-72
-00:04:22,422 --> 00:04:23,595
-the inner loop.  The
+47
+00:03:02,538 --> 00:03:07,853
+This is independent test authorship — the AI that writes the tests
 
-73
-00:04:23,653 --> 00:04:27,786
-workflow runs test-driven development: Red, Green, Refactor.
+48
+00:03:08,013 --> 00:03:10,494
+is not the AI that writes the code.
 
-74
-00:04:28,169 --> 00:04:30,991
-Here's the discipline that makes this work for AI.
+49
+00:03:12,454 --> 00:03:17,685
+Without that separation, implementation assumptions get silently baked
 
-75
-00:04:31,502 --> 00:04:35,019
-One model writes the failing tests.
+50
+00:03:17,749 --> 00:03:20,647
+into the tests.
 
-76
-00:04:35,403 --> 00:04:40,790
-A second model from an independent training lineage writes the implementation.
+51
+00:03:22,260 --> 00:03:28,607
+After TDD completes, the Lead AI updates the Progressive Disclosure docs,
 
-77
-00:04:41,393 --> 00:04:45,410
-This separation of test author and implementer is the key.
+52
+00:03:29,067 --> 00:03:33,366
+and the Verifier AI checks the updates against the actual
 
-78
-00:04:45,793 --> 00:04:51,215
-Without it, the same model writes both sides, and implementation assumptions
+53
+00:03:33,462 --> 00:03:33,926
+code.
 
-79
-00:04:51,262 --> 00:04:53,247
-get silently baked into the tests.
-
-80
-00:04:53,758 --> 00:04:57,682
-The tests pass, but they're testing the model's assumptions rather than the
-
-81
-00:04:57,717 --> 00:04:59,656
-spec's requirements.  After
-
-82
-00:04:59,714 --> 00:05:04,857
-test-driven development completes, Model A updates the affected Progressive Disclosure docs
-
-83
-00:05:05,240 --> 00:05:09,722
-to reflect the new reality, and Model B cross-verifies the doc updates
-
-84
-00:05:09,768 --> 00:05:11,475
-against the actual code changes.
-
-85
-00:05:11,916 --> 00:05:13,460
+54
+00:03:35,189 --> 00:03:38,487
 Then the spec is archived.
 
-86
-00:05:13,530 --> 00:05:16,676
-It moves to an archive directory and is no longer part of
+55
+00:03:39,248 --> 00:03:42,641
+The docs carry everything forward.
 
-87
-00:05:16,723 --> 00:05:18,604
-the agent's operating surface.
+56
+00:03:42,641 --> 00:03:47,123
+Progressive Disclosure docs give every repo the same structure.
 
-88
-00:05:19,416 --> 00:05:23,863
-Progressive Disclosure docs carry everything an agent needs going forward.
+57
+00:03:49,192 --> 00:03:52,158
+The same eight files, in every repo,
 
-89
-00:05:24,467 --> 00:05:28,960
-The archive exists only for human audits and retrospectives.  This
+58
+00:03:52,262 --> 00:03:54,723
+across the whole organisation.
 
-90
-00:05:29,018 --> 00:05:30,898
-is a deliberate design choice.
+59
+00:03:56,817 --> 00:04:01,120
+Level zero is an identity card — what is this repo?
 
-91
-00:05:31,502 --> 00:05:34,161
-Specs are in-flight artifacts.
+60
+00:04:02,079 --> 00:04:06,484
+Level one is eight fixed files:
 
-92
-00:05:34,857 --> 00:05:37,644
-They exist to coordinate the work while it's happening.
+61
+00:04:06,884 --> 00:04:11,531
+setup, architecture, code map,
 
-93
-00:05:38,457 --> 00:05:42,973
-Once the work lands, the knowledge gets absorbed into the Progressive Disclosure
+62
+00:04:11,604 --> 00:04:17,610
+conventions, workflows, interfaces, gotchas,
 
-94
-00:05:43,019 --> 00:05:45,631
-docs — the permanent record.
+63
+00:04:17,730 --> 00:04:19,211
+and security.
 
-95
-00:05:46,015 --> 00:05:49,173
-Future agents don't need to read old specs.
+64
+00:04:21,704 --> 00:04:26,971
+Level two is deep dives, loaded only when level one isn't
 
-96
-00:05:49,614 --> 00:05:51,982
-They read Progressive Disclosure docs.
+65
+00:04:27,005 --> 00:04:27,449
+enough.
 
-97
-00:05:52,982 --> 00:05:57,742
-Progressive Disclosure docs are the substrate the whole lifecycle runs on.
+66
+00:04:29,416 --> 00:04:33,689
+Levels zero and one load upfront — they're small.
 
-98
-00:05:58,021 --> 00:06:03,512
-They give every repository a consistent operating surface for AI agents.  There
+67
+00:04:34,409 --> 00:04:38,413
+Level two is pulled in only when needed.
 
-99
-00:06:03,547 --> 00:06:04,592
-are three tiers.
+68
+00:04:39,173 --> 00:04:44,574
+The agent gets full context without filling the context window.
 
-100
-00:06:04,836 --> 00:06:09,480
-Level zero is a three-hundred to five-hundred token identity card.
+69
+00:04:46,641 --> 00:04:51,456
+That consistency is what lets any agent pick up any repo and
 
-101
-00:06:09,863 --> 00:06:14,600
-It tells the agent what this repo is, what stack it uses,
+70
+00:04:51,536 --> 00:04:52,495
+work safely.
 
-102
-00:06:14,925 --> 00:06:16,214
-who maintains it.
+71
+00:04:54,314 --> 00:04:58,411
+You can generate these docs for an existing repo today — that's
 
-103
-00:06:17,027 --> 00:06:20,870
-Level one is eight fixed structured summary files.
+72
+00:04:58,430 --> 00:05:00,089
+the fastest way to start.
 
-104
-00:06:21,253 --> 00:06:25,328
-They answer eight questions every agent needs answered to work safely in
+73
+00:05:00,229 --> 00:05:04,253
+Why prompts instead of skills or slash commands?
 
-105
-00:06:25,386 --> 00:06:26,454
-any repository.
+74
+00:05:04,933 --> 00:05:07,293
+Skills are tool-specific.
 
-106
-00:06:26,895 --> 00:06:31,574
-Level two is on-demand deep dives, loaded only when level one isn't
-
-107
-00:06:31,621 --> 00:06:33,200
-detailed enough.  The
-
-108
-00:06:33,258 --> 00:06:37,031
-eight level-one files cover: How do I run this?
-
-109
-00:06:37,460 --> 00:06:38,680
-How is this shaped?
-
-110
-00:06:39,272 --> 00:06:40,456
-Where do I edit?
-
-111
-00:06:41,048 --> 00:06:42,615
-How do we write code here?
-
-112
-00:06:43,207 --> 00:06:44,984
-How do I perform this task?
-
-113
-00:06:45,425 --> 00:06:47,492
-What contracts must I preserve?
-
-114
-00:06:47,921 --> 00:06:50,696
-What will break if I touch it naively?
-
-115
-00:06:51,381 --> 00:06:55,410
-And what trust boundaries must I respect?  These
-
-116
-00:06:55,445 --> 00:06:57,488
-eight categories are deliberately fixed.
-
-117
-00:06:57,755 --> 00:07:02,794
-Agents, tooling, prompts, and reviewers can rely on a consistent
-
-118
-00:07:02,840 --> 00:07:05,348
-structure across an entire organisation.
-
-119
-00:07:05,952 --> 00:07:10,700
-Every repo looks the same to an agent, even though the repos
-
-120
-00:07:10,747 --> 00:07:14,102
-themselves are completely different.  The
-
-121
-00:07:14,160 --> 00:07:17,434
-workflows are part of Progressive Disclosure docs.
-
-122
-00:07:18,038 --> 00:07:23,401
-Each adopting repo's workflows file carries the spec-creation, implementation,
-
-123
-00:07:23,727 --> 00:07:26,919
-and docs-verification workflows.
-
-124
-00:07:28,034 --> 00:07:33,014
-These are materialised from AI DevKit's canonical templates at bootstrap, with the
-
-125
-00:07:33,061 --> 00:07:37,228
-repo's specific tooling, paths, and commands filled in.
-
-126
-00:07:37,832 --> 00:07:41,838
-This is what Model A actually executes during Plan and Implementation.
-
-127
-00:07:42,838 --> 00:07:47,737
-A natural question is: why does AI DevKit use copy-paste prompts instead
-
-128
-00:07:47,772 --> 00:07:51,534
-of skills, slash commands, or plugins?  The
-
-129
-00:07:51,580 --> 00:07:55,772
-answer comes down to portability and transparency.  Skills
-
-130
-00:07:55,830 --> 00:07:58,326
-and slash commands are tool-specific.
-
-131
-00:07:58,767 --> 00:08:02,017
+75
+00:05:07,813 --> 00:05:11,048
 A Claude Code skill doesn't work in Cursor.
 
-132
-00:08:02,400 --> 00:08:04,479
+76
+00:05:11,607 --> 00:05:15,924
 A Cursor command doesn't work in Codex.
 
-133
-00:08:04,804 --> 00:08:08,693
-If AI DevKit shipped its workflows as skills, you'd need a different
+77
+00:05:16,740 --> 00:05:20,404
+Prompts are portable — they work in any agent that can read
 
-134
-00:08:08,728 --> 00:08:12,547
-implementation for every tool, and you'd be locked into whichever tool you
+78
+00:05:20,524 --> 00:05:21,604
+files.
 
-135
-00:08:12,617 --> 00:08:14,533
-started with.  Prompts
+79
+00:05:21,844 --> 00:05:24,646
+The same prompt works in Claude Code,
 
-136
-00:08:14,614 --> 00:08:15,706
-are universal.
+80
+00:05:24,783 --> 00:05:30,242
+Cursor, Codex, Gemini, or whatever comes next.
 
-137
-00:08:15,984 --> 00:08:18,910
-They work in any agent session that can read files.
+81
+00:05:31,792 --> 00:05:34,801
+A prompt is visible text — you can read it,
 
-138
-00:08:19,421 --> 00:08:22,521
-You paste the prompt, the prompt tells the agent to read the
+82
+00:05:34,859 --> 00:05:39,559
+understand it, modify it, version-control it.
 
-139
-00:08:22,567 --> 00:08:25,667
-workflow from GitHub, and the agent executes it.
+83
+00:05:40,296 --> 00:05:44,312
+When a workflow changes, you update the markdown file,
 
-140
-00:08:26,271 --> 00:08:31,263
-The same prompt works in Claude Code, Cursor, Codex, Gemini, or any
+84
+00:05:44,352 --> 00:05:47,826
+and every prompt that references it picks up the change.
 
-141
-00:08:31,333 --> 00:08:33,341
-future tool that reads repo files.  There's
+85
+00:05:49,327 --> 00:05:51,743
+If your tool supports custom commands,
 
-142
-00:08:33,376 --> 00:08:35,013
-also a transparency benefit.
+86
+00:05:52,024 --> 00:05:55,025
+you can wrap the prompt for faster access.
 
-143
-00:08:35,454 --> 00:08:36,917
-A prompt is visible text.
-
-144
-00:08:36,952 --> 00:08:39,483
-You can read it, understand it, modify it.
-
-145
-00:08:39,924 --> 00:08:42,687
-A skill is a black box — you invoke it and hope
-
-146
-00:08:42,722 --> 00:08:44,000
-it does what you expect.
-
-147
-00:08:44,441 --> 00:08:49,712
-When the workflow changes, you update the markdown file, and every prompt
-
-148
-00:08:49,758 --> 00:08:53,543
-that references it picks up the change automatically.
-
-149
-00:08:53,822 --> 00:08:58,501
-There's no deployment step, no version mismatch, no "which version of the
-
-150
-00:08:58,547 --> 00:09:00,230
-skill is installed?"  If
-
-151
-00:09:00,288 --> 00:09:05,188
-your tool supports custom commands and you want faster access, you can
-
-152
-00:09:05,222 --> 00:09:06,116
-wrap the prompts.
-
-153
-00:09:06,441 --> 00:09:08,996
-Claude Code has slash commands and skills.
-
-154
-00:09:09,321 --> 00:09:11,027
-Cursor has commands and rules.
-
-155
-00:09:11,074 --> 00:09:12,479
-Codex has exec.
-
-156
-00:09:12,920 --> 00:09:15,346
+87
+00:05:55,625 --> 00:05:58,460
 But the prompt is the source of truth.
 
-157
-00:09:15,787 --> 00:09:18,551
-The wrapper is just a convenience layer.
+88
+00:05:58,460 --> 00:06:02,938
+Real systems span multiple repos — an API,
 
-158
-00:09:19,551 --> 00:09:22,860
-So far everything we've described works within a single repo.
+89
+00:06:02,991 --> 00:06:06,779
+an SDK, a frontend, shared infrastructure.
 
-159
-00:09:22,895 --> 00:09:27,260
-But real systems span multiple repos — an API, an SDK, a
+90
+00:06:08,998 --> 00:06:13,736
+The AI dev environment gives you one workspace where the AI can
 
-160
-00:09:27,353 --> 00:09:29,327
-frontend, shared infrastructure.
+91
+00:06:13,796 --> 00:06:16,219
+run the whole system end to end.
 
-161
-00:09:29,373 --> 00:09:32,531
-When Model A is working on a feature that touches the API
+92
+00:06:17,560 --> 00:06:19,574
+It's a container of containers.
 
-162
-00:09:32,647 --> 00:09:37,431
-and the SDK, it needs to run and test both components together.  This
+93
+00:06:20,494 --> 00:06:24,215
+Each component runs in its own container,
 
-163
-00:09:37,477 --> 00:09:39,103
-is what the dev environment solves.
+94
+00:06:24,575 --> 00:06:27,736
+all inside one outer workspace.
 
-164
-00:09:39,219 --> 00:09:40,937
-You create a system repo.
+95
+00:06:29,395 --> 00:06:32,293
+The Lead AI can start, stop,
 
-165
-00:09:41,262 --> 00:09:44,141
-The system repo doesn't contain application code.
+96
+00:06:32,383 --> 00:06:35,891
+restart, and test any component from there.
 
-166
-00:09:44,315 --> 00:09:48,286
-It describes the system — which repos, how they connect, what contracts
+97
+00:06:37,392 --> 00:06:39,733
+It runs locally or in the cloud.
 
-167
-00:09:48,320 --> 00:09:53,708
-they share — and provides a containerised workspace where
+98
+00:06:40,493 --> 00:06:45,808
+Cloud workspaces are useful for team handoff — another engineer
 
-168
-00:09:53,951 --> 00:09:57,736
-Model A can operate on the full system.  The
+99
+00:06:45,875 --> 00:06:49,009
+picks up the same workspace and the same context.
 
-169
-00:09:57,806 --> 00:10:00,813
-architecture is containers within a container.
+100
+00:06:50,988 --> 00:06:56,686
+The environment includes Playwright for browser testing and Terraform for infrastructure.
 
-170
-00:10:01,254 --> 00:10:03,634
-The outer container is the dev environment.
+101
+00:06:57,865 --> 00:07:03,095
+And there's an audit trail across all agent sessions — reproducibility,
 
-171
-00:10:04,017 --> 00:10:09,322
-Inside it, each component runs in its own container — the API,
+102
+00:07:03,162 --> 00:07:07,900
+traceability, and evals for debugging agent behaviour.
 
-172
-00:10:09,671 --> 00:10:14,628
-the SDK, the frontend, the database, the cache.
+103
+00:07:08,035 --> 00:07:09,020
+Here's how to start.
 
-173
-00:10:15,360 --> 00:10:17,438
-Model A works in the outer container.
+104
+00:07:10,899 --> 00:07:14,463
+Pick one repo and generate Progressive Disclosure docs for it.
 
-174
-00:10:17,984 --> 00:10:23,951
-It can start, stop, restart, and test any component from there.  Component
+105
+00:07:15,223 --> 00:07:18,541
+Any agent can then pick up that repo and work
 
-175
-00:10:24,009 --> 00:10:28,456
-repos are cloned into a components directory inside the dev environment.
+106
+00:07:18,610 --> 00:07:19,104
+safely.
 
-176
-00:10:29,152 --> 00:10:33,878
-Changes Model A makes to component code are reflected immediately in the
+107
+00:07:21,097 --> 00:07:25,256
+Next, stand up one dev environment for a multi-repo system.
 
-177
-00:10:33,913 --> 00:10:36,107
-running containers through volume mounts.
+108
+00:07:25,816 --> 00:07:28,773
+The AI can run it end to end from day
 
-178
-00:10:36,490 --> 00:10:41,389
-Model A edits the API code, restarts the API container, runs the
+109
+00:07:28,853 --> 00:07:29,173
+one.
 
-179
-00:10:41,447 --> 00:10:43,223
-tests, sees the result.
+110
+00:07:30,752 --> 00:07:34,208
+The docs and prompts are plain markdown — no plugins,
 
-180
-00:10:43,734 --> 00:10:47,310
-It can do the same for any component without leaving the workspace.  The
+111
+00:07:34,261 --> 00:07:35,249
+no vendor lock-in.
 
-181
-00:10:47,356 --> 00:10:50,398
-system repo has its own Progressive Disclosure docs.
+112
+00:07:37,146 --> 00:07:39,731
+Start with one repo and one system,
 
-182
-00:10:50,723 --> 00:10:54,438
-It publishes a system card — the system-level equivalent of a repo
+113
+00:07:39,771 --> 00:07:42,289
+and you can use this operating model now.
 
-183
-00:10:54,508 --> 00:10:58,954
-card — that lists the component repos, the dependency map, and the
-
-184
-00:10:58,989 --> 00:11:00,429
-shared conventions.
-
-185
-00:11:00,940 --> 00:11:05,514
-When a change spans multiple components, Model A reads the system card
-
-186
-00:11:05,560 --> 00:11:10,333
-to understand what's affected, works through the Plan and Implementation cycle for
-
-187
-00:11:10,379 --> 00:11:15,476
-each component, then runs cross-component tests to verify the contracts still
-
-188
-00:11:15,545 --> 00:11:16,811
-hold.  This
-
-189
-00:11:16,881 --> 00:11:22,105
-replaces the older idea of coordinating separate agents across separate
-
-190
-00:11:22,152 --> 00:11:24,694
-repos via transport layers.
-
-191
-00:11:25,135 --> 00:11:30,569
-The orchestration problem largely goes away when one agent can see
-
-192
-00:11:30,720 --> 00:11:33,994
-and run everything in one workspace.
-
-193
-00:11:34,994 --> 00:11:38,314
-AI DevKit is an operating model, not a tool.
-
-194
-00:11:38,373 --> 00:11:39,824
-It publishes standards.
-
-195
-00:11:40,265 --> 00:11:44,653
-The standards define how AI agents work in your repos.  Progressive
-
-196
-00:11:44,677 --> 00:11:48,299
-Disclosure docs give agents a consistent operating surface.
-
-197
-00:11:48,740 --> 00:11:53,152
-Specs give work items a structured shape that two models can verify.
-
-198
-00:11:53,849 --> 00:11:59,062
-Test-driven development with test-author and implementer separation prevents AI from testing
-
-199
-00:11:59,108 --> 00:12:00,455
-its own assumptions.
-
-200
-00:12:01,151 --> 00:12:06,747
-Cross-verification between independent training lineages catches errors that self-review misses.
-
-201
-00:12:07,072 --> 00:12:10,811
-And the whole thing runs on plain markdown — no install, no
-
-202
-00:12:10,881 --> 00:12:13,562
-plugins, no vendor lock-in.  The
-
-203
-00:12:13,609 --> 00:12:16,976
-human's job is to make the decisions that matter: approve the spec
-
-204
-00:12:17,022 --> 00:12:19,611
-at the front, approve the release at the back.
-
-205
-00:12:20,215 --> 00:12:25,416
-Everything in between is AI execution, verified by a second AI with
-
-206
-00:12:25,463 --> 00:12:27,332
-different blind spots.  That's
-
-207
-00:12:27,448 --> 00:12:28,864
-AI DevKit.

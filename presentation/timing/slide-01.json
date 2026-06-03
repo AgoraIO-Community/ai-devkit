@@ -2,629 +2,369 @@
   "words": [
     {
       "word": "AI",
-      "start": 0,
-      "end": 0.337
+      "start": 0.348,
+      "end": 0.402
     },
     {
       "word": "DevKit",
-      "start": 0.453,
-      "end": 1.08
+      "start": 0.502,
+      "end": 1.201
     },
     {
       "word": "is",
-      "start": 1.254,
-      "end": 1.405
+      "start": 1.281,
+      "end": 1.441
     },
     {
       "word": "an",
-      "start": 1.451,
-      "end": 1.498
+      "start": 1.494,
+      "end": 1.6
     },
     {
       "word": "operating",
-      "start": 1.533,
-      "end": 2.043
+      "start": 1.656,
+      "end": 2.16
     },
     {
       "word": "model",
-      "start": 2.101,
-      "end": 2.45
+      "start": 2.213,
+      "end": 2.478
     },
     {
       "word": "for",
-      "start": 2.566,
-      "end": 2.728
+      "start": 2.578,
+      "end": 2.878
     },
     {
       "word": "AI-centric",
-      "start": 2.798,
-      "end": 3.75
+      "start": 3.011,
+      "end": 3.917
     },
     {
       "word": "software",
-      "start": 3.82,
-      "end": 4.296
+      "start": 3.97,
+      "end": 4.394
     },
     {
-      "word": "engineering.\n\nIt",
-      "start": 4.342,
-      "end": 5.631
+      "word": "engineering.",
+      "start": 4.454,
+      "end": 5.794
     },
     {
-      "word": "publishes",
-      "start": 5.7,
-      "end": 6.211
+      "word": "[short",
+      "start": 6.134,
+      "end": 6.574
     },
     {
-      "word": "standards",
-      "start": 6.269,
-      "end": 6.885
-    },
-    {
-      "word": "and",
-      "start": 6.931,
-      "end": 7.036
-    },
-    {
-      "word": "workflow",
-      "start": 7.105,
-      "end": 7.593
-    },
-    {
-      "word": "templates",
-      "start": 7.651,
-      "end": 8.231
-    },
-    {
-      "word": "for",
-      "start": 8.301,
-      "end": 8.429
-    },
-    {
-      "word": "a",
-      "start": 8.464,
-      "end": 8.499
-    },
-    {
-      "word": "model",
-      "start": 8.568,
-      "end": 8.835
-    },
-    {
-      "word": "of",
-      "start": 8.893,
-      "end": 8.951
-    },
-    {
-      "word": "development",
-      "start": 9.021,
-      "end": 9.567
-    },
-    {
-      "word": "where",
-      "start": 9.613,
-      "end": 9.857
+      "word": "pause]",
+      "start": 6.591,
+      "end": 6.776
     },
     {
       "word": "AI",
-      "start": 9.915,
-      "end": 10.252
+      "start": 6.809,
+      "end": 6.875
     },
     {
-      "word": "agents",
-      "start": 10.31,
-      "end": 10.82
+      "word": "writes",
+      "start": 6.955,
+      "end": 7.435
     },
     {
-      "word": "do",
-      "start": 10.937,
-      "end": 11.076
+      "word": "specs,",
+      "start": 7.555,
+      "end": 8.315
     },
     {
-      "word": "the",
-      "start": 11.146,
-      "end": 11.215
+      "word": "tests,",
+      "start": 8.408,
+      "end": 8.953
     },
     {
-      "word": "bulk",
-      "start": 11.285,
-      "end": 11.598
-    },
-    {
-      "word": "of",
-      "start": 11.656,
-      "end": 11.714
-    },
-    {
-      "word": "execution",
-      "start": 11.796,
-      "end": 12.481
-    },
-    {
-      "word": "work,",
-      "start": 12.55,
-      "end": 12.992
+      "word": "code,",
+      "start": 9.033,
+      "end": 9.433
     },
     {
       "word": "and",
-      "start": 13.317,
-      "end": 13.491
+      "start": 9.493,
+      "end": 9.673
     },
     {
-      "word": "humans",
-      "start": 13.56,
-      "end": 13.978
+      "word": "docs.",
+      "start": 9.785,
+      "end": 10.313
     },
     {
-      "word": "gate",
-      "start": 14.048,
-      "end": 14.292
+      "word": "Humans",
+      "start": 11.536,
+      "end": 11.674
+    },
+    {
+      "word": "approve",
+      "start": 11.724,
+      "end": 12.074
     },
     {
       "word": "the",
-      "start": 14.327,
-      "end": 14.396
+      "start": 12.114,
+      "end": 12.234
     },
     {
-      "word": "highest-leverage",
-      "start": 14.478,
-      "end": 15.325
+      "word": "spec",
+      "start": 12.314,
+      "end": 12.634
     },
     {
-      "word": "decisions.",
-      "start": 15.383,
-      "end": 16.219
+      "word": "and",
+      "start": 12.714,
+      "end": 12.954
+    },
+    {
+      "word": "approve",
+      "start": 13.014,
+      "end": 13.434
+    },
+    {
+      "word": "the",
+      "start": 13.474,
+      "end": 13.594
+    },
+    {
+      "word": "release.",
+      "start": 13.664,
+      "end": 14.234
+    },
+    {
+      "word": "[short",
+      "start": 14.914,
+      "end": 15.614
+    },
+    {
+      "word": "pause]",
+      "start": 15.617,
+      "end": 15.652
     },
     {
       "word": "It",
-      "start": 16.544,
-      "end": 16.683
+      "start": 15.659,
+      "end": 15.673
     },
     {
-      "word": "combines",
-      "start": 16.73,
-      "end": 17.322
-    },
-    {
-      "word": "a",
-      "start": 17.403,
-      "end": 17.438
-    },
-    {
-      "word": "documentation",
-      "start": 17.508,
-      "end": 18.448
-    },
-    {
-      "word": "standard",
-      "start": 18.564,
-      "end": 19.145
-    },
-    {
-      "word": "called",
-      "start": 19.203,
-      "end": 19.412
-    },
-    {
-      "word": "Progressive",
-      "start": 19.435,
-      "end": 19.865
-    },
-    {
-      "word": "Disclosure",
-      "start": 19.899,
-      "end": 20.596
-    },
-    {
-      "word": "docs",
-      "start": 20.642,
-      "end": 21.142
+      "word": "works",
+      "start": 15.74,
+      "end": 16.075
     },
     {
       "word": "with",
-      "start": 21.652,
-      "end": 21.827
+      "start": 16.107,
+      "end": 16.235
     },
     {
-      "word": "a",
-      "start": 21.861,
-      "end": 21.885
-    },
-    {
-      "word": "multi-model",
-      "start": 21.978,
-      "end": 22.744
-    },
-    {
-      "word": "lifecycle",
-      "start": 22.837,
-      "end": 23.719
-    },
-    {
-      "word": "that",
-      "start": 23.765,
-      "end": 23.916
-    },
-    {
-      "word": "runs",
-      "start": 23.951,
-      "end": 24.183
-    },
-    {
-      "word": "from",
-      "start": 24.23,
-      "end": 24.369
-    },
-    {
-      "word": "work",
-      "start": 24.439,
-      "end": 24.694
-    },
-    {
-      "word": "intake",
-      "start": 24.764,
-      "end": 25.193
-    },
-    {
-      "word": "all",
-      "start": 25.228,
-      "end": 25.333
-    },
-    {
-      "word": "the",
-      "start": 25.379,
-      "end": 25.449
-    },
-    {
-      "word": "way",
-      "start": 25.484,
-      "end": 25.577
-    },
-    {
-      "word": "through",
-      "start": 25.635,
-      "end": 25.937
-    },
-    {
-      "word": "to",
-      "start": 25.995,
-      "end": 26.076
-    },
-    {
-      "word": "release.\n\nThe",
-      "start": 26.169,
-      "end": 27.074
-    },
-    {
-      "word": "key",
-      "start": 27.144,
-      "end": 27.365
-    },
-    {
-      "word": "word",
-      "start": 27.434,
-      "end": 27.724
-    },
-    {
-      "word": "here",
-      "start": 27.794,
-      "end": 28.038
-    },
-    {
-      "word": "is",
-      "start": 28.096,
-      "end": 28.189
-    },
-    {
-      "word": "AI-centric.",
-      "start": 28.247,
-      "end": 29.303
-    },
-    {
-      "word": "Not",
-      "start": 29.628,
-      "end": 29.803
-    },
-    {
-      "word": "AI-assisted,",
-      "start": 29.861,
-      "end": 31.033
-    },
-    {
-      "word": "where",
-      "start": 31.277,
-      "end": 31.497
-    },
-    {
-      "word": "humans",
-      "start": 31.532,
-      "end": 31.927
-    },
-    {
-      "word": "do",
-      "start": 31.985,
-      "end": 32.113
-    },
-    {
-      "word": "the",
-      "start": 32.182,
-      "end": 32.252
-    },
-    {
-      "word": "engineering",
-      "start": 32.31,
-      "end": 33.018
-    },
-    {
-      "word": "and",
-      "start": 33.146,
-      "end": 33.32
-    },
-    {
-      "word": "AI",
-      "start": 33.378,
-      "end": 33.738
-    },
-    {
-      "word": "helps",
-      "start": 33.912,
-      "end": 34.191
-    },
-    {
-      "word": "along",
-      "start": 34.226,
-      "end": 34.4
-    },
-    {
-      "word": "the",
-      "start": 34.435,
-      "end": 34.504
-    },
-    {
-      "word": "way.",
-      "start": 34.551,
-      "end": 34.934
-    },
-    {
-      "word": "And",
-      "start": 35.259,
-      "end": 35.387
-    },
-    {
-      "word": "not",
-      "start": 35.433,
-      "end": 35.561
-    },
-    {
-      "word": "AI-native,",
-      "start": 35.607,
-      "end": 36.582
-    },
-    {
-      "word": "where",
-      "start": 36.698,
-      "end": 36.884
-    },
-    {
-      "word": "you",
-      "start": 36.907,
-      "end": 36.989
-    },
-    {
-      "word": "throw",
-      "start": 37.035,
-      "end": 37.221
-    },
-    {
-      "word": "out",
-      "start": 37.267,
-      "end": 37.383
-    },
-    {
-      "word": "repos",
-      "start": 37.442,
-      "end": 37.987
-    },
-    {
-      "word": "and",
-      "start": 38.045,
-      "end": 38.15
-    },
-    {
-      "word": "commits",
-      "start": 38.231,
-      "end": 38.649
-    },
-    {
-      "word": "and",
-      "start": 38.695,
-      "end": 38.8
-    },
-    {
-      "word": "start",
-      "start": 38.858,
-      "end": 39.102
-    },
-    {
-      "word": "from",
-      "start": 39.148,
-      "end": 39.276
-    },
-    {
-      "word": "scratch.",
-      "start": 39.334,
-      "end": 39.961
-    },
-    {
-      "word": "AI-centric",
-      "start": 40.286,
-      "end": 41.308
-    },
-    {
-      "word": "sits",
-      "start": 41.482,
-      "end": 41.784
-    },
-    {
-      "word": "between",
-      "start": 41.83,
-      "end": 42.167
-    },
-    {
-      "word": "these",
-      "start": 42.213,
-      "end": 42.399
-    },
-    {
-      "word": "two.",
-      "start": 42.445,
-      "end": 42.875
-    },
-    {
-      "word": "It",
-      "start": 43.479,
-      "end": 43.618
-    },
-    {
-      "word": "takes",
-      "start": 43.653,
-      "end": 43.92
-    },
-    {
-      "word": "the",
-      "start": 43.966,
-      "end": 44.036
+      "word": "your",
+      "start": 16.283,
+      "end": 16.475
     },
     {
       "word": "existing",
-      "start": 44.094,
-      "end": 44.5
+      "start": 16.528,
+      "end": 16.952
     },
     {
-      "word": "software",
-      "start": 44.558,
-      "end": 44.895
+      "word": "stack",
+      "start": 17.045,
+      "end": 17.51
     },
     {
-      "word": "development",
-      "start": 44.93,
-      "end": 45.371
-    },
-    {
-      "word": "world",
-      "start": 45.418,
-      "end": 45.754
-    },
-    {
-      "word": "—",
-      "start": 45.847,
-      "end": 45.894
+      "word": "\u2014",
+      "start": 17.63,
+      "end": 17.75
     },
     {
       "word": "git,",
-      "start": 46.137,
-      "end": 46.579
+      "start": 17.83,
+      "end": 18.15
     },
     {
       "word": "repos,",
-      "start": 46.753,
-      "end": 47.461
+      "start": 18.283,
+      "end": 19.028
     },
     {
       "word": "pull",
-      "start": 47.636,
-      "end": 47.868
+      "start": 19.076,
+      "end": 19.268
     },
     {
       "word": "requests,",
-      "start": 47.937,
-      "end": 48.727
+      "start": 19.339,
+      "end": 20.067
     },
     {
-      "word": "continuous",
-      "start": 48.901,
-      "end": 49.505
+      "word": "CI",
+      "start": 20.254,
+      "end": 20.628
     },
     {
-      "word": "integration",
-      "start": 49.54,
-      "end": 49.958
-    },
-    {
-      "word": "—",
-      "start": 49.981,
-      "end": 50.529
+      "word": "\u2014",
+      "start": 20.988,
+      "end": 21.348
     },
     {
       "word": "and",
-      "start": 50.5,
-      "end": 50.647
+      "start": 21.368,
+      "end": 21.428
     },
     {
       "word": "reshapes",
-      "start": 50.5,
-      "end": 50.874
+      "start": 21.508,
+      "end": 22.068
     },
     {
       "word": "it",
-      "start": 50.5,
-      "end": 50.882
+      "start": 22.121,
+      "end": 22.227
     },
     {
       "word": "around",
-      "start": 50.5,
-      "end": 51
+      "start": 22.284,
+      "end": 22.626
     },
     {
       "word": "AI",
-      "start": 51.267,
-      "end": 51.36
+      "start": 22.786,
+      "end": 23.106
     },
     {
       "word": "execution,",
-      "start": 51.395,
-      "end": 51.836
+      "start": 23.194,
+      "end": 24.786
+    },
+    {
+      "word": "[short",
+      "start": 24.802,
+      "end": 24.848
+    },
+    {
+      "word": "pause]",
+      "start": 24.853,
+      "end": 24.91
     },
     {
       "word": "while",
-      "start": 51.859,
-      "end": 51.999
+      "start": 24.915,
+      "end": 24.94
     },
     {
       "word": "keeping",
-      "start": 52.033,
-      "end": 52.266
+      "start": 25.0,
+      "end": 25.42
     },
     {
       "word": "the",
-      "start": 52.301,
-      "end": 52.359
+      "start": 25.46,
+      "end": 25.58
     },
     {
       "word": "human",
-      "start": 52.393,
-      "end": 52.602
+      "start": 25.647,
+      "end": 25.982
     },
     {
       "word": "checkpoints",
-      "start": 52.637,
-      "end": 53.032
+      "start": 26.035,
+      "end": 26.618
     },
     {
       "word": "that",
-      "start": 53.067,
-      "end": 53.148
-    },
-    {
-      "word": "actually",
-      "start": 53.171,
-      "end": 53.415
+      "start": 26.65,
+      "end": 26.778
     },
     {
       "word": "matter.",
-      "start": 53.462,
-      "end": 53.763
+      "start": 26.847,
+      "end": 27.341
+    },
+    {
+      "word": "There",
+      "start": 29.249,
+      "end": 29.259
+    },
+    {
+      "word": "are",
+      "start": 29.279,
+      "end": 29.339
+    },
+    {
+      "word": "four",
+      "start": 29.387,
+      "end": 29.579
+    },
+    {
+      "word": "pillars:",
+      "start": 29.659,
+      "end": 30.619
+    },
+    {
+      "word": "spec",
+      "start": 30.699,
+      "end": 31.019
+    },
+    {
+      "word": "planning,",
+      "start": 31.081,
+      "end": 32.017
+    },
+    {
+      "word": "test-driven",
+      "start": 32.105,
+      "end": 32.856
+    },
+    {
+      "word": "implementation,",
+      "start": 32.92,
+      "end": 33.976
+    },
+    {
+      "word": "Progressive",
+      "start": 34.069,
+      "end": 35.092
+    },
+    {
+      "word": "Disclosure",
+      "start": 35.15,
+      "end": 35.73
+    },
+    {
+      "word": "docs,",
+      "start": 35.842,
+      "end": 36.61
+    },
+    {
+      "word": "and",
+      "start": 36.69,
+      "end": 36.93
+    },
+    {
+      "word": "the",
+      "start": 36.95,
+      "end": 37.01
+    },
+    {
+      "word": "AI",
+      "start": 37.197,
+      "end": 37.571
+    },
+    {
+      "word": "dev",
+      "start": 37.671,
+      "end": 37.971
+    },
+    {
+      "word": "environment.",
+      "start": 38.038,
+      "end": 38.935
     }
   ],
-  "duration": 53.763
+  "duration": 38.935
 }

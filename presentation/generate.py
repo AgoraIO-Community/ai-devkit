@@ -11,8 +11,8 @@ import urllib.request
 API_KEY = os.environ.get("TTS_KEY")
 if not API_KEY:
     raise SystemExit("Set TTS_KEY environment variable (ElevenLabs API key)")
-VOICE_ID = "N1wNyps2cLeRH3gZe3PL"  # User-specified voice
-MODEL_ID = "eleven_multilingual_v2"
+VOICE_ID = "XnKbmWxx8uWjruHkpXmf"
+MODEL_ID = "eleven_v3"
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -44,9 +44,9 @@ def generate_audio_with_timestamps(text, output_audio, output_timing):
         "text": text,
         "model_id": MODEL_ID,
         "voice_settings": {
-            "stability": 0.6,
+            "stability": 0.7,
             "similarity_boost": 0.8,
-            "style": 0.15,
+            "speed": 0.9,
         },
     }).encode()
 
@@ -103,6 +103,23 @@ def generate_audio_with_timestamps(text, output_audio, output_timing):
             "start": word_start,
             "end": word_end,
         })
+
+    # Strip audio tags (e.g. [pause], [excited], [short pause]) from word list
+    # Tags may span multiple word entries: [short -> pause] or be single: [pause]
+    cleaned = []
+    in_tag = False
+    for w in words:
+        if w["word"].startswith("[") and w["word"].endswith("]"):
+            continue  # single-word tag like [pause]
+        if w["word"].startswith("["):
+            in_tag = True
+            continue
+        if in_tag:
+            if w["word"].endswith("]"):
+                in_tag = False
+            continue
+        cleaned.append(w)
+    words = cleaned
 
     timing = {
         "words": words,
@@ -184,9 +201,13 @@ def generate_srt(all_timings, output_path, max_words=12, max_duration=5.0):
 
     with open(output_path, "w") as f:
         for entry in srt_entries:
+            # Strip audio tags like [pause], [short pause], [deliberate] etc.
+            text = re.sub(r"\[.*?\]\s*", "", entry["text"]).strip()
+            if not text:
+                continue
             f.write(f"{entry['idx']}\n")
             f.write(f"{format_srt_time(entry['start'])} --> {format_srt_time(entry['end'])}\n")
-            f.write(f"{entry['text']}\n\n")
+            f.write(f"{text}\n\n")
 
 
 def format_srt_time(seconds):
@@ -212,8 +233,9 @@ def main():
 
     # Check which slides to generate (allow partial runs)
     slide_arg = sys.argv[1] if len(sys.argv) > 1 else "all"
+    srt_only = slide_arg == "srt"
 
-    if slide_arg == "all":
+    if srt_only or slide_arg == "all":
         to_generate = list(range(len(slides)))
     else:
         to_generate = [int(slide_arg) - 1]  # 1-indexed arg
@@ -227,13 +249,7 @@ def main():
         audio_path = os.path.join(AUDIO_DIR, f"slide-{i+1:02d}.mp3")
         timing_path = os.path.join(TIMING_DIR, f"slide-{i+1:02d}.json")
 
-        if i in to_generate:
-            print(f"Generating slide {i+1}: {slide['title']}")
-            timing = generate_audio_with_timestamps(
-                slide["text"], audio_path, timing_path
-            )
-            print(f"  Duration: {timing['duration']:.1f}s, Words: {len(timing['words'])}")
-        else:
+        if srt_only or i not in to_generate:
             # Load existing timing
             if os.path.exists(timing_path):
                 with open(timing_path) as f:
@@ -241,6 +257,12 @@ def main():
             else:
                 print(f"  Skipping slide {i+1} (no existing timing)")
                 continue
+        else:
+            print(f"Generating slide {i+1}: {slide['title']}")
+            timing = generate_audio_with_timestamps(
+                slide["text"], audio_path, timing_path
+            )
+            print(f"  Duration: {timing['duration']:.1f}s, Words: {len(timing['words'])}")
 
         all_timings.append({
             "slide": i + 1,
@@ -249,7 +271,7 @@ def main():
             "timing": timing,
         })
         audio_files.append(audio_path)
-        cumulative_offset += timing["duration"] + 1.0  # 1s gap between slides
+        cumulative_offset += timing["duration"]  # no gap — v3 audio tags handle pacing
 
     # Concatenate audio
     if audio_files:

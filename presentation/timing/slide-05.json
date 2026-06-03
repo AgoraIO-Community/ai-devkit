@@ -1,400 +1,630 @@
 {
   "words": [
     {
-      "word": "Release",
+      "word": "Progressive",
       "start": 0.0,
-      "end": 0.464
+      "end": 0.481
     },
     {
-      "word": "is",
-      "start": 0.488,
-      "end": 0.592
+      "word": "Disclosure",
+      "start": 0.532,
+      "end": 1.042
+    },
+    {
+      "word": "docs",
+      "start": 1.122,
+      "end": 1.442
+    },
+    {
+      "word": "give",
+      "start": 1.506,
+      "end": 1.762
+    },
+    {
+      "word": "every",
+      "start": 1.842,
+      "end": 2.242
+    },
+    {
+      "word": "repo",
+      "start": 2.37,
+      "end": 2.882
     },
     {
       "word": "the",
-      "start": 0.639,
-      "end": 0.708
+      "start": 2.942,
+      "end": 3.122
     },
     {
-      "word": "human's",
-      "start": 0.766,
-      "end": 1.231
+      "word": "same",
+      "start": 3.202,
+      "end": 3.522
     },
     {
-      "word": "second",
-      "start": 1.3,
-      "end": 1.718
-    },
-    {
-      "word": "checkpoint.",
-      "start": 1.776,
-      "end": 2.508
+      "word": "structure.",
+      "start": 3.578,
+      "end": 4.482
     },
     {
       "word": "The",
-      "start": 2.659,
-      "end": 2.763
+      "start": 6.55,
+      "end": 6.556
     },
     {
-      "word": "first",
-      "start": 2.821,
-      "end": 3.135
-    },
-    {
-      "word": "was",
-      "start": 3.193,
-      "end": 3.32
-    },
-    {
-      "word": "spec",
-      "start": 3.379,
-      "end": 3.762
-    },
-    {
-      "word": "approval",
-      "start": 3.843,
-      "end": 4.4
-    },
-    {
-      "word": "at",
-      "start": 4.516,
-      "end": 4.679
-    },
-    {
-      "word": "the",
-      "start": 4.725,
-      "end": 4.795
-    },
-    {
-      "word": "front.",
-      "start": 4.853,
-      "end": 5.387
-    },
-    {
-      "word": "Here",
-      "start": 5.596,
-      "end": 5.817
-    },
-    {
-      "word": "at",
-      "start": 5.851,
-      "end": 5.909
-    },
-    {
-      "word": "the",
-      "start": 5.944,
-      "end": 6.014
-    },
-    {
-      "word": "back,",
-      "start": 6.06,
-      "end": 6.455
-    },
-    {
-      "word": "the",
-      "start": 6.49,
-      "end": 6.594
-    },
-    {
-      "word": "deliverable",
-      "start": 6.653,
-      "end": 7.221
-    },
-    {
-      "word": "is",
-      "start": 7.268,
-      "end": 7.361
-    },
-    {
-      "word": "pushed",
-      "start": 7.43,
-      "end": 7.709
-    },
-    {
-      "word": "to",
-      "start": 7.732,
-      "end": 7.802
-    },
-    {
-      "word": "a",
-      "start": 7.883,
-      "end": 7.906
-    },
-    {
-      "word": "release",
-      "start": 7.976,
-      "end": 8.301
-    },
-    {
-      "word": "branch",
-      "start": 8.348,
-      "end": 8.789
-    },
-    {
-      "word": "where",
-      "start": 8.87,
-      "end": 9.102
-    },
-    {
-      "word": "continuous",
-      "start": 9.137,
-      "end": 9.776
-    },
-    {
-      "word": "integration",
-      "start": 9.834,
-      "end": 10.553
-    },
-    {
-      "word": "runs",
-      "start": 10.67,
-      "end": 10.96
-    },
-    {
-      "word": "the",
-      "start": 11.018,
-      "end": 11.088
-    },
-    {
-      "word": "full",
-      "start": 11.157,
-      "end": 11.389
-    },
-    {
-      "word": "verification",
-      "start": 11.459,
-      "end": 12.214
-    },
-    {
-      "word": "suite:",
-      "start": 12.295,
-      "end": 12.771
-    },
-    {
-      "word": "tests,",
-      "start": 13.212,
-      "end": 13.909
-    },
-    {
-      "word": "lints,",
-      "start": 14.083,
-      "end": 14.838
-    },
-    {
-      "word": "doc-freshness",
-      "start": 15.163,
-      "end": 16.057
-    },
-    {
-      "word": "checks",
-      "start": 16.103,
-      "end": 16.521
-    },
-    {
-      "word": "against",
-      "start": 16.568,
-      "end": 16.904
-    },
-    {
-      "word": "the",
-      "start": 16.951,
-      "end": 17.02
+      "word": "same",
+      "start": 6.652,
+      "end": 7.036
     },
     {
       "word": "eight",
-      "start": 17.067,
-      "end": 17.229
-    },
-    {
-      "word": "level-one",
-      "start": 17.264,
-      "end": 17.705
+      "start": 7.103,
+      "end": 7.438
     },
     {
       "word": "files,",
-      "start": 17.764,
-      "end": 18.507
+      "start": 7.531,
+      "end": 8.076
     },
     {
-      "word": "and",
-      "start": 18.53,
-      "end": 18.948
+      "word": "in",
+      "start": 8.209,
+      "end": 8.475
     },
     {
-      "word": "spec-to-test",
-      "start": 19.122,
-      "end": 20.26
+      "word": "every",
+      "start": 8.542,
+      "end": 8.877
     },
     {
-      "word": "traceability",
-      "start": 20.376,
-      "end": 21.142
+      "word": "repo,",
+      "start": 8.989,
+      "end": 9.517
     },
     {
-      "word": "checks.\n\nWhat",
-      "start": 21.2,
-      "end": 22.721
+      "word": "across",
+      "start": 9.62,
+      "end": 10.238
     },
     {
-      "word": "happens",
-      "start": 22.767,
-      "end": 23.197
+      "word": "the",
+      "start": 10.278,
+      "end": 10.398
     },
     {
-      "word": "downstream",
-      "start": 23.278,
-      "end": 23.975
+      "word": "whole",
+      "start": 10.478,
+      "end": 10.878
     },
     {
-      "word": "of",
-      "start": 24.045,
-      "end": 24.103
+      "word": "organisation.",
+      "start": 10.946,
+      "end": 12.082
     },
     {
-      "word": "continuous",
-      "start": 24.172,
-      "end": 24.73
+      "word": "Level",
+      "start": 14.175,
+      "end": 14.24
     },
     {
-      "word": "integration",
-      "start": 24.776,
-      "end": 25.507
+      "word": "zero",
+      "start": 14.352,
+      "end": 14.8
     },
     {
       "word": "is",
-      "start": 25.682,
-      "end": 25.879
+      "start": 14.933,
+      "end": 15.199
+    },
+    {
+      "word": "an",
+      "start": 15.252,
+      "end": 15.358
+    },
+    {
+      "word": "identity",
+      "start": 15.429,
+      "end": 15.997
+    },
+    {
+      "word": "card",
+      "start": 16.093,
+      "end": 16.477
+    },
+    {
+      "word": "\u2014",
+      "start": 16.757,
+      "end": 17.037
+    },
+    {
+      "word": "what",
+      "start": 17.085,
+      "end": 17.277
+    },
+    {
+      "word": "is",
+      "start": 17.384,
+      "end": 17.598
+    },
+    {
+      "word": "this",
+      "start": 17.646,
+      "end": 17.838
+    },
+    {
+      "word": "repo?",
+      "start": 17.934,
+      "end": 18.478
+    },
+    {
+      "word": "[short",
+      "start": 19.438,
+      "end": 20.438
+    },
+    {
+      "word": "pause]",
+      "start": 20.445,
+      "end": 20.52
+    },
+    {
+      "word": "Level",
+      "start": 20.527,
+      "end": 20.562
+    },
+    {
+      "word": "one",
+      "start": 20.682,
+      "end": 21.042
+    },
+    {
+      "word": "is",
+      "start": 21.229,
+      "end": 21.603
+    },
+    {
+      "word": "eight",
+      "start": 21.683,
+      "end": 22.083
+    },
+    {
+      "word": "fixed",
+      "start": 22.203,
+      "end": 22.803
+    },
+    {
+      "word": "files:",
+      "start": 22.923,
+      "end": 23.843
+    },
+    {
+      "word": "[short",
+      "start": 24.243,
+      "end": 24.743
+    },
+    {
+      "word": "pause]",
+      "start": 24.76,
+      "end": 24.945
+    },
+    {
+      "word": "setup,",
+      "start": 24.962,
+      "end": 25.127
+    },
+    {
+      "word": "architecture,",
+      "start": 25.238,
+      "end": 27.37
+    },
+    {
+      "word": "code",
+      "start": 27.45,
+      "end": 27.77
+    },
+    {
+      "word": "map,",
+      "start": 27.85,
+      "end": 28.89
+    },
+    {
+      "word": "conventions,",
+      "start": 28.963,
+      "end": 30.646
+    },
+    {
+      "word": "workflows,",
+      "start": 30.734,
+      "end": 32.326
+    },
+    {
+      "word": "interfaces,",
+      "start": 32.399,
+      "end": 33.689
+    },
+    {
+      "word": "gotchas,",
+      "start": 33.829,
+      "end": 34.969
+    },
+    {
+      "word": "and",
+      "start": 35.089,
+      "end": 35.449
+    },
+    {
+      "word": "security.",
+      "start": 35.538,
+      "end": 36.57
+    },
+    {
+      "word": "Level",
+      "start": 39.063,
+      "end": 39.128
+    },
+    {
+      "word": "two",
+      "start": 39.248,
+      "end": 39.608
+    },
+    {
+      "word": "is",
+      "start": 39.741,
+      "end": 40.007
+    },
+    {
+      "word": "deep",
+      "start": 40.087,
+      "end": 40.407
+    },
+    {
+      "word": "dives,",
+      "start": 40.5,
+      "end": 41.445
+    },
+    {
+      "word": "loaded",
+      "start": 41.514,
+      "end": 41.928
+    },
+    {
+      "word": "only",
+      "start": 42.056,
+      "end": 42.568
+    },
+    {
+      "word": "when",
+      "start": 42.616,
+      "end": 42.808
+    },
+    {
+      "word": "level",
+      "start": 42.875,
+      "end": 43.21
+    },
+    {
+      "word": "one",
+      "start": 43.33,
+      "end": 43.69
+    },
+    {
+      "word": "isn't",
+      "start": 43.79,
+      "end": 44.33
+    },
+    {
+      "word": "enough.",
+      "start": 44.364,
+      "end": 44.808
+    },
+    {
+      "word": "Levels",
+      "start": 46.775,
+      "end": 46.889
+    },
+    {
+      "word": "zero",
+      "start": 47.017,
+      "end": 47.529
+    },
+    {
+      "word": "and",
+      "start": 47.609,
+      "end": 47.849
+    },
+    {
+      "word": "one",
+      "start": 47.949,
+      "end": 48.249
+    },
+    {
+      "word": "load",
+      "start": 48.377,
+      "end": 48.889
+    },
+    {
+      "word": "upfront",
+      "start": 48.979,
+      "end": 49.609
+    },
+    {
+      "word": "\u2014",
+      "start": 49.889,
+      "end": 50.169
+    },
+    {
+      "word": "they're",
+      "start": 50.185,
+      "end": 50.408
+    },
+    {
+      "word": "small.",
+      "start": 50.488,
+      "end": 51.048
+    },
+    {
+      "word": "[short",
+      "start": 51.768,
+      "end": 52.528
+    },
+    {
+      "word": "pause]",
+      "start": 52.535,
+      "end": 52.61
+    },
+    {
+      "word": "Level",
+      "start": 52.617,
+      "end": 52.652
+    },
+    {
+      "word": "two",
+      "start": 52.792,
+      "end": 53.212
+    },
+    {
+      "word": "is",
+      "start": 53.319,
+      "end": 53.533
+    },
+    {
+      "word": "pulled",
+      "start": 53.59,
+      "end": 53.932
+    },
+    {
+      "word": "in",
+      "start": 54.012,
+      "end": 54.172
+    },
+    {
+      "word": "only",
+      "start": 54.3,
+      "end": 54.812
+    },
+    {
+      "word": "when",
+      "start": 54.86,
+      "end": 55.052
+    },
+    {
+      "word": "needed.",
+      "start": 55.132,
+      "end": 55.772
+    },
+    {
+      "word": "[short",
+      "start": 56.532,
+      "end": 57.312
+    },
+    {
+      "word": "pause]",
+      "start": 57.315,
+      "end": 57.35
+    },
+    {
+      "word": "The",
+      "start": 57.355,
+      "end": 57.37
+    },
+    {
+      "word": "agent",
+      "start": 57.45,
+      "end": 57.85
+    },
+    {
+      "word": "gets",
+      "start": 57.914,
+      "end": 58.17
+    },
+    {
+      "word": "full",
+      "start": 58.234,
+      "end": 58.49
+    },
+    {
+      "word": "context",
+      "start": 58.59,
+      "end": 59.29
+    },
+    {
+      "word": "without",
+      "start": 59.39,
+      "end": 60.09
+    },
+    {
+      "word": "filling",
+      "start": 60.15,
+      "end": 60.57
+    },
+    {
+      "word": "the",
+      "start": 60.59,
+      "end": 60.65
+    },
+    {
+      "word": "context",
+      "start": 60.72,
+      "end": 61.21
+    },
+    {
+      "word": "window.",
+      "start": 61.279,
+      "end": 61.933
+    },
+    {
+      "word": "That",
+      "start": 63.999,
+      "end": 64.015
+    },
+    {
+      "word": "consistency",
+      "start": 64.095,
+      "end": 64.975
+    },
+    {
+      "word": "is",
+      "start": 65.162,
+      "end": 65.536
+    },
+    {
+      "word": "what",
+      "start": 65.568,
+      "end": 65.696
+    },
+    {
+      "word": "lets",
+      "start": 65.76,
+      "end": 66.016
+    },
+    {
+      "word": "any",
+      "start": 66.116,
+      "end": 66.416
+    },
+    {
+      "word": "agent",
+      "start": 66.509,
+      "end": 66.974
+    },
+    {
+      "word": "pick",
+      "start": 67.038,
+      "end": 67.294
     },
     {
       "word": "up",
-      "start": 25.937,
-      "end": 26.053
+      "start": 67.374,
+      "end": 67.534
+    },
+    {
+      "word": "any",
+      "start": 67.634,
+      "end": 67.934
+    },
+    {
+      "word": "repo",
+      "start": 68.046,
+      "end": 68.494
+    },
+    {
+      "word": "and",
+      "start": 68.574,
+      "end": 68.814
+    },
+    {
+      "word": "work",
+      "start": 68.894,
+      "end": 69.214
+    },
+    {
+      "word": "safely.",
+      "start": 69.294,
+      "end": 69.854
+    },
+    {
+      "word": "You",
+      "start": 71.673,
+      "end": 71.694
+    },
+    {
+      "word": "can",
+      "start": 71.734,
+      "end": 71.854
+    },
+    {
+      "word": "generate",
+      "start": 71.916,
+      "end": 72.412
+    },
+    {
+      "word": "these",
+      "start": 72.452,
+      "end": 72.652
+    },
+    {
+      "word": "docs",
+      "start": 72.732,
+      "end": 73.052
+    },
+    {
+      "word": "for",
+      "start": 73.092,
+      "end": 73.212
+    },
+    {
+      "word": "an",
+      "start": 73.239,
+      "end": 73.293
+    },
+    {
+      "word": "existing",
+      "start": 73.355,
+      "end": 73.851
+    },
+    {
+      "word": "repo",
+      "start": 73.947,
+      "end": 74.331
+    },
+    {
+      "word": "today",
+      "start": 74.424,
+      "end": 74.889
+    },
+    {
+      "word": "\u2014",
+      "start": 75.209,
+      "end": 75.529
+    },
+    {
+      "word": "that's",
+      "start": 75.561,
+      "end": 75.769
+    },
+    {
+      "word": "the",
+      "start": 75.789,
+      "end": 75.849
+    },
+    {
+      "word": "fastest",
+      "start": 75.919,
+      "end": 76.409
+    },
+    {
+      "word": "way",
+      "start": 76.469,
+      "end": 76.649
     },
     {
       "word": "to",
-      "start": 26.123,
-      "end": 26.181
+      "start": 76.702,
+      "end": 76.808
     },
     {
-      "word": "the",
-      "start": 26.239,
-      "end": 26.308
-    },
-    {
-      "word": "team.",
-      "start": 26.355,
-      "end": 26.843
-    },
-    {
-      "word": "Auto-promote",
-      "start": 27.353,
-      "end": 28.143
-    },
-    {
-      "word": "on",
-      "start": 28.189,
-      "end": 28.282
-    },
-    {
-      "word": "green,",
-      "start": 28.352,
-      "end": 28.839
-    },
-    {
-      "word": "route",
-      "start": 28.99,
-      "end": 29.223
-    },
-    {
-      "word": "through",
-      "start": 29.257,
-      "end": 29.513
-    },
-    {
-      "word": "human",
-      "start": 29.571,
-      "end": 29.838
-    },
-    {
-      "word": "review,",
-      "start": 29.896,
-      "end": 30.5
-    },
-    {
-      "word": "use",
-      "start": 30.674,
-      "end": 30.976
-    },
-    {
-      "word": "whatever",
-      "start": 31.01,
-      "end": 31.37
-    },
-    {
-      "word": "release",
-      "start": 31.44,
-      "end": 31.765
-    },
-    {
-      "word": "model",
-      "start": 31.823,
-      "end": 32.078
-    },
-    {
-      "word": "you",
-      "start": 32.148,
-      "end": 32.229
-    },
-    {
-      "word": "prefer.",
-      "start": 32.299,
-      "end": 32.903
-    },
-    {
-      "word": "AI",
-      "start": 33.344,
-      "end": 33.739
-    },
-    {
-      "word": "DevKit's",
-      "start": 33.832,
-      "end": 34.319
-    },
-    {
-      "word": "scope",
-      "start": 34.342,
-      "end": 34.818
-    },
-    {
-      "word": "ends",
-      "start": 35.143,
-      "end": 35.619
-    },
-    {
-      "word": "at",
-      "start": 36.061,
-      "end": 36.223
-    },
-    {
-      "word": "the",
-      "start": 36.258,
-      "end": 36.328
-    },
-    {
-      "word": "continuous",
-      "start": 36.386,
-      "end": 37.14
-    },
-    {
-      "word": "integration",
-      "start": 37.187,
-      "end": 37.756
-    },
-    {
-      "word": "gate.",
-      "start": 37.814,
-      "end": 38.406
+      "word": "start.",
+      "start": 76.888,
+      "end": 77.448
     }
   ],
-  "duration": 38.406
+  "duration": 77.448
 }

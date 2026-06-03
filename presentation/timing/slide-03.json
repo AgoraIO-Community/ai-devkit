@@ -3,1228 +3,598 @@
     {
       "word": "Plan",
       "start": 0.0,
-      "end": 0.418
-    },
-    {
-      "word": "is",
-      "start": 0.569,
-      "end": 0.731
-    },
-    {
-      "word": "the",
-      "start": 0.778,
-      "end": 0.848
-    },
-    {
-      "word": "only",
-      "start": 0.906,
-      "end": 1.068
-    },
-    {
-      "word": "phase",
-      "start": 1.115,
-      "end": 1.44
-    },
-    {
-      "word": "where",
-      "start": 1.474,
-      "end": 1.649
-    },
-    {
-      "word": "the",
-      "start": 1.672,
-      "end": 1.741
-    },
-    {
-      "word": "human",
-      "start": 1.788,
-      "end": 2.125
-    },
-    {
-      "word": "is",
-      "start": 2.183,
-      "end": 2.252
-    },
-    {
-      "word": "centrally",
-      "start": 2.299,
-      "end": 2.752
-    },
-    {
-      "word": "involved.",
-      "start": 2.798,
-      "end": 3.402
-    },
-    {
-      "word": "It",
-      "start": 3.437,
-      "end": 3.587
+      "end": 0.48
     },
     {
       "word": "turns",
-      "start": 3.622,
-      "end": 3.936
+      "start": 0.573,
+      "end": 1.038
     },
     {
       "word": "a",
-      "start": 3.982,
-      "end": 4.005
+      "start": 1.078,
+      "end": 1.118
     },
     {
       "word": "work",
-      "start": 4.063,
-      "end": 4.307
+      "start": 1.198,
+      "end": 1.518
     },
     {
       "word": "item",
-      "start": 4.389,
-      "end": 4.748
+      "start": 1.614,
+      "end": 1.998
     },
     {
       "word": "into",
-      "start": 4.865,
-      "end": 5.155
+      "start": 2.078,
+      "end": 2.398
     },
     {
       "word": "an",
-      "start": 5.224,
-      "end": 5.283
+      "start": 2.425,
+      "end": 2.479
     },
     {
       "word": "approved",
-      "start": 5.306,
-      "end": 5.7
+      "start": 2.55,
+      "end": 3.118
     },
     {
-      "word": "spec.\n\nModel",
-      "start": 5.759,
-      "end": 7.012
-    },
-    {
-      "word": "A",
-      "start": 7.105,
-      "end": 7.314
-    },
-    {
-      "word": "executes",
-      "start": 7.523,
-      "end": 8.231
-    },
-    {
-      "word": "the",
-      "start": 8.29,
-      "end": 8.359
-    },
-    {
-      "word": "spec-creation",
-      "start": 8.394,
-      "end": 9.149
-    },
-    {
-      "word": "workflow.",
-      "start": 9.218,
-      "end": 9.892
-    },
-    {
-      "word": "It",
-      "start": 9.95,
-      "end": 10.089
-    },
-    {
-      "word": "reads",
-      "start": 10.147,
-      "end": 10.414
-    },
-    {
-      "word": "the",
-      "start": 10.472,
-      "end": 10.542
-    },
-    {
-      "word": "repo's",
-      "start": 10.623,
-      "end": 11.099
-    },
-    {
-      "word": "Progressive",
-      "start": 11.169,
-      "end": 11.68
-    },
-    {
-      "word": "Disclosure",
-      "start": 11.714,
-      "end": 12.272
-    },
-    {
-      "word": "docs,",
-      "start": 12.307,
-      "end": 12.829
-    },
-    {
-      "word": "scans",
-      "start": 12.945,
-      "end": 13.386
-    },
-    {
-      "word": "the",
-      "start": 13.444,
-      "end": 13.514
-    },
-    {
-      "word": "code,",
-      "start": 13.572,
-      "end": 14.013
-    },
-    {
-      "word": "and",
-      "start": 14.396,
-      "end": 14.559
-    },
-    {
-      "word": "drafts",
-      "start": 14.617,
-      "end": 14.988
-    },
-    {
-      "word": "a",
-      "start": 15.023,
-      "end": 15.047
-    },
-    {
-      "word": "spec",
-      "start": 15.105,
-      "end": 15.43
-    },
-    {
-      "word": "with",
-      "start": 15.511,
-      "end": 15.651
-    },
-    {
-      "word": "acceptance",
-      "start": 15.686,
-      "end": 16.324
-    },
-    {
-      "word": "criteria,",
-      "start": 16.371,
-      "end": 17.195
-    },
-    {
-      "word": "edge",
-      "start": 17.311,
-      "end": 17.543
-    },
-    {
-      "word": "cases,",
-      "start": 17.578,
-      "end": 18.205
-    },
-    {
-      "word": "approach",
-      "start": 18.228,
-      "end": 18.658
-    },
-    {
-      "word": "decisions,",
-      "start": 18.739,
-      "end": 19.563
-    },
-    {
-      "word": "and",
-      "start": 19.888,
-      "end": 20.028
-    },
-    {
-      "word": "a",
-      "start": 20.086,
-      "end": 20.109
-    },
-    {
-      "word": "test",
-      "start": 20.155,
-      "end": 20.411
-    },
-    {
-      "word": "plan.",
-      "start": 20.457,
-      "end": 20.91
+      "word": "spec.",
+      "start": 3.246,
+      "end": 6.158
     },
     {
       "word": "The",
-      "start": 21.514,
-      "end": 21.63
+      "start": 7.497,
+      "end": 7.518
     },
     {
-      "word": "workflow",
-      "start": 21.676,
-      "end": 22.245
+      "word": "Lead",
+      "start": 7.598,
+      "end": 7.918
     },
     {
-      "word": "includes",
-      "start": 22.326,
-      "end": 22.837
+      "word": "AI",
+      "start": 8.131,
+      "end": 8.557
     },
     {
-      "word": "an",
-      "start": 22.872,
-      "end": 22.942
-    },
-    {
-      "word": "explicit",
-      "start": 22.988,
-      "end": 23.627
-    },
-    {
-      "word": "cross-verification",
-      "start": 23.72,
-      "end": 24.823
-    },
-    {
-      "word": "step:",
-      "start": 24.904,
-      "end": 25.415
-    },
-    {
-      "word": "Model",
-      "start": 25.798,
-      "end": 26.088
-    },
-    {
-      "word": "B",
-      "start": 26.146,
-      "end": 26.239
-    },
-    {
-      "word": "independently",
-      "start": 26.413,
-      "end": 27.168
-    },
-    {
-      "word": "restates",
-      "start": 27.261,
-      "end": 27.876
-    },
-    {
-      "word": "each",
-      "start": 27.992,
-      "end": 28.224
-    },
-    {
-      "word": "acceptance",
-      "start": 28.259,
-      "end": 28.863
-    },
-    {
-      "word": "criterion.",
-      "start": 28.898,
-      "end": 29.676
-    },
-    {
-      "word": "If",
-      "start": 30.117,
-      "end": 30.256
+      "word": "reads",
+      "start": 8.664,
+      "end": 9.199
     },
     {
       "word": "the",
-      "start": 30.314,
-      "end": 30.384
+      "start": 9.219,
+      "end": 9.279
     },
     {
-      "word": "two",
-      "start": 30.419,
-      "end": 30.581
+      "word": "requirement,",
+      "start": 9.346,
+      "end": 10.323
     },
     {
-      "word": "models'",
-      "start": 30.651,
-      "end": 30.976
+      "word": "the",
+      "start": 10.363,
+      "end": 10.483
     },
     {
-      "word": "restatements",
-      "start": 31.022,
-      "end": 31.672
-    },
-    {
-      "word": "diverge,",
-      "start": 31.718,
-      "end": 32.531
-    },
-    {
-      "word": "that",
-      "start": 32.856,
-      "end": 33.03
-    },
-    {
-      "word": "criterion",
-      "start": 33.088,
-      "end": 33.727
-    },
-    {
-      "word": "is",
-      "start": 33.773,
-      "end": 33.855
-    },
-    {
-      "word": "ambiguous",
-      "start": 33.913,
-      "end": 34.633
+      "word": "docs,",
+      "start": 10.595,
+      "end": 11.203
     },
     {
       "word": "and",
-      "start": 35.236,
-      "end": 35.445
-    },
-    {
-      "word": "gets",
-      "start": 35.48,
-      "end": 35.643
-    },
-    {
-      "word": "surfaced",
-      "start": 35.677,
-      "end": 36.13
-    },
-    {
-      "word": "to",
-      "start": 36.153,
-      "end": 36.211
+      "start": 11.263,
+      "end": 11.443
     },
     {
       "word": "the",
-      "start": 36.258,
-      "end": 36.328
+      "start": 11.463,
+      "end": 11.523
     },
     {
-      "word": "human",
-      "start": 36.362,
-      "end": 36.827
+      "word": "code,",
+      "start": 11.619,
+      "end": 12.163
     },
     {
-      "word": "for",
-      "start": 37.105,
-      "end": 37.256
+      "word": "[short",
+      "start": 12.803,
+      "end": 13.483
     },
     {
-      "word": "reconciliation.\n\nThe",
-      "start": 37.291,
-      "end": 39.265
+      "word": "pause]",
+      "start": 13.49,
+      "end": 13.565
     },
     {
-      "word": "phase",
-      "start": 39.311,
-      "end": 39.59
+      "word": "then",
+      "start": 13.573,
+      "end": 13.605
     },
     {
-      "word": "ends",
-      "start": 39.636,
-      "end": 40.054
+      "word": "drafts",
+      "start": 13.674,
+      "end": 14.088
     },
     {
-      "word": "when",
-      "start": 40.379,
-      "end": 40.554
-    },
-    {
-      "word": "the",
-      "start": 40.577,
-      "end": 40.647
-    },
-    {
-      "word": "human",
-      "start": 40.681,
-      "end": 40.983
-    },
-    {
-      "word": "signs",
-      "start": 41.053,
-      "end": 41.39
-    },
-    {
-      "word": "off",
-      "start": 41.436,
-      "end": 41.575
-    },
-    {
-      "word": "the",
-      "start": 41.622,
-      "end": 41.691
-    },
-    {
-      "word": "spec.\n\nThe",
-      "start": 41.738,
-      "end": 43.038
+      "word": "a",
+      "start": 14.128,
+      "end": 14.168
     },
     {
       "word": "spec",
-      "start": 43.073,
-      "end": 43.294
+      "start": 14.264,
+      "end": 14.648
     },
     {
-      "word": "itself",
-      "start": 43.352,
-      "end": 43.781
-    },
-    {
-      "word": "is",
-      "start": 43.851,
-      "end": 43.932
-    },
-    {
-      "word": "a",
-      "start": 43.979,
-      "end": 44.002
-    },
-    {
-      "word": "short",
-      "start": 44.048,
-      "end": 44.292
-    },
-    {
-      "word": "markdown",
-      "start": 44.338,
-      "end": 44.78
-    },
-    {
-      "word": "file.",
-      "start": 44.849,
-      "end": 45.337
-    },
-    {
-      "word": "It",
-      "start": 46.034,
-      "end": 46.161
-    },
-    {
-      "word": "has",
-      "start": 46.196,
-      "end": 46.301
-    },
-    {
-      "word": "a",
-      "start": 46.335,
-      "end": 46.37
-    },
-    {
-      "word": "title,",
-      "start": 46.417,
-      "end": 47.032
+      "word": "with",
+      "start": 14.696,
+      "end": 14.888
     },
     {
       "word": "acceptance",
-      "start": 47.148,
-      "end": 47.787
+      "start": 14.939,
+      "end": 15.449
     },
     {
-      "word": "criteria",
-      "start": 47.821,
-      "end": 48.541
-    },
-    {
-      "word": "written",
-      "start": 48.623,
-      "end": 48.924
-    },
-    {
-      "word": "in",
-      "start": 48.971,
-      "end": 49.041
-    },
-    {
-      "word": "Given-When-Then",
-      "start": 49.099,
-      "end": 49.703
-    },
-    {
-      "word": "form,",
-      "start": 49.819,
-      "end": 50.365
-    },
-    {
-      "word": "an",
-      "start": 50.806,
-      "end": 50.957
+      "word": "criteria,",
+      "start": 15.529,
+      "end": 16.489
     },
     {
       "word": "edge",
-      "start": 51.003,
-      "end": 51.177
+      "start": 16.537,
+      "end": 16.729
     },
     {
-      "word": "cases",
-      "start": 51.224,
-      "end": 51.607
+      "word": "cases,",
+      "start": 16.836,
+      "end": 17.531
     },
     {
-      "word": "section,",
-      "start": 51.653,
-      "end": 52.338
+      "word": "and",
+      "start": 17.571,
+      "end": 17.691
     },
     {
       "word": "approach",
-      "start": 52.779,
-      "end": 53.267
+      "start": 17.744,
+      "end": 18.168
     },
     {
-      "word": "decisions",
-      "start": 53.441,
-      "end": 53.882
+      "word": "decisions.",
+      "start": 18.24,
+      "end": 18.968
     },
     {
-      "word": "with",
-      "start": 53.917,
-      "end": 54.022
+      "word": "The",
+      "start": 21.507,
+      "end": 21.528
     },
     {
-      "word": "rationale,",
-      "start": 54.08,
-      "end": 54.892
-    },
-    {
-      "word": "a",
-      "start": 55.276,
-      "end": 55.345
-    },
-    {
-      "word": "test",
-      "start": 55.426,
-      "end": 55.659
-    },
-    {
-      "word": "case",
-      "start": 55.705,
-      "end": 55.937
-    },
-    {
-      "word": "table,",
-      "start": 55.972,
-      "end": 56.518
-    },
-    {
-      "word": "an",
-      "start": 56.727,
-      "end": 56.866
-    },
-    {
-      "word": "out-of-scope",
-      "start": 56.913,
-      "end": 57.551
-    },
-    {
-      "word": "list,",
-      "start": 57.598,
-      "end": 58.074
-    },
-    {
-      "word": "and",
-      "start": 58.457,
-      "end": 58.608
-    },
-    {
-      "word": "a",
-      "start": 58.666,
-      "end": 58.689
-    },
-    {
-      "word": "verification",
-      "start": 58.735,
-      "end": 59.455
-    },
-    {
-      "word": "plan.",
-      "start": 59.513,
-      "end": 59.978
-    },
-    {
-      "word": "There",
-      "start": 60.419,
-      "end": 60.616
-    },
-    {
-      "word": "are",
-      "start": 60.651,
-      "end": 60.755
-    },
-    {
-      "word": "nine",
-      "start": 60.802,
-      "end": 61.022
-    },
-    {
-      "word": "principles",
-      "start": 61.069,
-      "end": 61.626
-    },
-    {
-      "word": "a",
-      "start": 61.673,
-      "end": 61.696
-    },
-    {
-      "word": "good",
-      "start": 61.742,
-      "end": 61.893
-    },
-    {
-      "word": "spec",
-      "start": 61.94,
-      "end": 62.195
-    },
-    {
-      "word": "must",
-      "start": 62.265,
-      "end": 62.427
-    },
-    {
-      "word": "satisfy.",
-      "start": 62.462,
-      "end": 63.205
-    },
-    {
-      "word": "Every",
-      "start": 63.646,
-      "end": 63.96
-    },
-    {
-      "word": "acceptance",
-      "start": 64.006,
-      "end": 64.564
-    },
-    {
-      "word": "criterion",
-      "start": 64.598,
-      "end": 65.225
-    },
-    {
-      "word": "must",
-      "start": 65.283,
-      "end": 65.457
-    },
-    {
-      "word": "be",
-      "start": 65.503,
-      "end": 65.585
-    },
-    {
-      "word": "executable",
-      "start": 65.631,
-      "end": 66.502
-    },
-    {
-      "word": "\u2014",
-      "start": 66.525,
-      "end": 66.583
-    },
-    {
-      "word": "it",
-      "start": 66.908,
-      "end": 67.048
-    },
-    {
-      "word": "maps",
-      "start": 67.117,
-      "end": 67.489
-    },
-    {
-      "word": "to",
-      "start": 67.547,
-      "end": 67.64
-    },
-    {
-      "word": "a",
-      "start": 67.721,
-      "end": 67.744
-    },
-    {
-      "word": "runnable",
-      "start": 67.802,
-      "end": 68.162
-    },
-    {
-      "word": "test.",
-      "start": 68.197,
-      "end": 68.824
-    },
-    {
-      "word": "Every",
-      "start": 69.428,
-      "end": 69.706
-    },
-    {
-      "word": "spec",
-      "start": 69.741,
-      "end": 70.008
-    },
-    {
-      "word": "must",
-      "start": 70.078,
-      "end": 70.217
-    },
-    {
-      "word": "be",
-      "start": 70.252,
-      "end": 70.322
-    },
-    {
-      "word": "reviewable",
-      "start": 70.38,
-      "end": 70.867
-    },
-    {
-      "word": "in",
-      "start": 70.89,
-      "end": 70.937
-    },
-    {
-      "word": "under",
-      "start": 70.983,
-      "end": 71.146
-    },
-    {
-      "word": "five",
-      "start": 71.192,
-      "end": 71.459
-    },
-    {
-      "word": "minutes.",
-      "start": 71.494,
-      "end": 72.133
-    },
-    {
-      "word": "Edge",
-      "start": 72.644,
-      "end": 72.887
-    },
-    {
-      "word": "cases",
-      "start": 72.922,
-      "end": 73.352
-    },
-    {
-      "word": "get",
-      "start": 73.41,
-      "end": 73.561
-    },
-    {
-      "word": "their",
-      "start": 73.607,
-      "end": 73.77
-    },
-    {
-      "word": "own",
-      "start": 73.816,
-      "end": 73.956
-    },
-    {
-      "word": "section",
-      "start": 74.025,
-      "end": 74.466
-    },
-    {
-      "word": "rather",
-      "start": 74.559,
-      "end": 74.861
-    },
-    {
-      "word": "than",
-      "start": 74.908,
-      "end": 75.035
-    },
-    {
-      "word": "being",
-      "start": 75.105,
-      "end": 75.314
-    },
-    {
-      "word": "buried",
-      "start": 75.384,
-      "end": 75.72
-    },
-    {
-      "word": "in",
-      "start": 75.755,
-      "end": 75.813
-    },
-    {
-      "word": "the",
-      "start": 75.86,
-      "end": 75.929
-    },
-    {
-      "word": "happy",
-      "start": 75.976,
-      "end": 76.231
-    },
-    {
-      "word": "path.",
-      "start": 76.301,
-      "end": 76.846
-    },
-    {
-      "word": "And",
-      "start": 77.45,
-      "end": 77.589
-    },
-    {
-      "word": "approach",
-      "start": 77.624,
-      "end": 77.984
-    },
-    {
-      "word": "decisions",
-      "start": 78.042,
-      "end": 78.541
-    },
-    {
-      "word": "are",
-      "start": 78.588,
-      "end": 78.681
-    },
-    {
-      "word": "made",
-      "start": 78.704,
-      "end": 78.948
-    },
-    {
-      "word": "in",
-      "start": 78.983,
-      "end": 79.052
-    },
-    {
-      "word": "the",
-      "start": 79.099,
-      "end": 79.168
-    },
-    {
-      "word": "spec,",
-      "start": 79.203,
-      "end": 79.749
-    },
-    {
-      "word": "not",
-      "start": 79.865,
-      "end": 80.05
-    },
-    {
-      "word": "deferred",
-      "start": 80.097,
-      "end": 80.526
-    },
-    {
-      "word": "to",
-      "start": 80.561,
-      "end": 80.619
-    },
-    {
-      "word": "implementation.",
-      "start": 80.689,
-      "end": 81.769
-    },
-    {
-      "word": "When",
-      "start": 82.372,
-      "end": 82.547
-    },
-    {
-      "word": "the",
-      "start": 82.581,
-      "end": 82.651
+      "word": "Verifier",
+      "start": 21.608,
+      "end": 22.328
     },
     {
       "word": "AI",
-      "start": 82.709,
-      "end": 83.046
-    },
-    {
-      "word": "sees",
-      "start": 83.174,
-      "end": 83.324
-    },
-    {
-      "word": "multiple",
-      "start": 83.441,
-      "end": 84.218
-    },
-    {
-      "word": "reasonable",
-      "start": 84.393,
-      "end": 84.985
-    },
-    {
-      "word": "approaches,",
-      "start": 85.008,
-      "end": 85.832
-    },
-    {
-      "word": "it",
-      "start": 86.157,
-      "end": 86.308
-    },
-    {
-      "word": "names",
-      "start": 86.424,
-      "end": 86.831
-    },
-    {
-      "word": "them",
-      "start": 86.889,
-      "end": 87.074
-    },
-    {
-      "word": "and",
-      "start": 87.225,
-      "end": 87.388
-    },
-    {
-      "word": "picks",
-      "start": 87.469,
-      "end": 87.794
-    },
-    {
-      "word": "one",
-      "start": 87.864,
-      "end": 88.177
-    },
-    {
-      "word": "with",
-      "start": 88.386,
-      "end": 88.561
-    },
-    {
-      "word": "a",
-      "start": 88.595,
-      "end": 88.619
-    },
-    {
-      "word": "reason.\n\nThat",
-      "start": 88.688,
-      "end": 89.977
-    },
-    {
-      "word": "last",
-      "start": 90.035,
-      "end": 90.232
-    },
-    {
-      "word": "point",
-      "start": 90.279,
-      "end": 90.499
-    },
-    {
-      "word": "is",
-      "start": 90.546,
-      "end": 90.627
-    },
-    {
-      "word": "important.",
-      "start": 90.674,
-      "end": 91.359
-    },
-    {
-      "word": "If",
-      "start": 91.742,
-      "end": 91.881
-    },
-    {
-      "word": "you",
-      "start": 91.916,
-      "end": 91.997
-    },
-    {
-      "word": "let",
-      "start": 92.067,
-      "end": 92.206
-    },
-    {
-      "word": "the",
-      "start": 92.241,
-      "end": 92.311
-    },
-    {
-      "word": "AI",
-      "start": 92.369,
-      "end": 92.682
-    },
-    {
-      "word": "defer",
-      "start": 92.775,
-      "end": 93.181
-    },
-    {
-      "word": "decisions",
-      "start": 93.263,
-      "end": 93.75
-    },
-    {
-      "word": "to",
-      "start": 93.797,
-      "end": 93.866
-    },
-    {
-      "word": "implementation,",
-      "start": 93.936,
-      "end": 94.958
-    },
-    {
-      "word": "it",
-      "start": 95.283,
-      "end": 95.41
-    },
-    {
-      "word": "makes",
-      "start": 95.457,
-      "end": 95.666
-    },
-    {
-      "word": "them",
-      "start": 95.689,
-      "end": 95.817
-    },
-    {
-      "word": "implicitly,",
-      "start": 95.863,
-      "end": 96.757
-    },
-    {
-      "word": "often",
-      "start": 96.885,
-      "end": 97.268
-    },
-    {
-      "word": "inconsistently,",
-      "start": 97.384,
-      "end": 98.684
-    },
-    {
-      "word": "and",
-      "start": 99.009,
-      "end": 99.149
-    },
-    {
-      "word": "you",
-      "start": 99.195,
-      "end": 99.276
-    },
-    {
-      "word": "only",
-      "start": 99.358,
-      "end": 99.555
-    },
-    {
-      "word": "discover",
-      "start": 99.625,
-      "end": 100.066
-    },
-    {
-      "word": "the",
-      "start": 100.124,
-      "end": 100.194
-    },
-    {
-      "word": "choice",
-      "start": 100.24,
-      "end": 100.507
-    },
-    {
-      "word": "when",
-      "start": 100.53,
-      "end": 100.623
-    },
-    {
-      "word": "you're",
-      "start": 100.658,
-      "end": 100.809
-    },
-    {
-      "word": "reading",
-      "start": 100.832,
-      "end": 101.041
-    },
-    {
-      "word": "the",
-      "start": 101.076,
-      "end": 101.146
-    },
-    {
-      "word": "code.",
-      "start": 101.192,
-      "end": 101.633
-    },
-    {
-      "word": "Forcing",
-      "start": 102.237,
-      "end": 102.632
-    },
-    {
-      "word": "decisions",
-      "start": 102.69,
-      "end": 103.131
-    },
-    {
-      "word": "into",
-      "start": 103.177,
-      "end": 103.328
-    },
-    {
-      "word": "the",
-      "start": 103.386,
-      "end": 103.456
-    },
-    {
-      "word": "spec",
-      "start": 103.502,
-      "end": 103.874
-    },
-    {
-      "word": "means",
-      "start": 103.99,
-      "end": 104.35
-    },
-    {
-      "word": "the",
-      "start": 104.42,
-      "end": 104.513
-    },
-    {
-      "word": "human",
-      "start": 104.582,
-      "end": 105.0
+      "start": 22.515,
+      "end": 22.889
     },
     {
       "word": "reviews",
-      "start": 105.116,
-      "end": 105.581
+      "start": 22.979,
+      "end": 23.609
     },
     {
-      "word": "them",
-      "start": 105.639,
-      "end": 105.778
+      "word": "the",
+      "start": 23.649,
+      "end": 23.769
+    },
+    {
+      "word": "spec",
+      "start": 23.849,
+      "end": 24.169
+    },
+    {
+      "word": "independently.",
+      "start": 24.243,
+      "end": 26.325
+    },
+    {
+      "word": "[short",
+      "start": 27.165,
+      "end": 28.045
+    },
+    {
+      "word": "pause]",
+      "start": 28.052,
+      "end": 28.127
+    },
+    {
+      "word": "If",
+      "start": 28.14,
+      "end": 28.166
+    },
+    {
+      "word": "the",
+      "start": 28.186,
+      "end": 28.246
+    },
+    {
+      "word": "two",
+      "start": 28.346,
+      "end": 28.646
+    },
+    {
+      "word": "AIs",
+      "start": 28.806,
+      "end": 29.286
+    },
+    {
+      "word": "disagree",
+      "start": 29.366,
+      "end": 30.006
+    },
+    {
+      "word": "on",
+      "start": 30.086,
+      "end": 30.246
+    },
+    {
+      "word": "what",
+      "start": 30.278,
+      "end": 30.406
+    },
+    {
+      "word": "a",
+      "start": 30.446,
+      "end": 30.486
+    },
+    {
+      "word": "criterion",
+      "start": 30.574,
+      "end": 31.366
+    },
+    {
+      "word": "means,",
+      "start": 31.433,
+      "end": 31.928
+    },
+    {
+      "word": "[short",
+      "start": 32.208,
+      "end": 32.528
+    },
+    {
+      "word": "pause]",
+      "start": 32.535,
+      "end": 32.61
+    },
+    {
+      "word": "that's",
+      "start": 32.618,
+      "end": 32.73
+    },
+    {
+      "word": "ambiguity",
+      "start": 32.818,
+      "end": 33.61
+    },
+    {
+      "word": "\u2014",
+      "start": 33.89,
+      "end": 34.17
+    },
+    {
+      "word": "and",
+      "start": 34.19,
+      "end": 34.25
+    },
+    {
+      "word": "it",
+      "start": 34.277,
+      "end": 34.331
+    },
+    {
+      "word": "gets",
+      "start": 34.395,
+      "end": 34.651
+    },
+    {
+      "word": "surfaced",
+      "start": 34.713,
+      "end": 35.209
+    },
+    {
+      "word": "to",
+      "start": 35.236,
+      "end": 35.29
+    },
+    {
+      "word": "the",
+      "start": 35.31,
+      "end": 35.37
+    },
+    {
+      "word": "human",
+      "start": 35.463,
+      "end": 35.928
     },
     {
       "word": "before",
-      "start": 105.836,
-      "end": 106.15
+      "start": 36.008,
+      "end": 36.488
     },
     {
       "word": "any",
-      "start": 106.196,
-      "end": 106.37
+      "start": 36.568,
+      "end": 36.808
     },
     {
       "word": "code",
-      "start": 106.451,
-      "end": 106.765
+      "start": 36.888,
+      "end": 37.208
     },
     {
       "word": "is",
-      "start": 106.8,
-      "end": 106.881
+      "start": 37.235,
+      "end": 37.289
     },
     {
       "word": "written.",
-      "start": 106.927,
-      "end": 107.508
+      "start": 37.339,
+      "end": 37.849
+    },
+    {
+      "word": "The",
+      "start": 39.757,
+      "end": 39.763
+    },
+    {
+      "word": "key",
+      "start": 39.843,
+      "end": 40.083
+    },
+    {
+      "word": "discipline",
+      "start": 40.134,
+      "end": 40.644
+    },
+    {
+      "word": "here:",
+      "start": 40.724,
+      "end": 41.124
+    },
+    {
+      "word": "decide",
+      "start": 41.295,
+      "end": 42.321
+    },
+    {
+      "word": "in",
+      "start": 42.374,
+      "end": 42.48
+    },
+    {
+      "word": "the",
+      "start": 42.52,
+      "end": 42.64
+    },
+    {
+      "word": "spec,",
+      "start": 42.752,
+      "end": 43.44
+    },
+    {
+      "word": "not",
+      "start": 43.54,
+      "end": 43.84
+    },
+    {
+      "word": "in",
+      "start": 43.893,
+      "end": 43.999
+    },
+    {
+      "word": "the",
+      "start": 44.019,
+      "end": 44.079
+    },
+    {
+      "word": "code.",
+      "start": 44.175,
+      "end": 44.639
+    },
+    {
+      "word": "If",
+      "start": 46.06,
+      "end": 46.078
+    },
+    {
+      "word": "you",
+      "start": 46.118,
+      "end": 46.238
+    },
+    {
+      "word": "let",
+      "start": 46.298,
+      "end": 46.478
+    },
+    {
+      "word": "the",
+      "start": 46.518,
+      "end": 46.638
+    },
+    {
+      "word": "AI",
+      "start": 46.798,
+      "end": 47.118
+    },
+    {
+      "word": "defer",
+      "start": 47.198,
+      "end": 47.598
+    },
+    {
+      "word": "decisions",
+      "start": 47.654,
+      "end": 48.158
+    },
+    {
+      "word": "to",
+      "start": 48.211,
+      "end": 48.317
+    },
+    {
+      "word": "implementation,",
+      "start": 48.386,
+      "end": 49.432
+    },
+    {
+      "word": "[short",
+      "start": 49.712,
+      "end": 50.012
+    },
+    {
+      "word": "pause]",
+      "start": 50.015,
+      "end": 50.05
+    },
+    {
+      "word": "it",
+      "start": 50.057,
+      "end": 50.071
+    },
+    {
+      "word": "makes",
+      "start": 50.138,
+      "end": 50.473
+    },
+    {
+      "word": "them",
+      "start": 50.521,
+      "end": 50.713
+    },
+    {
+      "word": "implicitly,",
+      "start": 50.793,
+      "end": 52.073
+    },
+    {
+      "word": "often",
+      "start": 52.153,
+      "end": 52.553
+    },
+    {
+      "word": "inconsistently,",
+      "start": 52.625,
+      "end": 54.313
+    },
+    {
+      "word": "[short",
+      "start": 54.321,
+      "end": 54.344
+    },
+    {
+      "word": "pause]",
+      "start": 54.347,
+      "end": 54.378
+    },
+    {
+      "word": "and",
+      "start": 54.382,
+      "end": 54.394
+    },
+    {
+      "word": "you",
+      "start": 54.454,
+      "end": 54.634
+    },
+    {
+      "word": "only",
+      "start": 54.698,
+      "end": 54.954
+    },
+    {
+      "word": "find",
+      "start": 55.034,
+      "end": 55.354
+    },
+    {
+      "word": "out",
+      "start": 55.414,
+      "end": 55.594
+    },
+    {
+      "word": "when",
+      "start": 55.642,
+      "end": 55.834
+    },
+    {
+      "word": "you're",
+      "start": 55.854,
+      "end": 55.995
+    },
+    {
+      "word": "reading",
+      "start": 56.035,
+      "end": 56.315
+    },
+    {
+      "word": "the",
+      "start": 56.355,
+      "end": 56.475
+    },
+    {
+      "word": "code.",
+      "start": 56.555,
+      "end": 57.115
+    },
+    {
+      "word": "The",
+      "start": 59.295,
+      "end": 59.355
+    },
+    {
+      "word": "phase",
+      "start": 59.448,
+      "end": 59.913
+    },
+    {
+      "word": "ends",
+      "start": 59.993,
+      "end": 60.313
+    },
+    {
+      "word": "when",
+      "start": 60.361,
+      "end": 60.553
+    },
+    {
+      "word": "the",
+      "start": 60.573,
+      "end": 60.633
+    },
+    {
+      "word": "human",
+      "start": 60.713,
+      "end": 61.113
+    },
+    {
+      "word": "signs",
+      "start": 61.193,
+      "end": 61.593
+    },
+    {
+      "word": "off.",
+      "start": 61.673,
+      "end": 62.073
     }
   ],
-  "duration": 107.508
+  "duration": 62.073
 }
