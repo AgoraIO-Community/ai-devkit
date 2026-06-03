@@ -10,14 +10,14 @@ AI DevKit publishes standards. The diagrams below depict the lifecycle those sta
 
 ![AI Software Development Lifecycle flow](docs/img/ai-sdlc-flow.svg)
 
-*Work flows from intake (story, epic, bug, or feature) through Plan, Implementation, and Release. The Lead AI executes the workflow; the Verifier AI independently checks key transitions. The Plan phase produces a spec; the Implementation phase produces working code, tests, and updated docs.*
+*Work flows from intake (story, epic, bug, or feature) through Plan, Implementation, and Release. The Lead AI executes the workflow; the Verify AI independently reviews all Lead AI work. The Plan phase produces a spec; the Implementation phase produces working code, tests, and updated docs.*
 
 ```mermaid
 sequenceDiagram
     participant W as Work item
     participant H as Human
     participant A as Lead AI (A)
-    participant B as Verifier AI (B)
+    participant B as Verify AI (B)
     participant PD as Progressive Disclosure docs
     participant CI as Release
 
@@ -50,11 +50,11 @@ sequenceDiagram
     H-->>CI: approve & merge
 ```
 
-*The same flow shown as interactions. The Lead AI reads and updates Progressive Disclosure docs at each phase boundary, and the Verifier AI checks key transitions independently.*
+*The same flow shown as interactions. The Lead AI reads and updates Progressive Disclosure docs at each phase boundary, and the Verify AI reviews all Lead AI work independently.*
 
-## Lead AI and Verifier AI
+## Lead AI and Verify AI
 
-**Lead AI** executes the workflow — it reads the procedure from Progressive Disclosure docs and works through it step by step. **Verifier AI** independently checks key transitions — it's a second AI from a different training lineage.
+**Lead AI** executes the workflow — it reads the procedure from Progressive Disclosure docs and works through it step by step. **Verify AI** independently reviews all Lead AI work — it's a second AI from a different training lineage.
 
 Which provider takes which role can vary per phase and per repo. What matters is that the two AIs come from independent training lineages. A single AI is confidently wrong in ways invisible to itself, and asking the same model to review its own output rarely catches the error. Two independent lineages catch different mistakes.
 
@@ -62,7 +62,7 @@ Which provider takes which role can vary per phase and per repo. What matters is
 
 **What it is.** Plan turns a work item — story, epic, bug, or feature — into an approved spec: a short markdown file with acceptance criteria, edge cases, approach decisions, and a test plan. The human approves the spec before any code is written.
 
-**How it works.** Lead AI executes the spec-creation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the work item, the relevant Progressive Disclosure docs, existing code, and the human. The workflow includes explicit cross-verification steps that consult Verifier AI — for example, having Verifier AI independently restate the acceptance criteria to surface ambiguities. The phase ends when the human signs off the spec.
+**How it works.** Lead AI executes the spec-creation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the work item, the relevant Progressive Disclosure docs, existing code, and the human. The workflow includes explicit cross-verification steps that consult Verify AI — for example, having Verify AI independently restate the acceptance criteria to surface ambiguities. The phase ends when the human signs off the spec.
 
 **Artifact.** `docs/specs/SPEC-NNN-<short-name>.md` — title, status, acceptance criteria, edge cases, approach decisions, test cases, out-of-scope list, verification plan, and notes. See [spec-profile.md](docs/standard/spec-profile.md) for the template and the nine principles a good spec must satisfy.
 
@@ -122,7 +122,7 @@ https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/spec-prof
 
 **What it is.** Implementation turns an approved spec into a deliverable bundle: code, tests, updated Progressive Disclosure docs, and the structured commit message. The human is available on demand for clarifications but is not in the inner loop.
 
-**How it works.** Lead AI executes the implementation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the spec, the existing code, Progressive Disclosure docs, the testing tools, the human (on demand), and Verifier AI. The workflow runs Red, Green, Refactor for the test-driven development discipline and then Progressive Disclosure docs verification, with cross-verification steps that involve Verifier AI at key transitions. For test-driven development specifically, the workflow specifies a handoff: one model writes the failing tests, a second model from an independent training lineage implements — preserving test-author and implementer separation.
+**How it works.** Lead AI executes the implementation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the spec, the existing code, Progressive Disclosure docs, the testing tools, the human (on demand), and Verify AI. The workflow runs Red, Green, Refactor for the test-driven development discipline and then Progressive Disclosure docs verification, with cross-verification steps that involve Verify AI at key transitions. For test-driven development specifically, the workflow specifies a handoff: one model writes the failing tests, a second model from an independent training lineage implements — preserving test-author and implementer separation.
 
 Once implementation is complete, the affected Progressive Disclosure docs are updated to reflect the new reality and the spec is archived to `docs/specs/archive/`. Archived specs are not part of the agent operating surface — Progressive Disclosure docs carry everything an agent needs going forward. The archive exists for human audits and retrospectives.
 

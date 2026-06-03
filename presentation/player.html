@@ -131,9 +131,9 @@
     border-left: 10px solid #238636; border-top: 6px solid transparent; border-bottom: 6px solid transparent;
   }
   .slide-bullets .em { color: #58a6ff; font-weight: 600; }
-  .slide.layout-diagram .slide-bullets li { font-size: 16px; padding: 4px 0 4px 22px; }
+  .slide.layout-diagram .slide-bullets li { font-size: 18px; line-height: 1.5; padding: 8px 0 8px 24px; }
   .slide.layout-diagram .slide-bullets li::before {
-    top: 11px; border-left-width: 8px; border-top-width: 5px; border-bottom-width: 5px;
+    top: 15px; border-left-width: 9px; border-top-width: 5px; border-bottom-width: 5px;
   }
 
   /* ── Bottom panel: transcript (browse) or subtitles (play) ── */
@@ -155,13 +155,13 @@
 
   /* Subtitle panel (play mode) */
   .subtitle-panel {
-    display: none; padding: 14px 24px; text-align: center;
-    min-height: 72px;
+    display: none; padding: 20px 48px; text-align: center;
+    min-height: 110px;
     flex-direction: column; justify-content: center;
   }
   body.playing .subtitle-panel { display: flex; }
-  .subtitle-en { font-size: 17px; margin-bottom: 3px; line-height: 1.4; }
-  .subtitle-zh { font-size: 15px; color: #8b949e; line-height: 1.4; }
+  .subtitle-en { font-size: 28px; margin-bottom: 6px; line-height: 1.4; font-weight: 500; }
+  .subtitle-zh { font-size: 24px; color: #8b949e; line-height: 1.4; }
 </style>
 </head>
 <body class="browse">
@@ -209,7 +209,7 @@
     <!-- Slide 3: The Lifecycle (full diagram, no bullets) -->
     <div class="slide layout-full-diagram" data-slide="3">
       <div class="slide-title">The Lifecycle</div>
-      <div class="slide-subtitle" style="margin-bottom:12px">Lead AI executes the workflow &mdash; Verifier AI independently checks key transitions</div>
+      <div class="slide-subtitle" style="margin-bottom:12px">Lead AI executes the workflow &mdash; Verify AI independently reviews all work</div>
       <div class="diagram-full" id="diagramSlotFull"></div>
     </div>
 
@@ -220,7 +220,7 @@
         <div class="slide-subtitle">Decide in the spec, not in the code</div>
         <ul class="slide-bullets">
           <li>Lead AI reads requirement, docs and code &mdash; drafts spec with acceptance criteria and approach decisions</li>
-          <li><span class="em">Verifier AI</span> independently reviews the spec &mdash; mismatches reveal ambiguity before any code is written</li>
+          <li><span class="em">Verify AI</span> independently reviews the spec &mdash; mismatches reveal ambiguity before any code is written</li>
           <li>Decisions made <span class="em">in the spec</span>, not deferred to implementation</li>
           <li>Human signs off the spec before work begins</li>
         </ul>
@@ -234,9 +234,9 @@
         <div class="slide-title">Implementation</div>
         <div class="slide-subtitle">Test-driven development with AI separation</div>
         <ul class="slide-bullets">
-          <li>Red-Green-Refactor: Verifier AI authors the tests from the spec, <span class="em">Lead AI</span> implements</li>
+          <li>Red-Green-Refactor: Verify AI authors the tests from the spec, <span class="em">Lead AI</span> implements</li>
           <li>Independent test authorship prevents AI from testing its own assumptions</li>
-          <li>After TDD: update Progressive Disclosure docs, Verifier AI cross-checks against code</li>
+          <li>After TDD: update Progressive Disclosure docs, Verify AI cross-checks against code</li>
           <li>Specs archived &mdash; docs carry everything forward</li>
         </ul>
       </div>
@@ -261,12 +261,12 @@
     <div class="slide layout-text" data-slide="7">
       <div class="slide-content">
         <div class="slide-title">Why Prompts, Not Skills</div>
-        <div class="slide-subtitle">Portability and transparency</div>
+        <div class="slide-subtitle">It&rsquo;s all just text hitting an LLM</div>
         <ul class="slide-bullets">
-          <li>Skills are tool-specific &mdash; a Claude skill doesn&rsquo;t work in Cursor or Codex</li>
+          <li>Skills are tool-specific and <span class="em">walled gardens</span> &mdash; a Claude skill doesn&rsquo;t work in Cursor or Codex</li>
           <li>Prompts are <span class="em">portable</span> &mdash; paste into any agent that reads files</li>
-          <li>Prompts are <span class="em">visible text</span> &mdash; read, understand, modify, version-control</li>
-          <li>Want faster access? Wrap the prompt in your tool&rsquo;s command system</li>
+          <li>Prompts are <span class="em">visible text</span> &mdash; engineers can read, audit, and modify what the AI is told to do</li>
+          <li>Hidden skills may or may not be followed &mdash; <span class="em">visible prompts are accountable</span></li>
         </ul>
       </div>
     </div>
@@ -343,7 +343,7 @@ const SVG_CONTENT = `
   <rect x="200" y="60" width="380" height="460" rx="16" fill="url(#plan-bg)" stroke="#30363d" stroke-width="1.5"/>
   <text x="390" y="98" fill="#e6edf3" font-size="20" font-weight="700" text-anchor="middle">Plan</text>
   <rect x="228" y="168" width="86" height="44" rx="8" fill="#2d1b1b" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/><text x="271" y="195" fill="#f85149" font-size="14" font-weight="600" text-anchor="middle">Human</text>
-  <rect x="452" y="168" width="116" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="510" y="195" fill="#58a6ff" font-size="13" font-weight="600" text-anchor="middle">Verifier AI</text>
+  <rect x="452" y="168" width="116" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="510" y="195" fill="#58a6ff" font-size="13" font-weight="600" text-anchor="middle">Verify AI</text>
   <rect x="208" y="400" width="126" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="271" y="418" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Progressive</text><text x="271" y="430" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
   <rect x="468" y="400" width="86" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="511" y="427" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Code</text>
   <rect x="338" y="275" width="104" height="50" rx="12" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/><text x="390" y="306" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Lead AI</text>
@@ -354,7 +354,7 @@ const SVG_CONTENT = `
   <rect x="827" y="140" width="86" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="870" y="167" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Code</text>
   <rect x="668" y="260" width="126" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="731" y="278" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Progressive</text><text x="731" y="290" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
   <rect x="988" y="260" width="86" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="1031" y="287" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Test Tools</text>
-  <rect x="672" y="388" width="116" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="730" y="415" fill="#58a6ff" font-size="12" font-weight="600" text-anchor="middle">Verifier AI</text>
+  <rect x="672" y="388" width="116" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="730" y="415" fill="#58a6ff" font-size="12" font-weight="600" text-anchor="middle">Verify AI</text>
   <rect x="988" y="388" width="86" height="44" rx="8" fill="#2d1b1b" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/><text x="1031" y="415" fill="#f85149" font-size="12" font-weight="600" text-anchor="middle">Human</text>
   <rect x="818" y="248" width="104" height="76" rx="14" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/><text x="870" y="293" fill="#fff" font-size="20" font-weight="700" text-anchor="middle">Lead AI</text>
   <line x1="870" y1="248" x2="870" y2="190" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
@@ -388,11 +388,11 @@ document.getElementById('diagramSlotImpl').appendChild(makeSVG('575 40 715 500')
 const TRANSCRIPTS = {
   1: '',
   2: `AI DevKit is an operating model for AI-centric software engineering. AI writes specs, tests, code, and docs. Humans approve the spec and approve the release. It works with your existing stack \u2014 git, repos, pull requests, CI \u2014 and reshapes it around AI execution, while keeping the human checkpoints that matter. There are four pillars: spec planning, test-driven implementation, Progressive Disclosure docs, and the AI dev environment.`,
-  3: `Work comes in as a story, epic, bug, or feature. It flows through three phases: Plan, Implementation, and Release. The Lead AI executes the workflow. The Verifier AI independently checks key transitions \u2014 it's a second AI from a different training lineage. Why two AIs? A single AI is confidently wrong in ways invisible to itself. Asking the same model to review its own output rarely catches the error. Two independent lineages catch different mistakes. The Plan phase produces a spec. The Implementation phase produces working code, tests, and updated docs. That deliverable passes through Release \u2014 a CI gate plus human approval.`,
-  4: `Plan turns a work item into an approved spec. The Lead AI reads the requirement, the docs, and the code, then drafts a spec with acceptance criteria, edge cases, and approach decisions. The Verifier AI reviews the spec independently. If the two AIs disagree on what a criterion means, that's ambiguity \u2014 and it gets surfaced to the human before any code is written. The key discipline here: decide in the spec, not in the code. If you let the AI defer decisions to implementation, it makes them implicitly, often inconsistently, and you only find out when you're reading the code. The phase ends when the human signs off.`,
-  5: `Implementation turns the approved spec into working code. The Verifier AI authors the failing tests directly from the spec. The Lead AI writes the implementation to make them pass. This is independent test authorship \u2014 the AI that writes the tests is not the AI that writes the code. Without that separation, implementation assumptions get silently baked into the tests. After TDD completes, the Lead AI updates the Progressive Disclosure docs, and the Verifier AI checks the updates against the actual code. Then the spec is archived. The docs carry everything forward.`,
+  3: `Work comes in as a story, epic, bug, or feature. It flows through three phases: Plan, Implementation, and Release. The Lead AI executes the workflow. The Verify AI independently reviews all Lead AI work \u2014 it's a second AI from a different training lineage. Why two AIs? A single AI is confidently wrong in ways invisible to itself. Asking the same model to review its own output rarely catches the error. Two independent lineages catch different mistakes. The Plan phase produces a spec. The Implementation phase produces working code, tests, and updated docs. That deliverable passes through Release \u2014 continuous integration and delivery pipelines plus human approval.`,
+  4: `Plan turns a work item into an approved spec. The Lead AI reads the requirement, the docs, and the code, then drafts a spec with acceptance criteria, edge cases, and approach decisions. The Verify AI reviews the spec independently. If the two AIs disagree on what a criterion means, that's ambiguity \u2014 and it gets surfaced to the human before any code is written. The key discipline here: decide in the spec, not in the code. If you let the AI defer decisions to implementation, it makes them implicitly, often inconsistently, and you only find out when you're reading the code. The phase ends when the human signs off.`,
+  5: `Implementation turns the approved spec into working code. The Verify AI authors the failing tests directly from the spec. The Lead AI writes the implementation to make them pass. This is independent test authorship \u2014 the AI that writes the tests is not the AI that writes the code. Without that separation, implementation assumptions get silently baked into the tests. After TDD completes, the Lead AI updates the Progressive Disclosure docs, and the Verify AI checks the updates against the actual code. Then the spec is archived. The docs carry everything forward.`,
   6: `Progressive Disclosure docs give every repo the same structure. The same eight files, in every repo, across the whole organisation. Level zero is an identity card \u2014 what is this repo? Level one is eight fixed files: setup, architecture, code map, conventions, workflows, interfaces, gotchas, and security. Level two is deep dives, loaded only when level one isn't enough. Levels zero and one load upfront \u2014 they're small. Level two is pulled in only when needed. The agent gets full context without filling the context window. That consistency is what lets any agent pick up any repo and work safely. You can generate these docs for an existing repo today \u2014 that's the fastest way to start.`,
-  7: `Why prompts instead of skills or slash commands? Skills are tool-specific. A Claude Code skill doesn't work in Cursor. A Cursor command doesn't work in Codex. Prompts are portable \u2014 they work in any agent that can read files. The same prompt works in Claude Code, Cursor, Codex, Gemini, or whatever comes next. A prompt is visible text \u2014 you can read it, understand it, modify it, version-control it. When a workflow changes, you update the markdown file, and every prompt that references it picks up the change. If your tool supports custom commands, you can wrap the prompt for faster access. But the prompt is the source of truth.`,
+  7: `Why prompts instead of skills or slash commands? There are lots of ways to load instructions into an AI tool \u2014 user settings, project files, enterprise configs, workspace markdown, skills, slash commands. It's a walled garden. A Claude Code skill doesn't work in Cursor. A Cursor command doesn't work in Codex. But at the end of the day, it's all just text hitting an LLM. Prompts are portable \u2014 they work in any agent that can read files. The same prompt works in Claude Code, Cursor, Codex, Gemini, or whatever comes next. More importantly, a prompt is visible text. Engineers can read the prompt, understand exactly what the AI is being told to do, and modify it. Hidden skills may or may not be followed. Visible prompts are accountable. When a workflow changes, you update the markdown file, and every prompt that references it picks up the change. If your tool supports custom commands, you can wrap the prompt for faster access. But the prompt is the source of truth.`,
   8: `Real systems span multiple repos \u2014 an API, an SDK, a frontend, shared infrastructure. The AI dev environment gives you one workspace where the AI can run the whole system end to end. It's a container of containers. Each component runs in its own container, all inside one outer workspace. The Lead AI can start, stop, restart, and test any component from there. It runs locally or in the cloud. Cloud workspaces are useful for team handoff \u2014 another engineer picks up the same workspace and the same context. The environment includes Playwright for browser testing and Terraform for infrastructure. And there's an audit trail across all agent sessions \u2014 reproducibility, traceability, and evals for debugging agent behaviour.`,
   9: `Here's how to start. Pick one repo and generate Progressive Disclosure docs for it. Any agent can then pick up that repo and work safely. Next, stand up one dev environment for a multi-repo system. The AI can run it end to end from day one. The docs and prompts are plain markdown \u2014 no plugins, no vendor lock-in. Start with one repo and one system, and you can use this operating model now.`,
 };

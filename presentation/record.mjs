@@ -31,7 +31,20 @@ const MAX_DURATION = getArg('duration', null);
 const START_TIME = Number(getArg('start', 0));
 const BASE_URL = 'http://localhost:8090/player.html';
 const FRAMES_DIR = join(__dirname, 'frames');
-const OUTPUT = join(__dirname, 'output.mp4');
+const RUNS_DIR = join(__dirname, 'runs');
+
+// Generate datetime-stamped output filename
+function outputPath() {
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const hh = String(now.getHours()).padStart(2, '0');
+  const min = String(now.getMinutes()).padStart(2, '0');
+  mkdirSync(RUNS_DIR, { recursive: true });
+  return join(RUNS_DIR, `ai-devkit-overview-${yyyy}-${mm}-${dd}_${hh}${min}.mp4`);
+}
+const OUTPUT = getArg('output', null) || outputPath();
 
 async function main() {
   if (existsSync(FRAMES_DIR)) rmSync(FRAMES_DIR, { recursive: true });
