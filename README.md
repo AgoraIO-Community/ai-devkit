@@ -77,7 +77,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
   | claude --dangerously-skip-permissions
 
 # Codex as lead
-codex exec --full-auto "$(curl -sL \
+codex --full-auto "$(curl -sL \
   https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md)"
 ```
 
@@ -106,7 +106,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
   | claude --dangerously-skip-permissions
 
 # Codex as lead
-codex exec --full-auto "$(curl -sL \
+codex --full-auto "$(curl -sL \
   https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md)"
 ```
 
@@ -180,7 +180,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
   | claude --dangerously-skip-permissions
 
 # Codex as lead + Claude verify
-codex exec --full-auto "$(curl -sL \
+codex --full-auto "$(curl -sL \
   https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
   https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```
@@ -200,7 +200,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
   | claude --dangerously-skip-permissions
 
 # Codex as lead
-codex exec --full-auto "$(curl -sL \
+codex --full-auto "$(curl -sL \
   https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md)"
 ```
 
@@ -219,7 +219,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
   | claude --dangerously-skip-permissions
 
 # Codex as lead, Claude as verify
-codex exec --full-auto "$(curl -sL \
+codex --full-auto "$(curl -sL \
   https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
   https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```

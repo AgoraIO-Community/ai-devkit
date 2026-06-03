@@ -10,7 +10,7 @@ https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progress
 Run this command to get Codex's independent review:
 
 ```
-codex exec -m gpt-5.4 \
+codex -m gpt-5.4 \
   --config model_reasoning_effort="medium" \
   --sandbox read-only \
   --full-auto \
@@ -45,7 +45,7 @@ Resume the Codex session to verify fixes:
 echo "I fixed the findings you reported. Re-read docs/ai/ and verify each
 fix against source. Report any remaining issues using the same FINDING format,
 or say NO FINDINGS if everything is accurate." \
-  | codex exec --skip-git-repo-check resume --last 2>/dev/null
+  | codex --skip-git-repo-check resume --last 2>/dev/null
 ```
 
 If Codex reports new findings, repeat steps 2-3. Max 3 rounds.
