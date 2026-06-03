@@ -4,7 +4,8 @@ to this repository.
 Before starting:
 
 1. Confirm you are inside the target repo's checked-out folder.
-2. Ask whether to work on the current branch or create a new one.
+2. Stash any uncommitted changes. Create a new branch
+   `docs/progressive-disclosure` from the current HEAD and work there.
 
 Read these files from the ai-devkit repo:
 
