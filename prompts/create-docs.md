@@ -1,4 +1,4 @@
-Your task is to add progressive disclosure documentation and git conventions
+Your task is to add Progressive Disclosure documentation and git conventions
 to this repository.
 
 Before starting:
@@ -17,7 +17,7 @@ Deliverables:
 
 1. Add AGENTS.md at the repo root using the expanded template from section 4.7
    of the progressive disclosure standard.
-2. Generate progressive disclosure docs under docs/ai/.
+2. Generate Progressive Disclosure docs under docs/ai/.
 3. Preserve and integrate with existing repo docs — don't overwrite them.
 4. If CLAUDE.md already exists, add a reference to AGENTS.md using that file's
    existing conventions — don't replace content.
@@ -34,8 +34,8 @@ Requirements:
 - Use the real structure and terminology of the repo — no generic filler.
 - Do not invent subsystems or workflows that aren't present yet.
 - AGENTS.md must include How to Load, Git Conventions, and Doc Commands.
-- Generate level zero, level one, and level two docs according to the standard. Add level two docs only
-  where deeper detail is justified.
+- Generate Level zero, Level one, and Level two docs according to the standard.
+  Add Level two docs only where deeper detail is justified.
 - After generating, run the test workflow. Fix failures and retest until all
   pass. Test results are saved to docs/ai/test-results.md.
 

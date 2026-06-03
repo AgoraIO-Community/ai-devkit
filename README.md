@@ -67,54 +67,16 @@ Which provider takes which role can vary per phase and per repo. What matters is
 **Artifact.** `docs/specs/SPEC-NNN-<short-name>.md` — title, status, acceptance criteria, edge cases, approach decisions, test cases, out-of-scope list, verification plan, and notes. See [spec-profile.md](docs/standard/spec-profile.md) for the template and the nine principles a good spec must satisfy.
 
 <details>
-<summary>Draft a spec</summary>
+<summary>Spec prompt</summary>
 
-Run: `cat prompts/draft-spec.md | claude --dangerously-skip-permissions`
+Draft or update a spec. Chain with a verify prompt for cross-model review.
 
-````
-Draft a spec for this change using the ai-devkit spec template.
+```
+cat prompts/spec.md | claude --dangerously-skip-permissions
+cat prompts/spec.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+```
 
-Read the spec profile from the ai-devkit repo:
-https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/spec-profile.md
-
-1. Read the relevant source code and docs/ai/ files to understand the
-   current state.
-2. Create docs/specs/SPEC-NNN-<short-name>.md using the template from the
-   spec profile.
-3. Fill in: What we're building, Why, Acceptance criteria, Edge cases,
-   Approach decisions, Test cases, Verification, Out of scope.
-4. Run the spec self-check at the bottom.
-5. Summarize the spec and flag anything that needs human decision.
-````
-
-> Standalone file: `prompts/draft-spec.md`
-
-</details>
-
-<details>
-<summary>Review a spec</summary>
-
-Run: `cat prompts/review-spec.md | claude --dangerously-skip-permissions`
-
-````
-Review the spec at docs/specs/SPEC-NNN.md.
-
-Read the spec profile from the ai-devkit repo:
-https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/spec-profile.md
-
-1. Read the spec end to end. Confirm it satisfies the nine spec principles.
-2. Restate each acceptance criterion in your own words. Flag any that are
-   ambiguous.
-3. For each acceptance criterion, name the test case(s) that would verify
-   it. Flag any criterion with no obvious test case.
-4. List edge cases the spec doesn't cover. Propose adding them or marking
-   them out-of-scope.
-5. Confirm approach decisions are made and rationale is recorded.
-6. Append your findings to the Notes section, or list blocking issues if
-   the spec isn't ready.
-````
-
-> Standalone file: `prompts/review-spec.md`
+> Standalone file: `prompts/spec.md`
 
 </details>
 
@@ -129,30 +91,16 @@ Once implementation is complete, the affected Progressive Disclosure docs are up
 **Artifact.** Test files, code changes, updated Progressive Disclosure docs, and a structured commit message. See [spec-profile.md](docs/standard/spec-profile.md) for the canonical workflows.
 
 <details>
-<summary>Run a test-driven development cycle</summary>
+<summary>Implement prompt</summary>
 
-Run: `cat prompts/run-tdd.md | claude --dangerously-skip-permissions`
+Start or continue implementation from a spec using test-driven development. Chain with a verify prompt for cross-model review.
 
-````
-Implement the spec at docs/specs/SPEC-NNN.md using test-driven development.
+```
+cat prompts/implement.md | claude --dangerously-skip-permissions
+cat prompts/implement.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+```
 
-Read the spec profile from the ai-devkit repo:
-https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/spec-profile.md
-
-1. Read the spec. Read docs/ai/L1/07_gotchas.md and
-   docs/ai/L1/04_conventions.md before writing any code.
-2. Red: Write the failing tests, one per acceptance criterion and edge
-   case. Run the test suite to confirm they fail for the right reason.
-3. Green: Write the minimum code to make the tests pass. No premature
-   abstraction, no scope expansion beyond what the spec requires.
-4. Refactor: Improve naming, remove duplication, check against
-   04_conventions.md. Tests must stay green.
-5. Update the spec's test case status column as you go
-   (TODO → Red → Green → Refactored).
-6. Use normal conventional commits. Add a Spec: SPEC-NNN trailer.
-````
-
-> Standalone file: `prompts/run-tdd.md`
+> Standalone file: `prompts/implement.md`
 
 </details>
 
@@ -208,234 +156,74 @@ These eight categories define the minimum complete operating surface an AI agent
 <details>
 <summary>Create docs</summary>
 
-Paste this into any AI agent session.
+Generate Progressive Disclosure docs for a repo that doesn't have them yet.
+Chain with a verify prompt for cross-model review.
 
-Run: `cat prompts/create-docs.md | claude --dangerously-skip-permissions`
-
-````
-Your task is to add progressive disclosure documentation and git conventions
-to this repository.
-
-Before starting:
-
-1. Confirm you are inside the target repo's checked-out folder.
-2. Ask whether to work on the current branch or create a new one.
-
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
-
-1. docs/workflows/progressive-disclosure-docs.md#generate — the generation workflow
-2. docs/workflows/progressive-disclosure-docs.md#test — the test workflow
-3. docs/standard/progressive-disclosure-standard.md — the full standard
-
-Deliverables:
-
-1. Add AGENTS.md at the repo root using the expanded template from section 4.7
-   of the progressive disclosure standard.
-2. Generate progressive disclosure docs under docs/ai/.
-3. Preserve and integrate with existing repo docs — don't overwrite them.
-4. If CLAUDE.md already exists, add a reference to AGENTS.md using that file's
-   existing conventions — don't replace content.
-5. Apply these git conventions:
-   - conventional commits
-   - branch naming: type/short-description
-   - no AI tool names in commit messages
-
-Requirements:
-
-- Read the whole repo, not just top-level files. Delegate large modules when
-  the tool supports it.
-- Read existing markdown, config, and CI files for project context.
-- Use the real structure and terminology of the repo — no generic filler.
-- Do not invent subsystems or workflows that aren't present yet.
-- AGENTS.md must include How to Load, Git Conventions, and Doc Commands.
-- Generate level zero, level one, and level two docs according to the standard. Add level two docs only
-  where deeper detail is justified.
-- After generating, run the test workflow. Fix failures and retest until all
-  pass. Test results are saved to docs/ai/test-results.md.
-
-When finished:
-
-1. Summarize what you added.
-2. Call out any assumptions, gaps, or ambiguous areas.
-3. Commit with: docs: add progressive disclosure documentation
-4. Push and create a PR.
-````
+```
+cat prompts/create-docs.md | claude --dangerously-skip-permissions
+cat prompts/create-docs.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+```
 
 > Standalone file: `prompts/create-docs.md`
 
 </details>
 
 <details>
-<summary>Review docs</summary>
+<summary>Update docs</summary>
 
-After docs are generated, use a second agent session to review quality.
-This prompt is read-only — it reports findings without changing files.
+Update existing Progressive Disclosure docs after code or convention changes.
 
-Run: `cat prompts/review-docs.md | claude --dangerously-skip-permissions`
+```
+cat prompts/update-docs.md | claude --dangerously-skip-permissions
+cat prompts/update-docs.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+```
 
-````
-Review this repo's progressive disclosure docs and provide feedback only.
-Do not change files.
+> Standalone file: `prompts/update-docs.md`
 
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
+</details>
 
-1. docs/workflows/progressive-disclosure-docs.md#test — the test workflow
-2. docs/standard/progressive-disclosure-standard.md — the full standard
+## Verify prompts
 
-Do this:
+Verification uses a second AI from a different training lineage to independently review the Lead AI's work. Chain a verify prompt after any work prompt:
 
-1. Read docs/ai/test-results.md.
-2. Read the full docs/ai/ tree.
-3. Compare the docs to the real codebase.
-4. Use git log --oneline -30 to propose 3-5 additional test questions
-   based on real recent changes.
-5. Read 2-3 complex or under-documented source files and assess whether
-   the docs cover them well.
-6. Report gaps, inaccuracies, weak test coverage, and recommended new
-   test cases.
+```bash
+# Claude as Lead AI, Codex as Verify AI
+cat prompts/create-docs.md prompts/verify-codex.md | claude --dangerously-skip-permissions
 
-Do not edit docs, do not update test-results.md, and do not commit.
-````
+# Codex as Lead AI, Claude as Verify AI
+cat prompts/create-docs.md prompts/verify-claude.md | codex exec --full-auto
+```
 
-> Standalone file: `prompts/review-docs.md`
+The verify prompt tells the Lead AI how to shell out to the Verify AI, parse findings, fix them, and re-verify — up to 3 rounds with zero human intervention. Any work prompt can be chained with either verify prompt.
+
+<details>
+<summary>verify-codex.md</summary>
+
+Use when Claude is the Lead AI. Requires [Codex CLI](https://github.com/openai/codex) installed and on PATH.
+
+> Standalone file: `prompts/verify-codex.md`
 
 </details>
 
 <details>
-<summary>Fix review findings</summary>
+<summary>verify-claude.md</summary>
 
-After a review produces findings, use this prompt to close them. Each
-finding is traced to source code and patched at the correct disclosure
-level.
+Use when Codex is the Lead AI. Requires [Claude Code](https://github.com/anthropics/claude-code) installed and on PATH.
 
-Run: `cat prompts/fix-review-findings.md | claude --dangerously-skip-permissions`
-
-````
-Fix the review findings for this repo's progressive disclosure docs.
-
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
-
-1. docs/workflows/progressive-disclosure-docs.md#fix — the fix workflow
-2. docs/standard/progressive-disclosure-standard.md — the full standard
-
-Follow the Fix workflow:
-
-1. Read docs/ai/test-results.md for findings.
-2. For each finding, trace it to the actual source code.
-3. Patch the exact cited doc files at the correct disclosure level.
-4. Record a finding-to-fix matrix in docs/ai/test-results.md.
-5. Re-run structural checks.
-6. Commit with: docs: fix review findings
-````
-
-> Standalone file: `prompts/fix-review-findings.md`
-
-Do not use the generate or review prompts to close findings — they are not
-finding-driven.
+> Standalone file: `prompts/verify-claude.md`
 
 </details>
 
-<details>
-<summary>Multi-agent review with Codex</summary>
+**All six prompts.** The full set lives in `prompts/`:
 
-Use one agent as the orchestrator and Codex CLI as an independent reviewer.
-This catches issues that a single model misses since different training
-lineages have different blind spots.
-
-Requires: [Codex CLI](https://github.com/openai/codex) installed and on PATH.
-
-The canonical workflow doc is [docs/workflows/progressive-disclosure-docs.md](docs/workflows/progressive-disclosure-docs.md#review-with-codex).
-
-Run: `cat prompts/review-with-codex.md | claude --dangerously-skip-permissions`
-
-````
-Run a multi-agent review cycle on this repo's progressive disclosure docs
-using Codex as an independent reviewer.
-
-Read the fix workflow from the ai-devkit repo:
-https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#fix
-
-## Phase 1: Primary review
-
-1. Read all files in docs/ai/ and compare every factual claim against the
-   actual source code in this repo.
-2. For each inaccuracy or gap, note the finding, the doc file, and the source
-   file you checked.
-3. Follow the Fix workflow to close each finding.
-4. Commit: docs: fix findings from primary review
-
-## Phase 2: Codex review
-
-Run this command to get Codex's independent review:
-
-```
-codex exec -m gpt-5.4 \
-  --config model_reasoning_effort="medium" \
-  --sandbox read-only \
-  --full-auto \
-  --skip-git-repo-check \
-  "Read every file in docs/ai/ and compare each factual claim against
-the actual source code. For each doc file, report findings as:
-
-FINDING: [description]
-FILE: [doc file]
-SOURCE: [source file checked]
-SEVERITY: high | medium | low
-RECOMMENDATION: [what to fix]
-
-If everything is accurate, say: NO FINDINGS" 2>/dev/null
-```
-
-## Phase 3: Fix Codex findings
-
-1. Parse Codex's findings.
-2. For each finding, follow the Fix workflow — trace to source, patch the
-   exact doc file, record in the finding-to-fix matrix in test-results.md.
-3. Commit: docs: fix findings from codex review
-
-## Phase 4: Codex verification
-
-Resume the Codex session to verify fixes:
-
-```
-echo "I fixed the findings you reported. Re-read docs/ai/ and verify each
-fix against source. Report any remaining issues using the same FINDING format,
-or say NO FINDINGS if everything is accurate." \
-  | codex exec --skip-git-repo-check resume --last 2>/dev/null
-```
-
-If Codex reports new findings, repeat phases 3-4. Max 3 rounds.
-
-## Rules
-
-- Do not mark findings as fixed without checking the source file.
-- Do not use generate or update to close findings — use the Fix workflow.
-- Update last_reviewed in level zero when done.
-````
-
-> Standalone file: `prompts/review-with-codex.md`
-
-**Batch across repos.** Run from a parent directory containing cloned repos.
-The orchestrator generates docs for each repo on a
-`docs/progressive-disclosure` branch, runs the review cycle, and pushes each
-branch when done.
-
-</details>
-
-<details>
-<summary>Generate and review docs (all-in-one)</summary>
-
-A combined prompt that runs the full pipeline: generate docs, self-test,
-Codex review, fix findings, and verify — in a single session.
-
-Run: `cat prompts/generate-and-review-docs.md | claude --dangerously-skip-permissions`
-
-> Standalone file: `prompts/generate-and-review-docs.md`
-
-</details>
+| File | Purpose |
+|---|---|
+| `create-docs.md` | Generate Progressive Disclosure docs from scratch |
+| `update-docs.md` | Update existing docs after code changes |
+| `spec.md` | Draft or update a spec |
+| `implement.md` | Start or continue implementation from spec (TDD) |
+| `verify-codex.md` | Chain: use Codex as Verify AI |
+| `verify-claude.md` | Chain: use Claude as Verify AI |
 
 ## Getting started
 
@@ -446,19 +234,6 @@ Three adoption levels, each moving further along the AI-centric axis.
 **Spec-driven development (partially AI-centric).** Add `docs/specs/` and adopt the spec template for new work. Pair an AI agent with the test-driven development discipline.
 
 **Full multi-model flow (fully AI-centric).** Configure two model providers, adopt the Plan → Implementation → Release cycle with cross-verification at every phase, route a release branch through doc-freshness verification. This is the diagram's operating model.
-
-## Setting up slash commands and skills
-
-The prompts above work as copy-paste in any agent session. If your tool
-supports custom commands, you can wrap them for faster access:
-
-- **Claude Code** — add prompts as custom slash commands via
-  `claude-code-commands/` or as skills
-- **Cursor** — add as `.cursor/commands/` or rules
-- **Codex** — use `codex exec` with the prompt as the argument
-
-The content is identical regardless of the wrapper. The prompts are the
-source of truth; tool-specific configuration is just a convenience layer.
 
 ## Profiles
 
