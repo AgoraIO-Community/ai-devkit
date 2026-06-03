@@ -1,12 +1,11 @@
 Your task is to update this repository's Progressive Disclosure documentation
 to reflect recent code or convention changes.
 
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
+Read these files from the ai-devkit repo:
 
-1. docs/workflows/progressive-disclosure-docs.md#update — the update workflow
-2. docs/workflows/progressive-disclosure-docs.md#test — the test workflow
-3. docs/standard/progressive-disclosure-standard.md — the full standard
+1. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#update — the update workflow
+2. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#test — the test workflow
+3. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/progressive-disclosure-standard.md — the full standard
 
 Steps:
 

@@ -25,7 +25,7 @@ sequenceDiagram
 
     Note over H,PD: Plan — Lead AI runs the spec workflow
     H->>A: kickoff
-    A->>PD: read level one + workflow
+    A->>PD: read Level one + workflow
     A->>A: scan code, draft spec (acceptance criteria, edges, test plan)
     A->>B: cross-verify (restate acceptance criteria)
     B-->>A: divergences flagged
@@ -38,7 +38,7 @@ sequenceDiagram
     A->>B: handoff for Green
     B-->>A: implementation + tests pass
     A->>A: Refactor
-    A->>PD: update affected level one files
+    A->>PD: update affected Level one files
     A->>B: cross-verify doc updates
     B-->>A: doc review
 
@@ -116,7 +116,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
 
 **What it is.** The verification gate before deploy. Release is the human's second checkpoint — after spec approval at the front.
 
-**How it works.** The deliverable bundle is pushed to a release branch where continuous integration runs the full verification suite: tests, lints, doc-freshness checks against the eight level one files, and spec-to-test traceability checks. The release mechanism downstream of continuous integration is system-dependent and outside AI DevKit's scope — teams can auto-promote on green, route through human review, or use any other release model they prefer.
+**How it works.** The deliverable bundle is pushed to a release branch where continuous integration runs the full verification suite: tests, lints, doc-freshness checks against the eight Level one files, and spec-to-test traceability checks. The release mechanism downstream of continuous integration is system-dependent and outside AI DevKit's scope — teams can auto-promote on green, route through human review, or use any other release model they prefer.
 
 **Artifact.** The release branch, continuous integration workflow, merge record back to the spec via the structured commit message convention (see [spec-profile.md](docs/standard/spec-profile.md#commit-and-pr-convention)), and the archived spec.
 
@@ -130,7 +130,7 @@ The whole thing runs locally or in the cloud. Cloud workspaces are useful for te
 
 The system repo contains a system card (`docs/ai/SYSTEM.md`) that lists which repos belong to the system, how they connect, and what contracts they share. Component repos are cloned into a `components/` directory inside the dev environment. Changes to component code are reflected immediately via volume mounts.
 
-**Artifact.** A system repo with `System Role: system` in the level zero card, `SYSTEM.md` alongside it, docker-compose config, devcontainer config, and setup/start/stop/test scripts. See [system-profile.md](docs/standard/system-profile.md) for the full profile.
+**Artifact.** A system repo with `System Role: system` in the Level zero card, `SYSTEM.md` alongside it, docker-compose config, devcontainer config, and setup/start/stop/test scripts. See [system-profile.md](docs/standard/system-profile.md) for the full profile.
 
 ## Progressive Disclosure docs
 
@@ -142,7 +142,7 @@ The system repo contains a system card (`docs/ai/SYSTEM.md`) that lists which re
 - **Level one** — eight fixed structured summary files in `docs/ai/L1/`
 - **Level two** — on-demand deep dives under `docs/ai/L1/L2/`
 
-The eight level one files are the minimum complete operating surface for an AI agent:
+The eight Level one files are the minimum complete operating surface for an AI agent:
 
 | File              | Agent question it answers              |
 | ----------------- | -------------------------------------- |
@@ -155,11 +155,11 @@ The eight level one files are the minimum complete operating surface for an AI a
 | `07_gotchas`      | What will break if I touch it naively? |
 | `08_security`     | What trust boundaries must I respect?  |
 
-These eight categories define the minimum complete operating surface an AI agent needs to work safely in any repository. They cover orientation, local engineering practice, contracts, tribal knowledge, and security boundaries. The set is deliberately fixed so agents, tooling, prompts, and reviewers can rely on a consistent structure across an organisation, while repo-specific depth is handled through level two.
+These eight categories define the minimum complete operating surface an AI agent needs to work safely in any repository. They cover orientation, local engineering practice, contracts, tribal knowledge, and security boundaries. The set is deliberately fixed so agents, tooling, prompts, and reviewers can rely on a consistent structure across an organisation, while repo-specific depth is handled through Level two.
 
 **Workflows are part of Progressive Disclosure docs.** Each adopting repo's `05_workflows.md` carries the spec-creation, implementation, and Progressive Disclosure docs verification workflows — materialised from ai-devkit's canonical templates at bootstrap, with repo-specific tooling filled in. This is what Lead AI executes during Plan and Implementation.
 
-**Artifact.** `AGENTS.md` at the repo root, `docs/ai/L0_repo_card.md`, and the eight level one files. Optional `docs/ai/RECIPE.md` for reusable starter repos. See [progressive-disclosure-standard.md](docs/standard/progressive-disclosure-standard.md) for the full standard.
+**Artifact.** `AGENTS.md` at the repo root, `docs/ai/L0_repo_card.md`, and the eight Level one files. Optional `docs/ai/RECIPE.md` for reusable starter repos. See [progressive-disclosure-standard.md](docs/standard/progressive-disclosure-standard.md) for the full standard.
 
 <details>
 <summary>Create docs</summary>
@@ -266,14 +266,14 @@ Three adoption levels, each moving further along the AI-centric axis.
 **Recipe profile.** Use [docs/standard/recipe-profile.md](docs/standard/recipe-profile.md)
 when a repo is a reusable starter that should publish extension points and
 support child verticals. The profile is optional — repos without
-`Recipe Role` in the level zero card are unaffected. See [examples/recipe-base](examples/recipe-base/README.md) and
+`Recipe Role` in the Level zero card are unaffected. See [examples/recipe-base](examples/recipe-base/README.md) and
 [examples/recipe-vertical](examples/recipe-vertical/README.md) for
 structural fixtures.
 
 **System profile.** Use [docs/standard/system-profile.md](docs/standard/system-profile.md)
 when a repo describes a multi-component system and provides a containerised
 dev environment. The profile is optional — repos without `System Role` in
-the level zero card are unaffected.
+the Level zero card are unaffected.
 
 ## Compatibility
 
@@ -300,7 +300,7 @@ files can consume `AGENTS.md` and `docs/ai/`.
 
 | Layer                                | Status   |
 | ------------------------------------ | -------- |
-| Progressive Disclosure docs core (level zero/one/two, 8 files) | Stable   |
+| Progressive Disclosure docs core (Level zero/one/two, 8 files) | Stable   |
 | Recipe profile (base/vertical)       | Beta     |
 | Spec profile                         | Draft    |
 | Test-driven development profile      | Draft    |

@@ -27,20 +27,37 @@
 - L2 is opt-in by task.
 - Repo-local `AGENTS.md` is the authoritative source for conventions.
 
-## Workflow Contract
+## Prompt Interface
+
+Six chainable prompts in `prompts/`:
+
+| Prompt | Purpose |
+| ------ | ------- |
+| `spec.md` | draft or update a spec |
+| `implement.md` | start or continue implementation from spec (TDD) |
+| `create-docs.md` | generate Progressive Disclosure docs from scratch |
+| `update-docs.md` | update existing docs after code changes |
+| `verify-codex.md` | chain: use Codex as Verify AI |
+| `verify-claude.md` | chain: use Claude as Verify AI |
+
+Work prompts chain with either verify prompt via `cat` or `curl` piped to an agent.
+
+## Canonical Workflow Contract
+
+The canonical workflow file (`docs/workflows/progressive-disclosure-docs.md`) defines the underlying procedures that the prompts invoke:
 
 - `generate` creates `AGENTS.md` plus `docs/ai/`.
 - `update` refreshes existing docs after changes.
 - `test` checks whether docs guide an agent correctly.
 - `fix` closes findings from review or testing.
-- `review with codex` runs an independent Codex review loop after docs exist.
 
 ## Supported Interaction Styles
 
 | Style | Supported | Notes |
 | ----- | --------- | ----- |
 | plain repo reading | Yes | the core delivery path |
-| independent CLI review | Yes | Codex reviewer loop in README |
+| CLI prompt piping | Yes | `cat` or `curl` prompts piped to any agent |
+| cross-model verification | Yes | chain verify-codex or verify-claude |
 
 ## Compatibility Contract
 

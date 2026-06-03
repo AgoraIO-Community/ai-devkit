@@ -6,12 +6,11 @@ Before starting:
 1. Confirm you are inside the target repo's checked-out folder.
 2. Ask whether to work on the current branch or create a new one.
 
-Read these files from the ai-devkit repo
-(https://github.com/AgoraIO-Community/ai-devkit.git):
+Read these files from the ai-devkit repo:
 
-1. docs/workflows/progressive-disclosure-docs.md#generate — the generation workflow
-2. docs/workflows/progressive-disclosure-docs.md#test — the test workflow
-3. docs/standard/progressive-disclosure-standard.md — the full standard
+1. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#generate — the generation workflow
+2. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#test — the test workflow
+3. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/progressive-disclosure-standard.md — the full standard
 
 Deliverables:
 
