@@ -2,7 +2,7 @@
 
 ## Slide 1: What is AI DevKit?
 
-[excited] AI DevKit is an operating model for AI-centric software engineering. [short pause] AI writes specs, tests, code, and docs. [pause] Humans approve the spec and approve the release. [short pause] It works with your existing stack — git, repos, pull requests, continuous integration — and reshapes it around AI execution, [short pause] while keeping the human checkpoints that matter. [pause] [deliberate] There are four pillars: spec planning, test-driven implementation, Progressive Disclosure docs, and the AI dev environment.
+[excited] AI DevKit is an operating model for AI-centric software engineering. [short pause] AI writes specs, tests, code, and docs. [pause] Humans approve the spec and approve the release. [short pause] It works with your existing stack — git, repos, pull requests, continuous integration — and reshapes it around AI execution, [short pause] while keeping the human checkpoints that matter. [pause] [deliberate] There are four pillars: spec planning, test-driven implementation, progressive disclosure docs, and the AI dev environment.
 
 ## Slide 2: The Lifecycle
 
@@ -14,7 +14,7 @@
 
 ## Slide 4: Implementation
 
-[excited] Implementation turns the approved spec into working code. [pause] The Verify A.I. authors the failing tests directly from the spec. [short pause] The Lead AI writes the implementation to make them pass. [pause] [deliberate] This is independent test authorship — the AI that writes the tests is not the AI that writes the code. [pause] Without that separation, implementation assumptions get silently baked into the tests. [pause] After TDD completes, the Lead AI updates the Progressive Disclosure docs, [short pause] and the Verify A.I. checks the updates against the actual code. [pause] Then the spec is archived. [short pause] The docs carry everything forward.
+[excited] Implementation turns the approved spec into working code. [pause] The Verify A.I. authors the failing tests directly from the spec. [short pause] The Lead AI writes the implementation to make them pass. [pause] [deliberate] This is independent test authorship — the AI that writes the tests is not the AI that writes the code. [pause] Without that separation, implementation assumptions get silently baked into the tests. [pause] After test-driven development completes, the Lead AI updates the progressive disclosure docs, [short pause] and the Verify A.I. checks the updates against the actual code. [pause] Then the spec is archived. [short pause] The docs carry everything forward.
 
 ## Slide 5: Progressive Disclosure Docs
 

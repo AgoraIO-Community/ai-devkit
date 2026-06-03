@@ -7,459 +7,464 @@
     },
     {
       "word": "turns",
-      "start": 1.043,
-      "end": 1.443
+      "start": 1.056,
+      "end": 1.521
     },
     {
       "word": "the",
-      "start": 1.463,
-      "end": 1.523
+      "start": 1.541,
+      "end": 1.601
     },
     {
       "word": "approved",
-      "start": 1.594,
-      "end": 2.162
+      "start": 1.672,
+      "end": 2.24
     },
     {
       "word": "spec",
-      "start": 2.258,
-      "end": 2.642
+      "start": 2.336,
+      "end": 2.72
     },
     {
       "word": "into",
-      "start": 2.722,
-      "end": 3.042
+      "start": 2.816,
+      "end": 3.2
     },
     {
       "word": "working",
-      "start": 3.112,
-      "end": 3.602
+      "start": 3.26,
+      "end": 3.68
     },
     {
       "word": "code.",
-      "start": 3.698,
-      "end": 4.162
+      "start": 3.792,
+      "end": 4.32
     },
     {
       "word": "The",
-      "start": 6.061,
-      "end": 6.082
+      "start": 6.139,
+      "end": 6.16
     },
     {
       "word": "Verify",
-      "start": 6.162,
-      "end": 6.642
+      "start": 6.24,
+      "end": 6.72
     },
     {
       "word": "A.I.",
-      "start": 6.762,
-      "end": 7.202
+      "start": 6.84,
+      "end": 7.28
     },
     {
       "word": "authors",
-      "start": 7.272,
-      "end": 7.762
+      "start": 7.37,
+      "end": 8.0
     },
     {
       "word": "the",
-      "start": 7.802,
-      "end": 7.922
+      "start": 8.04,
+      "end": 8.16
     },
     {
       "word": "failing",
-      "start": 7.972,
-      "end": 8.322
+      "start": 8.21,
+      "end": 8.56
     },
     {
       "word": "tests",
-      "start": 8.429,
-      "end": 8.964
+      "start": 8.667,
+      "end": 9.202
     },
     {
       "word": "directly",
-      "start": 9.035,
-      "end": 9.603
+      "start": 9.3,
+      "end": 10.084
     },
     {
       "word": "from",
-      "start": 9.651,
-      "end": 9.843
+      "start": 10.164,
+      "end": 10.484
     },
     {
       "word": "the",
-      "start": 9.863,
-      "end": 9.923
+      "start": 10.504,
+      "end": 10.564
     },
     {
       "word": "spec.",
-      "start": 10.019,
-      "end": 10.483
+      "start": 10.676,
+      "end": 11.204
     },
     {
       "word": "The",
-      "start": 12.226,
-      "end": 12.241
+      "start": 13.107,
+      "end": 13.122
     },
     {
       "word": "Lead",
-      "start": 12.305,
-      "end": 12.561
+      "start": 13.186,
+      "end": 13.442
     },
     {
       "word": "AI",
-      "start": 12.721,
-      "end": 13.041
+      "start": 13.629,
+      "end": 14.003
     },
     {
       "word": "writes",
-      "start": 13.121,
-      "end": 13.601
+      "start": 14.083,
+      "end": 14.563
     },
     {
       "word": "the",
-      "start": 13.621,
-      "end": 13.681
+      "start": 14.583,
+      "end": 14.643
     },
     {
       "word": "implementation",
-      "start": 13.74,
-      "end": 14.566
+      "start": 14.707,
+      "end": 15.603
     },
     {
       "word": "to",
-      "start": 14.619,
-      "end": 14.725
+      "start": 15.736,
+      "end": 16.002
     },
     {
       "word": "make",
-      "start": 14.773,
-      "end": 14.965
+      "start": 16.05,
+      "end": 16.242
     },
     {
       "word": "them",
-      "start": 15.013,
-      "end": 15.205
+      "start": 16.274,
+      "end": 16.402
     },
     {
       "word": "pass.",
-      "start": 15.333,
-      "end": 16.765
+      "start": 16.546,
+      "end": 18.042
     },
     {
       "word": "This",
-      "start": 17.753,
-      "end": 17.761
+      "start": 19.18,
+      "end": 19.204
     },
     {
       "word": "is",
-      "start": 17.841,
-      "end": 18.001
+      "start": 19.311,
+      "end": 19.525
     },
     {
       "word": "independent",
-      "start": 18.074,
-      "end": 18.877
+      "start": 19.605,
+      "end": 20.485
     },
     {
       "word": "test",
-      "start": 18.957,
-      "end": 19.277
+      "start": 20.581,
+      "end": 20.965
     },
     {
       "word": "authorship",
-      "start": 19.323,
-      "end": 19.839
+      "start": 21.022,
+      "end": 21.604
     },
     {
       "word": "\u2014",
-      "start": 20.119,
-      "end": 20.399
+      "start": 22.004,
+      "end": 22.404
     },
     {
       "word": "the",
-      "start": 20.439,
-      "end": 20.559
+      "start": 22.444,
+      "end": 22.564
     },
     {
       "word": "AI",
-      "start": 20.719,
-      "end": 21.039
+      "start": 22.751,
+      "end": 23.125
     },
     {
       "word": "that",
-      "start": 21.071,
-      "end": 21.199
+      "start": 23.173,
+      "end": 23.365
     },
     {
       "word": "writes",
-      "start": 21.245,
-      "end": 21.521
+      "start": 23.422,
+      "end": 23.764
     },
     {
       "word": "the",
-      "start": 21.561,
-      "end": 21.681
+      "start": 23.784,
+      "end": 23.844
     },
     {
       "word": "tests",
-      "start": 21.761,
-      "end": 22.161
+      "start": 23.951,
+      "end": 24.486
     },
     {
       "word": "is",
-      "start": 22.268,
-      "end": 22.482
+      "start": 24.646,
+      "end": 24.966
     },
     {
       "word": "not",
-      "start": 22.582,
-      "end": 22.882
+      "start": 25.066,
+      "end": 25.366
     },
     {
       "word": "the",
-      "start": 22.962,
-      "end": 23.202
+      "start": 25.426,
+      "end": 25.606
     },
     {
       "word": "AI",
-      "start": 23.335,
-      "end": 23.601
+      "start": 25.766,
+      "end": 26.086
     },
     {
       "word": "that",
-      "start": 23.633,
-      "end": 23.761
+      "start": 26.166,
+      "end": 26.486
     },
     {
       "word": "writes",
-      "start": 23.818,
-      "end": 24.16
+      "start": 26.543,
+      "end": 26.885
     },
     {
       "word": "the",
-      "start": 24.18,
-      "end": 24.24
+      "start": 26.905,
+      "end": 26.965
     },
     {
       "word": "code.",
-      "start": 24.352,
-      "end": 25.72
+      "start": 27.077,
+      "end": 28.325
     },
     {
       "word": "Without",
-      "start": 26.865,
-      "end": 26.956
+      "start": 29.35,
+      "end": 29.441
     },
     {
       "word": "that",
-      "start": 26.988,
-      "end": 27.116
+      "start": 29.489,
+      "end": 29.681
     },
     {
       "word": "separation,",
-      "start": 27.181,
-      "end": 28.151
+      "start": 29.746,
+      "end": 31.036
     },
     {
       "word": "implementation",
-      "start": 28.204,
-      "end": 28.946
+      "start": 31.095,
+      "end": 31.921
     },
     {
       "word": "assumptions",
-      "start": 29.006,
-      "end": 29.666
+      "start": 31.981,
+      "end": 32.641
     },
     {
       "word": "get",
-      "start": 29.746,
-      "end": 29.986
+      "start": 32.761,
+      "end": 33.121
     },
     {
       "word": "silently",
-      "start": 30.057,
-      "end": 30.625
+      "start": 33.192,
+      "end": 33.76
     },
     {
       "word": "baked",
-      "start": 30.705,
-      "end": 31.105
+      "start": 33.853,
+      "end": 34.318
     },
     {
       "word": "into",
-      "start": 31.185,
-      "end": 31.505
+      "start": 34.398,
+      "end": 34.718
     },
     {
       "word": "the",
-      "start": 31.545,
-      "end": 31.665
+      "start": 34.738,
+      "end": 34.798
     },
     {
       "word": "tests.",
-      "start": 31.772,
-      "end": 32.387
+      "start": 34.918,
+      "end": 36.438
     },
     {
       "word": "After",
-      "start": 34.297,
-      "end": 34.387
+      "start": 37.588,
+      "end": 37.678
     },
     {
-      "word": "TDD",
-      "start": 34.547,
-      "end": 35.027
+      "word": "test-driven",
+      "start": 37.742,
+      "end": 38.236
+    },
+    {
+      "word": "development",
+      "start": 38.283,
+      "end": 38.8
     },
     {
       "word": "completes,",
-      "start": 35.091,
-      "end": 35.987
+      "start": 38.872,
+      "end": 40.0
     },
     {
       "word": "the",
-      "start": 36.007,
-      "end": 36.067
+      "start": 40.02,
+      "end": 40.08
     },
     {
       "word": "Lead",
-      "start": 36.131,
-      "end": 36.387
+      "start": 40.144,
+      "end": 40.4
     },
     {
       "word": "AI",
-      "start": 36.574,
-      "end": 36.948
+      "start": 40.587,
+      "end": 40.961
     },
     {
       "word": "updates",
-      "start": 37.028,
-      "end": 37.588
+      "start": 41.071,
+      "end": 41.841
     },
     {
       "word": "the",
-      "start": 37.608,
-      "end": 37.668
+      "start": 41.881,
+      "end": 42.001
     },
     {
-      "word": "Progressive",
-      "start": 37.715,
-      "end": 38.232
+      "word": "progressive",
+      "start": 42.048,
+      "end": 42.565
     },
     {
-      "word": "Disclosure",
-      "start": 38.29,
-      "end": 38.87
+      "word": "disclosure",
+      "start": 42.616,
+      "end": 43.126
     },
     {
       "word": "docs,",
-      "start": 38.966,
-      "end": 39.43
+      "start": 43.222,
+      "end": 44.046
     },
     {
       "word": "and",
-      "start": 40.133,
-      "end": 40.148
+      "start": 44.618,
+      "end": 44.648
     },
     {
       "word": "the",
-      "start": 40.168,
-      "end": 40.228
+      "start": 44.668,
+      "end": 44.728
     },
     {
       "word": "Verify",
-      "start": 40.319,
-      "end": 40.865
+      "start": 44.808,
+      "end": 45.288
     },
     {
       "word": "A.I.",
-      "start": 40.985,
-      "end": 41.345
+      "start": 45.408,
+      "end": 45.848
     },
     {
       "word": "checks",
-      "start": 41.402,
-      "end": 41.744
+      "start": 45.962,
+      "end": 46.646
     },
     {
       "word": "the",
-      "start": 41.784,
-      "end": 41.904
+      "start": 46.666,
+      "end": 46.726
     },
     {
       "word": "updates",
-      "start": 41.974,
-      "end": 42.464
+      "start": 46.816,
+      "end": 47.446
     },
     {
       "word": "against",
-      "start": 42.514,
-      "end": 42.864
+      "start": 47.496,
+      "end": 47.846
     },
     {
       "word": "the",
-      "start": 42.904,
-      "end": 43.024
+      "start": 47.866,
+      "end": 47.926
     },
     {
       "word": "actual",
-      "start": 43.104,
-      "end": 43.584
+      "start": 48.006,
+      "end": 48.486
     },
     {
       "word": "code.",
-      "start": 43.68,
-      "end": 44.144
+      "start": 48.598,
+      "end": 49.126
     },
     {
       "word": "Then",
-      "start": 45.783,
-      "end": 45.827
+      "start": 50.79,
+      "end": 51.046
     },
     {
       "word": "the",
-      "start": 45.867,
-      "end": 45.987
+      "start": 51.126,
+      "end": 51.366
     },
     {
       "word": "spec",
-      "start": 46.051,
-      "end": 46.307
+      "start": 51.43,
+      "end": 51.686
     },
     {
       "word": "is",
-      "start": 46.36,
-      "end": 46.466
+      "start": 51.739,
+      "end": 51.845
     },
     {
       "word": "archived.",
-      "start": 46.546,
-      "end": 47.546
+      "start": 51.916,
+      "end": 52.564
     },
     {
       "word": "The",
-      "start": 47.969,
-      "end": 47.984
+      "start": 53.267,
+      "end": 53.282
     },
     {
       "word": "docs",
-      "start": 48.064,
-      "end": 48.384
+      "start": 53.394,
+      "end": 53.842
     },
     {
       "word": "carry",
-      "start": 48.451,
-      "end": 48.786
+      "start": 53.922,
+      "end": 54.322
     },
     {
       "word": "everything",
-      "start": 48.844,
-      "end": 49.424
+      "start": 54.38,
+      "end": 54.96
     },
     {
       "word": "forward.",
-      "start": 49.484,
-      "end": 49.984
+      "start": 55.03,
+      "end": 55.6
     }
   ],
-  "duration": 49.984
+  "duration": 55.6
 }

@@ -2,539 +2,539 @@
   "words": [
     {
       "word": "Work",
-      "start": 0.337,
-      "end": 0.401
+      "start": 0.202,
+      "end": 0.242
     },
     {
       "word": "comes",
-      "start": 0.494,
-      "end": 0.959
+      "start": 0.282,
+      "end": 0.482
     },
     {
       "word": "in",
-      "start": 1.066,
-      "end": 1.28
+      "start": 0.535,
+      "end": 0.641
     },
     {
       "word": "as",
-      "start": 1.333,
-      "end": 1.439
+      "start": 0.668,
+      "end": 0.722
     },
     {
       "word": "a",
-      "start": 1.479,
-      "end": 1.519
+      "start": 0.802,
+      "end": 0.882
     },
     {
       "word": "story,",
-      "start": 1.612,
-      "end": 2.397
+      "start": 0.962,
+      "end": 1.682
     },
     {
       "word": "epic,",
-      "start": 2.493,
-      "end": 3.197
+      "start": 1.778,
+      "end": 2.402
     },
     {
       "word": "bug,",
-      "start": 3.297,
-      "end": 3.837
+      "start": 2.502,
+      "end": 3.042
     },
     {
       "word": "or",
-      "start": 3.864,
-      "end": 3.918
+      "start": 3.069,
+      "end": 3.123
     },
     {
       "word": "feature.",
-      "start": 3.978,
-      "end": 4.638
+      "start": 3.193,
+      "end": 3.763
     },
     {
       "word": "It",
-      "start": 5.663,
-      "end": 5.677
+      "start": 5.028,
+      "end": 5.042
     },
     {
       "word": "flows",
-      "start": 5.757,
-      "end": 6.157
+      "start": 5.109,
+      "end": 5.444
     },
     {
       "word": "through",
-      "start": 6.207,
-      "end": 6.557
+      "start": 5.474,
+      "end": 5.684
     },
     {
       "word": "three",
-      "start": 6.61,
-      "end": 6.875
+      "start": 5.737,
+      "end": 6.002
     },
     {
       "word": "phases:",
-      "start": 6.966,
-      "end": 7.832
+      "start": 6.082,
+      "end": 6.802
     },
     {
       "word": "Plan,",
-      "start": 7.912,
-      "end": 8.952
+      "start": 6.898,
+      "end": 7.922
     },
     {
       "word": "Implementation,",
-      "start": 9.0,
-      "end": 9.912
+      "start": 7.965,
+      "end": 8.647
     },
     {
       "word": "and",
-      "start": 9.932,
-      "end": 9.992
+      "start": 8.747,
+      "end": 9.047
     },
     {
       "word": "Release.",
-      "start": 10.062,
-      "end": 10.712
+      "start": 9.127,
+      "end": 9.767
     },
     {
       "word": "The",
-      "start": 12.291,
-      "end": 12.312
+      "start": 10.786,
+      "end": 10.807
     },
     {
       "word": "Lead",
-      "start": 12.408,
-      "end": 12.792
+      "start": 10.871,
+      "end": 11.127
     },
     {
       "word": "AI",
-      "start": 12.979,
-      "end": 13.353
+      "start": 11.26,
+      "end": 11.526
     },
     {
       "word": "executes",
-      "start": 13.442,
-      "end": 14.154
+      "start": 11.615,
+      "end": 12.327
     },
     {
       "word": "the",
-      "start": 14.174,
-      "end": 14.234
+      "start": 12.367,
+      "end": 12.487
     },
     {
       "word": "workflow.",
-      "start": 14.305,
-      "end": 14.953
+      "start": 12.549,
+      "end": 13.205
     },
     {
       "word": "The",
-      "start": 16.216,
-      "end": 16.231
+      "start": 14.788,
+      "end": 14.803
     },
     {
       "word": "Verify",
-      "start": 16.345,
-      "end": 17.029
+      "start": 14.883,
+      "end": 15.363
     },
     {
       "word": "A.I.",
-      "start": 17.149,
-      "end": 17.509
+      "start": 15.483,
+      "end": 15.843
     },
     {
       "word": "independently",
-      "start": 17.583,
-      "end": 18.545
+      "start": 15.906,
+      "end": 16.725
     },
     {
       "word": "reviews",
-      "start": 18.615,
-      "end": 19.105
+      "start": 16.805,
+      "end": 17.365
     },
     {
       "word": "all",
-      "start": 19.225,
-      "end": 19.585
+      "start": 17.465,
+      "end": 17.765
     },
     {
       "word": "Lead",
-      "start": 19.697,
-      "end": 20.145
+      "start": 17.861,
+      "end": 18.245
     },
     {
       "word": "AI",
-      "start": 20.305,
-      "end": 20.625
+      "start": 18.405,
+      "end": 18.725
     },
     {
       "word": "work",
-      "start": 20.721,
-      "end": 21.105
+      "start": 18.821,
+      "end": 19.205
     },
     {
       "word": "\u2014",
-      "start": 21.385,
-      "end": 21.665
+      "start": 19.525,
+      "end": 19.845
     },
     {
       "word": "it's",
-      "start": 21.718,
-      "end": 21.904
+      "start": 19.898,
+      "end": 20.044
     },
     {
       "word": "a",
-      "start": 21.984,
-      "end": 22.064
+      "start": 20.064,
+      "end": 20.084
     },
     {
       "word": "second",
-      "start": 22.121,
-      "end": 22.463
+      "start": 20.153,
+      "end": 20.567
     },
     {
       "word": "AI",
-      "start": 22.623,
-      "end": 22.943
+      "start": 20.7,
+      "end": 20.966
     },
     {
       "word": "from",
-      "start": 23.007,
-      "end": 23.263
+      "start": 21.014,
+      "end": 21.206
     },
     {
       "word": "a",
-      "start": 23.303,
-      "end": 23.343
+      "start": 21.246,
+      "end": 21.286
     },
     {
       "word": "different",
-      "start": 23.383,
-      "end": 23.743
+      "start": 21.326,
+      "end": 21.686
     },
     {
       "word": "training",
-      "start": 23.796,
-      "end": 24.22
+      "start": 21.739,
+      "end": 22.163
     },
     {
       "word": "lineage.",
-      "start": 24.29,
-      "end": 25.34
+      "start": 22.243,
+      "end": 22.883
     },
     {
       "word": "Why",
-      "start": 25.564,
-      "end": 25.582
+      "start": 24.307,
+      "end": 24.325
     },
     {
       "word": "two",
-      "start": 25.662,
-      "end": 25.902
+      "start": 24.405,
+      "end": 24.645
     },
     {
       "word": "AIs?",
-      "start": 26.022,
-      "end": 26.622
+      "start": 24.805,
+      "end": 25.445
     },
     {
       "word": "A",
-      "start": 27.997,
-      "end": 28.045
+      "start": 26.843,
+      "end": 26.883
     },
     {
       "word": "single",
-      "start": 28.059,
-      "end": 28.143
+      "start": 26.894,
+      "end": 26.96
     },
     {
       "word": "AI",
-      "start": 28.33,
-      "end": 28.704
+      "start": 27.093,
+      "end": 27.359
     },
     {
       "word": "is",
-      "start": 28.811,
-      "end": 29.025
+      "start": 27.439,
+      "end": 27.599
     },
     {
       "word": "confidently",
-      "start": 29.092,
-      "end": 29.829
+      "start": 27.666,
+      "end": 28.403
     },
     {
       "word": "wrong",
-      "start": 29.909,
-      "end": 30.309
+      "start": 28.47,
+      "end": 28.805
     },
     {
       "word": "in",
-      "start": 30.442,
-      "end": 30.708
+      "start": 28.885,
+      "end": 29.045
     },
     {
       "word": "ways",
-      "start": 30.788,
-      "end": 31.108
+      "start": 29.125,
+      "end": 29.445
     },
     {
       "word": "invisible",
-      "start": 31.164,
-      "end": 31.668
+      "start": 29.509,
+      "end": 30.085
     },
     {
       "word": "to",
-      "start": 31.721,
-      "end": 31.827
+      "start": 30.138,
+      "end": 30.244
     },
     {
       "word": "itself.",
-      "start": 31.918,
-      "end": 33.104
+      "start": 30.347,
+      "end": 31.645
     },
     {
       "word": "Asking",
-      "start": 34.06,
-      "end": 34.144
+      "start": 32.641,
+      "end": 32.725
     },
     {
       "word": "the",
-      "start": 34.184,
-      "end": 34.304
+      "start": 32.745,
+      "end": 32.805
     },
     {
       "word": "same",
-      "start": 34.368,
-      "end": 34.624
+      "start": 32.885,
+      "end": 33.205
     },
     {
       "word": "model",
-      "start": 34.691,
-      "end": 35.026
+      "start": 33.258,
+      "end": 33.523
     },
     {
       "word": "to",
-      "start": 35.106,
-      "end": 35.266
+      "start": 33.576,
+      "end": 33.682
     },
     {
       "word": "review",
-      "start": 35.323,
-      "end": 35.665
+      "start": 33.728,
+      "end": 34.004
     },
     {
       "word": "its",
-      "start": 35.725,
-      "end": 35.905
+      "start": 34.064,
+      "end": 34.244
     },
     {
       "word": "own",
-      "start": 36.005,
-      "end": 36.305
+      "start": 34.324,
+      "end": 34.564
     },
     {
       "word": "output",
-      "start": 36.385,
-      "end": 36.865
+      "start": 34.655,
+      "end": 35.201
     },
     {
       "word": "rarely",
-      "start": 36.979,
-      "end": 37.663
+      "start": 35.304,
+      "end": 35.922
     },
     {
       "word": "catches",
-      "start": 37.723,
-      "end": 38.143
+      "start": 35.992,
+      "end": 36.482
     },
     {
       "word": "the",
-      "start": 38.183,
-      "end": 38.303
+      "start": 36.522,
+      "end": 36.642
     },
     {
       "word": "error.",
-      "start": 38.356,
-      "end": 38.701
+      "start": 36.695,
+      "end": 37.04
     },
     {
       "word": "Two",
-      "start": 40.263,
-      "end": 40.299
+      "start": 38.62,
+      "end": 38.644
     },
     {
       "word": "independent",
-      "start": 40.359,
-      "end": 41.019
+      "start": 38.704,
+      "end": 39.364
     },
     {
       "word": "lineages",
-      "start": 41.083,
-      "end": 41.739
+      "start": 39.428,
+      "end": 40.084
     },
     {
       "word": "catch",
-      "start": 41.819,
-      "end": 42.219
+      "start": 40.151,
+      "end": 40.486
     },
     {
       "word": "different",
-      "start": 42.259,
-      "end": 42.619
+      "start": 40.534,
+      "end": 40.966
     },
     {
       "word": "mistakes.",
-      "start": 42.699,
-      "end": 43.499
+      "start": 41.046,
+      "end": 41.846
     },
     {
       "word": "The",
-      "start": 45.078,
-      "end": 45.099
+      "start": 43.425,
+      "end": 43.446
     },
     {
       "word": "Plan",
-      "start": 45.179,
-      "end": 45.499
+      "start": 43.51,
+      "end": 43.766
     },
     {
       "word": "phase",
-      "start": 45.579,
-      "end": 45.979
+      "start": 43.833,
+      "end": 44.168
     },
     {
       "word": "produces",
-      "start": 46.032,
-      "end": 46.456
+      "start": 44.221,
+      "end": 44.645
     },
     {
       "word": "a",
-      "start": 46.536,
-      "end": 46.616
+      "start": 44.725,
+      "end": 44.805
     },
     {
       "word": "spec.",
-      "start": 46.712,
-      "end": 47.496
+      "start": 44.901,
+      "end": 45.365
     },
     {
       "word": "The",
-      "start": 48.465,
-      "end": 48.597
+      "start": 47.134,
+      "end": 47.266
     },
     {
       "word": "Implementation",
-      "start": 48.609,
-      "end": 48.777
+      "start": 47.278,
+      "end": 47.446
     },
     {
       "word": "phase",
-      "start": 48.857,
-      "end": 49.257
+      "start": 47.526,
+      "end": 47.926
     },
     {
       "word": "produces",
-      "start": 49.328,
-      "end": 49.896
+      "start": 47.988,
+      "end": 48.484
     },
     {
       "word": "working",
-      "start": 49.956,
-      "end": 50.376
+      "start": 48.534,
+      "end": 48.884
     },
     {
       "word": "code,",
-      "start": 50.472,
-      "end": 51.256
+      "start": 48.98,
+      "end": 49.764
     },
     {
       "word": "tests,",
-      "start": 51.349,
-      "end": 51.974
+      "start": 49.857,
+      "end": 50.642
     },
     {
       "word": "and",
-      "start": 52.014,
-      "end": 52.134
+      "start": 50.682,
+      "end": 50.802
     },
     {
       "word": "updated",
-      "start": 52.214,
-      "end": 52.774
+      "start": 50.872,
+      "end": 51.362
     },
     {
       "word": "docs.",
-      "start": 52.886,
-      "end": 53.974
+      "start": 51.474,
+      "end": 52.002
     },
     {
       "word": "That",
-      "start": 54.806,
-      "end": 54.854
+      "start": 53.252,
+      "end": 53.284
     },
     {
       "word": "deliverable",
-      "start": 54.904,
-      "end": 55.574
+      "start": 53.334,
+      "end": 53.924
     },
     {
       "word": "passes",
-      "start": 55.677,
-      "end": 56.295
+      "start": 54.004,
+      "end": 54.484
     },
     {
       "word": "through",
-      "start": 56.335,
-      "end": 56.615
+      "start": 54.524,
+      "end": 54.804
     },
     {
       "word": "Release",
-      "start": 56.715,
-      "end": 57.415
+      "start": 54.884,
+      "end": 55.444
     },
     {
       "word": "\u2014",
-      "start": 57.775,
-      "end": 58.135
+      "start": 55.724,
+      "end": 56.004
     },
     {
       "word": "continuous",
-      "start": 58.186,
-      "end": 58.696
+      "start": 56.055,
+      "end": 56.565
     },
     {
       "word": "integration",
-      "start": 58.749,
-      "end": 59.332
+      "start": 56.632,
+      "end": 57.369
     },
     {
       "word": "and",
-      "start": 59.372,
-      "end": 59.492
+      "start": 57.429,
+      "end": 57.609
     },
     {
       "word": "delivery",
-      "start": 59.545,
-      "end": 59.969
+      "start": 57.653,
+      "end": 58.005
     },
     {
       "word": "pipelines",
-      "start": 60.049,
-      "end": 60.769
+      "start": 58.085,
+      "end": 58.805
     },
     {
       "word": "plus",
-      "start": 60.913,
-      "end": 61.489
+      "start": 58.965,
+      "end": 59.605
     },
     {
       "word": "human",
-      "start": 61.596,
-      "end": 62.131
+      "start": 59.672,
+      "end": 60.007
     },
     {
       "word": "approval.",
-      "start": 62.202,
-      "end": 62.93
+      "start": 60.069,
+      "end": 60.645
     }
   ],
-  "duration": 62.93
+  "duration": 60.645
 }

@@ -1,476 +1,480 @@
 1
-00:00:00,348 --> 00:00:05,684
+00:00:00,188 --> 00:00:04,645
 AI DevKit is an operating model for AI-centric software engineering.
 
 2
-00:00:06,429 --> 00:00:10,518
+00:00:05,950 --> 00:00:09,766
 AI writes specs, tests, code, and docs.
 
 3
-00:00:11,356 --> 00:00:14,159
+00:00:10,910 --> 00:00:13,368
 Humans approve the spec and approve the release.
 
 4
-00:00:15,423 --> 00:00:18,518
+00:00:14,473 --> 00:00:16,963
 It works with your existing stack — git,
 
 5
-00:00:18,606 --> 00:00:23,931
-repos, pull requests, continuous integration — and reshapes it around
+00:00:17,109 --> 00:00:22,402
+repos, pull requests, continuous integration — and reshapes it around AI
 
 6
-00:00:24,091 --> 00:00:28,484
-AI execution, while keeping the human checkpoints that matter.
+00:00:22,474 --> 00:00:26,009
+execution, while keeping the human checkpoints that matter.
 
 7
-00:00:29,992 --> 00:00:32,960
+00:00:27,277 --> 00:00:29,603
 There are four pillars: spec planning,
 
 8
-00:00:33,055 --> 00:00:38,088
-test-driven implementation, Progressive Disclosure docs, and the AI
+00:00:29,731 --> 00:00:35,033
+test-driven implementation, progressive disclosure docs, and the AI dev
 
 9
-00:00:38,189 --> 00:00:39,368
-dev environment.
+00:00:35,106 --> 00:00:35,990
+environment.
 
 10
-00:00:39,706 --> 00:00:41,765
+00:00:36,192 --> 00:00:37,672
 Work comes in as a story,
 
 11
-00:00:41,862 --> 00:00:44,006
+00:00:37,768 --> 00:00:39,753
 epic, bug, or feature.
 
 12
-00:00:45,031 --> 00:00:48,320
+00:00:41,018 --> 00:00:43,911
 It flows through three phases: Plan,
 
 13
-00:00:48,368 --> 00:00:50,081
+00:00:43,954 --> 00:00:45,757
 Implementation, and Release.
 
 14
-00:00:51,659 --> 00:00:54,322
+00:00:46,776 --> 00:00:49,195
 The Lead AI executes the workflow.
 
 15
-00:00:55,585 --> 00:00:56,878
+00:00:50,778 --> 00:00:51,832
 The Verify A.I.
 
 16
-00:00:56,951 --> 00:01:02,311
+00:00:51,896 --> 00:00:56,956
 independently reviews all Lead AI work — it's a second AI
 
 17
-00:01:02,376 --> 00:01:04,709
+00:00:57,004 --> 00:00:58,873
 from a different training lineage.
 
 18
-00:01:04,932 --> 00:01:05,990
+00:01:00,296 --> 00:01:01,435
 Why two AIs?
 
 19
-00:01:07,365 --> 00:01:12,472
+00:01:02,832 --> 00:01:07,635
 A single AI is confidently wrong in ways invisible to itself.
 
 20
-00:01:13,429 --> 00:01:17,671
+00:01:08,631 --> 00:01:12,632
 Asking the same model to review its own output rarely catches the
 
 21
-00:01:17,724 --> 00:01:18,069
+00:01:12,685 --> 00:01:13,030
 error.
 
 22
-00:01:19,632 --> 00:01:22,867
+00:01:14,609 --> 00:01:17,835
 Two independent lineages catch different mistakes.
 
 23
-00:01:24,447 --> 00:01:26,865
+00:01:19,414 --> 00:01:21,355
 The Plan phase produces a spec.
 
 24
-00:01:27,834 --> 00:01:30,625
+00:01:23,123 --> 00:01:25,754
 The Implementation phase produces working code,
 
 25
-00:01:30,717 --> 00:01:33,342
+00:01:25,847 --> 00:01:27,992
 tests, and updated docs.
 
 26
-00:01:34,174 --> 00:01:39,337
-That deliverable passes through Release — continuous integration and delivery
+00:01:29,242 --> 00:01:34,795
+That deliverable passes through Release — continuous integration and delivery pipelines
 
 27
-00:01:39,418 --> 00:01:42,299
-pipelines plus human approval.
+00:01:34,955 --> 00:01:36,635
+plus human approval.
 
 28
-00:01:42,567 --> 00:01:45,656
+00:01:36,903 --> 00:01:39,832
 Plan turns a work item into an approved spec.
 
 29
-00:01:47,377 --> 00:01:49,413
+00:01:41,412 --> 00:01:43,430
 The Lead AI reads the requirement,
 
 30
-00:01:49,433 --> 00:01:54,618
+00:01:43,450 --> 00:01:48,151
 the docs, and the code, then drafts a spec with acceptance criteria,
 
 31
-00:01:54,666 --> 00:01:57,893
+00:01:48,199 --> 00:01:50,308
 edge cases, and approach decisions.
 
 32
-00:01:58,832 --> 00:01:59,969
+00:01:52,207 --> 00:01:53,344
 The Verify A.I.
 
 33
-00:02:00,070 --> 00:02:02,128
+00:01:53,415 --> 00:01:55,427
 reviews the spec independently.
 
 34
-00:02:03,383 --> 00:02:07,487
+00:01:56,692 --> 00:02:00,786
 If the two AIs disagree on what a criterion means,
 
 35
-00:02:07,691 --> 00:02:12,528
+00:02:00,854 --> 00:02:04,384
 that's ambiguity — and it gets surfaced to the human before any
 
 36
-00:02:12,593 --> 00:02:13,487
+00:02:04,448 --> 00:02:05,343
 code is written.
 
 37
-00:02:15,316 --> 00:02:18,921
+00:02:07,011 --> 00:02:10,215
 The key discipline here: decide in the spec,
 
 38
-00:02:19,021 --> 00:02:20,201
+00:02:10,295 --> 00:02:11,335
 not in the code.
 
 39
-00:02:21,688 --> 00:02:25,169
+00:02:12,436 --> 00:02:16,143
 If you let the AI defer decisions to implementation,
 
 40
-00:02:25,314 --> 00:02:29,164
+00:02:16,288 --> 00:02:19,735
 it makes them implicitly, often inconsistently,
 
 41
-00:02:29,295 --> 00:02:31,881
+00:02:19,867 --> 00:02:22,132
 and you only find out when you're reading the code.
 
 42
-00:02:33,540 --> 00:02:36,043
+00:02:24,031 --> 00:02:26,532
 The phase ends when the human signs off.
 
 43
-00:02:36,824 --> 00:02:40,205
+00:02:27,313 --> 00:02:30,852
 Implementation turns the approved spec into working code.
 
 44
-00:02:42,104 --> 00:02:43,245
+00:02:32,671 --> 00:02:33,812
 The Verify A.I.
 
 45
-00:02:43,314 --> 00:02:46,526
+00:02:33,902 --> 00:02:37,736
 authors the failing tests directly from the spec.
 
 46
-00:02:48,269 --> 00:02:52,807
+00:02:39,639 --> 00:02:44,574
 The Lead AI writes the implementation to make them pass.
 
 47
-00:02:53,795 --> 00:02:58,204
+00:02:45,712 --> 00:02:51,018
 This is independent test authorship — the AI that writes the tests
 
 48
-00:02:58,311 --> 00:03:01,763
+00:02:51,177 --> 00:02:54,856
 is not the AI that writes the code.
 
 49
-00:03:02,908 --> 00:03:08,430
-Without that separation, implementation assumptions get silently baked into the tests.
+00:02:55,882 --> 00:03:01,250
+Without that separation, implementation assumptions get silently baked into
 
 50
-00:03:10,340 --> 00:03:15,473
-After TDD completes, the Lead AI updates the Progressive Disclosure docs,
+00:03:01,270 --> 00:03:02,970
+the tests.
 
 51
-00:03:16,176 --> 00:03:17,388
-and the Verify A.I.
+00:03:04,120 --> 00:03:09,658
+After test-driven development completes, the Lead AI updates the progressive disclosure
 
 52
-00:03:17,444 --> 00:03:20,187
-checks the updates against the actual code.
+00:03:09,754 --> 00:03:12,379
+docs, and the Verify A.I.
 
 53
-00:03:21,826 --> 00:03:23,588
-Then the spec is archived.
+00:03:12,494 --> 00:03:15,658
+checks the updates against the actual code.
 
 54
-00:03:24,012 --> 00:03:26,027
-The docs carry everything forward.
+00:03:17,322 --> 00:03:19,096
+Then the spec is archived.
 
 55
-00:03:26,419 --> 00:03:29,945
-Progressive Disclosure docs give every repo the same structure.
+00:03:19,799 --> 00:03:22,132
+The docs carry everything forward.
 
 56
-00:03:30,732 --> 00:03:33,792
-The same eight files, in every repo,
+00:03:22,587 --> 00:03:26,599
+Progressive Disclosure docs give every repo the same structure.
 
 57
-00:03:33,838 --> 00:03:35,640
-across the whole organisation.
+00:03:28,348 --> 00:03:31,236
+The same eight files, in every repo,
 
 58
-00:03:36,877 --> 00:03:41,084
-Level zero is an identity card — what is this repo?
+00:03:31,328 --> 00:03:33,556
+across the whole organisation.
 
 59
-00:03:42,253 --> 00:03:45,568
-Level one is eight fixed files:
+00:03:35,569 --> 00:03:39,233
+Level zero is an identity card — what is this repo?
 
 60
-00:03:45,967 --> 00:03:51,171
-setup, architecture, code map, conventions, workflows,
+00:03:41,042 --> 00:03:43,879
+Level one is eight fixed files:
 
 61
-00:03:51,251 --> 00:03:54,371
-interfaces, gotchas, and security.
+00:03:45,237 --> 00:03:51,314
+setup, architecture, code map, conventions, workflows,
 
 62
-00:03:55,824 --> 00:04:00,771
-Level two is deep dives, loaded only when Level one isn't enough.
+00:03:51,388 --> 00:03:54,356
+interfaces, gotchas, and security.
 
 63
-00:04:01,902 --> 00:04:05,847
-Levels zero and one load upfront — they're small.
+00:03:56,370 --> 00:04:01,555
+Level two is deep dives, loaded only when Level one isn't enough.
 
 64
-00:04:06,496 --> 00:04:09,256
-Level two is pulled in only when needed.
+00:04:02,721 --> 00:04:07,478
+Levels zero and one load upfront — they're small.
 
 65
-00:04:09,959 --> 00:04:13,893
-The agent gets full context without filling the context window.
+00:04:08,867 --> 00:04:11,401
+Level two is pulled in only when needed.
 
 66
-00:04:15,151 --> 00:04:19,413
-That consistency is what lets any agent pick up any repo and
+00:04:12,903 --> 00:04:17,084
+The agent gets full context without filling the context window.
 
 67
-00:04:19,492 --> 00:04:20,453
-work safely.
+00:04:18,982 --> 00:04:23,725
+That consistency is what lets any agent pick up any repo and
 
 68
-00:04:20,655 --> 00:04:24,056
-Real systems span multiple repos — an API,
-
-69
-00:04:24,083 --> 00:04:27,173
-an SDK, a frontend, shared infrastructure.
-
-70
-00:04:28,592 --> 00:04:32,612
-The AI dev environment gives you one workspace where the AI can
-
-71
-00:04:32,672 --> 00:04:34,935
-run the whole system end to end.
-
-72
-00:04:35,876 --> 00:04:38,373
-It's a container of containers.
-
-73
-00:04:39,063 --> 00:04:41,656
-Each component runs in its own container,
-
-74
-00:04:41,788 --> 00:04:44,052
-all inside one outer workspace.
-
-75
-00:04:45,391 --> 00:04:47,729
-The Lead AI can start, stop,
-
-76
-00:04:47,809 --> 00:04:50,771
-restart, and test any component from there.
-
-77
-00:04:51,872 --> 00:04:53,890
-It runs locally or in the cloud.
-
-78
-00:04:55,261 --> 00:05:00,119
-Cloud workspaces are useful for team handoff — another engineer picks up
-
-79
-00:05:00,159 --> 00:05:03,519
-the same workspace and the same context.
-
-80
-00:05:04,338 --> 00:05:10,197
-The environment includes Playwright for browser testing and Terraform for infrastructure.
-
-81
-00:05:10,816 --> 00:05:16,204
-And there's an audit trail across all agent sessions — reproducibility,
-
-82
-00:05:16,257 --> 00:05:20,525
-traceability, and evals for debugging agent behaviour.
-
-83
-00:05:20,982 --> 00:05:25,401
-Everything in AI DevKit runs through six markdown files in a prompts
-
-84
-00:05:25,470 --> 00:05:25,964
-folder.
-
-85
-00:05:27,406 --> 00:05:32,523
-spec, implement, create docs, update docs,
-
-86
-00:05:32,603 --> 00:05:35,966
-verify with Codex, verify with Claude.
-
-87
-00:05:37,543 --> 00:05:40,362
-They're plain text — you can read them,
-
-88
-00:05:40,413 --> 00:05:43,962
-understand exactly what the AI is being told to do,
-
-89
-00:05:44,022 --> 00:05:45,162
-and modify them.
-
-90
-00:05:46,829 --> 00:05:49,645
-Why not skills or slash commands?
-
-91
-00:05:51,226 --> 00:05:54,847
-There are lots of ways to load instructions into an AI tool
-
-92
-00:05:55,207 --> 00:05:59,723
-— user settings, project files, enterprise configs,
-
-93
-00:05:59,826 --> 00:06:02,206
-skills, slash commands.
-
-94
-00:06:02,751 --> 00:06:04,125
-It's a walled garden.
-
-95
-00:06:05,660 --> 00:06:07,885
-A Claude skill doesn't work in Cursor.
-
-96
-00:06:09,260 --> 00:06:11,807
-A Cursor command doesn't work in Codex.
-
-97
-00:06:13,306 --> 00:06:14,367
-But at the end of the day,
-
-98
-00:06:14,420 --> 00:06:17,247
-it's all just text hitting an LLM.
-
-99
-00:06:18,271 --> 00:06:22,283
-Prompts are portable — you can paste them into any agent,
-
-100
-00:06:22,336 --> 00:06:24,282
-or pipe them from the command line.
-
-101
-00:06:25,816 --> 00:06:30,514
-Curl the prompts straight from GitHub — no clone needed.
-
-102
-00:06:31,293 --> 00:06:36,277
-For example: curl create-docs and verify-codex,
-
-103
-00:06:36,437 --> 00:06:37,957
-pipe to claude.
-
-104
-00:06:39,302 --> 00:06:44,193
-Or flip it — curl create-docs and verify-claude,
-
-105
-00:06:44,321 --> 00:06:45,792
-pass to codex.
-
-106
-00:06:47,379 --> 00:06:52,823
-Either way, one command generates Progressive Disclosure docs and runs
-
-107
-00:06:52,890 --> 00:06:56,591
-cross-model verification — end to end,
-
-108
-00:06:56,698 --> 00:07:00,683
-about fifty minutes, zero human intervention.
-
-109
-00:07:02,871 --> 00:07:05,127
-Visible prompts are accountable.
-
-110
-00:07:05,213 --> 00:07:08,363
-Hidden skills may or may not be followed.
-
-111
-00:07:09,555 --> 00:07:14,689
-Engineers should read the prompts, not trust hidden instructions.
-
-112
-00:07:14,824 --> 00:07:15,727
-Here's how to start.
-
-113
-00:07:17,605 --> 00:07:18,530
-Pick one repo.
-
-114
-00:07:20,624 --> 00:07:26,364
-Curl create-docs, pipe to claude — or pass to codex.
-
-115
-00:07:27,374 --> 00:07:31,242
-That's it — any agent can then pick up that repo and
-
-116
-00:07:31,307 --> 00:07:32,126
+00:04:23,788 --> 00:04:24,687
 work safely.
 
+69
+00:04:24,955 --> 00:04:28,524
+Real systems span multiple repos — an API,
+
+70
+00:04:28,576 --> 00:04:32,036
+an SDK, a frontend, shared infrastructure.
+
+71
+00:04:33,615 --> 00:04:38,034
+The AI dev environment gives you one workspace where the AI can
+
+72
+00:04:38,074 --> 00:04:40,195
+run the whole system end to end.
+
+73
+00:04:41,456 --> 00:04:43,389
+It's a container of containers.
+
+74
+00:04:44,781 --> 00:04:47,707
+Each component runs in its own container,
+
+75
+00:04:47,983 --> 00:04:51,346
+all inside one outer workspace.
+
+76
+00:04:52,324 --> 00:04:55,223
+The Lead AI can start, stop,
+
+77
+00:04:55,303 --> 00:04:58,341
+restart, and test any component from there.
+
+78
+00:04:59,587 --> 00:05:02,382
+It runs locally or in the cloud.
+
+79
+00:05:03,392 --> 00:05:08,100
+Cloud workspaces are useful for team handoff — another engineer picks up
+
+80
+00:05:08,161 --> 00:05:11,700
+the same workspace and the same context.
+
+81
+00:05:12,560 --> 00:05:17,697
+The environment includes Playwright for browser testing and Terraform for infrastructure.
+
+82
+00:05:18,987 --> 00:05:24,344
+And there's an audit trail across all agent sessions — reproducibility,
+
+83
+00:05:24,397 --> 00:05:28,423
+traceability, and evals for debugging agent behaviour.
+
+84
+00:05:28,750 --> 00:05:32,658
+Everything in AI DevKit runs through six markdown files in a prompts
+
+85
+00:05:32,714 --> 00:05:33,137
+folder.
+
+86
+00:05:33,951 --> 00:05:37,451
+spec, implement, create docs, update docs,
+
+87
+00:05:37,531 --> 00:05:40,252
+verify with Codex, verify with Claude.
+
+88
+00:05:40,629 --> 00:05:42,649
+They're plain text — you can read them,
+
+89
+00:05:42,699 --> 00:05:45,612
+understand exactly what the AI is being told to do,
+
+90
+00:05:45,672 --> 00:05:46,654
+and modify them.
+
+91
+00:05:46,961 --> 00:05:49,492
+Why not skills or slash commands?
+
+92
+00:05:49,673 --> 00:05:52,566
+There are lots of ways to load instructions into an AI tool
+
+93
+00:05:52,646 --> 00:05:56,406
+— user settings, project files, enterprise configs,
+
+94
+00:05:56,497 --> 00:05:58,442
+skills, slash commands.
+
+95
+00:05:58,627 --> 00:05:59,961
+It's a walled garden.
+
+96
+00:06:00,360 --> 00:06:02,233
+A Claude skill doesn't work in Cursor.
+
+97
+00:06:02,382 --> 00:06:04,867
+A Cursor command doesn't work in Codex.
+
+98
+00:06:05,007 --> 00:06:05,990
+But at the end of the day,
+
+99
+00:06:06,043 --> 00:06:08,149
+it's all just text hitting an LLM.
+
+100
+00:06:08,428 --> 00:06:11,268
+Prompts are portable — you can paste them into any agent,
+
+101
+00:06:11,321 --> 00:06:13,146
+or pipe them from the command line.
+
+102
+00:06:13,459 --> 00:06:16,826
+Curl the prompts straight from GitHub — no clone needed.
+
+103
+00:06:17,005 --> 00:06:20,465
+For example: curl create-docs and verify-codex,
+
+104
+00:06:20,528 --> 00:06:21,625
+pipe to claude.
+
+105
+00:06:21,810 --> 00:06:24,865
+Or flip it — curl create-docs and verify-claude,
+
+106
+00:06:24,946 --> 00:06:26,067
+pass to codex.
+
+107
+00:06:26,317 --> 00:06:31,832
+Either way, one command generates Progressive Disclosure docs and runs cross-model verification
+
+108
+00:06:31,872 --> 00:06:34,228
+— end to end, about fifty minutes,
+
+109
+00:06:34,308 --> 00:06:35,944
+zero human intervention.
+
+110
+00:06:36,420 --> 00:06:38,101
+Visible prompts are accountable.
+
+111
+00:06:38,130 --> 00:06:40,379
+Hidden skills may or may not be followed.
+
+112
+00:06:40,971 --> 00:06:44,384
+Engineers should read the prompts, not trust hidden instructions.
+
+113
+00:06:44,450 --> 00:06:46,259
+Here's how to start.
+
+114
+00:06:47,218 --> 00:06:48,223
+Pick one repo.
+
+115
+00:06:49,997 --> 00:06:54,622
+Curl create-docs, pipe to claude — or pass to codex.
+
+116
+00:06:56,271 --> 00:06:59,980
+That's it — any agent can then pick up that repo and
+
 117
-00:07:34,036 --> 00:07:39,084
-Chain verify-codex or verify-claude for cross-model review — works
+00:07:00,028 --> 00:07:01,504
+work safely.
 
 118
-00:07:39,137 --> 00:07:40,845
-in either direction.
+00:07:02,593 --> 00:07:07,829
+Chain verify-codex or verify-claude for cross-model review —
 
 119
-00:07:41,915 --> 00:07:52,210
+00:07:07,882 --> 00:07:09,189
+works in either direction.
+
+120
+00:07:10,528 --> 00:07:22,954
 The repo, the standard, and all the prompts are open at github.com/AgoraIO-Community/ai-devkit.
 

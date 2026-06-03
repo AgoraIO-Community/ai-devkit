@@ -2,989 +2,989 @@
   "words": [
     {
       "word": "Everything",
-      "start": 0.457,
-      "end": 0.557
+      "start": 0.328,
+      "end": 0.398
     },
     {
       "word": "in",
-      "start": 0.637,
-      "end": 0.797
+      "start": 0.425,
+      "end": 0.479
     },
     {
       "word": "AI",
-      "start": 0.904,
-      "end": 1.118
+      "start": 0.586,
+      "end": 0.8
     },
     {
       "word": "DevKit",
-      "start": 1.218,
-      "end": 1.677
+      "start": 0.88,
+      "end": 1.36
     },
     {
       "word": "runs",
-      "start": 1.773,
-      "end": 2.157
+      "start": 1.424,
+      "end": 1.68
     },
     {
       "word": "through",
-      "start": 2.197,
-      "end": 2.477
+      "start": 1.73,
+      "end": 2.08
     },
     {
       "word": "six",
-      "start": 2.577,
-      "end": 2.877
+      "start": 2.16,
+      "end": 2.4
     },
     {
       "word": "markdown",
-      "start": 2.939,
-      "end": 3.435
+      "start": 2.462,
+      "end": 2.958
     },
     {
       "word": "files",
-      "start": 3.542,
-      "end": 4.077
+      "start": 3.051,
+      "end": 3.516
     },
     {
       "word": "in",
-      "start": 4.13,
-      "end": 4.236
+      "start": 3.569,
+      "end": 3.675
     },
     {
       "word": "a",
-      "start": 4.276,
-      "end": 4.316
+      "start": 3.715,
+      "end": 3.755
     },
     {
       "word": "prompts",
-      "start": 4.386,
-      "end": 4.876
+      "start": 3.815,
+      "end": 4.235
     },
     {
       "word": "folder.",
-      "start": 4.945,
-      "end": 5.439
+      "start": 4.292,
+      "end": 4.714
     },
     {
       "word": "spec,",
-      "start": 6.881,
-      "end": 7.041
+      "start": 5.528,
+      "end": 5.672
     },
     {
       "word": "implement,",
-      "start": 7.169,
-      "end": 8.721
+      "start": 5.752,
+      "end": 6.632
     },
     {
       "word": "create",
-      "start": 8.801,
-      "end": 9.281
+      "start": 6.689,
+      "end": 7.031
     },
     {
       "word": "docs,",
-      "start": 9.393,
-      "end": 10.321
+      "start": 7.143,
+      "end": 7.751
     },
     {
       "word": "update",
-      "start": 10.412,
-      "end": 10.958
+      "start": 7.842,
+      "end": 8.388
     },
     {
       "word": "docs,",
-      "start": 11.07,
-      "end": 11.998
+      "start": 8.484,
+      "end": 9.028
     },
     {
       "word": "verify",
-      "start": 12.078,
-      "end": 12.558
+      "start": 9.108,
+      "end": 9.588
     },
     {
       "word": "with",
-      "start": 12.59,
-      "end": 12.718
+      "start": 9.604,
+      "end": 9.668
     },
     {
       "word": "Codex,",
-      "start": 12.798,
-      "end": 13.998
+      "start": 9.748,
+      "end": 10.708
     },
     {
       "word": "verify",
-      "start": 14.067,
-      "end": 14.481
+      "start": 10.754,
+      "end": 11.03
     },
     {
       "word": "with",
-      "start": 14.529,
-      "end": 14.721
+      "start": 11.062,
+      "end": 11.19
     },
     {
       "word": "Claude.",
-      "start": 14.801,
-      "end": 15.441
+      "start": 11.27,
+      "end": 11.83
     },
     {
       "word": "They're",
-      "start": 17.018,
-      "end": 17.119
+      "start": 12.207,
+      "end": 12.308
     },
     {
       "word": "plain",
-      "start": 17.172,
-      "end": 17.437
+      "start": 12.361,
+      "end": 12.626
     },
     {
       "word": "text",
-      "start": 17.565,
-      "end": 18.077
+      "start": 12.722,
+      "end": 13.106
     },
     {
       "word": "\u2014",
-      "start": 18.357,
-      "end": 18.637
+      "start": 13.186,
+      "end": 13.266
     },
     {
       "word": "you",
-      "start": 18.677,
-      "end": 18.797
+      "start": 13.306,
+      "end": 13.426
     },
     {
       "word": "can",
-      "start": 18.837,
-      "end": 18.957
+      "start": 13.446,
+      "end": 13.506
     },
     {
       "word": "read",
-      "start": 19.005,
-      "end": 19.197
+      "start": 13.586,
+      "end": 13.906
     },
     {
       "word": "them,",
-      "start": 19.261,
-      "end": 19.837
+      "start": 13.938,
+      "end": 14.226
     },
     {
       "word": "understand",
-      "start": 19.888,
-      "end": 20.398
+      "start": 14.277,
+      "end": 14.787
     },
     {
       "word": "exactly",
-      "start": 20.458,
-      "end": 20.878
+      "start": 14.847,
+      "end": 15.267
     },
     {
       "word": "what",
-      "start": 20.926,
-      "end": 21.118
+      "start": 15.299,
+      "end": 15.427
     },
     {
       "word": "the",
-      "start": 21.158,
-      "end": 21.278
+      "start": 15.447,
+      "end": 15.507
     },
     {
       "word": "AI",
-      "start": 21.438,
-      "end": 21.758
+      "start": 15.64,
+      "end": 15.906
     },
     {
       "word": "is",
-      "start": 21.811,
-      "end": 21.917
+      "start": 15.959,
+      "end": 16.065
     },
     {
       "word": "being",
-      "start": 21.957,
-      "end": 22.157
+      "start": 16.092,
+      "end": 16.227
     },
     {
       "word": "told",
-      "start": 22.221,
-      "end": 22.477
+      "start": 16.307,
+      "end": 16.627
     },
     {
       "word": "to",
-      "start": 22.53,
-      "end": 22.636
+      "start": 16.654,
+      "end": 16.708
     },
     {
       "word": "do,",
-      "start": 22.743,
-      "end": 23.437
+      "start": 16.815,
+      "end": 17.189
     },
     {
       "word": "and",
-      "start": 23.497,
-      "end": 23.677
+      "start": 17.249,
+      "end": 17.429
     },
     {
       "word": "modify",
-      "start": 23.757,
-      "end": 24.237
+      "start": 17.498,
+      "end": 17.912
     },
     {
       "word": "them.",
-      "start": 24.285,
-      "end": 24.637
+      "start": 17.96,
+      "end": 18.232
     },
     {
       "word": "Why",
-      "start": 26.304,
-      "end": 26.319
+      "start": 18.539,
+      "end": 18.554
     },
     {
       "word": "not",
-      "start": 26.379,
-      "end": 26.559
+      "start": 18.594,
+      "end": 18.714
     },
     {
       "word": "skills",
-      "start": 26.673,
-      "end": 27.357
+      "start": 18.805,
+      "end": 19.351
     },
     {
       "word": "or",
-      "start": 27.437,
-      "end": 27.597
+      "start": 19.431,
+      "end": 19.591
     },
     {
       "word": "slash",
-      "start": 27.677,
-      "end": 28.077
+      "start": 19.684,
+      "end": 20.149
     },
     {
       "word": "commands?",
-      "start": 28.184,
-      "end": 29.12
+      "start": 20.238,
+      "end": 21.07
     },
     {
       "word": "There",
-      "start": 30.701,
-      "end": 30.716
+      "start": 21.251,
+      "end": 21.266
     },
     {
       "word": "are",
-      "start": 30.756,
-      "end": 30.876
+      "start": 21.286,
+      "end": 21.346
     },
     {
       "word": "lots",
-      "start": 30.94,
-      "end": 31.196
+      "start": 21.394,
+      "end": 21.586
     },
     {
       "word": "of",
-      "start": 31.223,
-      "end": 31.277
+      "start": 21.613,
+      "end": 21.667
     },
     {
       "word": "ways",
-      "start": 31.373,
-      "end": 31.757
+      "start": 21.731,
+      "end": 21.987
     },
     {
       "word": "to",
-      "start": 31.81,
-      "end": 31.916
+      "start": 22.04,
+      "end": 22.146
     },
     {
       "word": "load",
-      "start": 31.98,
-      "end": 32.236
+      "start": 22.194,
+      "end": 22.386
     },
     {
       "word": "instructions",
-      "start": 32.298,
-      "end": 33.042
+      "start": 22.435,
+      "end": 23.023
     },
     {
       "word": "into",
-      "start": 33.106,
-      "end": 33.362
+      "start": 23.071,
+      "end": 23.263
     },
     {
       "word": "an",
-      "start": 33.389,
-      "end": 33.443
+      "start": 23.29,
+      "end": 23.344
     },
     {
       "word": "AI",
-      "start": 33.576,
-      "end": 33.842
+      "start": 23.477,
+      "end": 23.743
     },
     {
       "word": "tool",
-      "start": 33.938,
-      "end": 34.322
+      "start": 23.823,
+      "end": 24.143
     },
     {
       "word": "\u2014",
-      "start": 34.682,
-      "end": 35.042
+      "start": 24.223,
+      "end": 24.303
     },
     {
       "word": "user",
-      "start": 35.106,
-      "end": 35.362
+      "start": 24.383,
+      "end": 24.703
     },
     {
       "word": "settings,",
-      "start": 35.433,
-      "end": 36.161
+      "start": 24.765,
+      "end": 25.421
     },
     {
       "word": "project",
-      "start": 36.211,
-      "end": 36.561
+      "start": 25.471,
+      "end": 25.821
     },
     {
       "word": "files,",
-      "start": 36.668,
-      "end": 37.363
+      "start": 25.928,
+      "end": 26.623
     },
     {
       "word": "enterprise",
-      "start": 37.428,
-      "end": 38.078
+      "start": 26.674,
+      "end": 27.184
     },
     {
       "word": "configs,",
-      "start": 38.178,
-      "end": 39.198
+      "start": 27.264,
+      "end": 27.984
     },
     {
       "word": "skills,",
-      "start": 39.301,
-      "end": 40.079
+      "start": 28.075,
+      "end": 28.781
     },
     {
       "word": "slash",
-      "start": 40.119,
-      "end": 40.319
+      "start": 28.834,
+      "end": 29.099
     },
     {
       "word": "commands.",
-      "start": 40.417,
-      "end": 41.681
+      "start": 29.188,
+      "end": 30.02
     },
     {
       "word": "It's",
-      "start": 42.226,
-      "end": 42.4
+      "start": 30.205,
+      "end": 30.299
     },
     {
       "word": "a",
-      "start": 42.44,
-      "end": 42.48
+      "start": 30.339,
+      "end": 30.379
     },
     {
       "word": "walled",
-      "start": 42.56,
-      "end": 42.96
+      "start": 30.459,
+      "end": 30.859
     },
     {
       "word": "garden.",
-      "start": 43.04,
-      "end": 43.6
+      "start": 30.939,
+      "end": 31.539
     },
     {
       "word": "A",
-      "start": 45.135,
-      "end": 45.183
+      "start": 31.937,
+      "end": 31.977
     },
     {
       "word": "Claude",
-      "start": 45.197,
-      "end": 45.281
+      "start": 31.988,
+      "end": 32.054
     },
     {
       "word": "skill",
-      "start": 45.348,
-      "end": 45.683
+      "start": 32.107,
+      "end": 32.372
     },
     {
       "word": "doesn't",
-      "start": 45.736,
-      "end": 46.161
+      "start": 32.425,
+      "end": 32.77
     },
     {
       "word": "work",
-      "start": 46.225,
-      "end": 46.481
+      "start": 32.834,
+      "end": 33.09
     },
     {
       "word": "in",
-      "start": 46.534,
-      "end": 46.64
+      "start": 33.117,
+      "end": 33.171
     },
     {
       "word": "Cursor.",
-      "start": 46.72,
-      "end": 47.36
+      "start": 33.251,
+      "end": 33.811
     },
     {
       "word": "A",
-      "start": 48.735,
-      "end": 48.783
+      "start": 33.959,
+      "end": 33.969
     },
     {
       "word": "Cursor",
-      "start": 48.797,
-      "end": 48.881
+      "start": 34.026,
+      "end": 34.368
     },
     {
       "word": "command",
-      "start": 48.951,
-      "end": 49.441
+      "start": 34.428,
+      "end": 34.848
     },
     {
       "word": "doesn't",
-      "start": 49.508,
-      "end": 49.923
+      "start": 34.901,
+      "end": 35.246
     },
     {
       "word": "work",
-      "start": 49.987,
-      "end": 50.243
+      "start": 35.294,
+      "end": 35.486
     },
     {
       "word": "in",
-      "start": 50.296,
-      "end": 50.402
+      "start": 35.539,
+      "end": 35.645
     },
     {
       "word": "Codex.",
-      "start": 50.482,
-      "end": 51.282
+      "start": 35.725,
+      "end": 36.445
     },
     {
       "word": "But",
-      "start": 52.781,
-      "end": 52.802
+      "start": 36.584,
+      "end": 36.605
     },
     {
       "word": "at",
-      "start": 52.855,
-      "end": 52.961
+      "start": 36.632,
+      "end": 36.686
     },
     {
       "word": "the",
-      "start": 52.981,
-      "end": 53.041
+      "start": 36.706,
+      "end": 36.766
     },
     {
       "word": "end",
-      "start": 53.081,
-      "end": 53.201
+      "start": 36.806,
+      "end": 36.926
     },
     {
       "word": "of",
-      "start": 53.228,
-      "end": 53.282
+      "start": 36.953,
+      "end": 37.007
     },
     {
       "word": "the",
-      "start": 53.322,
-      "end": 53.442
+      "start": 37.027,
+      "end": 37.087
     },
     {
       "word": "day,",
-      "start": 53.502,
-      "end": 53.842
+      "start": 37.167,
+      "end": 37.567
     },
     {
       "word": "it's",
-      "start": 53.895,
-      "end": 54.081
+      "start": 37.62,
+      "end": 37.806
     },
     {
       "word": "all",
-      "start": 54.161,
-      "end": 54.401
+      "start": 37.826,
+      "end": 37.886
     },
     {
       "word": "just",
-      "start": 54.481,
-      "end": 54.801
+      "start": 37.934,
+      "end": 38.126
     },
     {
       "word": "text",
-      "start": 54.929,
-      "end": 55.441
+      "start": 38.238,
+      "end": 38.686
     },
     {
       "word": "hitting",
-      "start": 55.501,
-      "end": 55.921
+      "start": 38.726,
+      "end": 39.006
     },
     {
       "word": "an",
-      "start": 55.948,
-      "end": 56.002
+      "start": 39.033,
+      "end": 39.087
     },
     {
       "word": "LLM.",
-      "start": 56.122,
-      "end": 56.722
+      "start": 39.207,
+      "end": 39.727
     },
     {
       "word": "Prompts",
-      "start": 57.746,
-      "end": 58.242
+      "start": 40.006,
+      "end": 40.209
     },
     {
       "word": "are",
-      "start": 58.282,
-      "end": 58.402
+      "start": 40.249,
+      "end": 40.369
     },
     {
       "word": "portable",
-      "start": 58.464,
-      "end": 58.96
+      "start": 40.431,
+      "end": 40.927
     },
     {
       "word": "\u2014",
-      "start": 59.32,
-      "end": 59.68
+      "start": 41.007,
+      "end": 41.087
     },
     {
       "word": "you",
-      "start": 59.7,
-      "end": 59.76
+      "start": 41.107,
+      "end": 41.167
     },
     {
       "word": "can",
-      "start": 59.8,
-      "end": 59.92
+      "start": 41.207,
+      "end": 41.327
     },
     {
       "word": "paste",
-      "start": 59.973,
-      "end": 60.238
+      "start": 41.38,
+      "end": 41.645
     },
     {
       "word": "them",
-      "start": 60.27,
-      "end": 60.398
+      "start": 41.661,
+      "end": 41.725
     },
     {
       "word": "into",
-      "start": 60.462,
-      "end": 60.718
+      "start": 41.773,
+      "end": 41.965
     },
     {
       "word": "any",
-      "start": 60.778,
-      "end": 60.958
+      "start": 42.045,
+      "end": 42.285
     },
     {
       "word": "agent,",
-      "start": 61.038,
-      "end": 61.758
+      "start": 42.365,
+      "end": 42.845
     },
     {
       "word": "or",
-      "start": 61.811,
-      "end": 61.917
+      "start": 42.898,
+      "end": 43.004
     },
     {
       "word": "pipe",
-      "start": 61.997,
-      "end": 62.317
+      "start": 43.068,
+      "end": 43.324
     },
     {
       "word": "them",
-      "start": 62.365,
-      "end": 62.557
+      "start": 43.356,
+      "end": 43.484
     },
     {
       "word": "from",
-      "start": 62.605,
-      "end": 62.797
+      "start": 43.532,
+      "end": 43.724
     },
     {
       "word": "the",
-      "start": 62.817,
-      "end": 62.877
+      "start": 43.744,
+      "end": 43.804
     },
     {
       "word": "command",
-      "start": 62.927,
-      "end": 63.277
+      "start": 43.854,
+      "end": 44.204
     },
     {
       "word": "line.",
-      "start": 63.357,
-      "end": 63.757
+      "start": 44.284,
+      "end": 44.724
     },
     {
       "word": "Curl",
-      "start": 65.291,
-      "end": 65.355
+      "start": 45.036,
+      "end": 45.084
     },
     {
       "word": "the",
-      "start": 65.395,
-      "end": 65.515
+      "start": 45.104,
+      "end": 45.164
     },
     {
       "word": "prompts",
-      "start": 65.585,
-      "end": 66.075
+      "start": 45.234,
+      "end": 45.724
     },
     {
       "word": "straight",
-      "start": 66.128,
-      "end": 66.552
+      "start": 45.777,
+      "end": 46.201
     },
     {
       "word": "from",
-      "start": 66.6,
-      "end": 66.792
+      "start": 46.233,
+      "end": 46.361
     },
     {
       "word": "GitHub",
-      "start": 66.872,
-      "end": 67.352
+      "start": 46.441,
+      "end": 46.921
     },
     {
       "word": "\u2014",
-      "start": 67.672,
-      "end": 67.992
+      "start": 47.001,
+      "end": 47.081
     },
     {
       "word": "no",
-      "start": 68.045,
-      "end": 68.151
+      "start": 47.161,
+      "end": 47.321
     },
     {
       "word": "clone",
-      "start": 68.244,
-      "end": 68.709
+      "start": 47.401,
+      "end": 47.801
     },
     {
       "word": "needed.",
-      "start": 68.789,
-      "end": 69.989
+      "start": 47.87,
+      "end": 48.404
     },
     {
       "word": "For",
-      "start": 70.768,
-      "end": 70.789
+      "start": 48.583,
+      "end": 48.604
     },
     {
       "word": "example:",
-      "start": 70.859,
-      "end": 71.509
+      "start": 48.664,
+      "end": 49.164
     },
     {
       "word": "curl",
-      "start": 72.631,
-      "end": 72.711
+      "start": 49.578,
+      "end": 49.642
     },
     {
       "word": "create-docs",
-      "start": 72.791,
-      "end": 73.911
+      "start": 49.722,
+      "end": 50.602
     },
     {
       "word": "and",
-      "start": 73.991,
-      "end": 74.231
+      "start": 50.642,
+      "end": 50.762
     },
     {
       "word": "verify-codex,",
-      "start": 74.334,
-      "end": 75.752
+      "start": 50.842,
+      "end": 52.042
     },
     {
       "word": "pipe",
-      "start": 75.912,
-      "end": 76.552
+      "start": 52.106,
+      "end": 52.362
     },
     {
       "word": "to",
-      "start": 76.605,
-      "end": 76.711
+      "start": 52.442,
+      "end": 52.602
     },
     {
       "word": "claude.",
-      "start": 76.771,
-      "end": 77.432
+      "start": 52.662,
+      "end": 53.202
     },
     {
       "word": "Or",
-      "start": 78.777,
-      "end": 78.791
+      "start": 53.387,
+      "end": 53.401
     },
     {
       "word": "flip",
-      "start": 78.871,
-      "end": 79.191
+      "start": 53.465,
+      "end": 53.721
     },
     {
       "word": "it",
-      "start": 79.271,
-      "end": 79.431
+      "start": 53.801,
+      "end": 53.961
     },
     {
       "word": "\u2014",
-      "start": 79.871,
-      "end": 80.311
+      "start": 54.001,
+      "end": 54.041
     },
     {
       "word": "curl",
-      "start": 80.391,
-      "end": 80.711
+      "start": 54.105,
+      "end": 54.361
     },
     {
       "word": "create-docs",
-      "start": 80.802,
-      "end": 81.908
+      "start": 54.43,
+      "end": 55.244
     },
     {
       "word": "and",
-      "start": 81.968,
-      "end": 82.148
+      "start": 55.284,
+      "end": 55.404
     },
     {
       "word": "verify-claude,",
-      "start": 82.228,
-      "end": 83.668
+      "start": 55.484,
+      "end": 56.443
     },
     {
       "word": "pass",
-      "start": 83.796,
-      "end": 84.308
+      "start": 56.523,
+      "end": 56.843
     },
     {
       "word": "to",
-      "start": 84.361,
-      "end": 84.467
+      "start": 56.87,
+      "end": 56.924
     },
     {
       "word": "codex.",
-      "start": 84.547,
-      "end": 85.267
+      "start": 57.004,
+      "end": 57.644
     },
     {
       "word": "Either",
-      "start": 86.854,
-      "end": 86.944
+      "start": 57.895,
+      "end": 57.961
     },
     {
       "word": "way,",
-      "start": 87.024,
-      "end": 87.744
+      "start": 58.041,
+      "end": 58.441
     },
     {
       "word": "one",
-      "start": 87.824,
-      "end": 88.064
+      "start": 58.481,
+      "end": 58.601
     },
     {
       "word": "command",
-      "start": 88.144,
-      "end": 88.704
+      "start": 58.661,
+      "end": 59.081
     },
     {
       "word": "generates",
-      "start": 88.776,
-      "end": 89.424
+      "start": 59.137,
+      "end": 59.641
     },
     {
       "word": "Progressive",
-      "start": 89.477,
-      "end": 90.06
+      "start": 59.688,
+      "end": 60.205
     },
     {
       "word": "Disclosure",
-      "start": 90.118,
-      "end": 90.698
+      "start": 60.256,
+      "end": 60.766
     },
     {
       "word": "docs",
-      "start": 90.81,
-      "end": 91.258
+      "start": 60.846,
+      "end": 61.166
     },
     {
       "word": "and",
-      "start": 91.398,
-      "end": 91.818
+      "start": 61.226,
+      "end": 61.406
     },
     {
       "word": "runs",
-      "start": 91.914,
-      "end": 92.298
+      "start": 61.486,
+      "end": 61.806
     },
     {
       "word": "cross-model",
-      "start": 92.365,
-      "end": 93.102
+      "start": 61.873,
+      "end": 62.526
     },
     {
       "word": "verification",
-      "start": 93.17,
-      "end": 93.986
+      "start": 62.594,
+      "end": 63.41
     },
     {
       "word": "\u2014",
-      "start": 94.546,
-      "end": 95.106
+      "start": 63.45,
+      "end": 63.49
     },
     {
       "word": "end",
-      "start": 95.186,
-      "end": 95.426
+      "start": 63.57,
+      "end": 63.81
     },
     {
       "word": "to",
-      "start": 95.506,
-      "end": 95.666
+      "start": 63.89,
+      "end": 64.05
     },
     {
       "word": "end,",
-      "start": 95.746,
-      "end": 96.066
+      "start": 64.15,
+      "end": 64.65
     },
     {
       "word": "about",
-      "start": 96.173,
-      "end": 96.708
+      "start": 64.683,
+      "end": 64.848
     },
     {
       "word": "fifty",
-      "start": 96.775,
-      "end": 97.11
+      "start": 64.901,
+      "end": 65.166
     },
     {
       "word": "minutes,",
-      "start": 97.18,
-      "end": 97.83
+      "start": 65.226,
+      "end": 65.806
     },
     {
       "word": "zero",
-      "start": 98.006,
-      "end": 98.71
+      "start": 65.886,
+      "end": 66.206
     },
     {
       "word": "human",
-      "start": 98.777,
-      "end": 99.112
+      "start": 66.286,
+      "end": 66.686
     },
     {
       "word": "intervention.",
-      "start": 99.174,
-      "end": 100.158
+      "start": 66.741,
+      "end": 67.521
     },
     {
       "word": "Visible",
-      "start": 102.346,
-      "end": 102.402
+      "start": 67.997,
+      "end": 68.039
     },
     {
       "word": "prompts",
-      "start": 102.482,
-      "end": 103.042
+      "start": 68.109,
+      "end": 68.599
     },
     {
       "word": "are",
-      "start": 103.102,
-      "end": 103.282
+      "start": 68.639,
+      "end": 68.759
     },
     {
       "word": "accountable.",
-      "start": 103.342,
-      "end": 104.602
+      "start": 68.819,
+      "end": 69.679
     },
     {
       "word": "Hidden",
-      "start": 104.688,
-      "end": 105.204
+      "start": 69.708,
+      "end": 69.882
     },
     {
       "word": "skills",
-      "start": 105.295,
-      "end": 105.841
+      "start": 69.962,
+      "end": 70.442
     },
     {
       "word": "may",
-      "start": 105.941,
-      "end": 106.241
+      "start": 70.502,
+      "end": 70.682
     },
     {
       "word": "or",
-      "start": 106.294,
-      "end": 106.4
+      "start": 70.735,
+      "end": 70.841
     },
     {
       "word": "may",
-      "start": 106.46,
-      "end": 106.64
+      "start": 70.881,
+      "end": 71.001
     },
     {
       "word": "not",
-      "start": 106.72,
-      "end": 106.96
+      "start": 71.061,
+      "end": 71.241
     },
     {
       "word": "be",
-      "start": 107.04,
-      "end": 107.2
+      "start": 71.294,
+      "end": 71.4
     },
     {
       "word": "followed.",
-      "start": 107.262,
-      "end": 107.838
+      "start": 71.453,
+      "end": 71.957
     },
     {
       "word": "Engineers",
-      "start": 109.03,
-      "end": 109.678
+      "start": 72.549,
+      "end": 72.675
     },
     {
       "word": "should",
-      "start": 109.724,
-      "end": 110.0
+      "start": 72.698,
+      "end": 72.836
     },
     {
       "word": "read",
-      "start": 110.08,
-      "end": 110.4
+      "start": 72.9,
+      "end": 73.156
     },
     {
       "word": "the",
-      "start": 110.44,
-      "end": 110.56
+      "start": 73.176,
+      "end": 73.236
     },
     {
       "word": "prompts,",
-      "start": 110.65,
-      "end": 111.68
+      "start": 73.306,
+      "end": 73.956
     },
     {
       "word": "not",
-      "start": 111.76,
-      "end": 112.0
+      "start": 73.996,
+      "end": 74.116
     },
     {
       "word": "trust",
-      "start": 112.107,
-      "end": 112.642
+      "start": 74.196,
+      "end": 74.596
     },
     {
       "word": "hidden",
-      "start": 112.688,
-      "end": 112.964
+      "start": 74.642,
+      "end": 74.918
     },
     {
       "word": "instructions.",
-      "start": 113.044,
-      "end": 114.164
+      "start": 74.986,
+      "end": 75.962
     }
   ],
-  "duration": 114.164
+  "duration": 75.962
 }

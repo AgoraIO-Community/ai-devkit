@@ -71,14 +71,22 @@ Which provider takes which role can vary per phase and per repo. What matters is
 
 Draft or update a spec. Chain with a verify prompt for cross-model review.
 
+**Claude as lead, Codex as verify:**
 ```bash
-# Claude as lead
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md \
+     https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
+  | claude --dangerously-skip-permissions
+```
+
+**Codex as lead, Claude as verify:**
+```bash
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+```
+
+**Prompt only (no verify):**
+```bash
 curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md \
   | claude --dangerously-skip-permissions
-
-# Codex as lead
-codex --full-auto "$(curl -sL \
-  https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md)"
 ```
 
 > Standalone file: `prompts/spec.md`
@@ -100,14 +108,22 @@ Once implementation is complete, the affected Progressive Disclosure docs are up
 
 Start or continue implementation from a spec using test-driven development. Chain with a verify prompt for cross-model review.
 
+**Claude as lead, Codex as verify:**
 ```bash
-# Claude as lead
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md \
+     https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
+  | claude --dangerously-skip-permissions
+```
+
+**Codex as lead, Claude as verify:**
+```bash
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+```
+
+**Prompt only (no verify):**
+```bash
 curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md \
   | claude --dangerously-skip-permissions
-
-# Codex as lead
-codex --full-auto "$(curl -sL \
-  https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md)"
 ```
 
 > Standalone file: `prompts/implement.md`
@@ -134,7 +150,7 @@ The system repo contains a system card (`docs/ai/SYSTEM.md`) that lists which re
 
 **Artifact.** A system repo with `System Role: system` in the Level zero card, `SYSTEM.md` alongside it, docker-compose config, devcontainer config, and setup/start/stop/test scripts. See [system-profile.md](docs/standard/system-profile.md) for the full profile.
 
-## Progressive Disclosure docs
+## Progressive Disclosure Docs
 
 **What it is.** Progressive Disclosure docs give every repository a consistent operating surface for AI agents. They are read at the start of every phase to orient Lead AI, and updated at the end of every cycle to reflect the new reality. They are the substrate the lifecycle runs on, and the place where each adopting repo's localised workflow templates live.
 
@@ -166,21 +182,25 @@ These eight categories define the minimum complete operating surface an AI agent
 <details>
 <summary>Create docs</summary>
 
-Generate Progressive Disclosure docs for a repo that doesn't have them yet.
+Generate Progressive Disclosure Docs for a repo that doesn't have them yet.
 Chain with a verify prompt for cross-model review.
 
+**Claude as lead, Codex as verify:**
 ```bash
-# Claude as lead
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
-  | claude --dangerously-skip-permissions
-
-# Claude as lead + Codex verify
 curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
      https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
   | claude --dangerously-skip-permissions
+```
 
-# Codex as lead + Claude verify
+**Codex as lead, Claude as verify:**
+```bash
 codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+```
+
+**Prompt only (no verify):**
+```bash
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
+  | claude --dangerously-skip-permissions
 ```
 
 > Standalone file: `prompts/create-docs.md`
@@ -190,16 +210,24 @@ codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Communit
 <details>
 <summary>Update docs</summary>
 
-Update existing Progressive Disclosure docs after code or convention changes.
+Update existing Progressive Disclosure Docs after code or convention changes.
 
+**Claude as lead, Codex as verify:**
 ```bash
-# Claude as lead
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md \
+     https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
+  | claude --dangerously-skip-permissions
+```
+
+**Codex as lead, Claude as verify:**
+```bash
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+```
+
+**Prompt only (no verify):**
+```bash
 curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md \
   | claude --dangerously-skip-permissions
-
-# Codex as lead
-codex --full-auto "$(curl -sL \
-  https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md)"
 ```
 
 > Standalone file: `prompts/update-docs.md`
@@ -298,15 +326,3 @@ files can consume `AGENTS.md` and `docs/ai/`.
 - `docs/guides/` — supplementary guides
 - `scripts/` — freshness checks, validators
 
-## Status
-
-| Layer                                | Status   |
-| ------------------------------------ | -------- |
-| Progressive Disclosure docs core (Level zero/one/two, 8 files) | Stable   |
-| Recipe profile (base/vertical)       | Beta     |
-| Spec profile                         | Draft    |
-| Test-driven development profile      | Draft    |
-| Multi-model flow conventions         | Draft    |
-| System profile (dev environment)     | Draft    |
-| Shared cloud environments            | Planned  |
-| Evaluation loop                      | Planned  |
