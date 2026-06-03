@@ -71,9 +71,13 @@ Which provider takes which role can vary per phase and per repo. What matters is
 
 Draft or update a spec. Chain with a verify prompt for cross-model review.
 
-```
+```bash
+# local (ai-devkit cloned)
 cat prompts/spec.md | claude --dangerously-skip-permissions
-cat prompts/spec.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+
+# remote (any repo)
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md \
+  | claude --dangerously-skip-permissions
 ```
 
 > Standalone file: `prompts/spec.md`
@@ -95,9 +99,13 @@ Once implementation is complete, the affected Progressive Disclosure docs are up
 
 Start or continue implementation from a spec using test-driven development. Chain with a verify prompt for cross-model review.
 
-```
+```bash
+# local
 cat prompts/implement.md | claude --dangerously-skip-permissions
-cat prompts/implement.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+
+# remote
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md \
+  | claude --dangerously-skip-permissions
 ```
 
 > Standalone file: `prompts/implement.md`
@@ -159,9 +167,18 @@ These eight categories define the minimum complete operating surface an AI agent
 Generate Progressive Disclosure docs for a repo that doesn't have them yet.
 Chain with a verify prompt for cross-model review.
 
-```
+```bash
+# local
 cat prompts/create-docs.md | claude --dangerously-skip-permissions
-cat prompts/create-docs.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+
+# remote (run from the target repo)
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
+  | claude --dangerously-skip-permissions
+
+# remote with cross-model verify
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
+     https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
+  | claude --dangerously-skip-permissions
 ```
 
 > Standalone file: `prompts/create-docs.md`
@@ -173,9 +190,13 @@ cat prompts/create-docs.md prompts/verify-codex.md | claude --dangerously-skip-p
 
 Update existing Progressive Disclosure docs after code or convention changes.
 
-```
+```bash
+# local
 cat prompts/update-docs.md | claude --dangerously-skip-permissions
-cat prompts/update-docs.md prompts/verify-codex.md | claude --dangerously-skip-permissions
+
+# remote
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md \
+  | claude --dangerously-skip-permissions
 ```
 
 > Standalone file: `prompts/update-docs.md`
@@ -187,11 +208,16 @@ cat prompts/update-docs.md prompts/verify-codex.md | claude --dangerously-skip-p
 Verification uses a second AI from a different training lineage to independently review the Lead AI's work. Chain a verify prompt after any work prompt:
 
 ```bash
-# Claude as Lead AI, Codex as Verify AI
+# local — Claude as Lead AI, Codex as Verify AI
 cat prompts/create-docs.md prompts/verify-codex.md | claude --dangerously-skip-permissions
 
-# Codex as Lead AI, Claude as Verify AI
+# local — Codex as Lead AI, Claude as Verify AI
 cat prompts/create-docs.md prompts/verify-claude.md | codex exec --full-auto
+
+# remote — no clone needed, run from the target repo
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
+     https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
+  | claude --dangerously-skip-permissions
 ```
 
 The verify prompt tells the Lead AI how to shell out to the Verify AI, parse findings, fix them, and re-verify — up to 3 rounds with zero human intervention. Any work prompt can be chained with either verify prompt.
