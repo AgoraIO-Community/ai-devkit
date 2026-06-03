@@ -257,22 +257,8 @@
       </div>
     </div>
 
-    <!-- Slide 7: Why Prompts, Not Skills -->
+    <!-- Slide 7: AI Dev Environment -->
     <div class="slide layout-text" data-slide="7">
-      <div class="slide-content">
-        <div class="slide-title">Why Prompts, Not Skills</div>
-        <div class="slide-subtitle">It&rsquo;s all just text hitting an LLM</div>
-        <ul class="slide-bullets">
-          <li>Skills are tool-specific and <span class="em">walled gardens</span> &mdash; a Claude skill doesn&rsquo;t work in Cursor or Codex</li>
-          <li>Prompts are <span class="em">portable</span> &mdash; paste into any agent that reads files</li>
-          <li>Prompts are <span class="em">visible text</span> &mdash; engineers can read, audit, and modify what the AI is told to do</li>
-          <li>Hidden skills may or may not be followed &mdash; <span class="em">visible prompts are accountable</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Slide 8: Dev Environment -->
-    <div class="slide layout-text" data-slide="8">
       <div class="slide-content">
         <div class="slide-title">AI Dev Environment</div>
         <div class="slide-subtitle">One workspace where AI can run the whole system end to end</div>
@@ -285,16 +271,29 @@
       </div>
     </div>
 
+    <!-- Slide 8: The Prompts -->
+    <div class="slide layout-text" data-slide="8">
+      <div class="slide-content">
+        <div class="slide-title">The Prompts</div>
+        <div class="slide-subtitle">Six markdown files &mdash; paste or pipe into any agent</div>
+        <ul class="slide-bullets">
+          <li>Six prompts: <span class="em">spec</span>, <span class="em">implement</span>, <span class="em">create-docs</span>, <span class="em">update-docs</span>, <span class="em">verify-codex</span>, <span class="em">verify-claude</span></li>
+          <li>Portable &mdash; paste into any agent, or pipe: <span class="em">cat prompts/create-docs.md | claude</span></li>
+          <li>Chain work + verify: <span class="em">cat prompts/create-docs.md prompts/verify-codex.md | claude</span> &mdash; ~50 min, zero human intervention</li>
+          <li><span class="em">Visible text</span> engineers can read and audit &mdash; not hidden skills that may or may not be followed</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- Slide 9: Getting Started -->
     <div class="slide layout-text" data-slide="9">
       <div class="slide-content">
         <div class="slide-title">Getting Started</div>
-        <div class="slide-subtitle">Start with one repo and one system</div>
+        <div class="slide-subtitle">Pick one repo, run one command</div>
         <ul class="slide-bullets">
-          <li><span class="em">Generate PD docs</span> for one repo &mdash; any agent can then pick it up and work safely</li>
-          <li><span class="em">Stand up one dev environment</span> for a multi-repo system &mdash; AI can run it end to end</li>
-          <li>Docs and prompts are plain markdown &mdash; no plugins, no vendor lock-in</li>
-          <li>Repo: <span class="em">github.com/AgoraIO-Community/ai-devkit</span></li>
+          <li><span class="em">cat prompts/create-docs.md | claude</span> &mdash; generates Progressive Disclosure docs for any existing repo</li>
+          <li>Chain <span class="em">verify-codex</span> or <span class="em">verify-claude</span> for cross-model review</li>
+          <li>Repo, standard, and all prompts are open: <span class="em">github.com/AgoraIO-Community/ai-devkit</span></li>
         </ul>
       </div>
     </div>
@@ -391,10 +390,10 @@ const TRANSCRIPTS = {
   3: `Work comes in as a story, epic, bug, or feature. It flows through three phases: Plan, Implementation, and Release. The Lead AI executes the workflow. The Verify AI independently reviews all Lead AI work \u2014 it's a second AI from a different training lineage. Why two AIs? A single AI is confidently wrong in ways invisible to itself. Asking the same model to review its own output rarely catches the error. Two independent lineages catch different mistakes. The Plan phase produces a spec. The Implementation phase produces working code, tests, and updated docs. That deliverable passes through Release \u2014 continuous integration and delivery pipelines plus human approval.`,
   4: `Plan turns a work item into an approved spec. The Lead AI reads the requirement, the docs, and the code, then drafts a spec with acceptance criteria, edge cases, and approach decisions. The Verify AI reviews the spec independently. If the two AIs disagree on what a criterion means, that's ambiguity \u2014 and it gets surfaced to the human before any code is written. The key discipline here: decide in the spec, not in the code. If you let the AI defer decisions to implementation, it makes them implicitly, often inconsistently, and you only find out when you're reading the code. The phase ends when the human signs off.`,
   5: `Implementation turns the approved spec into working code. The Verify AI authors the failing tests directly from the spec. The Lead AI writes the implementation to make them pass. This is independent test authorship \u2014 the AI that writes the tests is not the AI that writes the code. Without that separation, implementation assumptions get silently baked into the tests. After TDD completes, the Lead AI updates the Progressive Disclosure docs, and the Verify AI checks the updates against the actual code. Then the spec is archived. The docs carry everything forward.`,
-  6: `Progressive Disclosure docs give every repo the same structure. The same eight files, in every repo, across the whole organisation. Level zero is an identity card \u2014 what is this repo? Level one is eight fixed files: setup, architecture, code map, conventions, workflows, interfaces, gotchas, and security. Level two is deep dives, loaded only when level one isn't enough. Levels zero and one load upfront \u2014 they're small. Level two is pulled in only when needed. The agent gets full context without filling the context window. That consistency is what lets any agent pick up any repo and work safely. You can generate these docs for an existing repo today \u2014 that's the fastest way to start.`,
-  7: `Why prompts instead of skills or slash commands? There are lots of ways to load instructions into an AI tool \u2014 user settings, project files, enterprise configs, workspace markdown, skills, slash commands. It's a walled garden. A Claude Code skill doesn't work in Cursor. A Cursor command doesn't work in Codex. But at the end of the day, it's all just text hitting an LLM. Prompts are portable \u2014 they work in any agent that can read files. The same prompt works in Claude Code, Cursor, Codex, Gemini, or whatever comes next. More importantly, a prompt is visible text. Engineers can read the prompt, understand exactly what the AI is being told to do, and modify it. Hidden skills may or may not be followed. Visible prompts are accountable. When a workflow changes, you update the markdown file, and every prompt that references it picks up the change. If your tool supports custom commands, you can wrap the prompt for faster access. But the prompt is the source of truth.`,
-  8: `Real systems span multiple repos \u2014 an API, an SDK, a frontend, shared infrastructure. The AI dev environment gives you one workspace where the AI can run the whole system end to end. It's a container of containers. Each component runs in its own container, all inside one outer workspace. The Lead AI can start, stop, restart, and test any component from there. It runs locally or in the cloud. Cloud workspaces are useful for team handoff \u2014 another engineer picks up the same workspace and the same context. The environment includes Playwright for browser testing and Terraform for infrastructure. And there's an audit trail across all agent sessions \u2014 reproducibility, traceability, and evals for debugging agent behaviour.`,
-  9: `Here's how to start. Pick one repo and generate Progressive Disclosure docs for it. Any agent can then pick up that repo and work safely. Next, stand up one dev environment for a multi-repo system. The AI can run it end to end from day one. The docs and prompts are plain markdown \u2014 no plugins, no vendor lock-in. Start with one repo and one system, and you can use this operating model now.`,
+  6: `Progressive Disclosure docs give every repo the same structure. The same eight files, in every repo, across the whole organisation. Level zero is an identity card \u2014 what is this repo? Level one is eight fixed files: setup, architecture, code map, conventions, workflows, interfaces, gotchas, and security. Level two is deep dives, loaded only when Level one isn't enough. Levels zero and one load upfront \u2014 they're small. Level two is pulled in only when needed. The agent gets full context without filling the context window. That consistency is what lets any agent pick up any repo and work safely.`,
+  7: `Real systems span multiple repos \u2014 an API, an SDK, a frontend, shared infrastructure. The AI dev environment gives you one workspace where the AI can run the whole system end to end. It's a container of containers. Each component runs in its own container, all inside one outer workspace. The Lead AI can start, stop, restart, and test any component from there. It runs locally or in the cloud. Cloud workspaces are useful for team handoff \u2014 another engineer picks up the same workspace and the same context. The environment includes Playwright for browser testing and Terraform for infrastructure. And there's an audit trail across all agent sessions \u2014 reproducibility, traceability, and evals for debugging agent behaviour.`,
+  8: `Everything in AI DevKit runs through six markdown files in a prompts folder. spec, implement, create-docs, update-docs, verify-codex, verify-claude. They're plain text \u2014 you can read them, understand exactly what the AI is being told to do, and modify them. Why not skills or slash commands? There are lots of ways to load instructions into an AI tool \u2014 user settings, project files, enterprise configs, skills, slash commands. It's a walled garden. A Claude skill doesn't work in Cursor. A Cursor command doesn't work in Codex. But at the end of the day, it's all just text hitting an LLM. Prompts are portable \u2014 you can paste them into any agent, or pipe them from the command line. For example: cat prompts/create-docs.md prompts/verify-codex.md, pipe to claude. That single command generates Progressive Disclosure docs for a repo and runs cross-model verification \u2014 end to end, about fifty minutes, zero human intervention. Visible prompts are accountable. Hidden skills may or may not be followed. Engineers should read the prompts, not trust hidden instructions.`,
+  9: `Here's how to start. Pick one repo. Run cat prompts/create-docs.md pipe to claude. Any agent can then pick up that repo and work safely. Chain verify-codex or verify-claude for cross-model review. The repo, the standard, and all the prompts are open at github.com/AgoraIO-Community/ai-devkit.`,
 };
 
 // ── State ──
