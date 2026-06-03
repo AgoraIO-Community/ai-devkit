@@ -11,7 +11,7 @@
 | Language | Markdown + Bash + JSON |
 | Deploy Target | GitHub-distributed repo, consumed locally by AI agents |
 | Owner | AgoraIO-Community |
-| Last Reviewed | 2026-06-03 |
+| Last Reviewed | 2026-06-04 |
 
 ## L1 — Summaries
 

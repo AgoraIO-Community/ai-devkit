@@ -180,9 +180,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
   | claude --dangerously-skip-permissions
 
 # Codex as lead + Claude verify
-codex --full-auto "$(curl -sL \
-  https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
-  https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```
 
 > Standalone file: `prompts/create-docs.md`
@@ -219,9 +217,7 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
   | claude --dangerously-skip-permissions
 
 # Codex as lead, Claude as verify
-codex --full-auto "$(curl -sL \
-  https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
-  https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```
 
 The verify prompt tells the Lead AI how to shell out to the Verify AI, parse findings, fix them, and re-verify — up to 3 rounds with zero human intervention. Any work prompt can be chained with either verify prompt.
@@ -289,6 +285,8 @@ files can consume `AGENTS.md` and `docs/ai/`.
 - **Codex** — tested; plain markdown plus CLI reviewer role
 - **Gemini** — untested; plain markdown consumption expected to work
 - **Other tools** — expected to work if the tool reads repo files
+
+**Codex CLI notes.** Codex does not accept piped stdin the way Claude does. Use command substitution instead: `codex --full-auto "$(curl -sL ...)"`. When chaining multiple URLs, keep the entire `$()` on a single line — zsh does not reliably handle line breaks inside command substitution passed to Codex. Use `codex` (not `codex exec`) with `--full-auto` for non-interactive prompt execution.
 
 ## Repository contents
 

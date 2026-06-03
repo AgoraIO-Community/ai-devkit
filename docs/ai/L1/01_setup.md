@@ -17,7 +17,7 @@
 | `python3` | Recommended | run `scripts/validate-ai-devkit` |
 | Markdown-capable editor | Yes | most work is doc and config editing |
 | `gh` | Optional | validate PR helper behavior and GitHub workflows |
-| `codex` | Optional | run the independent review loop described in the README |
+| `codex` | Optional | run the independent review loop described in the README (use `codex --full-auto "$(curl ...)"`, not piped stdin) |
 
 ## Quick Commands
 

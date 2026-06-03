@@ -14,6 +14,12 @@
 - Root `AGENTS.md` promising behavior not backed by `docs/ai/`
 - Standard template text that breaks when copied into another repo
 
+## Codex CLI Traps
+
+- Codex does not accept piped stdin — use `codex --full-auto "$(curl -sL ...)"` not `curl ... | codex`
+- zsh does not handle line breaks inside `$()` passed to Codex — keep multi-URL `curl` on a single line
+- Use `codex` not `codex exec` for non-interactive `--full-auto` runs
+
 ## Path-Change Traps
 
 - Moving workflow docs without updating README prompts
