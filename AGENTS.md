@@ -31,7 +31,7 @@ These rules mirror [docs/standard/agent-policy.md](docs/standard/agent-policy.md
 - **Repo-local instructions win.** This `AGENTS.md` is the authoritative source for repo conventions.
 - **No `Co-Authored-By` trailers**
 - **No `--no-verify`**
-- **No git identity rewrites**
+- **No git config identity changes**
 - **Spec before plan, plan before code**
 - **Review before commit**
 - **Prefer TDD when behavior changes**

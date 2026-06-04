@@ -18,6 +18,9 @@
 | Markdown-capable editor | Yes | most work is doc and config editing |
 | `gh` | Optional | validate PR helper behavior and GitHub workflows |
 | `codex` | Optional | run the independent review loop described in the README (use `codex --full-auto "$(curl ...)"`, not piped stdin) |
+| `node` 22+ | Optional | run `presentation/record.mjs` (Playwright requires Node 18+, 22 recommended) |
+| `ffmpeg` | Optional | compose video frames into MP4 during recording |
+| `TTS_KEY` in `.env` | Optional | ElevenLabs API key for audio generation (`source .env && export TTS_KEY`) |
 
 ## Quick Commands
 

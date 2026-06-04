@@ -109,7 +109,7 @@ out of scope.
 - EC-1: ...
 - EC-2: ...
 
-## Approach decisions
+## Design decisions
 
 When multiple reasonable implementations exist, name them and pick one.
 
@@ -147,7 +147,7 @@ with timestamps. This is what makes the spec airtight retroactively.]
 - [ ] Spec is reviewable in under 5 minutes
 - [ ] Granularity is appropriate (not under, not over)
 - [ ] Edge cases have their own section
-- [ ] Approach decisions are made, not deferred
+- [ ] Design decisions are made, not deferred
 - [ ] Out-of-scope list is present
 - [ ] Every AC maps to a test case and vice versa
 - [ ] Verification mechanism is named
@@ -198,7 +198,7 @@ proactively eliminates the race.
 - EC-3: Refresh succeeds but new token is also expired. Raise
   `TokenRefreshError`; do not retry.
 
-## Approach decisions
+## Design decisions
 
 - Decision: Refresh on demand at request time, not via background timer.
   - Alternatives considered: Background timer that refreshes proactively
@@ -245,7 +245,7 @@ proactively eliminates the race.
 - [x] Spec is reviewable in under 5 minutes
 - [x] Granularity is appropriate
 - [x] Edge cases have their own section
-- [x] Approach decisions are made
+- [x] Design decisions are made
 - [x] Out-of-scope list is present
 - [x] Every AC maps to a test case and vice versa
 - [x] Verification mechanism is named
@@ -276,7 +276,8 @@ is archived. Archive rules:
 
 ## Commit and PR Convention
 
-Use normal conventional commits during implementation. Link commits to
+Use normal conventional commits as defined in
+[agent-policy.md](agent-policy.md) during implementation. Link commits to
 specs with a `Spec:` trailer.
 
 ### Commits
@@ -294,8 +295,9 @@ unchanged.
 ### PR body or squash commit
 
 The full structured summary belongs in the PR body (or the squash commit
-message if the team squashes). This is where the spec's intent is preserved
-for agents doing `git log` after the branch is merged.
+message if the team squashes). In a squash-merge workflow this preserves
+the spec's intent in `git log`; in a merge-commit workflow the PR body
+is available via `gh pr view` but not `git log`.
 
 ```
 feat: refresh access tokens before expiry
@@ -336,9 +338,6 @@ this canonical source is detectable:
 <!-- ai-engineering-workflows-version: 1.0.0 -->
 ```
 
-A `refresh workflows` doc command updates a repo's local copy to a newer
-canonical version, with a diff for review.
-
 Cross-verification by a second model from an independent training lineage
 is encoded as explicit steps within each workflow, not bolted on around it.
 References to "a second model" mean Model B in the SDLC sense — any AI from
@@ -362,7 +361,7 @@ When asked to review a spec at `docs/specs/SPEC-NNN.md`:
    integration, e2e) is appropriate and the tooling exists in this repo.
 6. List edge cases the spec doesn't cover. Propose adding them or marking
    them out-of-scope explicitly.
-7. Confirm that approach decisions are made and rationale is recorded.
+7. Confirm that design decisions are made and rationale is recorded.
 8. Output: an updated spec with your additions appended in the Notes
    section, or a list of blocking issues if the spec isn't ready.
 

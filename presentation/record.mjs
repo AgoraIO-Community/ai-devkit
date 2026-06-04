@@ -84,10 +84,19 @@ async function main() {
   console.log(`Audio duration: ${info.duration.toFixed(1)}s`);
   console.log(`Timing entries: ${info.timingCount}, EN subs: ${info.enSubCount}, ZH subs: ${info.zhSubCount}`);
 
+  const TITLE_HOLD = 2; // seconds of silence before audio starts on title slide
+  const TITLE_AUDIO = 3; // seconds of audio to play while still showing title slide (Hello and welcome)
+  const CLOSING_HOLD = 4; // seconds to show closing slide after audio ends
   const endTime = MAX_DURATION ? Math.min(START_TIME + Number(MAX_DURATION), info.duration) : info.duration;
   const recordDuration = endTime - START_TIME;
-  const totalFrames = Math.ceil(recordDuration * CAPTURE_FPS);
-  console.log(`Total frames to capture: ${totalFrames} (${recordDuration.toFixed(1)}s, from ${START_TIME}s to ${endTime.toFixed(1)}s)`);
+  const titleFrames = Math.ceil(TITLE_HOLD * CAPTURE_FPS);
+  const audioFrames = Math.ceil(recordDuration * CAPTURE_FPS);
+  const closingFrames = Math.ceil(CLOSING_HOLD * CAPTURE_FPS);
+  const totalFrames = titleFrames + audioFrames + closingFrames;
+  console.log(`Title hold: ${TITLE_HOLD}s (${titleFrames} frames)`);
+  console.log(`Audio frames: ${audioFrames} (${recordDuration.toFixed(1)}s, from ${START_TIME}s to ${endTime.toFixed(1)}s)`);
+  console.log(`Closing hold: ${CLOSING_HOLD}s (${closingFrames} frames)`);
+  console.log(`Total frames to capture: ${totalFrames}`);
 
   // Set up recording mode: switch to play mode, mute audio, disable rAF loop
   await page.evaluate(() => {
@@ -104,13 +113,41 @@ async function main() {
     window.requestAnimationFrame = () => {};
   });
 
-  // Capture frames
+  // Capture title slide frames (silent hold)
   let lastPct = -1;
-  for (let i = 0; i < totalFrames; i++) {
+  let frameNum = 0;
+
+  // Show title slide (slide 1) with no subtitles
+  await page.evaluate(() => {
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+    const title = document.querySelector('.slide[data-slide="1"]');
+    if (title) title.classList.add('active');
+    document.getElementById('slideIndicator').textContent = '1 / 10';
+    document.getElementById('subtitleEn').textContent = '';
+    document.getElementById('subtitleZh').textContent = '';
+    document.getElementById('progressFill').style.width = '0%';
+    document.getElementById('timeDisplay').textContent = '0:00 / 0:00';
+  });
+
+  console.log(`Capturing ${titleFrames} title slide frames...`);
+  for (let i = 0; i < titleFrames; i++) {
+    const framePath = join(FRAMES_DIR, `frame-${String(frameNum).padStart(6, '0')}.png`);
+    await page.screenshot({ path: framePath, type: 'png' });
+    frameNum++;
+
+    const pct = Math.floor((frameNum / totalFrames) * 100);
+    if (pct !== lastPct && pct % 5 === 0) {
+      lastPct = pct;
+      process.stdout.write(`\rCapturing: ${pct}% (${frameNum}/${totalFrames}) title`);
+    }
+  }
+
+  // Capture audio-driven frames
+  for (let i = 0; i < audioFrames; i++) {
     const currentTime = START_TIME + (i / CAPTURE_FPS);
 
     // Drive the entire UI state in one evaluate call
-    await page.evaluate((t) => {
+    await page.evaluate(({t, titleAudio}) => {
       const audio = document.getElementById('audio');
 
       // 1. Set the time
@@ -128,51 +165,91 @@ async function main() {
       };
       document.getElementById('timeDisplay').textContent = `${fm(t)} / ${fm(dur)}`;
 
-      // 4. Current slide (JSON slides are 1-8, display slides are 2-9; title is slide 1)
-      let jsonSlide = 1;
-      for (let j = combinedTiming.length - 1; j >= 0; j--) {
-        if (t >= combinedTiming[j].offset) {
-          jsonSlide = combinedTiming[j].slide;
-          break;
+      // 4. Current slide
+      // During first titleAudio seconds, keep title slide (1) visible
+      // After that, JSON slides 1-8 map to display slides 2-9
+      let displaySlide;
+      if (t < titleAudio) {
+        displaySlide = 1; // title slide stays during greeting
+      } else {
+        let jsonSlide = 1;
+        for (let j = combinedTiming.length - 1; j >= 0; j--) {
+          if (t >= combinedTiming[j].offset) {
+            jsonSlide = combinedTiming[j].slide;
+            break;
+          }
         }
+        displaySlide = jsonSlide + 1; // offset by 1 for title slide
       }
-      const displaySlide = jsonSlide + 1; // offset by 1 for title slide
-      const totalSlides = 9;
+
+      // Show closing slide (10) when "Goodbye" subtitle starts
+      const goodbyeSub = subtitlesEn.find(s => s.text.startsWith('Goodbye'));
+      if (goodbyeSub && t >= goodbyeSub.start) {
+        displaySlide = 10;
+      }
+
+      const totalSlides = 10;
       document.getElementById('slideIndicator').textContent =
         `${displaySlide} / ${totalSlides}`;
 
-      // 5. English subtitle
-      const enSub = subtitlesEn.find(s => t >= s.start && t <= s.end);
+      // 5. English subtitle — extend end time by 0.8s so text lingers
+      const SUB_LINGER = 0.8;
+      const enSub = subtitlesEn.find(s => t >= s.start && t <= s.end + SUB_LINGER);
       document.getElementById('subtitleEn').textContent = enSub ? enSub.text : '';
 
       // 6. Chinese subtitle
-      const zhSub = subtitlesZh.find(s => t >= s.start && t <= s.end);
+      const zhSub = subtitlesZh.find(s => t >= s.start && t <= s.end + SUB_LINGER);
       document.getElementById('subtitleZh').textContent = zhSub ? zhSub.text : '';
 
       // 7. Switch active slide
       document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
       const target = document.querySelector(`.slide[data-slide="${displaySlide}"]`);
       if (target) target.classList.add('active');
-    }, currentTime);
+    }, {t: currentTime, titleAudio: TITLE_AUDIO});
 
     // Screenshot
-    const framePath = join(FRAMES_DIR, `frame-${String(i).padStart(6, '0')}.png`);
+    const framePath = join(FRAMES_DIR, `frame-${String(frameNum).padStart(6, '0')}.png`);
     await page.screenshot({ path: framePath, type: 'png' });
+    frameNum++;
 
-    const pct = Math.floor((i / totalFrames) * 100);
+    const pct = Math.floor((frameNum / totalFrames) * 100);
     if (pct !== lastPct && pct % 5 === 0) {
       lastPct = pct;
-      process.stdout.write(`\rCapturing: ${pct}% (${i}/${totalFrames}) t=${currentTime.toFixed(1)}s`);
+      process.stdout.write(`\rCapturing: ${pct}% (${frameNum}/${totalFrames}) t=${currentTime.toFixed(1)}s`);
     }
   }
 
-  console.log(`\rCapturing: 100% (${totalFrames}/${totalFrames})`);
+  // Capture closing slide frames (slide 10)
+  await page.evaluate(() => {
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+    const closing = document.querySelector('.slide[data-slide="10"]');
+    if (closing) closing.classList.add('active');
+    document.getElementById('slideIndicator').textContent = '10 / 10';
+    document.getElementById('subtitleEn').textContent = '';
+    document.getElementById('subtitleZh').textContent = '';
+  });
+
+  console.log(`\nCapturing ${closingFrames} closing slide frames...`);
+  for (let i = 0; i < closingFrames; i++) {
+    const framePath = join(FRAMES_DIR, `frame-${String(frameNum).padStart(6, '0')}.png`);
+    await page.screenshot({ path: framePath, type: 'png' });
+    frameNum++;
+
+    const pct = Math.floor((frameNum / totalFrames) * 100);
+    if (pct !== lastPct && pct % 5 === 0) {
+      lastPct = pct;
+      process.stdout.write(`\rCapturing: ${pct}% (${frameNum}/${totalFrames}) closing`);
+    }
+  }
+
+  console.log(`\rCapturing: 100% (${frameNum}/${totalFrames})`);
   await browser.close();
 
   // Compose with ffmpeg
   console.log('\nComposing video with ffmpeg...');
   const audioPath = join(__dirname, 'audio', 'full.mp3');
 
+  // Audio starts after TITLE_HOLD seconds of silent title frames
   const ffmpegArgs = [
     '-y',
     '-framerate', String(CAPTURE_FPS),
@@ -186,6 +263,7 @@ async function main() {
     '-pix_fmt', 'yuv420p',
     '-c:a', 'aac',
     '-b:a', '192k',
+    '-af', `adelay=${TITLE_HOLD * 1000}|${TITLE_HOLD * 1000}`,
     '-shortest',
     '-movflags', '+faststart',
     OUTPUT,

@@ -20,4 +20,7 @@ Steps:
 5. Update the spec's test case status column as you go
    (TODO → Red → Green → Refactored).
 6. Update Progressive Disclosure docs if repo behaviour changed.
-7. Use normal conventional commits. Add a Spec: SPEC-NNN trailer.
+7. Archive the spec: move it from docs/specs/SPEC-NNN.md to
+   docs/specs/archive/<YYYY-QN>/SPEC-NNN.md. Append a closing note
+   linking to the PD docs commit SHA and the affected L1 files.
+8. Use normal conventional commits. Add a Spec: SPEC-NNN trailer.

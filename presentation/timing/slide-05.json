@@ -2,504 +2,504 @@
   "words": [
     {
       "word": "Progressive",
-      "start": 0.456,
-      "end": 0.555
+      "start": 0.45,
+      "end": 0.56
     },
     {
       "word": "Disclosure",
-      "start": 0.62,
-      "end": 1.27
+      "start": 0.618,
+      "end": 1.198
     },
     {
       "word": "docs",
-      "start": 1.35,
-      "end": 1.67
+      "start": 1.31,
+      "end": 1.758
     },
     {
       "word": "give",
-      "start": 1.718,
-      "end": 1.91
+      "start": 1.838,
+      "end": 2.158
     },
     {
       "word": "every",
-      "start": 2.003,
-      "end": 2.468
+      "start": 2.251,
+      "end": 2.716
     },
     {
       "word": "repo",
-      "start": 2.58,
-      "end": 3.028
+      "start": 2.828,
+      "end": 3.276
     },
     {
       "word": "the",
-      "start": 3.108,
-      "end": 3.348
+      "start": 3.336,
+      "end": 3.516
     },
     {
       "word": "same",
-      "start": 3.428,
-      "end": 3.748
+      "start": 3.612,
+      "end": 3.996
     },
     {
       "word": "structure.",
-      "start": 3.812,
-      "end": 4.468
+      "start": 4.06,
+      "end": 5.836
     },
     {
       "word": "The",
-      "start": 6.216,
-      "end": 6.222
+      "start": 7.184,
+      "end": 7.19
     },
     {
       "word": "same",
-      "start": 6.302,
-      "end": 6.622
+      "start": 7.254,
+      "end": 7.51
     },
     {
       "word": "eight",
-      "start": 6.689,
-      "end": 7.024
+      "start": 7.563,
+      "end": 7.828
     },
     {
       "word": "files,",
-      "start": 7.144,
-      "end": 7.904
+      "start": 7.921,
+      "end": 8.546
     },
     {
       "word": "in",
-      "start": 7.957,
-      "end": 8.063
+      "start": 8.573,
+      "end": 8.627
     },
     {
       "word": "every",
-      "start": 8.13,
-      "end": 8.465
+      "start": 8.707,
+      "end": 9.107
     },
     {
       "word": "repo,",
-      "start": 8.561,
-      "end": 9.105
+      "start": 9.203,
+      "end": 9.827
     },
     {
       "word": "across",
-      "start": 9.196,
-      "end": 9.742
+      "start": 9.873,
+      "end": 10.149
     },
     {
       "word": "the",
-      "start": 9.762,
-      "end": 9.822
+      "start": 10.189,
+      "end": 10.309
     },
     {
       "word": "whole",
-      "start": 9.902,
-      "end": 10.302
+      "start": 10.376,
+      "end": 10.711
     },
     {
       "word": "organisation.",
-      "start": 10.376,
-      "end": 11.424
+      "start": 10.785,
+      "end": 11.833
     },
     {
       "word": "Level",
-      "start": 13.437,
-      "end": 13.502
+      "start": 13.846,
+      "end": 13.911
     },
     {
       "word": "zero",
-      "start": 13.598,
-      "end": 13.982
+      "start": 13.991,
+      "end": 14.311
     },
     {
       "word": "is",
-      "start": 14.062,
-      "end": 14.222
+      "start": 14.391,
+      "end": 14.551
     },
     {
       "word": "an",
-      "start": 14.249,
-      "end": 14.303
+      "start": 14.578,
+      "end": 14.632
     },
     {
       "word": "identity",
-      "start": 14.365,
-      "end": 14.861
+      "start": 14.703,
+      "end": 15.271
     },
     {
       "word": "card",
-      "start": 14.925,
-      "end": 15.181
+      "start": 15.351,
+      "end": 15.671
     },
     {
       "word": "\u2014",
-      "start": 15.541,
-      "end": 15.901
+      "start": 15.911,
+      "end": 16.151
     },
     {
       "word": "what",
-      "start": 15.933,
-      "end": 16.061
+      "start": 16.183,
+      "end": 16.311
     },
     {
       "word": "is",
-      "start": 16.141,
-      "end": 16.301
+      "start": 16.418,
+      "end": 16.632
     },
     {
       "word": "this",
-      "start": 16.349,
-      "end": 16.541
+      "start": 16.696,
+      "end": 16.952
     },
     {
       "word": "repo?",
-      "start": 16.637,
-      "end": 17.101
+      "start": 17.064,
+      "end": 17.672
     },
     {
       "word": "Level",
-      "start": 18.91,
-      "end": 18.945
+      "start": 19.302,
+      "end": 19.352
     },
     {
       "word": "one",
-      "start": 19.045,
-      "end": 19.345
+      "start": 19.452,
+      "end": 19.752
     },
     {
       "word": "is",
-      "start": 19.505,
-      "end": 19.825
+      "start": 19.885,
+      "end": 20.151
     },
     {
       "word": "eight",
-      "start": 19.892,
-      "end": 20.227
+      "start": 20.218,
+      "end": 20.553
     },
     {
       "word": "fixed",
-      "start": 20.347,
-      "end": 20.947
+      "start": 20.66,
+      "end": 21.195
     },
     {
       "word": "files:",
-      "start": 21.067,
-      "end": 21.747
+      "start": 21.302,
+      "end": 21.917
     },
     {
       "word": "setup,",
-      "start": 23.106,
-      "end": 23.271
+      "start": 23.116,
+      "end": 23.761
     },
     {
       "word": "architecture,",
-      "start": 23.363,
-      "end": 24.547
+      "start": 23.804,
+      "end": 24.64
     },
     {
       "word": "code",
-      "start": 24.739,
-      "end": 25.507
+      "start": 24.704,
+      "end": 24.96
     },
     {
       "word": "map,",
-      "start": 25.587,
-      "end": 26.547
+      "start": 25.02,
+      "end": 25.6
     },
     {
       "word": "conventions,",
-      "start": 26.62,
-      "end": 28.103
+      "start": 25.667,
+      "end": 26.884
     },
     {
       "word": "workflows,",
-      "start": 28.171,
-      "end": 29.183
+      "start": 26.956,
+      "end": 28.004
     },
     {
       "word": "interfaces,",
-      "start": 29.256,
-      "end": 30.386
+      "start": 28.077,
+      "end": 29.287
     },
     {
       "word": "gotchas,",
-      "start": 30.446,
-      "end": 31.266
+      "start": 29.347,
+      "end": 30.247
     },
     {
       "word": "and",
-      "start": 31.306,
-      "end": 31.426
+      "start": 30.287,
+      "end": 30.407
     },
     {
       "word": "security.",
-      "start": 31.497,
-      "end": 32.225
+      "start": 30.487,
+      "end": 31.287
     },
     {
       "word": "Level",
-      "start": 34.238,
-      "end": 34.303
+      "start": 33.3,
+      "end": 33.365
     },
     {
       "word": "two",
-      "start": 34.423,
-      "end": 34.783
+      "start": 33.485,
+      "end": 33.845
     },
     {
       "word": "is",
-      "start": 34.916,
-      "end": 35.182
+      "start": 33.952,
+      "end": 34.166
     },
     {
       "word": "deep",
-      "start": 35.246,
-      "end": 35.502
+      "start": 34.246,
+      "end": 34.566
     },
     {
       "word": "dives,",
-      "start": 35.609,
-      "end": 36.584
+      "start": 34.686,
+      "end": 35.366
     },
     {
       "word": "loaded",
-      "start": 36.647,
-      "end": 37.025
+      "start": 35.48,
+      "end": 36.164
     },
     {
       "word": "only",
-      "start": 37.105,
-      "end": 37.425
+      "start": 36.244,
+      "end": 36.564
     },
     {
       "word": "when",
-      "start": 37.473,
-      "end": 37.665
+      "start": 36.612,
+      "end": 36.804
     },
     {
       "word": "Level",
-      "start": 37.718,
-      "end": 37.983
+      "start": 36.857,
+      "end": 37.122
     },
     {
       "word": "one",
-      "start": 38.083,
-      "end": 38.383
+      "start": 37.222,
+      "end": 37.522
     },
     {
       "word": "isn't",
-      "start": 38.463,
-      "end": 38.783
+      "start": 37.602,
+      "end": 37.922
     },
     {
       "word": "enough.",
-      "start": 38.863,
-      "end": 39.423
+      "start": 37.991,
+      "end": 38.485
     },
     {
       "word": "Levels",
-      "start": 40.589,
-      "end": 41.345
+      "start": 40.532,
+      "end": 40.646
     },
     {
       "word": "zero",
-      "start": 41.473,
-      "end": 41.985
+      "start": 40.758,
+      "end": 41.206
     },
     {
       "word": "and",
-      "start": 42.065,
-      "end": 42.305
+      "start": 41.266,
+      "end": 41.446
     },
     {
       "word": "one",
-      "start": 42.405,
-      "end": 42.705
+      "start": 41.546,
+      "end": 41.846
     },
     {
       "word": "load",
-      "start": 42.801,
-      "end": 43.185
+      "start": 41.926,
+      "end": 42.246
     },
     {
       "word": "upfront",
-      "start": 43.295,
-      "end": 44.065
+      "start": 42.326,
+      "end": 42.886
     },
     {
       "word": "\u2014",
-      "start": 44.345,
-      "end": 44.625
+      "start": 43.046,
+      "end": 43.206
     },
     {
       "word": "they're",
-      "start": 44.641,
-      "end": 44.786
+      "start": 43.222,
+      "end": 43.367
     },
     {
       "word": "small.",
-      "start": 44.866,
-      "end": 45.346
+      "start": 43.434,
+      "end": 44.009
     },
     {
       "word": "Level",
-      "start": 46.736,
-      "end": 46.786
+      "start": 45.098,
+      "end": 45.133
     },
     {
       "word": "two",
-      "start": 46.906,
-      "end": 47.266
+      "start": 45.253,
+      "end": 45.613
     },
     {
       "word": "is",
-      "start": 47.399,
-      "end": 47.665
+      "start": 45.72,
+      "end": 45.934
     },
     {
       "word": "pulled",
-      "start": 47.711,
-      "end": 47.987
+      "start": 45.98,
+      "end": 46.256
     },
     {
       "word": "in",
-      "start": 48.04,
-      "end": 48.146
+      "start": 46.336,
+      "end": 46.496
     },
     {
       "word": "only",
-      "start": 48.226,
-      "end": 48.546
+      "start": 46.608,
+      "end": 47.056
     },
     {
       "word": "when",
-      "start": 48.578,
-      "end": 48.706
+      "start": 47.104,
+      "end": 47.296
     },
     {
       "word": "needed.",
-      "start": 48.775,
-      "end": 49.269
+      "start": 47.353,
+      "end": 47.775
     },
     {
       "word": "The",
-      "start": 50.772,
-      "end": 50.787
+      "start": 49.278,
+      "end": 49.293
     },
     {
       "word": "agent",
-      "start": 50.854,
-      "end": 51.189
+      "start": 49.36,
+      "end": 49.695
     },
     {
       "word": "gets",
-      "start": 51.253,
-      "end": 51.509
+      "start": 49.759,
+      "end": 50.015
     },
     {
       "word": "full",
-      "start": 51.573,
-      "end": 51.829
+      "start": 50.079,
+      "end": 50.335
     },
     {
       "word": "context",
-      "start": 51.929,
-      "end": 52.629
+      "start": 50.425,
+      "end": 51.055
     },
     {
       "word": "without",
-      "start": 52.719,
-      "end": 53.349
+      "start": 51.165,
+      "end": 51.935
     },
     {
       "word": "filling",
-      "start": 53.399,
-      "end": 53.749
+      "start": 52.005,
+      "end": 52.495
     },
     {
       "word": "the",
-      "start": 53.769,
-      "end": 53.829
+      "start": 52.515,
+      "end": 52.575
     },
     {
       "word": "context",
-      "start": 53.899,
-      "end": 54.389
+      "start": 52.635,
+      "end": 53.055
     },
     {
       "word": "window.",
-      "start": 54.458,
-      "end": 54.952
+      "start": 53.124,
+      "end": 53.618
     },
     {
       "word": "That",
-      "start": 56.85,
-      "end": 56.874
+      "start": 55.364,
+      "end": 55.38
     },
     {
       "word": "consistency",
-      "start": 56.954,
-      "end": 57.834
+      "start": 55.447,
+      "end": 56.184
     },
     {
       "word": "is",
-      "start": 57.967,
-      "end": 58.233
+      "start": 56.371,
+      "end": 56.745
     },
     {
       "word": "what",
-      "start": 58.281,
-      "end": 58.473
+      "start": 56.793,
+      "end": 56.985
     },
     {
       "word": "lets",
-      "start": 58.537,
-      "end": 58.793
+      "start": 57.033,
+      "end": 57.225
     },
     {
       "word": "any",
-      "start": 58.893,
-      "end": 59.193
+      "start": 57.325,
+      "end": 57.625
     },
     {
       "word": "agent",
-      "start": 59.273,
-      "end": 59.673
+      "start": 57.705,
+      "end": 58.105
     },
     {
       "word": "pick",
-      "start": 59.721,
-      "end": 59.913
+      "start": 58.153,
+      "end": 58.345
     },
     {
       "word": "up",
-      "start": 59.993,
-      "end": 60.153
+      "start": 58.452,
+      "end": 58.666
     },
     {
       "word": "any",
-      "start": 60.233,
-      "end": 60.473
+      "start": 58.746,
+      "end": 58.986
     },
     {
       "word": "repo",
-      "start": 60.585,
-      "end": 61.033
+      "start": 59.098,
+      "end": 59.546
     },
     {
       "word": "and",
-      "start": 61.173,
-      "end": 61.593
+      "start": 59.646,
+      "end": 59.946
     },
     {
       "word": "work",
-      "start": 61.657,
-      "end": 61.913
+      "start": 60.026,
+      "end": 60.346
     },
     {
       "word": "safely.",
-      "start": 61.982,
-      "end": 62.556
+      "start": 60.426,
+      "end": 61.146
     }
   ],
-  "duration": 62.556
+  "duration": 61.146
 }

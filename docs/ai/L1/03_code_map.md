@@ -26,7 +26,16 @@
 │   ├── minimal-repo/
 │   ├── recipe-base/
 │   └── recipe-vertical/
+├── presentation.md
 ├── presentation/
+│   ├── player.html
+│   ├── generate.py
+│   ├── record.mjs
+│   ├── audio/
+│   ├── images/
+│   ├── timing/
+│   ├── subs/
+│   └── runs/
 ├── prompts/
 └── scripts/
     └── validate-ai-devkit
@@ -49,7 +58,14 @@
 | `prompts/` | standalone pipeable prompt files (`cat prompts/X.md \| claude`) |
 | `docs/img/` | diagrams (AI SDLC flow SVG) |
 | `examples/` | structural fixtures for adopters |
-| `presentation/` | presentation video pipeline (audio, timing, subtitles) |
+| `presentation.md` | voiceover script — one section per slide with ElevenLabs audio tags |
+| `presentation/player.html` | HTML slide deck with SVG diagrams, transcripts, dual-language subtitles |
+| `presentation/generate.py` | TTS generation — ElevenLabs API, MP3 + timing JSON + SRT output |
+| `presentation/record.mjs` | Playwright video recorder — frame capture + ffmpeg MP4 composition |
+| `presentation/audio/` | per-slide MP3s + concatenated `full.mp3` |
+| `presentation/images/` | static assets — `closing.png` (laptop photo shown on closing slide) |
+| `presentation/subs/` | `en.srt` (auto-generated) and `zh.srt` (translated) |
+| `.env` | `TTS_KEY` for ElevenLabs API (gitignored, not committed) |
 
 ## Core Workflows
 
@@ -69,6 +85,8 @@
 | change a prompt | `prompts/X.md`, then mirror in `README.md` `<details>` block |
 | change self-hosted repo docs | `docs/ai/` |
 | change validation checks | `scripts/validate-ai-devkit` |
+| change voiceover script | `presentation.md`, then regenerate audio + subs + video |
+| change slide visuals | `presentation/player.html`, then re-record video |
 
 ## Files To Avoid Treating As Canonical
 

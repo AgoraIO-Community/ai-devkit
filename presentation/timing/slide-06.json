@@ -2,594 +2,594 @@
   "words": [
     {
       "word": "Real",
-      "start": 0.268,
-      "end": 0.32
+      "start": 0.129,
+      "end": 0.321
     },
     {
       "word": "systems",
-      "start": 0.39,
-      "end": 0.88
+      "start": 0.391,
+      "end": 0.881
     },
     {
       "word": "span",
-      "start": 0.992,
-      "end": 1.44
+      "start": 0.977,
+      "end": 1.361
     },
     {
       "word": "multiple",
-      "start": 1.493,
-      "end": 1.917
+      "start": 1.423,
+      "end": 1.919
     },
     {
       "word": "repos",
-      "start": 2.01,
-      "end": 2.475
+      "start": 2.039,
+      "end": 2.639
     },
     {
       "word": "\u2014",
-      "start": 2.635,
-      "end": 2.795
+      "start": 2.799,
+      "end": 2.959
     },
     {
       "word": "an",
-      "start": 2.822,
-      "end": 2.876
+      "start": 2.986,
+      "end": 3.04
     },
     {
       "word": "API,",
-      "start": 3.056,
-      "end": 3.836
+      "start": 3.22,
+      "end": 3.92
     },
     {
       "word": "an",
-      "start": 3.889,
-      "end": 3.995
+      "start": 3.947,
+      "end": 4.001
     },
     {
       "word": "SDK,",
-      "start": 4.175,
-      "end": 5.035
+      "start": 4.221,
+      "end": 5.041
     },
     {
       "word": "a",
-      "start": 5.075,
-      "end": 5.115
+      "start": 5.081,
+      "end": 5.121
     },
     {
       "word": "frontend,",
-      "start": 5.204,
-      "end": 6.236
+      "start": 5.201,
+      "end": 6.081
     },
     {
       "word": "shared",
-      "start": 6.27,
-      "end": 6.474
+      "start": 6.127,
+      "end": 6.403
     },
     {
       "word": "infrastructure.",
-      "start": 6.527,
-      "end": 7.349
+      "start": 6.456,
+      "end": 7.838
     },
     {
       "word": "The",
-      "start": 8.928,
-      "end": 8.949
+      "start": 8.599,
+      "end": 8.638
     },
     {
       "word": "AI",
-      "start": 9.109,
-      "end": 9.429
+      "start": 8.771,
+      "end": 9.037
     },
     {
       "word": "dev",
-      "start": 9.489,
-      "end": 9.669
+      "start": 9.117,
+      "end": 9.357
     },
     {
       "word": "environment",
-      "start": 9.722,
-      "end": 10.305
+      "start": 9.417,
+      "end": 10.077
     },
     {
       "word": "gives",
-      "start": 10.372,
-      "end": 10.707
+      "start": 10.13,
+      "end": 10.395
     },
     {
       "word": "you",
-      "start": 10.767,
-      "end": 10.947
+      "start": 10.475,
+      "end": 10.715
     },
     {
       "word": "one",
-      "start": 11.007,
-      "end": 11.187
+      "start": 10.795,
+      "end": 11.035
     },
     {
       "word": "workspace",
-      "start": 11.267,
-      "end": 11.987
+      "start": 11.123,
+      "end": 11.915
     },
     {
       "word": "where",
-      "start": 12.067,
-      "end": 12.467
+      "start": 11.968,
+      "end": 12.233
     },
     {
       "word": "the",
-      "start": 12.507,
-      "end": 12.627
+      "start": 12.273,
+      "end": 12.393
     },
     {
       "word": "AI",
-      "start": 12.787,
-      "end": 13.107
+      "start": 12.526,
+      "end": 12.792
     },
     {
       "word": "can",
-      "start": 13.167,
-      "end": 13.347
+      "start": 12.852,
+      "end": 13.032
     },
     {
       "word": "run",
-      "start": 13.387,
-      "end": 13.507
+      "start": 13.092,
+      "end": 13.272
     },
     {
       "word": "the",
-      "start": 13.547,
-      "end": 13.667
+      "start": 13.332,
+      "end": 13.512
     },
     {
       "word": "whole",
-      "start": 13.72,
-      "end": 13.985
+      "start": 13.565,
+      "end": 13.83
     },
     {
       "word": "system",
-      "start": 14.054,
-      "end": 14.468
+      "start": 13.91,
+      "end": 14.39
     },
     {
       "word": "end",
-      "start": 14.548,
-      "end": 14.788
+      "start": 14.53,
+      "end": 14.95
     },
     {
       "word": "to",
-      "start": 14.868,
-      "end": 15.028
+      "start": 15.057,
+      "end": 15.271
     },
     {
       "word": "end.",
-      "start": 15.128,
-      "end": 15.508
+      "start": 15.371,
+      "end": 15.751
     },
     {
       "word": "It's",
-      "start": 16.769,
-      "end": 16.947
+      "start": 16.837,
+      "end": 16.953
     },
     {
       "word": "a",
-      "start": 16.987,
-      "end": 17.027
+      "start": 17.073,
+      "end": 17.193
     },
     {
       "word": "container",
-      "start": 17.099,
-      "end": 17.747
+      "start": 17.273,
+      "end": 17.993
     },
     {
       "word": "of",
-      "start": 17.8,
-      "end": 17.906
+      "start": 18.046,
+      "end": 18.152
     },
     {
       "word": "containers.",
-      "start": 17.971,
-      "end": 18.701
+      "start": 18.225,
+      "end": 19.035
     },
     {
       "word": "Each",
-      "start": 20.093,
-      "end": 20.141
+      "start": 20.027,
+      "end": 20.075
     },
     {
       "word": "component",
-      "start": 20.213,
-      "end": 20.861
+      "start": 20.139,
+      "end": 20.715
     },
     {
       "word": "runs",
-      "start": 20.925,
-      "end": 21.181
+      "start": 20.795,
+      "end": 21.115
     },
     {
       "word": "in",
-      "start": 21.234,
-      "end": 21.34
+      "start": 21.142,
+      "end": 21.196
     },
     {
       "word": "its",
-      "start": 21.38,
-      "end": 21.5
+      "start": 21.276,
+      "end": 21.516
     },
     {
       "word": "own",
-      "start": 21.58,
-      "end": 21.82
+      "start": 21.576,
+      "end": 21.756
     },
     {
       "word": "container,",
-      "start": 21.884,
-      "end": 23.02
+      "start": 21.828,
+      "end": 23.196
     },
     {
       "word": "all",
-      "start": 23.295,
-      "end": 23.34
+      "start": 23.471,
+      "end": 23.516
     },
     {
       "word": "inside",
-      "start": 23.42,
-      "end": 23.9
+      "start": 23.596,
+      "end": 24.076
     },
     {
       "word": "one",
-      "start": 24.02,
-      "end": 24.38
+      "start": 24.196,
+      "end": 24.556
     },
     {
       "word": "outer",
-      "start": 24.473,
-      "end": 24.938
+      "start": 24.649,
+      "end": 25.114
     },
     {
       "word": "workspace.",
-      "start": 25.018,
-      "end": 26.658
+      "start": 25.202,
+      "end": 26.074
     },
     {
       "word": "The",
-      "start": 27.637,
-      "end": 27.658
+      "start": 27.093,
+      "end": 27.114
     },
     {
       "word": "Lead",
-      "start": 27.738,
-      "end": 28.058
+      "start": 27.194,
+      "end": 27.514
     },
     {
       "word": "AI",
-      "start": 28.218,
-      "end": 28.538
+      "start": 27.647,
+      "end": 27.913
     },
     {
       "word": "can",
-      "start": 28.618,
-      "end": 28.858
+      "start": 27.993,
+      "end": 28.233
     },
     {
       "word": "start,",
-      "start": 28.951,
-      "end": 29.736
+      "start": 28.326,
+      "end": 29.111
     },
     {
       "word": "stop,",
-      "start": 29.832,
-      "end": 30.536
+      "start": 29.191,
+      "end": 29.831
     },
     {
       "word": "restart,",
-      "start": 30.616,
-      "end": 31.496
+      "start": 29.921,
+      "end": 30.711
     },
     {
       "word": "and",
-      "start": 31.516,
-      "end": 31.576
+      "start": 30.751,
+      "end": 30.871
     },
     {
       "word": "test",
-      "start": 31.672,
-      "end": 32.056
+      "start": 30.983,
+      "end": 31.431
     },
     {
       "word": "any",
-      "start": 32.156,
-      "end": 32.456
+      "start": 31.531,
+      "end": 31.831
     },
     {
       "word": "component",
-      "start": 32.512,
-      "end": 33.016
+      "start": 31.887,
+      "end": 32.391
     },
     {
       "word": "from",
-      "start": 33.064,
-      "end": 33.256
+      "start": 32.439,
+      "end": 32.631
     },
     {
       "word": "there.",
-      "start": 33.309,
-      "end": 33.654
+      "start": 32.698,
+      "end": 33.113
     },
     {
       "word": "It",
-      "start": 34.9,
-      "end": 34.936
+      "start": 34.134,
+      "end": 34.152
     },
     {
       "word": "runs",
-      "start": 35.0,
-      "end": 35.256
+      "start": 34.216,
+      "end": 34.472
     },
     {
       "word": "locally",
-      "start": 35.326,
-      "end": 35.816
+      "start": 34.542,
+      "end": 35.032
     },
     {
       "word": "or",
-      "start": 35.949,
-      "end": 36.215
+      "start": 35.139,
+      "end": 35.353
     },
     {
       "word": "in",
-      "start": 36.268,
-      "end": 36.374
+      "start": 35.406,
+      "end": 35.512
     },
     {
       "word": "the",
-      "start": 36.394,
-      "end": 36.454
+      "start": 35.532,
+      "end": 35.592
     },
     {
       "word": "cloud.",
-      "start": 36.534,
-      "end": 37.694
+      "start": 35.672,
+      "end": 36.152
     },
     {
       "word": "Cloud",
-      "start": 38.705,
-      "end": 38.77
+      "start": 37.462,
+      "end": 37.512
     },
     {
       "word": "workspaces",
-      "start": 38.834,
-      "end": 39.492
+      "start": 37.576,
+      "end": 38.234
     },
     {
       "word": "are",
-      "start": 39.532,
-      "end": 39.652
+      "start": 38.254,
+      "end": 38.314
     },
     {
       "word": "useful",
-      "start": 39.721,
-      "end": 40.135
+      "start": 38.383,
+      "end": 38.797
     },
     {
       "word": "for",
-      "start": 40.175,
-      "end": 40.295
+      "start": 38.857,
+      "end": 39.037
     },
     {
       "word": "team",
-      "start": 40.375,
-      "end": 40.695
+      "start": 39.101,
+      "end": 39.357
     },
     {
       "word": "handoff",
-      "start": 40.775,
-      "end": 41.335
+      "start": 39.453,
+      "end": 40.158
     },
     {
       "word": "\u2014",
-      "start": 41.655,
-      "end": 41.975
+      "start": 40.438,
+      "end": 40.718
     },
     {
       "word": "another",
-      "start": 42.025,
-      "end": 42.375
+      "start": 40.768,
+      "end": 41.118
     },
     {
       "word": "engineer",
-      "start": 42.428,
-      "end": 42.852
+      "start": 41.171,
+      "end": 41.595
     },
     {
       "word": "picks",
-      "start": 42.919,
-      "end": 43.254
+      "start": 41.662,
+      "end": 41.997
     },
     {
       "word": "up",
-      "start": 43.307,
-      "end": 43.413
+      "start": 42.05,
+      "end": 42.156
     },
     {
       "word": "the",
-      "start": 43.473,
-      "end": 43.653
+      "start": 42.196,
+      "end": 42.316
     },
     {
       "word": "same",
-      "start": 43.701,
-      "end": 43.893
+      "start": 42.396,
+      "end": 42.716
     },
     {
       "word": "workspace",
-      "start": 43.965,
-      "end": 44.613
+      "start": 42.788,
+      "end": 43.436
     },
     {
       "word": "and",
-      "start": 44.713,
-      "end": 45.013
+      "start": 43.536,
+      "end": 43.836
     },
     {
       "word": "the",
-      "start": 45.033,
-      "end": 45.093
+      "start": 43.876,
+      "end": 43.996
     },
     {
       "word": "same",
-      "start": 45.173,
-      "end": 45.493
+      "start": 44.06,
+      "end": 44.316
     },
     {
       "word": "context.",
-      "start": 45.583,
-      "end": 47.013
+      "start": 44.416,
+      "end": 45.796
     },
     {
       "word": "The",
-      "start": 47.872,
-      "end": 47.893
+      "start": 46.836,
+      "end": 46.956
     },
     {
       "word": "environment",
-      "start": 47.94,
-      "end": 48.457
+      "start": 46.969,
+      "end": 47.112
     },
     {
       "word": "includes",
-      "start": 48.519,
-      "end": 49.015
+      "start": 47.183,
+      "end": 47.751
     },
     {
       "word": "Playwright",
-      "start": 49.095,
-      "end": 49.655
+      "start": 47.847,
+      "end": 48.471
     },
     {
       "word": "for",
-      "start": 49.695,
-      "end": 49.815
+      "start": 48.531,
+      "end": 48.711
     },
     {
       "word": "browser",
-      "start": 49.865,
-      "end": 50.215
+      "start": 48.771,
+      "end": 49.191
     },
     {
       "word": "testing",
-      "start": 50.285,
-      "end": 50.775
+      "start": 49.261,
+      "end": 49.751
     },
     {
       "word": "and",
-      "start": 50.895,
-      "end": 51.255
+      "start": 49.911,
+      "end": 50.391
     },
     {
       "word": "Terraform",
-      "start": 51.335,
-      "end": 51.975
+      "start": 50.471,
+      "end": 51.191
     },
     {
       "word": "for",
-      "start": 52.015,
-      "end": 52.135
+      "start": 51.231,
+      "end": 51.351
     },
     {
       "word": "infrastructure.",
-      "start": 52.188,
-      "end": 53.01
+      "start": 51.41,
+      "end": 53.116
     },
     {
       "word": "And",
-      "start": 54.3,
-      "end": 54.33
+      "start": 53.376,
+      "end": 53.436
     },
     {
       "word": "there's",
-      "start": 54.337,
-      "end": 54.452
+      "start": 53.463,
+      "end": 53.678
     },
     {
       "word": "an",
-      "start": 54.505,
-      "end": 54.611
+      "start": 53.705,
+      "end": 53.759
     },
     {
       "word": "audit",
-      "start": 54.678,
-      "end": 55.013
+      "start": 53.839,
+      "end": 54.239
     },
     {
       "word": "trail",
-      "start": 55.08,
-      "end": 55.415
+      "start": 54.319,
+      "end": 54.719
     },
     {
       "word": "across",
-      "start": 55.484,
-      "end": 55.898
+      "start": 54.788,
+      "end": 55.202
     },
     {
       "word": "all",
-      "start": 55.998,
-      "end": 56.298
+      "start": 55.322,
+      "end": 55.682
     },
     {
       "word": "agent",
-      "start": 56.378,
-      "end": 56.778
+      "start": 55.775,
+      "end": 56.24
     },
     {
       "word": "sessions",
-      "start": 56.876,
-      "end": 57.66
+      "start": 56.311,
+      "end": 56.879
     },
     {
       "word": "\u2014",
-      "start": 57.9,
-      "end": 58.14
+      "start": 57.199,
+      "end": 57.519
     },
     {
       "word": "reproducibility,",
-      "start": 58.193,
-      "end": 59.657
+      "start": 57.572,
+      "end": 59.114
     },
     {
       "word": "traceability,",
-      "start": 59.71,
-      "end": 60.935
+      "start": 59.181,
+      "end": 60.236
     },
     {
       "word": "and",
-      "start": 60.975,
-      "end": 61.095
+      "start": 60.296,
+      "end": 60.476
     },
     {
       "word": "evals",
-      "start": 61.207,
-      "end": 61.815
+      "start": 60.62,
+      "end": 61.356
     },
     {
       "word": "for",
-      "start": 61.855,
-      "end": 61.975
+      "start": 61.476,
+      "end": 61.836
     },
     {
       "word": "debugging",
-      "start": 62.031,
-      "end": 62.535
+      "start": 61.9,
+      "end": 62.476
     },
     {
       "word": "agent",
-      "start": 62.615,
-      "end": 63.015
+      "start": 62.569,
+      "end": 63.034
     },
     {
       "word": "behaviour.",
-      "start": 63.063,
-      "end": 63.735
+      "start": 63.09,
+      "end": 63.834
     }
   ],
-  "duration": 63.735
+  "duration": 63.834
 }

@@ -13,6 +13,6 @@ Steps:
 2. Create or update docs/specs/SPEC-NNN-<short-name>.md using the template
    from the spec profile.
 3. Fill in: What we're building, Why, Acceptance criteria, Edge cases,
-   Approach decisions, Test cases, Verification, Out of scope.
+   Design decisions, Test cases, Verification, Out of scope.
 4. Run the spec self-check at the bottom.
 5. Summarize the spec and flag anything that needs human decision.

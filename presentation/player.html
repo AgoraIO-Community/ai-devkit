@@ -85,13 +85,21 @@
     letter-spacing: -1px;
   }
   .title-url {
-    font-size: 18px; color: #58a6ff; margin-bottom: 40px; text-align: center;
+    font-size: 18px; color: #58a6ff; margin-bottom: 20px; text-align: center;
     font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   }
   .title-url a { color: #58a6ff; text-decoration: none; }
   .title-url a:hover { text-decoration: underline; }
+  .title-subtitle {
+    font-size: 20px; color: #8b949e; text-align: center; font-weight: 400;
+    font-style: italic; margin-bottom: 32px;
+  }
   .title-author {
     font-size: 22px; color: #8b949e; text-align: center; font-weight: 500;
+  }
+  .title-credits {
+    font-size: 16px; color: #c9d1d9; text-align: center; margin-top: 24px;
+    line-height: 1.5;
   }
 
   /* Text-only layout */
@@ -156,12 +164,12 @@
   /* Subtitle panel (play mode) */
   .subtitle-panel {
     display: none; padding: 20px 48px; text-align: center;
-    min-height: 110px;
+    height: 110px;
     flex-direction: column; justify-content: center;
   }
   body.playing .subtitle-panel { display: flex; }
-  .subtitle-en { font-size: 28px; margin-bottom: 6px; line-height: 1.4; font-weight: 500; }
-  .subtitle-zh { font-size: 24px; color: #8b949e; line-height: 1.4; }
+  .subtitle-en { font-size: 28px; margin-bottom: 6px; line-height: 1.4; font-weight: 500; min-height: 39px; }
+  .subtitle-zh { font-size: 24px; color: #8b949e; line-height: 1.4; min-height: 34px; }
 </style>
 </head>
 <body class="browse">
@@ -170,7 +178,7 @@
   <h1>AI DevKit</h1>
   <div class="controls">
     <button class="btn btn-nav" onclick="prevSlide()">&larr; Prev</button>
-    <span class="slide-indicator" id="slideIndicator">1 / 9</span>
+    <span class="slide-indicator" id="slideIndicator">1 / 10</span>
     <button class="btn btn-nav" onclick="nextSlide()">Next &rarr;</button>
     <button class="btn btn-play" id="playBtn" onclick="togglePlay()">&#9654; Play</button>
   </div>
@@ -188,8 +196,10 @@
     <!-- Slide 1: Title -->
     <div class="slide layout-title active" data-slide="1">
       <div class="title-main">AI DevKit</div>
+      <div class="title-subtitle">The Dark Code Factory</div>
       <div class="title-url"><a href="https://github.com/AgoraIO-Community/ai-devkit" target="_blank">github.com/AgoraIO-Community/ai-devkit</a></div>
       <div class="title-author">Ben Weekes, Agora</div>
+      <div class="title-credits">Special thanks to: Zhao Bin, Hu Yuewei, Lai Ligao, Yao Tong, Hermes Frangoudis, Vineeth Srinivasan, Liu Chang</div>
     </div>
 
     <!-- Slide 2: What is AI DevKit? -->
@@ -219,7 +229,7 @@
         <div class="slide-title">Plan</div>
         <div class="slide-subtitle">Decide in the spec, not in the code</div>
         <ul class="slide-bullets">
-          <li>Lead AI reads requirement, docs and code &mdash; drafts spec with acceptance criteria and approach decisions</li>
+          <li>Lead AI reads requirement, docs and code &mdash; drafts spec with acceptance criteria and design decisions</li>
           <li><span class="em">Verify AI</span> independently reviews the spec &mdash; mismatches reveal ambiguity before any code is written</li>
           <li>Decisions made <span class="em">in the spec</span>, not deferred to implementation</li>
           <li>Human signs off the spec before work begins</li>
@@ -278,9 +288,9 @@
         <div class="slide-subtitle">Six markdown files &mdash; curl from GitHub, pipe to any agent</div>
         <ul class="slide-bullets">
           <li>Six prompts: <span class="em">spec</span>, <span class="em">implement</span>, <span class="em">create-docs</span>, <span class="em">update-docs</span>, <span class="em">verify-codex</span>, <span class="em">verify-claude</span></li>
-          <li style="font-size:15px; line-height:1.5"><span class="em" style="font-family:monospace; font-size:13px">curl -sL &hellip;/prompts/create-docs.md &hellip;/prompts/verify-codex.md | claude</span><br><span class="em" style="font-family:monospace; font-size:13px">codex --full-auto "$(curl -sL &hellip;/prompts/create-docs.md &hellip;/prompts/verify-claude.md)"</span></li>
-          <li>Chain work + verify: ~50 min end to end, zero human intervention</li>
-          <li><span class="em">Visible text</span> engineers can read and audit &mdash; not hidden skills that may or may not be followed</li>
+          <li style="font-size:15px; line-height:1.5">Chain work + verify in either direction, straight from the repo:<br><span class="em" style="font-family:monospace; font-size:13px">curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md<br>&nbsp;&nbsp;https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md<br>| claude --dangerously-skip-permissions</span></li>
+          <li>~50 min end to end, zero human intervention &mdash; full progressive disclosure docs for any repo</li>
+          <li>Plain text, not hidden skills &mdash; but skills and slash commands can be hooked up to the prompt files depending on implementation preferences</li>
         </ul>
       </div>
     </div>
@@ -291,11 +301,19 @@
         <div class="slide-title">Getting Started</div>
         <div class="slide-subtitle">Pick one repo, run one command</div>
         <ul class="slide-bullets">
-          <li style="font-size:15px; line-height:1.5"><span class="em" style="font-family:monospace; font-size:13px">curl -sL &hellip;/prompts/create-docs.md | claude --dangerously-skip-permissions</span><br><span class="em" style="font-family:monospace; font-size:13px">codex --full-auto "$(curl -sL &hellip;/prompts/create-docs.md)"</span></li>
-          <li>Chain <span class="em">verify-codex</span> or <span class="em">verify-claude</span> for cross-model review &mdash; works in either direction</li>
-          <li>Repo, standard, and all prompts are open: <span class="em">github.com/AgoraIO-Community/ai-devkit</span></li>
+          <li>Pick a repo &mdash; use the <span class="em">create-docs</span> prompt chained with <span class="em">verify</span> as shown in the readme</li>
+          <li>Let it run &mdash; now you have <span class="em">Progressive Disclosure docs</span> enabling any agent to work effectively in that repo</li>
+          <li>Add <span class="em">specs</span> and <span class="em">test-driven implementation</span> using the relevant prompts</li>
+          <li>Build your <span class="em">AI Dev Environment</span> to run multi-repo systems end to end</li>
         </ul>
       </div>
+    </div>
+
+    <!-- Slide 10: Closing -->
+    <div class="slide layout-title" data-slide="10">
+      <img src="images/closing.png" alt="The Dark Code Factory" style="max-height: 70%; max-width: 80%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.4);">
+      <div style="margin-top: 24px; font-size: 20px; color: #8b949e; font-style: italic;">The Dark Code Factory</div>
+      <div class="title-url" style="margin-top: 12px;"><a href="https://github.com/AgoraIO-Community/ai-devkit" target="_blank">github.com/AgoraIO-Community/ai-devkit</a></div>
     </div>
 
   </div>
@@ -341,26 +359,26 @@ const SVG_CONTENT = `
   <line x1="138" y1="236" x2="155" y2="236" stroke="#484f58" stroke-width="1.5"/><line x1="138" y1="280" x2="155" y2="280" stroke="#484f58" stroke-width="1.5"/><line x1="138" y1="324" x2="155" y2="324" stroke="#484f58" stroke-width="1.5"/><line x1="138" y1="368" x2="155" y2="368" stroke="#484f58" stroke-width="1.5"/><line x1="155" y1="236" x2="155" y2="368" stroke="#484f58" stroke-width="1.5"/><line x1="155" y1="302" x2="195" y2="302" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
   <rect x="200" y="60" width="380" height="460" rx="16" fill="url(#plan-bg)" stroke="#30363d" stroke-width="1.5"/>
   <text x="390" y="98" fill="#e6edf3" font-size="20" font-weight="700" text-anchor="middle">Plan</text>
-  <rect x="228" y="168" width="86" height="44" rx="8" fill="#2d1b1b" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/><text x="271" y="195" fill="#f85149" font-size="14" font-weight="600" text-anchor="middle">Human</text>
-  <rect x="452" y="168" width="116" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="510" y="195" fill="#58a6ff" font-size="13" font-weight="600" text-anchor="middle">Verify AI</text>
-  <rect x="208" y="400" width="126" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="271" y="418" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Progressive</text><text x="271" y="430" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
-  <rect x="468" y="400" width="86" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="511" y="427" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Code</text>
-  <rect x="338" y="275" width="104" height="50" rx="12" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/><text x="390" y="306" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Lead AI</text>
-  <line x1="314" y1="206" x2="344" y2="279" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/><line x1="468" y1="206" x2="438" y2="279" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/><line x1="314" y1="408" x2="344" y2="323" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/><line x1="468" y1="408" x2="438" y2="323" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <rect x="230" y="168" width="110" height="44" rx="8" fill="#2d1b1b" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/><text x="285" y="195" fill="#f85149" font-size="13" font-weight="600" text-anchor="middle">Human</text>
+  <rect x="440" y="168" width="110" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="495" y="195" fill="#58a6ff" font-size="13" font-weight="600" text-anchor="middle">Verify AI</text>
+  <rect x="230" y="390" width="110" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="285" y="408" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Progressive</text><text x="285" y="420" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
+  <rect x="440" y="390" width="110" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="495" y="417" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Code</text>
+  <rect x="338" y="270" width="104" height="60" rx="12" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/><text x="390" y="306" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">Lead AI</text>
+  <line x1="310" y1="212" x2="338" y2="278" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/><line x1="470" y1="212" x2="442" y2="278" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/><line x1="310" y1="390" x2="338" y2="330" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/><line x1="470" y1="390" x2="442" y2="330" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
   <text x="615" y="290" fill="#8b949e" font-size="13" font-weight="600" text-anchor="middle">Spec</text><line x1="585" y1="302" x2="645" y2="302" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
   <rect x="650" y="60" width="440" height="460" rx="16" fill="url(#impl-bg)" stroke="#30363d" stroke-width="1.5"/>
   <text x="870" y="98" fill="#e6edf3" font-size="20" font-weight="700" text-anchor="middle">Implementation</text>
-  <rect x="827" y="140" width="86" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="870" y="167" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Code</text>
-  <rect x="668" y="260" width="126" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="731" y="278" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Progressive</text><text x="731" y="290" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
-  <rect x="988" y="260" width="86" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="1031" y="287" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Test Tools</text>
-  <rect x="672" y="388" width="116" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="730" y="415" fill="#58a6ff" font-size="12" font-weight="600" text-anchor="middle">Verify AI</text>
-  <rect x="988" y="388" width="86" height="44" rx="8" fill="#2d1b1b" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/><text x="1031" y="415" fill="#f85149" font-size="12" font-weight="600" text-anchor="middle">Human</text>
-  <rect x="818" y="248" width="104" height="76" rx="14" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/><text x="870" y="293" fill="#fff" font-size="20" font-weight="700" text-anchor="middle">Lead AI</text>
-  <line x1="870" y1="248" x2="870" y2="190" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
-  <line x1="818" y1="282" x2="794" y2="282" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
-  <line x1="922" y1="282" x2="988" y2="282" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
-  <line x1="830" y1="324" x2="774" y2="392" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
-  <line x1="910" y1="324" x2="994" y2="392" stroke="#484f58" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-sm)"/>
+  <rect x="815" y="168" width="110" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="870" y="195" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Code</text>
+  <rect x="676" y="268" width="110" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="731" y="286" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Progressive</text><text x="731" y="298" fill="#e6edf3" font-size="10" font-weight="600" text-anchor="middle">Disclosure docs</text>
+  <rect x="954" y="268" width="110" height="44" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/><text x="1009" y="295" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle">Test Tools</text>
+  <rect x="676" y="390" width="110" height="44" rx="8" fill="#1b2332" stroke="#58a6ff" stroke-width="1" filter="url(#shadow)"/><text x="731" y="417" fill="#58a6ff" font-size="13" font-weight="600" text-anchor="middle">Verify AI</text>
+  <rect x="954" y="390" width="110" height="44" rx="8" fill="#2d1b1b" stroke="#f85149" stroke-width="1" filter="url(#shadow)"/><text x="1009" y="417" fill="#f85149" font-size="13" font-weight="600" text-anchor="middle">Human</text>
+  <rect x="818" y="270" width="104" height="60" rx="12" fill="url(#model-a-fill)" filter="url(#shadow-lg)"/><text x="870" y="306" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">Lead AI</text>
+  <line x1="870" y1="270" x2="870" y2="212" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="818" y1="300" x2="786" y2="290" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="922" y1="300" x2="954" y2="290" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="838" y1="330" x2="760" y2="390" stroke="#484f58" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+  <line x1="902" y1="330" x2="976" y2="390" stroke="#484f58" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-sm)"/>
   <text x="1132" y="290" fill="#8b949e" font-size="13" font-weight="600" text-anchor="middle">Deliverable</text><line x1="1095" y1="304" x2="1165" y2="304" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
   <rect x="1170" y="256" width="100" height="100" rx="12" fill="#21262d" stroke="#30363d" stroke-width="1.5" filter="url(#shadow-lg)"/><text x="1220" y="296" fill="#e6edf3" font-size="17" font-weight="700" text-anchor="middle">Release</text><text x="1220" y="318" fill="#8b949e" font-size="11" font-weight="500" text-anchor="middle">verification gate</text><text x="1220" y="336" fill="#8b949e" font-size="11" font-weight="500" text-anchor="middle">+ human</text>
 `;
@@ -385,15 +403,16 @@ document.getElementById('diagramSlotImpl').appendChild(makeSVG('575 40 715 500')
 // ── Transcripts per slide ──
 // Slide 1 (title) has no transcript
 const TRANSCRIPTS = {
-  1: '',
+  1: `Hello and welcome.`,
   2: `AI DevKit is an operating model for AI-centric software engineering. AI writes specs, tests, code, and docs. Humans approve the spec and approve the release. It works with your existing stack \u2014 git, repos, pull requests, continuous integration \u2014 and reshapes it around AI execution, while keeping the human checkpoints that matter. There are four pillars: spec planning, test-driven implementation, progressive disclosure docs, and the AI dev environment.`,
   3: `Work comes in as a story, epic, bug, or feature. It flows through three phases: Plan, Implementation, and Release. The Lead AI executes the workflow. The Verify AI independently reviews all Lead AI work \u2014 it's a second AI from a different training lineage. Why two AIs? A single AI is confidently wrong in ways invisible to itself. Asking the same model to review its own output rarely catches the error. Two independent lineages catch different mistakes. The Plan phase produces a spec. The Implementation phase produces working code, tests, and updated docs. That deliverable passes through Release \u2014 continuous integration and delivery pipelines plus human approval.`,
-  4: `Plan turns a work item into an approved spec. The Lead AI reads the requirement, the docs, and the code, then drafts a spec with acceptance criteria, edge cases, and approach decisions. The Verify AI reviews the spec independently. If the two AIs disagree on what a criterion means, that's ambiguity \u2014 and it gets surfaced to the human before any code is written. The key discipline here: decide in the spec, not in the code. If you let the AI defer decisions to implementation, it makes them implicitly, often inconsistently, and you only find out when you're reading the code. The phase ends when the human signs off.`,
+  4: `Plan turns a work item into an approved spec. The Lead AI reads the requirement, the docs, and the code, then drafts a spec with acceptance criteria, edge cases, and design decisions. The Verify AI reviews the spec independently. If the two AIs disagree on what a criterion means, that's ambiguity \u2014 and it gets surfaced to the human before any code is written. The key discipline here: decide in the spec, not in the code. If you let the AI defer decisions to implementation, it makes them implicitly, often inconsistently, and you only find out when you're reading the code. The phase ends when the human signs off.`,
   5: `Implementation turns the approved spec into working code. The Verify AI authors the failing tests directly from the spec. The Lead AI writes the implementation to make them pass. This is independent test authorship \u2014 the AI that writes the tests is not the AI that writes the code. Without that separation, implementation assumptions get silently baked into the tests. After test-driven development completes, the Lead AI updates the progressive disclosure docs, and the Verify AI checks the updates against the actual code. Then the spec is archived. The docs carry everything forward.`,
   6: `Progressive Disclosure docs give every repo the same structure. The same eight files, in every repo, across the whole organisation. Level zero is an identity card \u2014 what is this repo? Level one is eight fixed files: setup, architecture, code map, conventions, workflows, interfaces, gotchas, and security. Level two is deep dives, loaded only when Level one isn't enough. Levels zero and one load upfront \u2014 they're small. Level two is pulled in only when needed. The agent gets full context without filling the context window. That consistency is what lets any agent pick up any repo and work safely.`,
   7: `Real systems span multiple repos \u2014 an API, an SDK, a frontend, shared infrastructure. The AI dev environment gives you one workspace where the AI can run the whole system end to end. It's a container of containers. Each component runs in its own container, all inside one outer workspace. The Lead AI can start, stop, restart, and test any component from there. It runs locally or in the cloud. Cloud workspaces are useful for team handoff \u2014 another engineer picks up the same workspace and the same context. The environment includes Playwright for browser testing and Terraform for infrastructure. And there's an audit trail across all agent sessions \u2014 reproducibility, traceability, and evals for debugging agent behaviour.`,
-  8: `Everything in AI DevKit runs through six markdown files in a prompts folder. spec, implement, create-docs, update-docs, verify-codex, verify-claude. They're plain text \u2014 you can read them, understand exactly what the AI is being told to do, and modify them. Why not skills or slash commands? There are lots of ways to load instructions into an AI tool \u2014 user settings, project files, enterprise configs, skills, slash commands. It's a walled garden. A Claude skill doesn't work in Cursor. A Cursor command doesn't work in Codex. But at the end of the day, it's all just text hitting an LLM. Prompts are portable \u2014 you can paste them into any agent, or pipe them from the command line. Curl the prompts straight from GitHub \u2014 no clone needed. For example: curl create-docs and verify-codex, pipe to claude. Or flip it \u2014 curl create-docs and verify-claude, pass to codex. Either way, one command generates Progressive Disclosure docs and runs cross-model verification \u2014 end to end, about fifty minutes, zero human intervention. Visible prompts are accountable. Hidden skills may or may not be followed. Engineers should read the prompts, not trust hidden instructions.`,
-  9: `Here's how to start. Pick one repo. Curl create-docs, pipe to claude \u2014 or pass to codex. That's it \u2014 any agent can then pick up that repo and work safely. Chain verify-codex or verify-claude for cross-model review \u2014 works in either direction. The repo, the standard, and all the prompts are open at github.com/AgoraIO-Community/ai-devkit.`,
+  8: `Everything in AI DevKit runs through six markdown files in a prompts folder. spec, implement, create-docs, update-docs, verify-codex, verify-claude. They're plain text \u2014 you can read them, understand exactly what the AI is being told to do, and modify them. Chain any work prompt with a verify prompt in either direction, straight from the master repo. For example: curl create-docs and verify-codex, pipe to claude \u2014 with the dangerously-skip-permissions flag. The markdown URLs will be shortened in the near future. That one command generates full Progressive Disclosure docs for any repo and runs cross-model verification \u2014 end to end, about fifty minutes, zero human intervention. We're not providing skills or slash commands \u2014 but they could easily be hooked up to the master prompt files depending on your implementation preferences. Visible prompts are accountable. Hidden skills may or may not be followed. Engineers should read the prompts, not trust hidden instructions.`,
+  9: `Here's how to start. Pick a repo. Use the create-docs prompt chained with a verify prompt, as shown in the ai-devkit readme. Let it run \u2014 now you have Progressive Disclosure docs enabling any agent to work effectively in that repo. Add specs and test-driven implementation using the relevant prompts. Build your AI Dev Environment to run multi-repo systems end to end. The repo, the standard, and all the prompts are open at github.com/AgoraIO-Community/ai-devkit. Goodbye for now. Questions gratefully received. And look out for upcoming deeper topic dives.`,
+  10: '',
 };
 
 // ── State ──
@@ -409,7 +428,7 @@ const subtitleEn = document.getElementById('subtitleEn');
 const subtitleZh = document.getElementById('subtitleZh');
 const transcriptText = document.getElementById('transcriptText');
 
-const TOTAL_SLIDES = 9;
+const TOTAL_SLIDES = 10;
 // Audio slide mapping: audio slides are 2-9 (display), mapped from combined.json slides 1-8
 // combinedTiming[i].slide is 1-8 in the JSON; we add 1 to get display slide number
 const AUDIO_SLIDE_OFFSET = 1; // display_slide = json_slide + 1
@@ -479,11 +498,10 @@ function togglePlay() {
     playBtn.classList.remove('playing');
     showSlide(currentSlideNum);
   } else {
-    // If on title slide, jump to slide 2 to start audio
-    if (currentSlideNum === 1) showSlide(2);
-
     // Sync audio to current slide before playing
-    if (combinedTiming.length) {
+    if (currentSlideNum === 1) {
+      audio.currentTime = 0; // title slide starts from beginning (greeting)
+    } else if (combinedTiming.length) {
       const jsonSlide = currentSlideNum - AUDIO_SLIDE_OFFSET;
       const entry = combinedTiming.find(s => s.slide === jsonSlide);
       if (entry) audio.currentTime = entry.offset;
@@ -516,28 +534,39 @@ function updateLoop() {
     timeDisplay.textContent = `${formatTime(t)} / ${formatTime(dur)}`;
 
     // Determine display slide from audio time
-    // combinedTiming has slide 1-8; display slide = json_slide + 1
-    let jsonSlide = 1;
-    for (let i = combinedTiming.length - 1; i >= 0; i--) {
-      if (t >= combinedTiming[i].offset) { jsonSlide = combinedTiming[i].slide; break; }
+    // First 3 seconds: keep title slide (greeting)
+    // After that: combinedTiming slides 1-8 map to display slides 2-9
+    const TITLE_AUDIO_DUR = 3;
+    let displaySlide;
+    if (t < TITLE_AUDIO_DUR) {
+      displaySlide = 1;
+    } else {
+      let jsonSlide = 1;
+      for (let i = combinedTiming.length - 1; i >= 0; i--) {
+        if (t >= combinedTiming[i].offset) { jsonSlide = combinedTiming[i].slide; break; }
+      }
+      displaySlide = jsonSlide + AUDIO_SLIDE_OFFSET;
     }
-    const displaySlide = jsonSlide + AUDIO_SLIDE_OFFSET;
+    // Show closing slide when "Goodbye" subtitle starts
+    const goodbyeSub = subtitlesEn.find(s => s.text.startsWith('Goodbye'));
+    if (goodbyeSub && t >= goodbyeSub.start) displaySlide = 10;
     if (displaySlide !== currentSlideNum) showSlide(displaySlide);
 
-    // Subtitles
-    const enSub = subtitlesEn.find(s => t >= s.start && t <= s.end);
+    // Subtitles — extend end time by 0.8s so text lingers after audio
+    const SUB_LINGER = 0.8;
+    const enSub = subtitlesEn.find(s => t >= s.start && t <= s.end + SUB_LINGER);
     subtitleEn.textContent = enSub ? enSub.text : '';
-    const zhSub = subtitlesZh.find(s => t >= s.start && t <= s.end);
+    const zhSub = subtitlesZh.find(s => t >= s.start && t <= s.end + SUB_LINGER);
     subtitleZh.textContent = zhSub ? zhSub.text : '';
 
-    // End
+    // End — show closing slide
     if (audio.ended) {
+      showSlide(10); // closing slide with laptop photo
       isPlaying = false;
       document.body.classList.remove('playing');
       document.body.classList.add('browse');
       playBtn.innerHTML = '&#9654; Play';
       playBtn.classList.remove('playing');
-      showSlide(currentSlideNum);
     }
   }
 

@@ -2,6 +2,11 @@
 
 > Step-by-step maintenance flows for the standard, canonical docs, and self-hosted repo docs.
 
+**Note:** ai-devkit is a standards repo — its canonical workflow procedures live
+in `docs/workflows/` and `docs/standard/spec-profile.md`. Adopting repos get
+materialised copies of these workflows in their own `05_workflows.md` at
+bootstrap. This file describes how to maintain ai-devkit itself.
+
 ## Common Tasks
 
 | Task | Start Here | Also Review |
@@ -79,6 +84,20 @@ This L1 file describes how ai-devkit uses and maintains it.
 4. run validation
 5. scan `README.md` and `AGENTS.md` for stale public claims
 
+## Regenerate Presentation
+
+When `presentation.md` or `presentation/player.html` changes:
+
+1. Source the API key: `source .env && export TTS_KEY`
+2. Regenerate audio: `python3 presentation/generate.py` (all slides) or `python3 presentation/generate.py N` (single slide)
+3. Translate `presentation/subs/en.srt` to `presentation/subs/zh.srt` (keep timestamps identical, keep technical terms in English)
+4. Start HTTP server if needed: `python3 -m http.server 8090 -d presentation &`
+5. Record video: `nvm use 22 && node presentation/record.mjs`
+6. Output lands in `presentation/runs/`
+
+See [elevenlabs_voiceover.md](L2/elevenlabs_voiceover.md) for API details, audio tag reference, and script conventions.
+
 ## Related Deep Dives
 
 - [policy_delivery.md](L2/policy_delivery.md) — Detailed change propagation for policy and workflow updates.
+- [elevenlabs_voiceover.md](L2/elevenlabs_voiceover.md) — TTS API reference and presentation pipeline.

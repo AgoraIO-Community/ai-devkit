@@ -58,97 +58,138 @@ sequenceDiagram
 
 Which provider takes which role can vary per phase and per repo. What matters is that the two AIs come from independent training lineages. A single AI is confidently wrong in ways invisible to itself, and asking the same model to review its own output rarely catches the error. Two independent lineages catch different mistakes.
 
-## Plan
+Verification uses a second AI from a different training lineage to independently review the Lead AI's work. Chain a verify prompt after any work prompt:
 
-**What it is.** Plan turns a work item — story, epic, bug, or feature — into an approved spec: a short markdown file with acceptance criteria, edge cases, approach decisions, and a test plan. The human approves the spec before any code is written.
-
-**How it works.** Lead AI executes the spec-creation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the work item, the relevant Progressive Disclosure docs, existing code, and the human. The workflow includes explicit cross-verification steps that consult Verify AI — for example, having Verify AI independently restate the acceptance criteria to surface ambiguities. The phase ends when the human signs off the spec.
-
-**Artifact.** `docs/specs/SPEC-NNN-<short-name>.md` — title, status, acceptance criteria, edge cases, approach decisions, test cases, out-of-scope list, verification plan, and notes. See [spec-profile.md](docs/standard/spec-profile.md) for the template and the nine principles a good spec must satisfy.
-
-<details>
-<summary>Spec prompt</summary>
-
-Draft or update a spec. Chain with a verify prompt for cross-model review.
-
-**Claude as lead, Codex as verify:**
 ```bash
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md \
+# Claude as lead, Codex as verify
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
      https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
   | claude --dangerously-skip-permissions
+
+# Codex as lead, Claude as verify
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```
 
-**Codex as lead, Claude as verify:**
-```bash
-codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
-```
+The verify prompt tells the Lead AI how to shell out to the Verify AI, parse findings, fix them, and re-verify — up to 3 rounds with zero human intervention. Any work prompt can be chained with either verify prompt.
 
-**Prompt only (no verify):**
-```bash
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md \
-  | claude --dangerously-skip-permissions
-```
+<details>
+<summary>verify-codex.md</summary>
 
-> Standalone file: `prompts/spec.md`
+Use when Claude is the Lead AI. Requires [Codex CLI](https://github.com/openai/codex) installed and on PATH.
+
+**Prompt:** ([`prompts/verify-codex.md`](prompts/verify-codex.md)):
+
+```
+## Verify with Codex
+
+After completing the work above, use Codex as an independent Verify AI.
+
+Read the fix workflow from the ai-devkit repo:
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#fix
+
+### Step 1: Codex review
+
+Run this command to get Codex's independent review:
+
+codex -m gpt-5.4 \
+  --config model_reasoning_effort="medium" \
+  --sandbox read-only \
+  --full-auto \
+  --skip-git-repo-check \
+  "Read every file in docs/ai/ and compare each factual claim against
+the actual source code. For each doc file, report findings as:
+
+FINDING: [description]
+FILE: [doc file]
+SOURCE: [source file checked]
+SEVERITY: high | medium | low
+RECOMMENDATION: [what to fix]
+
+If everything is accurate, say: NO FINDINGS" 2>/dev/null
+
+### Step 2: Fix findings
+
+For each finding Codex reported:
+
+1. Read the cited doc file AND the source file side by side.
+2. Determine the ground truth from the source code.
+3. Patch the exact doc file at the correct level.
+4. Do NOT blindly accept findings — verify each one against source.
+5. Commit: docs: fix findings from codex review
+
+### Step 3: Re-verify
+
+Resume the Codex session to verify fixes:
+
+echo "I fixed the findings you reported. Re-read docs/ai/ and verify each
+fix against source. Report any remaining issues using the same FINDING format,
+or say NO FINDINGS if everything is accurate." \
+  | codex --skip-git-repo-check resume --last 2>/dev/null
+
+If Codex reports new findings, repeat steps 2-3. Max 3 rounds.
+
+### Rules
+
+- Do not mark findings as fixed without checking the source file.
+- Update last_reviewed in Level zero when done.
+```
 
 </details>
 
-## Implementation
-
-**What it is.** Implementation turns an approved spec into a deliverable bundle: code, tests, updated Progressive Disclosure docs, and the structured commit message. The human is available on demand for clarifications but is not in the inner loop.
-
-**How it works.** Lead AI executes the implementation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the spec, the existing code, Progressive Disclosure docs, the testing tools, the human (on demand), and Verify AI. The workflow runs Red, Green, Refactor for the test-driven development discipline and then Progressive Disclosure docs verification, with cross-verification steps that involve Verify AI at key transitions. For test-driven development specifically, the workflow specifies a handoff: one model writes the failing tests, a second model from an independent training lineage implements — preserving test-author and implementer separation.
-
-Once implementation is complete, the affected Progressive Disclosure docs are updated to reflect the new reality and the spec is archived to `docs/specs/archive/`. Archived specs are not part of the agent operating surface — Progressive Disclosure docs carry everything an agent needs going forward. The archive exists for human audits and retrospectives.
-
-**Artifact.** Test files, code changes, updated Progressive Disclosure docs, and a structured commit message. See [spec-profile.md](docs/standard/spec-profile.md) for the canonical workflows.
-
 <details>
-<summary>Implement prompt</summary>
+<summary>verify-claude.md</summary>
 
-Start or continue implementation from a spec using test-driven development. Chain with a verify prompt for cross-model review.
+Use when Codex is the Lead AI. Requires [Claude Code](https://github.com/anthropics/claude-code) installed and on PATH.
 
-**Claude as lead, Codex as verify:**
-```bash
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md \
-     https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
-  | claude --dangerously-skip-permissions
+**Prompt:** ([`prompts/verify-claude.md`](prompts/verify-claude.md)):
+
 ```
+## Verify with Claude
 
-**Codex as lead, Claude as verify:**
-```bash
-codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+After completing the work above, use Claude as an independent Verify AI.
+
+Read the fix workflow from the ai-devkit repo:
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#fix
+
+### Step 1: Claude review
+
+Run this command to get Claude's independent review:
+
+claude --dangerously-skip-permissions -p "Read every file in docs/ai/ and compare each factual claim against the actual source code. For each doc file, report findings as:
+
+FINDING: [description]
+FILE: [doc file]
+SOURCE: [source file checked]
+SEVERITY: high | medium | low
+RECOMMENDATION: [what to fix]
+
+If everything is accurate, say: NO FINDINGS"
+
+### Step 2: Fix findings
+
+For each finding Claude reported:
+
+1. Read the cited doc file AND the source file side by side.
+2. Determine the ground truth from the source code.
+3. Patch the exact doc file at the correct level.
+4. Do NOT blindly accept findings — verify each one against source.
+5. Commit: docs: fix findings from claude review
+
+### Step 3: Re-verify
+
+Run Claude again to verify fixes:
+
+claude --dangerously-skip-permissions -p "I fixed the findings you reported. Re-read docs/ai/ and verify each fix against source. Report any remaining issues using the same FINDING format, or say NO FINDINGS if everything is accurate."
+
+If Claude reports new findings, repeat steps 2-3. Max 3 rounds.
+
+### Rules
+
+- Do not mark findings as fixed without checking the source file.
+- Update last_reviewed in Level zero when done.
 ```
-
-**Prompt only (no verify):**
-```bash
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md \
-  | claude --dangerously-skip-permissions
-```
-
-> Standalone file: `prompts/implement.md`
 
 </details>
-
-## Release
-
-**What it is.** The verification gate before deploy. Release is the human's second checkpoint — after spec approval at the front.
-
-**How it works.** The deliverable bundle is pushed to a release branch where continuous integration runs the full verification suite: tests, lints, doc-freshness checks against the eight Level one files, and spec-to-test traceability checks. The release mechanism downstream of continuous integration is system-dependent and outside AI DevKit's scope — teams can auto-promote on green, route through human review, or use any other release model they prefer.
-
-**Artifact.** The release branch, continuous integration workflow, merge record back to the spec via the structured commit message convention (see [spec-profile.md](docs/standard/spec-profile.md#commit-and-pr-convention)), and the archived spec.
-
-## AI Dev Environment
-
-**What it is.** One workspace where the AI can run the whole system end to end. When a system spans multiple repos — an API, an SDK, a frontend, shared infrastructure — the Lead AI needs to run, stop, and test everything from a single place.
-
-**How it works.** It's a container of containers. The outer container is the workspace. Inside it, each component runs in its own container, managed by docker-compose. Infrastructure dependencies (databases, caches, message queues) also run as containers. The Lead AI can start, stop, restart, and test any component without leaving the workspace.
-
-The whole thing runs locally or in the cloud. Cloud workspaces are useful for team handoff — another engineer picks up the same workspace and the same agent context. The environment includes built-in tooling: Playwright for browser testing, Terraform for infrastructure provisioning. All agent sessions are audited — giving you reproducibility, traceability, and evals for debugging agent behaviour.
-
-The system repo contains a system card (`docs/ai/SYSTEM.md`) that lists which repos belong to the system, how they connect, and what contracts they share. Component repos are cloned into a `components/` directory inside the dev environment. Changes to component code are reflected immediately via volume mounts.
-
-**Artifact.** A system repo with `System Role: system` in the Level zero card, `SYSTEM.md` alongside it, docker-compose config, devcontainer config, and setup/start/stop/test scripts. See [system-profile.md](docs/standard/system-profile.md) for the full profile.
 
 ## Progressive Disclosure Docs
 
@@ -197,13 +238,57 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
 codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```
 
-**Prompt only (no verify):**
-```bash
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
-  | claude --dangerously-skip-permissions
-```
+**Prompt:** ([`prompts/create-docs.md`](prompts/create-docs.md)):
 
-> Standalone file: `prompts/create-docs.md`
+```
+Your task is to add Progressive Disclosure documentation and git conventions
+to this repository.
+
+Before starting:
+
+1. Confirm you are inside the target repo's checked-out folder.
+2. Stash any uncommitted changes. Create a new branch
+   `docs/progressive-disclosure` from the current HEAD and work there.
+
+Read these files from the ai-devkit repo:
+
+1. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#generate — the generation workflow
+2. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#test — the test workflow
+3. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/progressive-disclosure-standard.md — the full standard
+
+Deliverables:
+
+1. Add AGENTS.md at the repo root using the expanded template from section 4.7
+   of the progressive disclosure standard.
+2. Generate Progressive Disclosure docs under docs/ai/.
+3. Preserve and integrate with existing repo docs — don't overwrite them.
+4. If CLAUDE.md already exists, add a reference to AGENTS.md using that file's
+   existing conventions — don't replace content.
+5. Apply these git conventions:
+   - conventional commits
+   - branch naming: type/short-description
+   - no AI tool names in commit messages
+
+Requirements:
+
+- Read the whole repo, not just top-level files. Delegate large modules when
+  the tool supports it.
+- Read existing markdown, config, and CI files for project context.
+- Use the real structure and terminology of the repo — no generic filler.
+- Do not invent subsystems or workflows that aren't present yet.
+- AGENTS.md must include How to Load, Git Conventions, and Doc Commands.
+- Generate Level zero, Level one, and Level two docs according to the standard.
+  Add Level two docs only where deeper detail is justified.
+- After generating, run the test workflow. Fix failures and retest until all
+  pass. Test results are saved to docs/ai/test-results.md.
+
+When finished:
+
+1. Summarize what you added.
+2. Call out any assumptions, gaps, or ambiguous areas.
+3. Commit with: docs: add progressive disclosure documentation
+4. Push and create a PR.
+```
 
 </details>
 
@@ -224,49 +309,175 @@ curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prom
 codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```
 
-**Prompt only (no verify):**
-```bash
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/update-docs.md \
-  | claude --dangerously-skip-permissions
-```
+**Prompt:** ([`prompts/update-docs.md`](prompts/update-docs.md)):
 
-> Standalone file: `prompts/update-docs.md`
+```
+Your task is to update this repository's Progressive Disclosure documentation
+to reflect recent code or convention changes.
+
+Read these files from the ai-devkit repo:
+
+1. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#update — the update workflow
+2. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progressive-disclosure-docs.md#test — the test workflow
+3. https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/progressive-disclosure-standard.md — the full standard
+
+Steps:
+
+1. Read the existing docs/ai/ tree end to end.
+2. Read recent git history (git log --oneline -20) to identify what changed.
+3. Compare docs/ai/ claims against the current source code.
+4. Update only the docs that have drifted — do not regenerate from scratch.
+5. If a change affects Level one, check whether the related Level two deep
+   dives also need updating.
+6. Update last_reviewed in docs/ai/L0_repo_card.md.
+7. Run the test workflow. Fix failures and retest until all pass.
+
+Rules:
+
+- Only change docs that are actually stale. Do not rewrite docs that are
+  already accurate.
+- Preserve the existing structure and style.
+- Use the real terminology from the codebase, not generic filler.
+
+When finished:
+
+1. Summarize what you changed and why.
+2. Commit with: docs: update progressive disclosure documentation
+```
 
 </details>
 
-## Verify prompts
+## Plan
 
-Verification uses a second AI from a different training lineage to independently review the Lead AI's work. Chain a verify prompt after any work prompt:
+**What it is.** Plan turns a work item — story, epic, bug, or feature — into an approved spec: a short markdown file with acceptance criteria, edge cases, design decisions, and a test plan. The human approves the spec before any code is written.
 
+**How it works.** Lead AI executes the spec-creation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the work item, the relevant Progressive Disclosure docs, existing code, and the human. The workflow includes explicit cross-verification steps that consult Verify AI — for example, having Verify AI independently restate the acceptance criteria to surface ambiguities. The phase ends when the human signs off the spec.
+
+**Artifact.** `docs/specs/SPEC-NNN-<short-name>.md` — title, status, acceptance criteria, edge cases, design decisions, test cases, out-of-scope list, verification plan, and notes. See [spec-profile.md](docs/standard/spec-profile.md) for the template and the nine principles a good spec must satisfy.
+
+<details>
+<summary>Spec prompt</summary>
+
+Draft or update a spec. Chain with a verify prompt for cross-model review.
+
+**Claude as lead, Codex as verify:**
 ```bash
-# Claude as lead, Codex as verify
-curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md \
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md \
      https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
   | claude --dangerously-skip-permissions
-
-# Codex as lead, Claude as verify
-codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/create-docs.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
 ```
 
-The verify prompt tells the Lead AI how to shell out to the Verify AI, parse findings, fix them, and re-verify — up to 3 rounds with zero human intervention. Any work prompt can be chained with either verify prompt.
+**Codex as lead, Claude as verify:**
+```bash
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/spec.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+```
 
-<details>
-<summary>verify-codex.md</summary>
+**Prompt:** ([`prompts/spec.md`](prompts/spec.md)):
 
-Use when Claude is the Lead AI. Requires [Codex CLI](https://github.com/openai/codex) installed and on PATH.
+```
+Your task is to draft or update a spec for this change.
 
-> Standalone file: `prompts/verify-codex.md`
+Read the spec profile from the ai-devkit repo:
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/spec-profile.md
+
+If a spec already exists for this work (check docs/specs/), update it.
+Otherwise, create a new one.
+
+Steps:
+
+1. Read the relevant source code and docs/ai/ files to understand the
+   current state.
+2. Create or update docs/specs/SPEC-NNN-<short-name>.md using the template
+   from the spec profile.
+3. Fill in: What we're building, Why, Acceptance criteria, Edge cases,
+   Design decisions, Test cases, Verification, Out of scope.
+4. Run the spec self-check at the bottom.
+5. Summarize the spec and flag anything that needs human decision.
+```
 
 </details>
 
+## Implementation
+
+**What it is.** Implementation turns an approved spec into a deliverable bundle: code, tests, updated Progressive Disclosure docs, and the archived spec. The human is available on demand for clarifications but is not in the inner loop.
+
+**How it works.** Lead AI executes the implementation workflow from the adopting repo's `docs/ai/L1/05_workflows.md`. The workspace draws on the spec, the existing code, Progressive Disclosure docs, the testing tools, the human (on demand), and Verify AI. The workflow runs Red, Green, Refactor for the test-driven development discipline and then Progressive Disclosure docs verification, with cross-verification steps that involve Verify AI at key transitions. For test-driven development specifically, the workflow specifies a handoff: one model writes the failing tests, a second model from an independent training lineage implements — preserving test-author and implementer separation.
+
+Once implementation is complete, the affected Progressive Disclosure docs are updated to reflect the new reality and the spec is archived to `docs/specs/archive/`. Archived specs are not part of the agent operating surface — Progressive Disclosure docs carry everything an agent needs going forward. The archive exists for human audits and retrospectives.
+
+**Artifact.** Test files, code changes, updated Progressive Disclosure docs, the archived spec, and conventional commits with `Spec:` trailers. See [spec-profile.md](docs/standard/spec-profile.md) for the canonical workflows.
+
 <details>
-<summary>verify-claude.md</summary>
+<summary>Implement prompt</summary>
 
-Use when Codex is the Lead AI. Requires [Claude Code](https://github.com/anthropics/claude-code) installed and on PATH.
+Start or continue implementation from a spec using test-driven development. Chain with a verify prompt for cross-model review.
 
-> Standalone file: `prompts/verify-claude.md`
+**Claude as lead, Codex as verify:**
+```bash
+curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md \
+     https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-codex.md \
+  | claude --dangerously-skip-permissions
+```
+
+**Codex as lead, Claude as verify:**
+```bash
+codex --full-auto "$(curl -sL https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/implement.md https://raw.githubusercontent.com/AgoraIO-Community/ai-devkit/main/prompts/verify-claude.md)"
+```
+
+**Prompt:** ([`prompts/implement.md`](prompts/implement.md)):
+
+```
+Your task is to implement (or continue implementing) the spec using
+test-driven development.
+
+Read the spec profile from the ai-devkit repo:
+https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/standard/spec-profile.md
+
+If this is a continuation, check the spec's test case status column to see
+where you left off.
+
+Steps:
+
+1. Read the spec. Read docs/ai/L1/07_gotchas.md and
+   docs/ai/L1/04_conventions.md before writing any code.
+2. Red: Write the failing tests, one per acceptance criterion and edge
+   case. Run the test suite to confirm they fail for the right reason.
+3. Green: Write the minimum code to make the tests pass. No premature
+   abstraction, no scope expansion beyond what the spec requires.
+4. Refactor: Improve naming, remove duplication, check against
+   04_conventions.md. Tests must stay green.
+5. Update the spec's test case status column as you go
+   (TODO → Red → Green → Refactored).
+6. Update Progressive Disclosure docs if repo behaviour changed.
+7. Archive the spec: move it from docs/specs/SPEC-NNN.md to
+   docs/specs/archive/<YYYY-QN>/SPEC-NNN.md. Append a closing note
+   linking to the PD docs commit SHA and the affected L1 files.
+8. Use normal conventional commits. Add a Spec: SPEC-NNN trailer.
+```
 
 </details>
+
+## Release
+
+**What it is.** The verification gate before deploy. Release is the human's second checkpoint — after spec approval at the front.
+
+**How it works.** The deliverable bundle is pushed to a release branch where continuous integration runs the full verification suite: tests, lints, doc-freshness checks against the eight Level one files, and spec-to-test traceability checks. The release mechanism downstream of continuous integration is system-dependent and outside AI DevKit's scope — teams can auto-promote on green, route through human review, or use any other release model they prefer.
+
+**Artifact.** The release branch, continuous integration workflow, and merge record linked to the spec via `Spec:` trailer (see [spec-profile.md](docs/standard/spec-profile.md#commit-and-pr-convention)).
+
+## AI Dev Environment
+
+**What it is.** One workspace where the AI can run the whole system end to end. When a system spans multiple repos — an API, an SDK, a frontend, shared infrastructure — the Lead AI needs to run, stop, and test everything from a single place.
+
+**How it works.** It's a container of containers. The outer container is the workspace. Inside it, each component runs in its own container, managed by docker-compose. Infrastructure dependencies (databases, caches, message queues) also run as containers. The Lead AI can start, stop, restart, and test any component without leaving the workspace.
+
+The whole thing runs locally or in the cloud. Cloud workspaces are useful for team handoff — another engineer picks up the same workspace and the same agent context. The environment includes built-in tooling: Playwright for browser testing, Terraform for infrastructure provisioning. All agent sessions are audited — giving you reproducibility, traceability, and evals for debugging agent behaviour.
+
+The system repo contains a system card (`docs/ai/SYSTEM.md`) that lists which repos belong to the system, how they connect, and what contracts they share. Component repos are cloned into a `components/` directory inside the dev environment. Changes to component code are reflected immediately via volume mounts.
+
+**Artifact.** A system repo with `System Role: system` in the Level zero card, `SYSTEM.md` alongside it, docker-compose config, devcontainer config, and setup/start/stop/test scripts. See [system-profile.md](docs/standard/system-profile.md) for the full profile.
+
+## Prompts
 
 **All six prompts.** The full set lives in `prompts/`:
 
@@ -325,4 +536,3 @@ files can consume `AGENTS.md` and `docs/ai/`.
 - `docs/workflows/` — canonical Progressive Disclosure docs workflows (generate, update, test, fix, review)
 - `docs/guides/` — supplementary guides
 - `scripts/` — freshness checks, validators
-
