@@ -27,6 +27,29 @@ RECOMMENDATION: [what to fix]
 If everything is accurate, say: NO FINDINGS" 2>/dev/null
 ```
 
+**Running inside a container or CI** (where the OS sandbox can't initialise —
+e.g. `bwrap: … Operation not permitted`): the host is already isolated, so
+replace `--sandbox read-only --full-auto` with
+`--dangerously-bypass-approvals-and-sandbox`, and use `codex exec` instead of
+bare `codex` (the bare form opens an interactive TUI that won't work headless):
+
+```
+codex exec -m gpt-5.4 \
+  --config model_reasoning_effort="medium" \
+  --dangerously-bypass-approvals-and-sandbox \
+  --skip-git-repo-check \
+  "Read every file in docs/ai/ and compare each factual claim against
+the actual source code. For each doc file, report findings as:
+
+FINDING: [description]
+FILE: [doc file]
+SOURCE: [source file checked]
+SEVERITY: high | medium | low
+RECOMMENDATION: [what to fix]
+
+If everything is accurate, say: NO FINDINGS" 2>/dev/null
+```
+
 ### Step 2: Fix findings
 
 For each finding Codex reported:
@@ -46,6 +69,18 @@ echo "I fixed the findings you reported. Re-read docs/ai/ and verify each
 fix against source. Report any remaining issues using the same FINDING format,
 or say NO FINDINGS if everything is accurate." \
   | codex --skip-git-repo-check resume --last 2>/dev/null
+```
+
+In a container/CI environment, use `codex exec` with the bypass flag instead:
+
+```
+codex exec -m gpt-5.4 \
+  --config model_reasoning_effort="medium" \
+  --dangerously-bypass-approvals-and-sandbox \
+  --skip-git-repo-check \
+  "I fixed the findings you reported. Re-read docs/ai/ and verify each
+fix against source. Report any remaining issues using the same FINDING format,
+or say NO FINDINGS if everything is accurate." 2>/dev/null
 ```
 
 If Codex reports new findings, repeat steps 2-3. Max 3 rounds.
