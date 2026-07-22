@@ -10,20 +10,20 @@ https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progress
 Run this command to get Codex's independent review:
 
 ```
-codex \
-  --config model_reasoning_effort="medium" \
-  --sandbox read-only \
-  --skip-git-repo-check \
-  "Read every file in docs/ai/ and compare each factual claim against
-the actual source code. For each doc file, report findings as:
+codex exec \
+    --config 'model_reasoning_effort = "medium"' \
+    --sandbox read-only \
+    --skip-git-repo-check \
+    "Read every file in docs/ai/ and compare each factual claim against
+  the actual source code. For each doc file, report findings as:
 
-FINDING: [description]
-FILE: [doc file]
-SOURCE: [source file checked]
-SEVERITY: high | medium | low
-RECOMMENDATION: [what to fix]
+  FINDING: [description]
+  FILE: [doc file]
+  SOURCE: [source file checked]
+  SEVERITY: high | medium | low
+  RECOMMENDATION: [what to fix]
 
-If everything is accurate, say: NO FINDINGS" 2>/dev/null
+  If everything is accurate, say: NO FINDINGS" 2>/dev/null
 ```
 
 **Running inside a container or CI** (where the OS sandbox can't initialise —
