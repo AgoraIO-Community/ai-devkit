@@ -10,7 +10,7 @@ https://github.com/AgoraIO-Community/ai-devkit/blob/main/docs/workflows/progress
 Run this command to get Codex's independent review:
 
 ```
-codex -m gpt-5.4 \
+codex -m gpt-5.6 \
   --config model_reasoning_effort="medium" \
   --sandbox read-only \
   --full-auto \
